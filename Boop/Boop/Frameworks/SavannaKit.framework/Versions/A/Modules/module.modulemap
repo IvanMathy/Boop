@@ -1,0 +1,4 @@
+framework module SavannaKit {
+  header "SavannaKit-Swift.h"
+  requires objc
+}
