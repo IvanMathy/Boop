@@ -35,7 +35,7 @@ class DefaultTheme: SyntaxColorTheme {
     }
     
     func attributes(for token: Token) -> [NSAttributedString.Key : Any] {
-        return [:]
+        return [.foregroundColor:NSColor.gray]
     }
     
 }

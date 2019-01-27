@@ -16,6 +16,7 @@
 		2C20669121FD64A20082570E /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20668F21FD64A20082570E /* DefaultTheme.swift */; };
 		2C20669521FD6F400082570E /* BoopLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669321FD6F400082570E /* BoopLexer.swift */; };
 		2C20669A21FD76900082570E /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669921FD76900082570E /* StatusView.swift */; };
+		2C20669C21FE3E060082570E /* BoopToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669B21FE3E060082570E /* BoopToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		2C20668F21FD64A20082570E /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		2C20669321FD6F400082570E /* BoopLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoopLexer.swift; sourceTree = "<group>"; };
 		2C20669921FD76900082570E /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		2C20669B21FE3E060082570E /* BoopToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoopToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				2C20668E21FD64580082570E /* Themes */,
 				2C20669321FD6F400082570E /* BoopLexer.swift */,
+				2C20669B21FE3E060082570E /* BoopToken.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				2C20669121FD64A20082570E /* DefaultTheme.swift in Sources */,
 				2C20667621FD628E0082570E /* AppDelegate.swift in Sources */,
 				2C20669521FD6F400082570E /* BoopLexer.swift in Sources */,
+				2C20669C21FE3E060082570E /* BoopToken.swift in Sources */,
 				2C20668B21FD63C90082570E /* MainViewController.swift in Sources */,
 				2C20669A21FD76900082570E /* StatusView.swift in Sources */,
 			);
