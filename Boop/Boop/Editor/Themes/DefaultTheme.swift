@@ -10,17 +10,19 @@ import Cocoa
 import SavannaKit
 
 class DefaultTheme: SyntaxColorTheme {
-    private static var lineNumbersColor: Color {
-        return Color(red: 100/255, green: 100/255, blue: 100/255, alpha: 1.0)
-    }
     
-    let lineNumbersStyle: LineNumbersStyle? = LineNumbersStyle(font: Font(name: "Menlo", size: 16)!, textColor: lineNumbersColor)
     let gutterStyle: GutterStyle = GutterStyle(backgroundColor: Color(red: 21/255.0, green: 22/255, blue: 31/255, alpha: 1.0), minimumWidth: 32)
     
-    var font: Font = Font(name: "Menlo", size: 15)!
+    var font: Font = NSFont(name: "SFMono-Regular", size: 15) ?? Font(name: "Menlo", size: 15)!
+    
+    let lineNumbersStyle: LineNumbersStyle?
     
     var backgroundColor: Color = Color(red: 31/255.0, green: 32/255, blue: 41/255, alpha: 1.0)
     
+    
+    init() {
+        lineNumbersStyle = LineNumbersStyle(font: font, textColor: Color(red: 100/255, green: 100/255, blue: 100/255, alpha: 1.0))
+    }
     
     func globalAttributes() -> [NSAttributedString.Key: Any] {
         
