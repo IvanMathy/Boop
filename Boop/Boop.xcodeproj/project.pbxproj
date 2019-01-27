@@ -17,6 +17,9 @@
 		2C20669521FD6F400082570E /* BoopLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669321FD6F400082570E /* BoopLexer.swift */; };
 		2C20669A21FD76900082570E /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669921FD76900082570E /* StatusView.swift */; };
 		2C20669C21FE3E060082570E /* BoopToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669B21FE3E060082570E /* BoopToken.swift */; };
+		2C20669E21FE445E0082570E /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669D21FE445E0082570E /* OverlayView.swift */; };
+		2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A121FE47090082570E /* PopoverViewController.swift */; };
+		2C2066A421FE47CE0082570E /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A321FE47CE0082570E /* PopoverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +48,9 @@
 		2C20669321FD6F400082570E /* BoopLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoopLexer.swift; sourceTree = "<group>"; };
 		2C20669921FD76900082570E /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		2C20669B21FE3E060082570E /* BoopToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoopToken.swift; sourceTree = "<group>"; };
+		2C20669D21FE445E0082570E /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		2C2066A121FE47090082570E /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		2C2066A321FE47CE0082570E /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				2C20668921FD63C90082570E /* MainViewController.swift */,
+				2C2066A121FE47090082570E /* PopoverViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -129,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				2C20669921FD76900082570E /* StatusView.swift */,
+				2C20669D21FE445E0082570E /* OverlayView.swift */,
+				2C2066A321FE47CE0082570E /* PopoverView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,10 +213,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */,
 				2C20669121FD64A20082570E /* DefaultTheme.swift in Sources */,
 				2C20667621FD628E0082570E /* AppDelegate.swift in Sources */,
+				2C20669E21FE445E0082570E /* OverlayView.swift in Sources */,
 				2C20669521FD6F400082570E /* BoopLexer.swift in Sources */,
 				2C20669C21FE3E060082570E /* BoopToken.swift in Sources */,
+				2C2066A421FE47CE0082570E /* PopoverView.swift in Sources */,
 				2C20668B21FD63C90082570E /* MainViewController.swift in Sources */,
 				2C20669A21FD76900082570E /* StatusView.swift in Sources */,
 			);
