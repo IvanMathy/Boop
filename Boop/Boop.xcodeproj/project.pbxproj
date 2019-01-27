@@ -15,6 +15,7 @@
 		2C20668B21FD63C90082570E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20668921FD63C90082570E /* MainViewController.swift */; };
 		2C20669121FD64A20082570E /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20668F21FD64A20082570E /* DefaultTheme.swift */; };
 		2C20669521FD6F400082570E /* BoopLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669321FD6F400082570E /* BoopLexer.swift */; };
+		2C20669A21FD76900082570E /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669921FD76900082570E /* StatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		2C20668921FD63C90082570E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2C20668F21FD64A20082570E /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		2C20669321FD6F400082570E /* BoopLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoopLexer.swift; sourceTree = "<group>"; };
+		2C20669921FD76900082570E /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		2C20667421FD628E0082570E /* Boop */ = {
 			isa = PBXGroup;
 			children = (
+				2C20669821FD767E0082570E /* Views */,
 				2C20668D21FD64330082570E /* Editor */,
 				2C20668821FD63AB0082570E /* Controllers */,
 				2C20668321FD62D00082570E /* Frameworks */,
@@ -117,6 +120,14 @@
 				2C20668F21FD64A20082570E /* DefaultTheme.swift */,
 			);
 			path = Themes;
+			sourceTree = "<group>";
+		};
+		2C20669821FD767E0082570E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C20669921FD76900082570E /* StatusView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 				2C20667621FD628E0082570E /* AppDelegate.swift in Sources */,
 				2C20669521FD6F400082570E /* BoopLexer.swift in Sources */,
 				2C20668B21FD63C90082570E /* MainViewController.swift in Sources */,
+				2C20669A21FD76900082570E /* StatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

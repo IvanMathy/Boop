@@ -11,6 +11,7 @@ import SavannaKit
 
 class BoopLexer: SavannaKit.Lexer {
     func getSavannaTokens(input: String) -> [Token] {
+        print(input)
         return []
     }
 }

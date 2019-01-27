@@ -684,8 +684,9 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="139" y="-200"/>
         </menu>
-        <window title="Boop" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="Boop" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titleVisibility="hidden" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
@@ -694,12 +695,61 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ef0-Na-xwu" customClass="SyntaxTextView" customModule="SavannaKit">
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ef0-Na-xwu" customClass="SyntaxTextView" customModule="SavannaKit">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Ef0-Na-xwu" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="2j0-VT-9ub"/>
+                    <constraint firstItem="Ef0-Na-xwu" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="9fr-9t-SBR"/>
+                    <constraint firstAttribute="bottom" secondItem="Ef0-Na-xwu" secondAttribute="bottom" id="bZ8-tK-5Rp"/>
+                    <constraint firstAttribute="trailing" secondItem="Ef0-Na-xwu" secondAttribute="trailing" id="mT1-Dv-hPz"/>
+                </constraints>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="487B18E4-7841-45EF-823D-4B59D73956C5" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="Z9T-tu-hzd">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ri3-8q-QoT"/>
+                    <toolbarItem implicitItemIdentifier="C5459F48-A2E4-4A46-BA5F-7368C65F8AC9" label="Custom View" paletteLabel="Custom View" tag="-1" sizingBehavior="auto" id="mG6-GU-aNe">
+                        <nil key="toolTip"/>
+                        <customView key="view" id="zMi-QK-dkF" customClass="StatusView" customModule="Boop" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="14" width="200" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aib-Zm-MbW">
+                                    <rect key="frame" x="28" y="2" width="144" height="16"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Press ⌘+B to get started" drawsBackground="YES" id="Sc8-Qd-kcQ">
+                                        <font key="font" metaFont="systemLight" size="12"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="aib-Zm-MbW" firstAttribute="centerY" secondItem="zMi-QK-dkF" secondAttribute="centerY" id="OLZ-CX-wuG"/>
+                                <constraint firstItem="aib-Zm-MbW" firstAttribute="centerX" secondItem="zMi-QK-dkF" secondAttribute="centerX" id="xy7-o4-c4a"/>
+                            </constraints>
+                        </customView>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="E07EE5B8-04D2-489A-9820-98FEE796C03D" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="8Ui-RU-4cg">
+                        <nil key="toolTip"/>
+                        <button key="view" verticalHuggingPriority="750" id="6ty-Rp-Gk6">
+                            <rect key="frame" x="0.0" y="14" width="82" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundRect" title="Clear" bezelStyle="roundedRect" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gHZ-Ur-uxE">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="cellTitle"/>
+                            </buttonCell>
+                        </button>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="ri3-8q-QoT"/>
+                    <toolbarItem reference="ri3-8q-QoT"/>
+                    <toolbarItem reference="mG6-GU-aNe"/>
+                    <toolbarItem reference="ri3-8q-QoT"/>
+                    <toolbarItem reference="8Ui-RU-4cg"/>
+                </defaultToolbarItems>
+            </toolbar>
         </window>
     </objects>
 </document>
