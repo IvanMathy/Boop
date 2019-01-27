@@ -15,7 +15,19 @@ class MainViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        
+        editorView.delegate = self
+        editorView.theme = DefaultTheme()
+    
     }
+    
+}
+
+extension MainViewController: SyntaxTextViewDelegate {
+    func lexerForSource(_ source: String) -> Lexer {
+        return BoopLexer()
+    }
+    
     
 }

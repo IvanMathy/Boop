@@ -15,6 +15,7 @@
         <viewController id="unv-pE-gme" customClass="MainViewController" customModule="Boop" customModuleProvider="target">
             <connections>
                 <outlet property="editorView" destination="Ef0-Na-xwu" id="Bgy-ZL-Z2D"/>
+                <outlet property="view" destination="Ef0-Na-xwu" id="wVq-8C-Rni"/>
             </connections>
         </viewController>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Boop" customModuleProvider="target">

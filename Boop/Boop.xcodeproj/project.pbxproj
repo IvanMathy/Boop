@@ -14,7 +14,7 @@
 		2C20668721FD636C0082570E /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C20668421FD62DB0082570E /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C20668B21FD63C90082570E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20668921FD63C90082570E /* MainViewController.swift */; };
 		2C20669121FD64A20082570E /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20668F21FD64A20082570E /* DefaultTheme.swift */; };
-		2C20669221FD64A20082570E /* DefaultTheme.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C20669021FD64A20082570E /* DefaultTheme.xib */; };
+		2C20669521FD6F400082570E /* BoopLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669321FD6F400082570E /* BoopLexer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +40,7 @@
 		2C20668421FD62DB0082570E /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = "<group>"; };
 		2C20668921FD63C90082570E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2C20668F21FD64A20082570E /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
-		2C20669021FD64A20082570E /* DefaultTheme.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTheme.xib; sourceTree = "<group>"; };
+		2C20669321FD6F400082570E /* BoopLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoopLexer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				2C20668E21FD64580082570E /* Themes */,
+				2C20669321FD6F400082570E /* BoopLexer.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -114,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				2C20668F21FD64A20082570E /* DefaultTheme.swift */,
-				2C20669021FD64A20082570E /* DefaultTheme.xib */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -180,7 +180,6 @@
 			files = (
 				2C20667821FD62910082570E /* Assets.xcassets in Resources */,
 				2C20667B21FD62910082570E /* MainMenu.xib in Resources */,
-				2C20669221FD64A20082570E /* DefaultTheme.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +192,7 @@
 			files = (
 				2C20669121FD64A20082570E /* DefaultTheme.swift in Sources */,
 				2C20667621FD628E0082570E /* AppDelegate.swift in Sources */,
+				2C20669521FD6F400082570E /* BoopLexer.swift in Sources */,
 				2C20668B21FD63C90082570E /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
