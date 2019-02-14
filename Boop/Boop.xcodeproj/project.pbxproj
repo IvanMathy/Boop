@@ -20,6 +20,12 @@
 		2C20669E21FE445E0082570E /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669D21FE445E0082570E /* OverlayView.swift */; };
 		2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A121FE47090082570E /* PopoverViewController.swift */; };
 		2C2066A421FE47CE0082570E /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A321FE47CE0082570E /* PopoverView.swift */; };
+		2C2066A621FE53870082570E /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A521FE53870082570E /* SearchField.swift */; };
+		2C9761D52214E11600AFF8CD /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
+		2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
+		2C9761DC2214E45300AFF8CD /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DB2214E45300AFF8CD /* ScriptManager.swift */; };
+		2C9761DF2214E46800AFF8CD /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DE2214E46800AFF8CD /* Script.swift */; };
+		2C9761E12214E68D00AFF8CD /* ScriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +57,12 @@
 		2C20669D21FE445E0082570E /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		2C2066A121FE47090082570E /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		2C2066A321FE47CE0082570E /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		2C2066A521FE53870082570E /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		2C9761D42214E11600AFF8CD /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
+		2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsTableViewController.swift; sourceTree = "<group>"; };
+		2C9761DB2214E45300AFF8CD /* ScriptManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptManager.swift; sourceTree = "<group>"; };
+		2C9761DE2214E46800AFF8CD /* Script.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
+		2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,8 @@
 		2C20667421FD628E0082570E /* Boop */ = {
 			isa = PBXGroup;
 			children = (
+				2C9761DA2214E44300AFF8CD /* System */,
+				2C9761D42214E11600AFF8CD /* scripts */,
 				2C20669821FD767E0082570E /* Views */,
 				2C20668D21FD64330082570E /* Editor */,
 				2C20668821FD63AB0082570E /* Controllers */,
@@ -110,6 +124,7 @@
 			children = (
 				2C20668921FD63C90082570E /* MainViewController.swift */,
 				2C2066A121FE47090082570E /* PopoverViewController.swift */,
+				2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -138,8 +153,27 @@
 				2C20669921FD76900082570E /* StatusView.swift */,
 				2C20669D21FE445E0082570E /* OverlayView.swift */,
 				2C2066A321FE47CE0082570E /* PopoverView.swift */,
+				2C2066A521FE53870082570E /* SearchField.swift */,
+				2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2C9761DA2214E44300AFF8CD /* System */ = {
+			isa = PBXGroup;
+			children = (
+				2C9761DD2214E45D00AFF8CD /* Models */,
+				2C9761DB2214E45300AFF8CD /* ScriptManager.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		2C9761DD2214E45D00AFF8CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C9761DE2214E46800AFF8CD /* Script.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C9761D52214E11600AFF8CD /* scripts in Resources */,
 				2C20667821FD62910082570E /* Assets.xcassets in Resources */,
 				2C20667B21FD62910082570E /* MainMenu.xib in Resources */,
 			);
@@ -214,14 +249,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */,
+				2C9761DF2214E46800AFF8CD /* Script.swift in Sources */,
 				2C20669121FD64A20082570E /* DefaultTheme.swift in Sources */,
+				2C9761DC2214E45300AFF8CD /* ScriptManager.swift in Sources */,
 				2C20667621FD628E0082570E /* AppDelegate.swift in Sources */,
 				2C20669E21FE445E0082570E /* OverlayView.swift in Sources */,
+				2C9761E12214E68D00AFF8CD /* ScriptTableViewCell.swift in Sources */,
 				2C20669521FD6F400082570E /* BoopLexer.swift in Sources */,
 				2C20669C21FE3E060082570E /* BoopToken.swift in Sources */,
+				2C2066A621FE53870082570E /* SearchField.swift in Sources */,
 				2C2066A421FE47CE0082570E /* PopoverView.swift in Sources */,
 				2C20668B21FD63C90082570E /* MainViewController.swift in Sources */,
 				2C20669A21FD76900082570E /* StatusView.swift in Sources */,
+				2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +411,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -394,6 +435,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

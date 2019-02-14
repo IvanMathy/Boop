@@ -14,6 +14,8 @@ class PopoverViewController: NSViewController {
     @IBOutlet weak var overlayView: OverlayView!
     @IBOutlet weak var popoverView: PopoverView!
     @IBOutlet weak var editorView: SyntaxTextView!
+    @IBOutlet weak var searchField: SearchField!
+    @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
     
     var enabled = true
 
@@ -29,6 +31,8 @@ class PopoverViewController: NSViewController {
         keyHandler = {
             (_ theEvent: NSEvent) -> NSEvent in
             
+            var didSomething = false
+            
             if(self.enabled){
                 
                 // Key codes:
@@ -36,27 +40,21 @@ class PopoverViewController: NSViewController {
                 // 126 is up
                 // 53 is escape
                 // 36 is enter
-
+                
                 if(theEvent.keyCode == 53){ // ESCAPE
                     
                     // Let's dismiss the popover
-                    
                     self.hide()
                     
-                    // Return an empty event to avoid the funk sound
-                    return NSEvent()
+                    didSomething = true
                 }
-                
-                
                 
                 if(theEvent.keyCode == 36){ // ENTER
                     
                     // Let's dismiss the popover
-                    
                     self.hide()
                     
-                    // Return an empty event to avoid the funk sound
-                    return NSEvent()
+                    didSomething = true
                 }
                 
                 
@@ -67,14 +65,18 @@ class PopoverViewController: NSViewController {
                     
                     self.show()
                     
-                    // Return an empty event to avoid the funk sound
-                    return NSEvent()
+                    didSomething = true
                 }
             }
             
+            guard didSomething else {
+                return theEvent
+            }
             
-            return theEvent
+            // Return an empty event to avoid the funk sound
+            return NSEvent()
         }
+        
         // Creates an object we do not own, but must keep track
         // of so that it can be "removed" when we're done
         NSEvent.addLocalMonitorForEvents(matching: .keyDown, handler: keyHandler)
@@ -85,15 +87,21 @@ class PopoverViewController: NSViewController {
         overlayView.show()
         popoverView.show()
         
+        self.searchField.stringValue = ""
+        self.tableHeightConstraint.constant = 0
+        
+        self.view.window?.makeFirstResponder(self.searchField)
         self.enabled = true
+        
     }
     
     func hide() {
         overlayView.hide()
         popoverView.hide()
         
-        self.view.window?.makeFirstResponder(self.editorView)
+        self.view.window?.makeFirstResponder(self.editorView.contentTextView)
         self.enabled = false
+        self.tableHeightConstraint.animator().constant = 0
     }
     
 }
