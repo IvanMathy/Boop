@@ -19,14 +19,12 @@ class ScriptsTableViewController: NSViewController, NSTableViewDelegate, NSTable
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {        
         
-        var view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "scriptCell"), owner: self) as! ScriptTableViewCell
+        let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "scriptCell"), owner: self) as! ScriptTableViewCell
         
-        // view.subtitleView.stringValue = scriptManager.scripts[row].info["description"] as! String
-        // view.titleView.stringValue = scriptManager.scripts[row].info["name"] as! String
+        view.titleLabel.stringValue = scriptManager.scripts[row].info["name"] as! String
+        view.subtitleLabel.stringValue = scriptManager.scripts[row].info["description"] as! String
         
-        
-        view.imageView?.image = NSImage(named:  scriptManager.scripts[row].info["icon"] as! String + "Icon")
-        
+        //view.imageView?.image = NSImage(named:  scriptManager.scripts[row].info["icon"] as! String + "Icon")
         
         return view
         

@@ -12,5 +12,6 @@ class ScriptTableViewCell: NSTableCellView {
     weak var script:Script!
    
     @IBOutlet weak var titleLabel:NSTextField!
+    @IBOutlet weak var subtitleLabel:NSTextField!
     
 }

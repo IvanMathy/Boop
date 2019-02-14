@@ -16,6 +16,7 @@ class PopoverViewController: NSViewController {
     @IBOutlet weak var editorView: SyntaxTextView!
     @IBOutlet weak var searchField: SearchField!
     @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableView: NSTableView!
     
     var enabled = true
 
@@ -33,40 +34,60 @@ class PopoverViewController: NSViewController {
             
             var didSomething = false
             
-            if(self.enabled){
-                
-                // Key codes:
-                // 125 is down arrow
-                // 126 is up
-                // 53 is escape
-                // 36 is enter
-                
-                if(theEvent.keyCode == 53){ // ESCAPE
+            guard self.enabled else {
+                if theEvent.modifierFlags.contains(NSEvent.ModifierFlags.command)
+                    && theEvent.keyCode == 11 { // cmd + B
                     
-                    // Let's dismiss the popover
-                    self.hide()
-                    
-                    didSomething = true
-                }
-                
-                if(theEvent.keyCode == 36){ // ENTER
-                    
-                    // Let's dismiss the popover
-                    self.hide()
-                    
-                    didSomething = true
-                }
-                
-                
-                
-                
-            } else {
-                if(theEvent.modifierFlags.contains(NSEvent.ModifierFlags.command) && theEvent.keyCode == 11){
-                    
+                    // Open the popover
                     self.show()
                     
-                    didSomething = true
+                    return NSEvent()
                 }
+                
+                return theEvent
+            }
+                
+            // Key codes:
+            // 125 is down arrow
+            // 126 is up
+            // 53 is escape
+            // 36 is enter
+       
+            if theEvent.keyCode == 53 { // ESCAPE
+                
+                // Let's dismiss the popover
+                self.hide()
+                
+                didSomething = true
+            }
+            
+            if theEvent.keyCode == 36 { // ENTER
+                
+                // Let's dismiss the popover
+                self.hide()
+                
+                didSomething = true
+            }
+            
+            let window = self.view.window
+            
+            if window?.firstResponder is NSTextView &&
+                (window?.firstResponder as! NSTextView).delegate is SearchField &&
+                theEvent.keyCode == 125 { // DOWN
+                
+                // Why -1? I don't know, and I don't even care.
+                let indexSet = IndexSet(integer: -1)
+                self.tableView.selectRowIndexes(indexSet, byExtendingSelection: false)
+                window?.makeFirstResponder(self.tableView)
+            }
+            
+            // Oh hey look now somehow it's 0.
+            if window?.firstResponder is NSTableView &&
+                self.tableView.selectedRow == 0 &&
+                theEvent.keyCode == 126 { // UP
+                
+                window?.makeFirstResponder(self.searchField)
+                self.tableView.deselectAll(self)
             }
             
             guard didSomething else {
@@ -78,7 +99,7 @@ class PopoverViewController: NSViewController {
         }
         
         // Creates an object we do not own, but must keep track
-        // of so that it can be "removed" when we're done
+        // of it so that it can be "removed" when we're done
         NSEvent.addLocalMonitorForEvents(matching: .keyDown, handler: keyHandler)
         
     }
