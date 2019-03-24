@@ -11,8 +11,10 @@ import SavannaKit
 
 class BoopToken: Token {
     
-    enum TokenType {
+    public enum TokenType {
         case comment
+        case string
+        case attribute
     }
     
     // There is no support for placeholder yet or planned.
@@ -22,7 +24,7 @@ class BoopToken: Token {
     var isPlain = false
     
     var range: Range<String.Index>
-    var type: TokenType
+    var type: BoopToken.TokenType
     
     init(type:TokenType, range: Range<String.Index>) {
         self.range = range
