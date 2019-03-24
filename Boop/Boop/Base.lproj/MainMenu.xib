@@ -35,6 +35,7 @@
         </viewController>
         <viewController id="vMD-En-4WA" customClass="ScriptsTableViewController" customModule="Boop" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="hJ8-Qr-O0F" id="uzU-Vv-r6i"/>
                 <outlet property="view" destination="hJ8-Qr-O0F" id="2pH-I2-fMU"/>
             </connections>
         </viewController>
@@ -710,7 +711,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <value key="minSize" type="size" width="480" height="360"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
@@ -745,7 +746,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="440" height="140"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="45" rowSizeStyle="automatic" viewBased="YES" id="hJ8-Qr-O0F">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="45" rowSizeStyle="automatic" viewBased="YES" id="hJ8-Qr-O0F" customClass="ScriptTableView" customModule="Boop" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="440" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -766,11 +767,11 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ODE-N3-eZN">
-                                                                    <rect key="frame" x="8" y="16" width="14" height="14"/>
-                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="wtt-XN-7xb"/>
+                                                                    <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icons8-get-quote" id="wtt-XN-7xb"/>
                                                                 </imageView>
                                                                 <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSG-6c-xJD">
-                                                                    <rect key="frame" x="29" y="3" width="408" height="42"/>
+                                                                    <rect key="frame" x="45" y="3" width="392" height="42"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V6y-xm-z2x">
                                                                             <rect key="frame" x="-2" y="17" width="151" height="25"/>
@@ -800,9 +801,9 @@
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="ODE-N3-eZN" firstAttribute="top" secondItem="XkG-Fy-tdM" secondAttribute="top" constant="5" id="4mU-eF-3j3"/>
                                                                 <constraint firstItem="GSG-6c-xJD" firstAttribute="top" secondItem="XkG-Fy-tdM" secondAttribute="top" id="U5p-fa-fLP"/>
                                                                 <constraint firstAttribute="bottom" secondItem="GSG-6c-xJD" secondAttribute="bottom" constant="3" id="UKe-0i-Ayc"/>
-                                                                <constraint firstItem="ODE-N3-eZN" firstAttribute="centerY" secondItem="XkG-Fy-tdM" secondAttribute="centerY" id="buz-Lc-amZ"/>
                                                                 <constraint firstAttribute="trailing" secondItem="GSG-6c-xJD" secondAttribute="trailing" id="hCU-gZ-R6K"/>
                                                                 <constraint firstItem="GSG-6c-xJD" firstAttribute="leading" secondItem="ODE-N3-eZN" secondAttribute="trailing" constant="7" id="k2L-1g-tgk"/>
                                                                 <constraint firstItem="ODE-N3-eZN" firstAttribute="leading" secondItem="XkG-Fy-tdM" secondAttribute="leading" constant="8" id="lJM-8X-Pdr"/>
@@ -915,6 +916,6 @@
         </window>
     </objects>
     <resources>
-        <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="icons8-get-quote" width="30" height="30"/>
     </resources>
 </document>

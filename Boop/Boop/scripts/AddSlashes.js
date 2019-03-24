@@ -4,7 +4,7 @@
 		"name":"Add Slashes",
 		"description":"Escapes your text",
 		"author":"Ivan",
-		"icon":"code",
+		"icon":"quote",
 		"tags":"add,slashes,escape"
 	}
 **/

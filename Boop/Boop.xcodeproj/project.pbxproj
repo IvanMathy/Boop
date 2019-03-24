@@ -29,6 +29,7 @@
 		2CA245D822480F9500586DFD /* FuseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D522480F9500586DFD /* FuseUtilities.swift */; };
 		2CA245D922480F9500586DFD /* String+Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D622480F9500586DFD /* String+Fuse.swift */; };
 		2CA245DA22480F9500586DFD /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D722480F9500586DFD /* Fuse.swift */; };
+		2CA245DC224822EA00586DFD /* ScriptTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245DB224822EA00586DFD /* ScriptTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +70,7 @@
 		2CA245D522480F9500586DFD /* FuseUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FuseUtilities.swift; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/FuseUtilities.swift"; sourceTree = "<group>"; };
 		2CA245D622480F9500586DFD /* String+Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Fuse.swift"; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/String+Fuse.swift"; sourceTree = "<group>"; };
 		2CA245D722480F9500586DFD /* Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fuse.swift; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/Fuse.swift"; sourceTree = "<group>"; };
+		2CA245DB224822EA00586DFD /* ScriptTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				2C2066A321FE47CE0082570E /* PopoverView.swift */,
 				2C2066A521FE53870082570E /* SearchField.swift */,
 				2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */,
+				2CA245DB224822EA00586DFD /* ScriptTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				2C20669E21FE445E0082570E /* OverlayView.swift in Sources */,
 				2C9761E12214E68D00AFF8CD /* ScriptTableViewCell.swift in Sources */,
 				2CA245D822480F9500586DFD /* FuseUtilities.swift in Sources */,
+				2CA245DC224822EA00586DFD /* ScriptTableView.swift in Sources */,
 				2C20669521FD6F400082570E /* BoopLexer.swift in Sources */,
 				2C20669C21FE3E060082570E /* BoopToken.swift in Sources */,
 				2C2066A621FE53870082570E /* SearchField.swift in Sources */,

@@ -18,7 +18,7 @@ class PopoverViewController: NSViewController {
     
     @IBOutlet weak var scriptManager: ScriptManager!
     
-    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var tableView: ScriptTableView!
     @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableViewController: ScriptsTableViewController!
     
@@ -91,7 +91,6 @@ class PopoverViewController: NSViewController {
                 theEvent.keyCode == 126 { // UP
                 
                 window?.makeFirstResponder(self.searchField)
-                self.tableView.deselectAll(self)
                 // This doesn't work for some reason.
                 self.searchField.moveToEndOfLine(nil)
             }
@@ -141,9 +140,6 @@ extension PopoverViewController: NSTextFieldDelegate {
         
         let results = scriptManager.search(searchField.stringValue)
         tableViewController.results = results
-        
-        tableView.reloadData()
-        
         
         self.tableHeightConstraint.constant = CGFloat(47 * min(5, results.count))
     }

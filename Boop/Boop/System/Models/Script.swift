@@ -21,6 +21,7 @@ class Script: NSObject {
     @objc dynamic var name: String?
     @objc dynamic var tags: String?
     @objc dynamic var desc: String?
+    @objc dynamic var icon: String?
     
     init(script:String, parameters: [String: Any]) {
         
@@ -30,6 +31,7 @@ class Script: NSObject {
         self.name = parameters["name"] as? String
         self.tags = parameters["tags"] as? String
         self.desc = parameters["description"] as? String
+        self.icon = parameters["icon"] as? String
         
         context = JSContext()
         context.evaluateScript(script)

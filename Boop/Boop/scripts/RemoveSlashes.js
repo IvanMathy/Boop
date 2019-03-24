@@ -4,7 +4,7 @@
 		"name":"Remove Slashes",
 		"description":"Removes slashes from your text",
 		"author":"Ivan",
-		"icon":"code",
+		"icon":"quote",
 		"tags":"strip,slashes,remove"
 	}
 **/

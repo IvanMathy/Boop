@@ -10,7 +10,13 @@ import Cocoa
 
 class ScriptsTableViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
-    var results: [Script] = []
+    @IBOutlet weak var tableView: ScriptTableView!
+    
+    var results: [Script] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
         return results.count
@@ -20,12 +26,18 @@ class ScriptsTableViewController: NSViewController, NSTableViewDelegate, NSTable
         
         let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "scriptCell"), owner: self) as! ScriptTableViewCell
         
-        view.titleLabel.stringValue = results[row].info["name"] as! String
-        view.subtitleLabel.stringValue = results[row].info["description"] as! String
+        let script = scriptAt(row)
         
-        //view.imageView?.image = NSImage(named:  scriptManager.scripts[row].info["icon"] as! String + "Icon")
+        view.titleLabel.stringValue = script.name ?? "No Name 🤔"
+        view.subtitleLabel.stringValue = script.desc ?? "No Description 😢"
+        
+        view.imageView?.image = NSImage(named: "icons8-\(script.icon ?? "unknown")")
         
         return view
         
+    }
+    
+    func scriptAt(_ index: Int) -> Script {
+        return results[index]
     }
 }

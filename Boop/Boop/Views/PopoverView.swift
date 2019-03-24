@@ -16,6 +16,7 @@ class PopoverView: NSView {
         // UI set up
         self.wantsLayer = true
         self.layer?.cornerRadius = 5.0
+        self.layer?.masksToBounds = true
         self.layer?.backgroundColor = NSColor(calibratedWhite: 0.05, alpha: 1).cgColor
         
         let dropShadow = NSShadow()
