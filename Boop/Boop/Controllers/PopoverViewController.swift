@@ -13,10 +13,14 @@ class PopoverViewController: NSViewController {
     
     @IBOutlet weak var overlayView: OverlayView!
     @IBOutlet weak var popoverView: PopoverView!
-    @IBOutlet weak var editorView: SyntaxTextView!
     @IBOutlet weak var searchField: SearchField!
-    @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var editorView: SyntaxTextView!
+    
+    @IBOutlet weak var scriptManager: ScriptManager!
+    
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewController: ScriptsTableViewController!
     
     var enabled = true
 
@@ -88,6 +92,8 @@ class PopoverViewController: NSViewController {
                 
                 window?.makeFirstResponder(self.searchField)
                 self.tableView.deselectAll(self)
+                // This doesn't work for some reason.
+                self.searchField.moveToEndOfLine(nil)
             }
             
             guard didSomething else {
@@ -125,4 +131,20 @@ class PopoverViewController: NSViewController {
         self.tableHeightConstraint.animator().constant = 0
     }
     
+}
+
+extension PopoverViewController: NSTextFieldDelegate {
+    func controlTextDidChange(_ obj: Notification) {
+        guard (obj.object as? SearchField) == searchField else {
+            return
+        }
+        
+        let results = scriptManager.search(searchField.stringValue)
+        tableViewController.results = results
+        
+        tableView.reloadData()
+        
+        
+        self.tableHeightConstraint.constant = CGFloat(47 * min(5, results.count))
+    }
 }

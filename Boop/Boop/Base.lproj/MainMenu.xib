@@ -25,15 +25,16 @@
                 <outlet property="editorView" destination="Ef0-Na-xwu" id="C6m-b3-Qev"/>
                 <outlet property="overlayView" destination="Cdf-EW-00p" id="EYn-q0-EM9"/>
                 <outlet property="popoverView" destination="ibo-QR-zuu" id="mTd-Ji-b2L"/>
+                <outlet property="scriptManager" destination="jdF-I6-2al" id="rrD-di-AFq"/>
                 <outlet property="searchField" destination="8Zz-Qr-iVg" id="vHz-mz-WO7"/>
                 <outlet property="tableHeightConstraint" destination="Nja-wF-cOR" id="cug-ts-Ivb"/>
                 <outlet property="tableView" destination="hJ8-Qr-O0F" id="JVV-UL-MGG"/>
+                <outlet property="tableViewController" destination="vMD-En-4WA" id="vKY-bZ-GjW"/>
                 <outlet property="view" destination="ibo-QR-zuu" id="zX8-ig-WV6"/>
             </connections>
         </viewController>
         <viewController id="vMD-En-4WA" customClass="ScriptsTableViewController" customModule="Boop" customModuleProvider="target">
             <connections>
-                <outlet property="scriptManager" destination="jdF-I6-2al" id="WCv-Wj-hvV"/>
                 <outlet property="view" destination="hJ8-Qr-O0F" id="2pH-I2-fMU"/>
             </connections>
         </viewController>
@@ -709,7 +710,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="480" height="360"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
@@ -734,6 +735,9 @@
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="ugb-uZ-HP1" id="Qsc-KS-RbB"/>
+                                </connections>
                             </textField>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="47" horizontalPageScroll="10" verticalLineScroll="47" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kim-cP-qoy">
                                 <rect key="frame" x="0.0" y="0.0" width="440" height="140"/>

@@ -10,6 +10,7 @@ import Cocoa
 
 class ScriptManager: NSObject {
     
+    let fuse = Fuse(threshold: 0.2)
     var scripts = [Script]()
     
     let currentAPIVersion = 1.0
@@ -22,12 +23,11 @@ class ScriptManager: NSObject {
     }
     
     func loadDefaultScripts(){
-        let scripts = Bundle.main.paths(forResourcesOfType: "js", inDirectory: "scripts")
+        let files = Bundle.main.paths(forResourcesOfType: "js", inDirectory: "scripts")
         
-        let _ = scripts.map { (script:String) in
+        files.forEach { (script:String) in
             loadScript(path: script)
         }
-        
     }
     
     func loadScript(path:String){
@@ -37,8 +37,8 @@ class ScriptManager: NSObject {
             // This is inspired by the ISF file format by Vidvox
             // Thanks to them for the idea and their awesome work
             
-            let openComment = script.range(of: "/*")
-            let closeComment = script.range(of: "*/")
+            let openComment = script.range(of: "/**")
+            let closeComment = script.range(of: "**/")
             
             
             if((openComment != nil) && (closeComment != nil)){
@@ -54,6 +54,25 @@ class ScriptManager: NSObject {
             
         } catch {
             print("Unable to load ",path)
+        }
+    }
+    
+    func search(_ query: String) -> [Script] {
+        
+        let results = fuse.search(query, in: scripts)
+        
+        results.forEach { item in
+            print(scripts[item.index].name)
+            print("index: \(item.index)")
+            print("score: \(item.score)")
+            print("results: \(item.results)")
+            print("---------------")
+        }
+        
+        return results.filter { result in
+            result.score < 0.4 // Filter low quality results
+        }.map { result in
+            scripts[result.index]
         }
     }
 

@@ -1,4 +1,4 @@
-/*
+/**
 	{
 		"api":1,
 		"name":"Remove Slashes",
@@ -7,7 +7,7 @@
 		"icon":"code",
 		"tags":"strip,slashes,remove"
 	}
-*/
+**/
 
 function main(){
 	

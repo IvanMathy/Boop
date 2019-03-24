@@ -18,11 +18,18 @@ class Script: NSObject {
     
     var info:[String: Any]
     
+    @objc dynamic var name: String?
+    @objc dynamic var tags: String?
+    @objc dynamic var desc: String?
+    
     init(script:String, parameters: [String: Any]) {
         
         scriptCode = script
-        
         info = parameters
+        
+        self.name = parameters["name"] as? String
+        self.tags = parameters["tags"] as? String
+        self.desc = parameters["description"] as? String
         
         context = JSContext()
         context.evaluateScript(script)
@@ -30,8 +37,6 @@ class Script: NSObject {
         main = context.objectForKeyedSubscript("main")
         
         super.init();
-        
-        
     }
     
     
@@ -41,8 +46,17 @@ class Script: NSObject {
         
         print(result?.toDictionary());
         
-        
     }
     
 }
 
+extension Script: Fuseable {
+    
+    var properties: [FuseProperty] {
+        return [
+            FuseProperty(name: "name", weight: 0.9),
+            FuseProperty(name: "tags", weight: 0.6),
+            FuseProperty(name: "desc", weight: 0.2)
+        ]
+    }
+}

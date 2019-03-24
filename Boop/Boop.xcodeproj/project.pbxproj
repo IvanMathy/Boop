@@ -26,6 +26,9 @@
 		2C9761DC2214E45300AFF8CD /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DB2214E45300AFF8CD /* ScriptManager.swift */; };
 		2C9761DF2214E46800AFF8CD /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DE2214E46800AFF8CD /* Script.swift */; };
 		2C9761E12214E68D00AFF8CD /* ScriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */; };
+		2CA245D822480F9500586DFD /* FuseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D522480F9500586DFD /* FuseUtilities.swift */; };
+		2CA245D922480F9500586DFD /* String+Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D622480F9500586DFD /* String+Fuse.swift */; };
+		2CA245DA22480F9500586DFD /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D722480F9500586DFD /* Fuse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +66,9 @@
 		2C9761DB2214E45300AFF8CD /* ScriptManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptManager.swift; sourceTree = "<group>"; };
 		2C9761DE2214E46800AFF8CD /* Script.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
 		2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTableViewCell.swift; sourceTree = "<group>"; };
+		2CA245D522480F9500586DFD /* FuseUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FuseUtilities.swift; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/FuseUtilities.swift"; sourceTree = "<group>"; };
+		2CA245D622480F9500586DFD /* String+Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Fuse.swift"; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/String+Fuse.swift"; sourceTree = "<group>"; };
+		2CA245D722480F9500586DFD /* Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fuse.swift; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/Fuse.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,7 @@
 		2C20666921FD628E0082570E = {
 			isa = PBXGroup;
 			children = (
+				2CA245D322480F2200586DFD /* Dependencies */,
 				2C20667421FD628E0082570E /* Boop */,
 				2C20667321FD628E0082570E /* Products */,
 			);
@@ -176,6 +183,24 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		2CA245D322480F2200586DFD /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				2CA245D422480F8C00586DFD /* Fuse */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		2CA245D422480F8C00586DFD /* Fuse */ = {
+			isa = PBXGroup;
+			children = (
+				2CA245D722480F9500586DFD /* Fuse.swift */,
+				2CA245D522480F9500586DFD /* FuseUtilities.swift */,
+				2CA245D622480F9500586DFD /* String+Fuse.swift */,
+			);
+			path = Fuse;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,12 +274,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */,
+				2CA245D922480F9500586DFD /* String+Fuse.swift in Sources */,
 				2C9761DF2214E46800AFF8CD /* Script.swift in Sources */,
 				2C20669121FD64A20082570E /* DefaultTheme.swift in Sources */,
+				2CA245DA22480F9500586DFD /* Fuse.swift in Sources */,
 				2C9761DC2214E45300AFF8CD /* ScriptManager.swift in Sources */,
 				2C20667621FD628E0082570E /* AppDelegate.swift in Sources */,
 				2C20669E21FE445E0082570E /* OverlayView.swift in Sources */,
 				2C9761E12214E68D00AFF8CD /* ScriptTableViewCell.swift in Sources */,
+				2CA245D822480F9500586DFD /* FuseUtilities.swift in Sources */,
 				2C20669521FD6F400082570E /* BoopLexer.swift in Sources */,
 				2C20669C21FE3E060082570E /* BoopToken.swift in Sources */,
 				2C2066A621FE53870082570E /* SearchField.swift in Sources */,
