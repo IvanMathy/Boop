@@ -75,5 +75,12 @@ class ScriptManager: NSObject {
             scripts[result.index]
         }
     }
+    
+    func runScript(_ script: Script) {
+        let scriptExecution = ScriptExecution()
+        
+        script.run(with: scriptExecution)
+        
+    }
 
 }

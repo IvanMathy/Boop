@@ -34,6 +34,8 @@ class Script: NSObject {
         self.icon = parameters["icon"] as? String
         
         context = JSContext()
+        context.setObject(ScriptExecution.self, forKeyedSubscript: "ScriptExecution" as NSString)
+        
         context.evaluateScript(script)
         
         main = context.objectForKeyedSubscript("main")
@@ -41,13 +43,8 @@ class Script: NSObject {
         super.init();
     }
     
-    
-    func evalWith(value:String){
-        
-        let result = main.call(withArguments: [value])
-        
-        print(result?.toDictionary());
-        
+    func run(with execution: ScriptExecution) {
+        main.call(withArguments: [execution])
     }
     
 }

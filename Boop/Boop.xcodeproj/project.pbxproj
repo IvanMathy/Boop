@@ -21,6 +21,7 @@
 		2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A121FE47090082570E /* PopoverViewController.swift */; };
 		2C2066A421FE47CE0082570E /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A321FE47CE0082570E /* PopoverView.swift */; };
 		2C2066A621FE53870082570E /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A521FE53870082570E /* SearchField.swift */; };
+		2C53B6E0226D404E00DC6861 /* ScriptExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */; };
 		2C9761D52214E11600AFF8CD /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
 		2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
 		2C9761DC2214E45300AFF8CD /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DB2214E45300AFF8CD /* ScriptManager.swift */; };
@@ -62,6 +63,7 @@
 		2C2066A121FE47090082570E /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		2C2066A321FE47CE0082570E /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		2C2066A521FE53870082570E /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptExecution.swift; sourceTree = "<group>"; };
 		2C9761D42214E11600AFF8CD /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsTableViewController.swift; sourceTree = "<group>"; };
 		2C9761DB2214E45300AFF8CD /* ScriptManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptManager.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				2C9761DE2214E46800AFF8CD /* Script.swift */,
+				2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C53B6E0226D404E00DC6861 /* ScriptExecution.swift in Sources */,
 				2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */,
 				2CA245D922480F9500586DFD /* String+Fuse.swift in Sources */,
 				2C9761DF2214E46800AFF8CD /* Script.swift in Sources */,

@@ -67,6 +67,12 @@ class PopoverViewController: NSViewController {
             
             if theEvent.keyCode == 36 { // ENTER
                 
+                guard let script = self.tableViewController.selectedScript else {
+                    return theEvent // Return event to beep
+                }
+                
+                self.scriptManager.runScript(script)
+                
                 // Let's dismiss the popover
                 self.hide()
                 

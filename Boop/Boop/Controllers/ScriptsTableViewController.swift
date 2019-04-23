@@ -26,7 +26,9 @@ class ScriptsTableViewController: NSViewController, NSTableViewDelegate, NSTable
         
         let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "scriptCell"), owner: self) as! ScriptTableViewCell
         
-        let script = scriptAt(row)
+        guard let script = scriptAt(row) else {
+            fatalError("Missing script for index \(row).")
+        }
         
         view.titleLabel.stringValue = script.name ?? "No Name 🤔"
         view.subtitleLabel.stringValue = script.desc ?? "No Description 😢"
@@ -37,7 +39,18 @@ class ScriptsTableViewController: NSViewController, NSTableViewDelegate, NSTable
         
     }
     
-    func scriptAt(_ index: Int) -> Script {
+    func scriptAt(_ index: Int) -> Script? {
+        guard index < results.count else {
+            return nil
+        }
         return results[index]
+    }
+    
+    var selectedScript:Script? {
+        guard tableView.selectedRow >= 0 else {
+            // Nothing selected, return first item
+            return scriptAt(0)
+        }
+        return scriptAt(tableView.selectedRow)
     }
 }
