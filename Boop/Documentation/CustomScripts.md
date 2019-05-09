@@ -4,7 +4,7 @@ You can easily extend Boop with custom scripts to add your own functionality. Ea
 
 ### Meta info
 
-Each script starts with a delarative JSON document, describing the contents of that file, a title, a description, which icon to use, and search tags. All that stuff is contained within a top level comment (with some extra asterisks) just like so:
+Each script starts with a declarative JSON document, describing the contents of that file, a title, a description, which icon to use, and search tags. All that stuff is contained within a top level comment (with some extra asterisks) just like so:
 
 ```javascript
 /**

@@ -37,20 +37,22 @@ class ScriptManager: NSObject {
             // This is inspired by the ISF file format by Vidvox
             // Thanks to them for the idea and their awesome work
             
-            let openComment = script.range(of: "/**")
-            let closeComment = script.range(of: "**/")
             
-            
-            if((openComment != nil) && (closeComment != nil)){
-                let meta = script[openComment!.upperBound..<closeComment!.lowerBound]
-                
-                let json = try JSONSerialization.jsonObject(with: meta.data(using: .utf8)!, options: .allowFragments) as! [String: Any]
-                
-                let scriptObject = Script.init(script: script, parameters: json)
-                
-                scripts.append(scriptObject)
-                
+            guard
+                let openComment = script.range(of: "/**"),
+                let closeComment = script.range(of: "**/")
+                else {
+                    throw NSError()
             }
+            
+            let meta = script[openComment.upperBound..<closeComment.lowerBound]
+            
+            let json = try JSONSerialization.jsonObject(with: meta.data(using: .utf8)!, options: .allowFragments) as! [String: Any]
+            
+            let scriptObject = Script.init(script: script, parameters: json)
+            
+            scripts.append(scriptObject)
+            
             
         } catch {
             print("Unable to load ",path)
