@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SavannaKit
 
 class ScriptManager: NSObject {
     
@@ -64,7 +65,7 @@ class ScriptManager: NSObject {
         let results = fuse.search(query, in: scripts)
         
         results.forEach { item in
-            print(scripts[item.index].name)
+            print(scripts[item.index].name ?? "No Name")
             print("index: \(item.index)")
             print("score: \(item.score)")
             print("results: \(item.results)")
@@ -78,11 +79,45 @@ class ScriptManager: NSObject {
         }
     }
     
-    func runScript(_ script: Script) {
-        let scriptExecution = ScriptExecution()
+    func runScript(_ script: Script, into editor: SyntaxTextView) {
+        
+        let textView = editor.contentTextView
+        var fullText = editor.text
+        
+        guard let ranges = textView.selectedRanges as? [NSRange], ranges.reduce(0, { $0 + $1.length }) > 0 else {
+            // No selection, run on full text
+            let result = runScript(script, fullText: fullText)
+            editor.text = result
+            
+            return
+        }
+        
+        // Fun fact: You can have multi selections! Which means we need to disable
+        // the ability to edit `fullText` while in selection mode, otherwise the
+        // some scripts may accidentally run multiple time over the full text.
+        
+        ranges.forEach {
+            range in
+            
+            let value = (fullText as NSString).substring(with: range)
+            
+            let result = runScript(script, selection: value, fullText: fullText)
+            
+            fullText = (fullText as NSString).replacingCharacters(in: range, with: result)
+            
+            
+        }
+        
+        editor.text = fullText
+        
+    }
+    
+    func runScript(_ script: Script, selection: String? = nil, fullText: String) -> String {
+        let scriptExecution = ScriptExecution(selection: selection, fullText: fullText)
         
         script.run(with: scriptExecution)
         
+        return scriptExecution.text ?? ""
     }
 
 }

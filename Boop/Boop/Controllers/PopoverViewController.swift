@@ -71,7 +71,7 @@ class PopoverViewController: NSViewController {
                     return theEvent // Return event to beep
                 }
                 
-                self.scriptManager.runScript(script)
+                self.scriptManager.runScript(script, into: self.editorView)
                 
                 // Let's dismiss the popover
                 self.hide()
