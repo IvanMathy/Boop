@@ -22,7 +22,7 @@ class PopoverViewController: NSViewController {
     @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableViewController: ScriptsTableViewController!
     
-    var enabled = true
+    var enabled = false // Closed by default
 
     override func viewDidLoad() {
         super.viewDidLoad()

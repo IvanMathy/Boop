@@ -96,18 +96,22 @@ class ScriptManager: NSObject {
         // the ability to edit `fullText` while in selection mode, otherwise the
         // some scripts may accidentally run multiple time over the full text.
         
-        ranges.forEach {
-            range in
+        let values = ranges.map {
+            range -> String in
             
             let value = (fullText as NSString).substring(with: range)
             
-            let result = runScript(script, selection: value, fullText: fullText)
+            return runScript(script, selection: value, fullText: fullText)
             
-            if (textView.shouldChangeText(in: range, replacementString: result)) {
-                textView.replaceCharacters(in: range, with: result)
-                textView.didChangeText()
+        }
+        if (textView.shouldChangeText(inRanges: ranges as [NSValue], replacementStrings: values)) {
+            
+            zip(ranges, values).forEach {
+                (range, value) in
+                textView.replaceCharacters(in: range, with: value)
             }
             
+            textView.didChangeText()
         }
     }
     

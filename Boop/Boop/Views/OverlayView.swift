@@ -16,7 +16,6 @@ class OverlayView: NSView {
         self.layer?.backgroundColor = NSColor(calibratedWhite: 0.05, alpha: 1).cgColor
         self.animator().isHidden = true
         self.alphaValue = 0;
-        show()
     }
     
     

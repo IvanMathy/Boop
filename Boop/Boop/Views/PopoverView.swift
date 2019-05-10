@@ -26,6 +26,8 @@ class PopoverView: NSView {
         
         self.shadow = dropShadow
         
+        self.isHidden = true
+        
     }
     
     func show() {
