@@ -103,13 +103,12 @@ class ScriptManager: NSObject {
             
             let result = runScript(script, selection: value, fullText: fullText)
             
-            fullText = (fullText as NSString).replacingCharacters(in: range, with: result)
-            
+            if (textView.shouldChangeText(in: range, replacementString: result)) {
+                textView.replaceCharacters(in: range, with: result)
+                textView.didChangeText()
+            }
             
         }
-        
-        editor.text = fullText
-        
     }
     
     func runScript(_ script: Script, selection: String? = nil, fullText: String) -> String {

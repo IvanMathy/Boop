@@ -19,12 +19,17 @@ class MainViewController: NSViewController {
         
         editorView.delegate = self
         editorView.theme = DefaultTheme()
+        editorView.allowsAutocomplete = false
     
     }
     
 }
 
 extension MainViewController: SyntaxTextViewDelegate {
+    func didChangeFont(_ font: Font) {
+        //
+    }
+    
     func lexerForSource(_ source: String) -> Lexer {
         return BoopLexer()
     }
