@@ -104,9 +104,34 @@ class ScriptManager: NSObject {
             return runScript(script, selection: value, fullText: fullText)
             
         }
+        
+        
+        // Since we have to replace each selection one by one, after each
+        // occurence the whole text shifts around a bit, and therefore the
+        // Ranges don't match their original position anymore. So we have
+        // to offset everything based on the previous replacements deltas.
+        // This is pretty straightforward because we know selections can't
+        // overlap, and we sort them so they are always in order.
+        
+        var offset = 0
+        let pairs = zip(ranges, values)
+            .sorted{ $0.0.location < $1.0.location }
+            .map {
+                (pair) -> (NSRange, String) in
+                
+                let (range, value) = pair
+                let length = range.length
+                let newRange = NSRange(location: range.location + offset, length: length)
+                
+                offset += value.count - length
+                return (newRange, value)
+            }
+        
+        // 👆 I seriously don't know how to properly indent this.
+        
         if (textView.shouldChangeText(inRanges: ranges as [NSValue], replacementStrings: values)) {
             
-            zip(ranges, values).forEach {
+            pairs.forEach {
                 (range, value) in
                 textView.replaceCharacters(in: range, with: value)
             }
