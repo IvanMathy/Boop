@@ -24,17 +24,27 @@ class BoopLexer: RegexLexer {
         
         generators.append(regexToken(.number, number))
         
-        generators.append(regexToken(.comment, "//(.*)"))
+        // Find common attributes
         
-        generators.append(regexToken(.comment, "(/\\*)(.*)(\\*/)", options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        generators.append(regexToken(.attribute, "(?:[\\s]|^)(\(commonAttributes.joined(separator: "|")))(?=[\\s]|$)", options: .dotMatchesLineSeparators))
+        
+        
+        // Strings
         
         generators.append(regexToken(.string, "(\"|@\")[^\"\\n]*(@\"|\")", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         generators.append(regexToken(.string, "(\"\"\")(.*?)(\"\"\")", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         
+        // Comments
         
-        // Find common attributes
+        let quoteLookahead = "(?=(?:(?:[^\"]*\"){2})*[^\"]*$)"
         
-        generators.append(regexToken(.attribute, "(?:[\\s]|^)(\(commonAttributes.joined(separator: "|")))(?=[\\s]|$)", options: .dotMatchesLineSeparators))
+        generators.append(regexToken(.comment, "\(quoteLookahead)//(.*)"))
+        
+        generators.append(regexToken(.comment, "\(quoteLookahead)/\\*.*?\\*/", options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        
+        generators.append(regexToken(.comment, "\(quoteLookahead)<\\!--[\\s\\S]*?(?:-\\->|$)", options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        
+        
         
         
         
