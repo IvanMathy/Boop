@@ -1,16 +1,16 @@
 /**
 	{
 		"api":1,
-		"name":"HTML Decode",
-		"description":"Decodes HTML entities in your text",
+		"name":"HTML Encode",
+		"description":"Encodes HTML entities in your text",
 		"author":"See Source",
 		"icon":"HTML",
-		"tags":"html,decode,web"
+		"tags":"html,encode,web"
 	}
 **/
 
 function main(input) {
-	input.text = Encoder.htmlDecode(input.text)
+	input.text = Encoder.htmlEncode(input.text)
 }
 
 

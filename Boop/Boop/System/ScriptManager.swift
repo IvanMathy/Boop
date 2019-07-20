@@ -38,7 +38,6 @@ class ScriptManager: NSObject {
             // This is inspired by the ISF file format by Vidvox
             // Thanks to them for the idea and their awesome work
             
-            
             guard
                 let openComment = script.range(of: "/**"),
                 let closeComment = script.range(of: "**/")
@@ -63,14 +62,6 @@ class ScriptManager: NSObject {
     func search(_ query: String) -> [Script] {
         
         let results = fuse.search(query, in: scripts)
-        
-        results.forEach { item in
-            print(scripts[item.index].name ?? "No Name")
-            print("index: \(item.index)")
-            print("score: \(item.score)")
-            print("results: \(item.results)")
-            print("---------------")
-        }
         
         return results.filter { result in
             result.score < 0.4 // Filter low quality results

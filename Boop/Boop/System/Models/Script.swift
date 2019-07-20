@@ -14,7 +14,9 @@ class Script: NSObject {
     var scriptCode:String
     
     var context:JSContext
-    var main:JSValue
+    lazy var main:JSValue = {
+        return context.objectForKeyedSubscript("main")
+    }()
     
     var info:[String: Any]
     
@@ -25,6 +27,7 @@ class Script: NSObject {
     
     init(script:String, parameters: [String: Any]) {
         
+        
         scriptCode = script
         info = parameters
         
@@ -34,14 +37,20 @@ class Script: NSObject {
         self.icon = parameters["icon"] as? String
         
         context = JSContext()
+        
+        super.init();
+        
+        context.exceptionHandler = { context, exception in
+            print("[\(self.name ?? "Unknown Script")] Error: \(exception?.toString() ?? "Unknown Error") ")
+        }
+
+        
         context.setObject(ScriptExecution.self, forKeyedSubscript: "ScriptExecution" as NSString)
         
         context.evaluateScript(script)
         
-        main = context.objectForKeyedSubscript("main")
-        
-        super.init();
     }
+    
     
     func run(with execution: ScriptExecution) {
         main.call(withArguments: [execution])
