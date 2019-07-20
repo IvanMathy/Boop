@@ -10,8 +10,6 @@
 		2C20667621FD628E0082570E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20667521FD628E0082570E /* AppDelegate.swift */; };
 		2C20667821FD62910082570E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667721FD62910082570E /* Assets.xcassets */; };
 		2C20667B21FD62910082570E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667921FD62910082570E /* MainMenu.xib */; };
-		2C20668521FD62DB0082570E /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C20668421FD62DB0082570E /* SavannaKit.framework */; };
-		2C20668721FD636C0082570E /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C20668421FD62DB0082570E /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C20668B21FD63C90082570E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20668921FD63C90082570E /* MainViewController.swift */; };
 		2C20669121FD64A20082570E /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20668F21FD64A20082570E /* DefaultTheme.swift */; };
 		2C20669521FD6F400082570E /* BoopLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669321FD6F400082570E /* BoopLexer.swift */; };
@@ -21,6 +19,8 @@
 		2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A121FE47090082570E /* PopoverViewController.swift */; };
 		2C2066A421FE47CE0082570E /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A321FE47CE0082570E /* PopoverView.swift */; };
 		2C2066A621FE53870082570E /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A521FE53870082570E /* SearchField.swift */; };
+		2C47436422E2B86C0075E3D9 /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C47436322E2B86C0075E3D9 /* SavannaKit.framework */; };
+		2C47436522E2B8A90075E3D9 /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C47436322E2B86C0075E3D9 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C53B6E0226D404E00DC6861 /* ScriptExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */; };
 		2C9761D52214E11600AFF8CD /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
 		2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
@@ -40,7 +40,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2C20668721FD636C0082570E /* SavannaKit.framework in CopyFiles */,
+				2C47436522E2B8A90075E3D9 /* SavannaKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +53,6 @@
 		2C20667A21FD62910082570E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2C20667C21FD62910082570E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C20667D21FD62910082570E /* Boop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Boop.entitlements; sourceTree = "<group>"; };
-		2C20668421FD62DB0082570E /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = "<group>"; };
 		2C20668921FD63C90082570E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2C20668F21FD64A20082570E /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		2C20669321FD6F400082570E /* BoopLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoopLexer.swift; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		2C2066A121FE47090082570E /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		2C2066A321FE47CE0082570E /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		2C2066A521FE53870082570E /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		2C47436322E2B86C0075E3D9 /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = ../../../Carthage/Build/Mac/SavannaKit.framework; sourceTree = "<group>"; };
 		2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptExecution.swift; sourceTree = "<group>"; };
 		2C9761D42214E11600AFF8CD /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsTableViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C20668521FD62DB0082570E /* SavannaKit.framework in Frameworks */,
+				2C47436422E2B86C0075E3D9 /* SavannaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +125,7 @@
 		2C20668321FD62D00082570E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2C20668421FD62DB0082570E /* SavannaKit.framework */,
+				2C47436322E2B86C0075E3D9 /* SavannaKit.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -439,6 +439,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = RLZ8XBTX7G;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../Carthage/Build/Mac",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Boop/Frameworks",
 				);
@@ -463,6 +464,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = RLZ8XBTX7G;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../Carthage/Build/Mac",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Boop/Frameworks",
 				);
