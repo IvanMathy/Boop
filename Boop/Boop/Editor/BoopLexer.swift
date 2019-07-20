@@ -31,7 +31,7 @@ class BoopLexer: RegexLexer {
         
         // Strings
         
-        generators.append(regexToken(.string, "(\"|@\")[^\"\\n]*(@\"|\")", options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        generators.append(regexToken(.string, "(\"|@\")(?:[^\"\\\\]|\\\\.)*[^\"\\n]*(@\"|\")", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         generators.append(regexToken(.string, "(\"\"\")(.*?)(\"\"\")", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         
         // Comments
