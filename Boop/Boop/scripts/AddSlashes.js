@@ -9,7 +9,7 @@
 	}
 **/
 
-function main(str) {
+function main(input) {
 	//  discuss at: http://locutus.io/php/addslashes/
 	// original by: Kevin van Zonneveld (http://kvz.io)
 	// improved by: Ates Goral (http://magnetiq.com)
@@ -22,7 +22,7 @@ function main(str) {
 	//   example 1: addslashes("kevin's birthday")
 	//   returns 1: "kevin\\'s birthday"
 	
-	return (str + '')
+	input.text = (input.text + '')
 		.replace(/[\\"']/g, '\\$&')
 		.replace(/\u0000/g, '\\0')
 }

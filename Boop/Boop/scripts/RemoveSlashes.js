@@ -9,7 +9,7 @@
 	}
 **/
 
-function main(){
+function main(input){
 	
 	//       discuss at: http://locutus.io/php/stripslashes/
 	//      original by: Kevin van Zonneveld (http://kvz.io)
@@ -27,7 +27,7 @@ function main(){
 	//        example 2: stripslashes('Kevin\\\'s code')
 	//        returns 2: "Kevin\'s code"
 
-	var result = (str + '')
+	input.text = (input.text + '')
 	    .replace(/\\(.?)/g, function (s, n1) {
 	      switch (n1) {
 	        case '\\':
@@ -40,7 +40,4 @@ function main(){
 	          return n1
 	    	}
     });
-    
-    return {success:true, result:result};
-    // or {success:false, error:message};
 }

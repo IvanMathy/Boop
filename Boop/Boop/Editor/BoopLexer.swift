@@ -20,6 +20,10 @@ class BoopLexer: RegexLexer {
         
         var generators = [TokenGenerator?]()
         
+        let number = "\\b(?:0x[a-f0-9]+|(?:\\d(?:_\\d+)*\\d*(?:\\.\\d*)?|\\.\\d\\+)(?:e[+\\-]?\\d+)?)\\b"
+        
+        generators.append(regexToken(.number, number))
+        
         generators.append(regexToken(.comment, "//(.*)"))
         
         generators.append(regexToken(.comment, "(/\\*)(.*)(\\*/)", options: [.dotMatchesLineSeparators, .caseInsensitive]))

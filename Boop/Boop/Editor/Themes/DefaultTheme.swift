@@ -47,6 +47,8 @@ class DefaultTheme: SyntaxColorTheme {
             return [.foregroundColor:NSColor(red:0.84, green:0.17, blue:0.20, alpha:1.0)]
         case .attribute:
             return [.foregroundColor:NSColor(red:0.58, green:0.78, blue:0.44, alpha:1.0)]
+        case .number:
+            return [.foregroundColor:NSColor(red:0.58, green:0.08, blue:1, alpha:1.0)]
             
         }
     }

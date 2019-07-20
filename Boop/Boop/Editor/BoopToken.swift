@@ -15,6 +15,7 @@ class BoopToken: Token {
         case comment
         case string
         case attribute
+        case number
     }
     
     // There is no support for placeholder yet or planned.
