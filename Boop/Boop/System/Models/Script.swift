@@ -25,7 +25,9 @@ class Script: NSObject {
     @objc dynamic var desc: String?
     @objc dynamic var icon: String?
     
-    init(script:String, parameters: [String: Any]) {
+    weak var delegate: ScriptDelegate?
+    
+    init(script:String, parameters: [String: Any], delegate: ScriptDelegate? = nil) {
         
         
         scriptCode = script
@@ -41,7 +43,9 @@ class Script: NSObject {
         super.init();
         
         context.exceptionHandler = { context, exception in
-            print("[\(self.name ?? "Unknown Script")] Error: \(exception?.toString() ?? "Unknown Error") ")
+            let message = "[\(self.name ?? "Unknown Script")] Error: \(exception?.toString() ?? "Unknown Error") "
+            print(message)
+            self.onScriptError(message: message)
         }
 
         
@@ -49,8 +53,19 @@ class Script: NSObject {
         
         context.evaluateScript(script)
         
+        // We set the delegate after the initial eval to avoid
+        // showing init errors from scripts at launch.
+        self.delegate = delegate
+        
     }
     
+    func onScriptError(message: String) {
+        self.delegate?.onScriptError(message: message)
+    }
+    
+    func onScriptInfo(message: String) {
+        self.delegate?.onScriptInfo(message: message)
+    }
     
     func run(with execution: ScriptExecution) {
         main.call(withArguments: [execution])
@@ -67,4 +82,9 @@ extension Script: Fuseable {
             FuseProperty(name: "desc", weight: 0.2)
         ]
     }
+}
+
+protocol ScriptDelegate: class {
+    func onScriptError(message: String)
+    func onScriptInfo(message: String)
 }

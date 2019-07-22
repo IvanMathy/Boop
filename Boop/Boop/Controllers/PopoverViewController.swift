@@ -15,6 +15,7 @@ class PopoverViewController: NSViewController {
     @IBOutlet weak var popoverView: PopoverView!
     @IBOutlet weak var searchField: SearchField!
     @IBOutlet weak var editorView: SyntaxTextView!
+    @IBOutlet weak var statusView: StatusView!
     
     @IBOutlet weak var scriptManager: ScriptManager!
     
@@ -71,10 +72,13 @@ class PopoverViewController: NSViewController {
                     return theEvent // Return event to beep
                 }
                 
-                self.scriptManager.runScript(script, into: self.editorView)
                 
                 // Let's dismiss the popover
                 self.hide()
+                
+                // Run the script afterwards in case we need to show a status
+                self.scriptManager.runScript(script, into: self.editorView)
+                
                 
                 didSomething = true
             }
@@ -119,6 +123,9 @@ class PopoverViewController: NSViewController {
         overlayView.show()
         popoverView.show()
         
+        // FIXME: Use localized strings
+        statusView.setStatus(.help("Select your action"))
+        
         self.searchField.stringValue = ""
         self.tableHeightConstraint.constant = 0
         
@@ -130,6 +137,8 @@ class PopoverViewController: NSViewController {
     func hide() {
         overlayView.hide()
         popoverView.hide()
+        
+        statusView.setStatus(.normal)
         
         self.view.window?.makeFirstResponder(self.editorView.contentTextView)
         self.enabled = false

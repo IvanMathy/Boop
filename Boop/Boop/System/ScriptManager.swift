@@ -11,6 +11,9 @@ import SavannaKit
 
 class ScriptManager: NSObject {
     
+    // This probably does not belong here.
+    @IBOutlet weak var statusView: StatusView!
+    
     let fuse = Fuse(threshold: 0.2)
     var scripts = [Script]()
     
@@ -49,7 +52,7 @@ class ScriptManager: NSObject {
             
             let json = try JSONSerialization.jsonObject(with: meta.data(using: .utf8)!, options: .allowFragments) as! [String: Any]
             
-            let scriptObject = Script.init(script: script, parameters: json)
+            let scriptObject = Script.init(script: script, parameters: json, delegate: self)
             
             scripts.append(scriptObject)
             
@@ -132,11 +135,23 @@ class ScriptManager: NSObject {
     }
     
     func runScript(_ script: Script, selection: String? = nil, fullText: String) -> String {
-        let scriptExecution = ScriptExecution(selection: selection, fullText: fullText)
+        let scriptExecution = ScriptExecution(selection: selection, fullText: fullText, script: script)
         
         script.run(with: scriptExecution)
         
         return scriptExecution.text ?? ""
     }
 
+}
+
+extension ScriptManager: ScriptDelegate {
+    func onScriptError(message: String) {
+        self.statusView.setStatus(.error(message))
+    }
+    
+    func onScriptInfo(message: String) {
+        self.statusView.setStatus(.info(message))
+    }
+    
+    
 }
