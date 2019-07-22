@@ -10,14 +10,17 @@ import Cocoa
 
 @IBDesignable
 class StatusView: NSView {
-
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-
-        let rectanglePath = NSBezierPath(roundedRect: NSMakeRect(0, 0, 200, 20), xRadius: 5, yRadius: 5)
-        NSColor.textBackgroundColor.setFill()
-        rectanglePath.fill()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.wantsLayer = true
+        
+        self.layer?.backgroundColor = NSColor.red.cgColor
+        self.layer?.cornerRadius = 5
 
     }
+
+    
     
 }
