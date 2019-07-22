@@ -19,8 +19,8 @@
 		2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A121FE47090082570E /* PopoverViewController.swift */; };
 		2C2066A421FE47CE0082570E /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A321FE47CE0082570E /* PopoverView.swift */; };
 		2C2066A621FE53870082570E /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A521FE53870082570E /* SearchField.swift */; };
-		2C47436422E2B86C0075E3D9 /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C47436322E2B86C0075E3D9 /* SavannaKit.framework */; };
-		2C47436522E2B8A90075E3D9 /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C47436322E2B86C0075E3D9 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C3B003E22E3775300BBD4D0 /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; };
+		2C3B004022E3776D00BBD4D0 /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C53B6E0226D404E00DC6861 /* ScriptExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */; };
 		2C9761D52214E11600AFF8CD /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
 		2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
@@ -34,13 +34,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2C20668621FD63670082570E /* CopyFiles */ = {
+		2C3B003C22E3758100BBD4D0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2C47436522E2B8A90075E3D9 /* SavannaKit.framework in CopyFiles */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C3B003F22E3776800BBD4D0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2C3B004022E3776D00BBD4D0 /* SavannaKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +72,7 @@
 		2C2066A121FE47090082570E /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		2C2066A321FE47CE0082570E /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		2C2066A521FE53870082570E /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
-		2C47436322E2B86C0075E3D9 /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = ../../../Carthage/Build/Mac/SavannaKit.framework; sourceTree = "<group>"; };
+		2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = ../../../Carthage/Build/Mac/SavannaKit.framework; sourceTree = "<group>"; };
 		2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptExecution.swift; sourceTree = "<group>"; };
 		2C9761D42214E11600AFF8CD /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsTableViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C47436422E2B86C0075E3D9 /* SavannaKit.framework in Frameworks */,
+				2C3B003E22E3775300BBD4D0 /* SavannaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +135,7 @@
 		2C20668321FD62D00082570E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2C47436322E2B86C0075E3D9 /* SavannaKit.framework */,
+				2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -217,7 +227,8 @@
 				2C20666E21FD628E0082570E /* Sources */,
 				2C20666F21FD628E0082570E /* Frameworks */,
 				2C20667021FD628E0082570E /* Resources */,
-				2C20668621FD63670082570E /* CopyFiles */,
+				2C3B003C22E3758100BBD4D0 /* Embed Frameworks */,
+				2C3B003F22E3776800BBD4D0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -433,6 +444,7 @@
 		2C20668121FD62910082570E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Boop/Boop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,7 +460,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -458,6 +470,7 @@
 		2C20668221FD62910082570E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Boop/Boop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -473,7 +486,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

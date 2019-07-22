@@ -44,25 +44,6 @@ class BoopLexer: RegexLexer {
         
         generators.append(regexToken(.comment, "\(quoteLookahead)<\\!--[\\s\\S]*?(?:-\\->|$)", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         
-        
-        
-        
-        
-        /*// Line comment
-        generators.append(RegexTokenGenerator(regularExpression: regex("//(.*)"), tokenTransformer: .comment))
-        
-        // Block comment
-        generators.append(RegexTokenGenerator("(/\\*)(.*)(\\*---/)", options: [.dotMatchesLineSeparators], tokenTransformer: .comment))
-        
-        // Single-line string literal
-        generators.append(RegexTokenGenerator("(\"|@\")[^\"\\n]*(@\"|\")", tokenTransformer: .string))
-        
-        // Multi-line string literal
-        generators.append(RegexTokenGenerator("(\"\"\")(.*?)(\"\"\")", options: [.dotMatchesLineSeparators], tokenTransformer: .string))
-        
-        
-        */
-        
         return generators.compactMap( { $0 })
     }
     
