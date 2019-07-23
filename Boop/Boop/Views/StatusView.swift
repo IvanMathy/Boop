@@ -18,7 +18,7 @@ enum Status {
 @IBDesignable
 class StatusView: NSView {
     
-    let transitionLength = 0.3$
+    let transitionLength = 0.3
     let messageLength = 5.0
     
     @IBOutlet weak var textLabel: NSTextField!
@@ -94,10 +94,7 @@ class StatusView: NSView {
             text = "Press ⌘+B to get started"
         }
         
-        NSAnimationContext.runAnimationGroup({ (context) in
-            context.duration = self.transitionLength
-            self.textLabel.stringValue = text
-        })
+        self.textLabel.stringValue = text
     }
     
     fileprivate func fadeText(to alphaValue: CGFloat, completionHandler: (() -> Void)? = nil) {
