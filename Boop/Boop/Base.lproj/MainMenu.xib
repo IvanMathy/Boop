@@ -772,7 +772,11 @@
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ODE-N3-eZN">
                                                                     <rect key="frame" x="8" y="10" width="30" height="30"/>
-                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icons8-HTML" id="wtt-XN-7xb"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="30" id="3Lp-yt-Tn1"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="uEa-Wh-Tu7"/>
+                                                                    </constraints>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="icons8-broom" id="wtt-XN-7xb"/>
                                                                 </imageView>
                                                                 <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSG-6c-xJD">
                                                                     <rect key="frame" x="45" y="3" width="392" height="42"/>
@@ -906,6 +910,6 @@
         </window>
     </objects>
     <resources>
-        <image name="icons8-HTML" width="30" height="30"/>
+        <image name="icons8-broom" width="22" height="22"/>
     </resources>
 </document>

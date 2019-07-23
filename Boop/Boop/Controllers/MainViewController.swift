@@ -21,6 +21,10 @@ class MainViewController: NSViewController {
         editorView.theme = DefaultTheme()
         
         editorView.contentTextView.selectedTextAttributes = [.backgroundColor:NSColor(red:0.19, green:0.44, blue:0.71, alpha:1.0), .foregroundColor: NSColor.white]
+        
+        let fieldEditor = self.view.window?.fieldEditor(true, for: editorView.contentTextView)!
+        
+        fieldEditor?.menu
     
     }
     
