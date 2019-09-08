@@ -34,6 +34,7 @@ class BoopLexer: RegexLexer {
         
         // Extras
         
+        // - Match MD5 strings
         generators.append(regexToken(.extra, "\(standalonePrefix)([a-f0-9]{32})\(standaloneSuffix)", options: .dotMatchesLineSeparators))
         
         
@@ -41,6 +42,11 @@ class BoopLexer: RegexLexer {
         
         generators.append(regexToken(.string, "(\"|@\")(?:[^\"\\\\]|\\\\.)*[^\"\\n]*(@\"|\")", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         generators.append(regexToken(.string, "(\"\"\")(.*?)(\"\"\")", options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        
+        // More Extras
+        
+        // - Match JSON labels and generic parameters
+        generators.append(regexToken(.extra, "(?m)^[ ]*([^\\r\\n:]+?)\\s*(?=\\:)"))
         
         // Comments
         
@@ -52,7 +58,7 @@ class BoopLexer: RegexLexer {
         
         generators.append(regexToken(.comment, "\(quoteLookahead)<\\!--[\\s\\S]*?(?:-\\->|$)", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         
-        
+      
         
         
         return generators.compactMap( { $0 })
