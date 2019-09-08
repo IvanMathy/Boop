@@ -21,9 +21,13 @@ class BoopLexer: RegexLexer {
         let standalonePrefix = "(?:[\\s]|^)"
         let standaloneSuffix = "(?=[\\s]|$)"
         
-        var generators = [TokenGenerator?]()
+        let quoteLookahead = "(?=(?:(?:[^\"]*\"){2})*[^\"]*$)"
         
+        let quotes = "(\"|@\")(?:[^\"\\\\]|\\\\.)*[^\"\\n]*(@\"|\")"
         let number = "\\b(?:0x[a-f0-9]+|(?:\\d(?:_\\d+)*\\d*(?:\\.\\d*)?|\\.\\d\\+)(?:e[+\\-]?\\d+)?)\\b"
+        
+        
+        var generators = [TokenGenerator?]()
         
         generators.append(regexToken(.number, number))
         
@@ -40,17 +44,15 @@ class BoopLexer: RegexLexer {
         
         // Strings
         
-        generators.append(regexToken(.string, "(\"|@\")(?:[^\"\\\\]|\\\\.)*[^\"\\n]*(@\"|\")", options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        generators.append(regexToken(.string, quotes, options: [.dotMatchesLineSeparators, .caseInsensitive]))
         generators.append(regexToken(.string, "(\"\"\")(.*?)(\"\"\")", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         
         // More Extras
         
         // - Match JSON labels and generic parameters
-        generators.append(regexToken(.extra, "(?m)^[ ]*([^\\r\\n:]+?)\\s*(?=\\:)"))
+        generators.append(regexToken(.extra, "\(quoteLookahead)(?m)^[ ]*([^\\r\\n:\\s]+?|\(quotes))\\s*(?=\\:)"))
         
         // Comments
-        
-        let quoteLookahead = "(?=(?:(?:[^\"]*\"){2})*[^\"]*$)"
         
         generators.append(regexToken(.comment, "\(quoteLookahead)//(.*)"))
         

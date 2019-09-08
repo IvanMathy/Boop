@@ -53,7 +53,7 @@ class DefaultTheme: SyntaxColorTheme {
         case .number:
             return [.foregroundColor:NSColor(red:0.58, green:0.08, blue:1, alpha:1.0)]
         case .extra:
-            return [.foregroundColor:NSColor(red:0.4, green:0.4, blue:1, alpha:1.0)]
+            return [.foregroundColor:NSColor(red:0.3, green:0.7, blue:1, alpha:1.0)]
         }
     }
     
