@@ -11,7 +11,10 @@ import SavannaKit
 
 class DefaultTheme: SyntaxColorTheme {
     
-    let gutterStyle: GutterStyle = GutterStyle(backgroundColor: Color(red: 22/255.0, green: 22/255, blue: 22/255, alpha: 1.0), minimumWidth: 32)
+    let gutterStyle: GutterStyle = GutterStyle(
+        backgroundColor: Color(red: 22/255.0, green: 22/255, blue: 22/255, alpha: 1.0),
+        separatorColor: Color(red: 15/255.0, green: 15/255, blue: 15/255, alpha: 1.0),
+        minimumWidth: 40)
     
     var font: Font = NSFont(name: "SFMono-Regular", size: 15) ?? Font(name: "Menlo", size: 15)!
     
@@ -49,7 +52,8 @@ class DefaultTheme: SyntaxColorTheme {
             return [.foregroundColor:NSColor(red:0.58, green:0.78, blue:0.44, alpha:1.0)]
         case .number:
             return [.foregroundColor:NSColor(red:0.58, green:0.08, blue:1, alpha:1.0)]
-            
+        case .extra:
+            return [.foregroundColor:NSColor(red:0.4, green:0.4, blue:1, alpha:1.0)]
         }
     }
     

@@ -14,9 +14,12 @@ class BoopLexer: RegexLexer {
     // This is not really an exhaustive list, it's more of a rough estimation of
     // what you can encounter in a lot/most of languages. Add more to it!
     // BTW is attribute the correct name? Token was taken.
-    var commonAttributes = ["var", "val", "let", "if", "else", "export", "import", "return", "static", "fun", "function", "func", "class", "open"]
+    var commonAttributes = ["var", "val", "let", "if", "else", "export", "import", "return", "static", "fun", "function", "func", "class", "open", "new"]
     
     func generators(source: String) -> [TokenGenerator] {
+        
+        let standalonePrefix = "(?:[\\s]|^)"
+        let standaloneSuffix = "(?=[\\s]|$)"
         
         var generators = [TokenGenerator?]()
         
@@ -26,7 +29,12 @@ class BoopLexer: RegexLexer {
         
         // Find common attributes
         
-        generators.append(regexToken(.attribute, "(?:[\\s]|^)(\(commonAttributes.joined(separator: "|")))(?=[\\s]|$)", options: .dotMatchesLineSeparators))
+        generators.append(regexToken(.attribute, "\(standalonePrefix)(\(commonAttributes.joined(separator: "|")))\(standaloneSuffix)", options: .dotMatchesLineSeparators))
+        
+        
+        // Extras
+        
+        generators.append(regexToken(.extra, "\(standalonePrefix)([a-f0-9]{32})\(standaloneSuffix)", options: .dotMatchesLineSeparators))
         
         
         // Strings
@@ -43,6 +51,9 @@ class BoopLexer: RegexLexer {
         generators.append(regexToken(.comment, "\(quoteLookahead)/\\*.*?\\*/", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         
         generators.append(regexToken(.comment, "\(quoteLookahead)<\\!--[\\s\\S]*?(?:-\\->|$)", options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        
+        
+        
         
         return generators.compactMap( { $0 })
     }
