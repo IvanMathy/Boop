@@ -50,7 +50,7 @@ class BoopLexer: RegexLexer {
         // More Extras
         
         // - Match JSON labels and generic parameters
-        generators.append(regexToken(.extra, "\(quoteLookahead)(?=(?:[ {\\[]*))([^\\r\\n:\\s\\w]+?|\(quotes))\\s*(?=\\:)"))
+        generators.append(regexToken(.extra, "\(quoteLookahead)(?:(?=(?:[ {\\[]*))([^\\r\\n:\\s\\w]+?|\(quotes))\\s*(?=\\:(?!\\:))"))
         
         // Comments
         
