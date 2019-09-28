@@ -76,7 +76,7 @@ class ScriptManager: NSObject {
     func runScript(_ script: Script, into editor: SyntaxTextView) {
         
         let textView = editor.contentTextView
-        var fullText = editor.text
+        let fullText = editor.text
         
         guard let ranges = textView.selectedRanges as? [NSRange], ranges.reduce(0, { $0 + $1.length }) > 0 else {
             // No selection, run on full text

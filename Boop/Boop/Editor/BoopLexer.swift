@@ -23,7 +23,7 @@ class BoopLexer: RegexLexer {
         
         let quoteLookahead = "(?=(?:(?:[^\"]*\"){2})*[^\"]*$)"
         
-        let quotes = "(\"|@\")(?:[^\"\\\\]|\\\\.)*[^\"\\n]*(@\"|\")"
+        let quotes = "(\"|@\")(?:[^\"\\\\\\n]|\\\\.)*[^\"\\n]*(@\"|\")"
         let number = "\\b(?:0x[a-f0-9]+|(?:\\d(?:_\\d+)*\\d*(?:\\.\\d*)?|\\.\\d\\+)(?:e[+\\-]?\\d+)?)\\b"
         
         
@@ -38,19 +38,24 @@ class BoopLexer: RegexLexer {
         
         // Extras
         
+        
+        generators.append(regexToken(.extra, "`(?:[^`\\\\\\n]|\\\\.)*[^`\\n]*`", options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        
         // - Match MD5 strings
         generators.append(regexToken(.extra, "\(standalonePrefix)([a-f0-9]{32})\(standaloneSuffix)", options: .dotMatchesLineSeparators))
-        
         
         // Strings
         
         generators.append(regexToken(.string, quotes, options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        
+        generators.append(regexToken(.string, "'(?:[^\'\\\\\\n]|\\\\.)*[^\'\\n]*'", options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        
         generators.append(regexToken(.string, "(\"\"\")(.*?)(\"\"\")", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         
         // More Extras
         
         // - Match JSON labels and generic parameters
-        generators.append(regexToken(.extra, "\(quoteLookahead)(?:(?=(?:[ {\\[]*))([^\\r\\n:\\s\\w]+?|\(quotes))\\s*(?=\\:(?!\\:))"))
+        generators.append(regexToken(.extra, "(?m)\(quoteLookahead)(?=(?:[ {\\[]*))([^\\r\\n:\\s\\w]+?|\(quotes))\\s*(?=\\:(?!\\:))"))
         
         // Comments
         
