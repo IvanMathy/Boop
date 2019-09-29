@@ -21,8 +21,8 @@ class BoopLexer: RegexLexer {
     
     func generators(source: String) -> [TokenGenerator] {
         
-        let standalonePrefix = "(?:[\\s,:&]|^)"
-        let standaloneSuffix = "(?=[\\s\\?\\!,:]|$)"
+        let standalonePrefix = "(?<=[\\s&]|^|[\\(,:])"
+        let standaloneSuffix = "(?=[\\s\\?\\!,:\\)\\();]|$)"
         
         let quoteLookahead = "(?=(?:(?:[^\"]*\"){2})*[^\"]*$)"
         
@@ -45,7 +45,7 @@ class BoopLexer: RegexLexer {
         
         
         // - Match MD5 strings
-        generators.append(regexToken(.extra, "\(standalonePrefix)([a-f0-9]{32})\(standaloneSuffix)", options: .dotMatchesLineSeparators))
+        generators.append(regexToken(.attribute, "\(standalonePrefix)([a-f0-9]{32})\(standaloneSuffix)", options: .dotMatchesLineSeparators))
         
         // Strings
         

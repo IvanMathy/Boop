@@ -32,6 +32,8 @@ SELECT "Hello" FROM table LIMIT 2
 /*
  haha you can't see me 👻
 */
+    
+if(true) return;
 `
 	
 }
