@@ -75,13 +75,14 @@ class ScriptManager: NSObject {
     
     func runScript(_ script: Script, into editor: SyntaxTextView) {
         
-        let textView = editor.contentTextView
         let fullText = editor.text
         
-        guard let ranges = textView.selectedRanges as? [NSRange], ranges.reduce(0, { $0 + $1.length }) > 0 else {
-            // No selection, run on full text
+        guard let ranges = editor.contentTextView.selectedRanges as? [NSRange], ranges.reduce(0, { $0 + $1.length }) > 0 else {
+            
             let result = runScript(script, fullText: fullText)
-            editor.text = result
+            // No selection, run on full text
+            
+            replaceText(ranges: [NSRange(location: 0, length: fullText.count)], values: [result], editor: editor)
             
             return
         }
@@ -99,6 +100,15 @@ class ScriptManager: NSObject {
             
         }
         
+        replaceText(ranges: ranges, values: values, editor: editor)
+
+        
+    }
+    
+    private func replaceText(ranges: [NSRange], values: [String], editor: SyntaxTextView) {
+        
+        
+        let textView = editor.contentTextView
         
         // Since we have to replace each selection one by one, after each
         // occurence the whole text shifts around a bit, and therefore the
@@ -110,8 +120,7 @@ class ScriptManager: NSObject {
         var offset = 0
         let pairs = zip(ranges, values)
             .sorted{ $0.0.location < $1.0.location }
-            .map {
-                (pair) -> (NSRange, String) in
+            .map { (pair) -> (NSRange, String) in
                 
                 let (range, value) = pair
                 let length = range.length
@@ -121,17 +130,22 @@ class ScriptManager: NSObject {
                 return (newRange, value)
             }
         
-        // 👆 I seriously don't know how to properly indent this.
         
-        if (textView.shouldChangeText(inRanges: ranges as [NSValue], replacementStrings: values)) {
-            
-            pairs.forEach {
-                (range, value) in
-                textView.replaceCharacters(in: range, with: value)
-            }
-            
-            textView.didChangeText()
+        guard textView.shouldChangeText(inRanges: ranges as [NSValue], replacementStrings: values) else {
+            return
         }
+        
+        textView.textStorage?.beginEditing()
+        
+        pairs.forEach {
+            (range, value) in
+            textView.textStorage?.replaceCharacters(in: range, with: value)
+        }
+        
+        
+        textView.textStorage?.endEditing()
+        
+        textView.didChangeText()
     }
     
     func runScript(_ script: Script, selection: String? = nil, fullText: String) -> String {

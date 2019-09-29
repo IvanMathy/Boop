@@ -15,7 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        // Disable light mode because why in heck would you want that???
+        NSApp.appearance = NSAppearance(named: .darkAqua)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

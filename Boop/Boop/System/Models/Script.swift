@@ -36,7 +36,7 @@ class Script: NSObject {
         self.name = parameters["name"] as? String
         self.tags = parameters["tags"] as? String
         self.desc = parameters["description"] as? String
-        self.icon = parameters["icon"] as? String
+        self.icon = (parameters["icon"] as? String)?.lowercased()
         
         context = JSContext()
         
