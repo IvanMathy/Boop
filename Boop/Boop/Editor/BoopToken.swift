@@ -15,6 +15,7 @@ class BoopToken: Token {
         case comment
         case string
         case attribute
+        case keyword
         case number
         case extra
     }

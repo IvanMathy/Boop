@@ -14,12 +14,15 @@ class BoopLexer: RegexLexer {
     // This is not really an exhaustive list, it's more of a rough estimation of
     // what you can encounter in a lot/most of languages. Add more to it!
     // BTW is attribute the correct name? Token was taken.
-    var commonAttributes = ["var", "val", "let", "if", "else", "export", "import", "return", "static", "fun", "function", "func", "class", "open", "new"]
+    var commonAttributes = ["var", "val", "let", "if", "else", "export", "import", "return", "static", "fun", "function", "func", "class", "open", "new", "as"]
+    
+    
+    var moreAttributes = ["true", "false", "to", "string", "int", "float", "double", "where", "select", "delete", "add", "limit", "update", "insert", "bool", "boolean", "from"]
     
     func generators(source: String) -> [TokenGenerator] {
         
-        let standalonePrefix = "(?:[\\s]|^)"
-        let standaloneSuffix = "(?=[\\s]|$)"
+        let standalonePrefix = "(?:[\\s,:&]|^)"
+        let standaloneSuffix = "(?=[\\s\\?\\!,:]|$)"
         
         let quoteLookahead = "(?=(?:(?:[^\"]*\"){2})*[^\"]*$)"
         
@@ -33,13 +36,13 @@ class BoopLexer: RegexLexer {
         
         // Find common attributes
         
-        generators.append(regexToken(.attribute, "\(standalonePrefix)(\(commonAttributes.joined(separator: "|")))\(standaloneSuffix)", options: .dotMatchesLineSeparators))
+        generators.append(regexToken(.attribute, "\(standalonePrefix)(\(commonAttributes.joined(separator: "|")))\(standaloneSuffix)", options: .caseInsensitive))
+        
+        generators.append(regexToken(.keyword, "\(standalonePrefix)(\(moreAttributes.joined(separator: "|")))\(standaloneSuffix)", options: .caseInsensitive))
         
         
         // Extras
         
-        
-        generators.append(regexToken(.extra, "`(?:[^`\\\\\\n]|\\\\.)*[^`\\n]*`", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         
         // - Match MD5 strings
         generators.append(regexToken(.extra, "\(standalonePrefix)([a-f0-9]{32})\(standaloneSuffix)", options: .dotMatchesLineSeparators))
@@ -47,6 +50,8 @@ class BoopLexer: RegexLexer {
         // Strings
         
         generators.append(regexToken(.string, quotes, options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        
+        generators.append(regexToken(.string, "`(?:[^`\\\\\\n]|\\\\.)*[^`\\n]*`", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         
         generators.append(regexToken(.string, "'(?:[^\'\\\\\\n]|\\\\.)*[^\'\\n]*'", options: [.dotMatchesLineSeparators, .caseInsensitive]))
         
