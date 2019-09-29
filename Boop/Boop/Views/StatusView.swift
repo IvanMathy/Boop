@@ -114,9 +114,9 @@ class StatusView: NSView {
         case .normal, .help(_):
             break
         case .info(_):
-            color = NSColor.systemBlue
+            color = Colors.blueButDarker
         case .error(_):
-            color = NSColor.red
+            color = Colors.redButDarker
         }
         
         NSAnimationContext.runAnimationGroup({ (context) in

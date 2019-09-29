@@ -13,14 +13,6 @@ class DefaultTheme: SyntaxColorTheme {
     
     var tabWidth: Int = 4
     
-    let redey = #colorLiteral(red: 1, green: 0.2980392157, blue: 0.4862745098, alpha: 1) // #ff4c7c
-    let bluish = #colorLiteral(red: 0.5, green: 0.8870540044, blue: 1, alpha: 1) // #3586FF
-    let cyanish = #colorLiteral(red: 0.1595847315, green: 0.951053901, blue: 0.7986315017, alpha: 1) // #4cffb2
-    let greenish = #colorLiteral(red: 0.6049238592, green: 1, blue: 0, alpha: 1) // #32FF47
-    let orangeish = #colorLiteral(red: 1, green: 0.6980392157, blue: 0.2980392157, alpha: 1) // #ffb24c
-    let yellowishy = #colorLiteral(red: 0.9882352941, green: 1, blue: 0.2980392157, alpha: 1) // #fcff4c
-    let commentGrey = #colorLiteral(red: 0.7008966023, green: 0.7301803691, blue: 0.8538076556, alpha: 1) // #9BCCE3
-    
     let gutterStyle: GutterStyle = GutterStyle(
         backgroundColor: Color(red: 22/255.0, green: 22/255, blue: 22/255, alpha: 1.0),
         separatorColor: Color(red: 15/255.0, green: 15/255, blue: 15/255, alpha: 1.0),
@@ -55,17 +47,17 @@ class DefaultTheme: SyntaxColorTheme {
         
         switch token.type {
         case .comment:
-            return [.foregroundColor: commentGrey]
+            return [.foregroundColor: Colors.commentGrey]
         case .string:
-            return [.foregroundColor: redey]
+            return [.foregroundColor: Colors.redey]
         case .attribute:
-            return [.foregroundColor: greenish]
+            return [.foregroundColor: Colors.greenish]
         case .number:
-            return [.foregroundColor: orangeish]
+            return [.foregroundColor: Colors.orangeish]
         case .extra:
-            return [.foregroundColor: bluish]
+            return [.foregroundColor: Colors.bluish]
         case .keyword:
-            return [.foregroundColor: cyanish]
+            return [.foregroundColor: Colors.cyanish]
         }
     }
     
