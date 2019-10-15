@@ -14,14 +14,14 @@ class BoopLexer: RegexLexer {
     // This is not really an exhaustive list, it's more of a rough estimation of
     // what you can encounter in a lot/most of languages. Add more to it!
     // BTW is attribute the correct name? Token was taken.
-    var commonAttributes = ["var", "val", "let", "if", "else", "export", "import", "return", "static", "fun", "function", "func", "class", "open", "new", "as"]
+    var commonAttributes = ["var", "val", "let", "if", "else", "export", "import", "return", "static", "fun", "function", "func", "class", "open", "new", "as", "where", "select", "delete", "add", "limit", "update", "insert"]
     
     
-    var moreAttributes = ["true", "false", "to", "string", "int", "float", "double", "where", "select", "delete", "add", "limit", "update", "insert", "bool", "boolean", "from"]
+    var moreAttributes = ["true", "false", "to", "string", "int", "float", "double", "bool", "boolean", "from"]
     
     func generators(source: String) -> [TokenGenerator] {
         
-        let standalonePrefix = "(?<=[\\s&]|^|[\\(,:])"
+        let standalonePrefix = "(?<=[\\s]|^|[\\(,:])"
         let standaloneSuffix = "(?=[\\s\\?\\!,:\\)\\();]|$)"
         
         let quoteLookahead = "(?=(?:(?:[^\"]*\"){2})*[^\"]*$)"
@@ -45,7 +45,12 @@ class BoopLexer: RegexLexer {
         
         
         // - Match MD5 strings
-        generators.append(regexToken(.attribute, "\(standalonePrefix)([a-f0-9]{32})\(standaloneSuffix)", options: .dotMatchesLineSeparators))
+        generators.append(regexToken(.keyword, "\(standalonePrefix)([a-f0-9]{32})\(standaloneSuffix)", options: .dotMatchesLineSeparators))
+        
+        
+        // - Bootleg XML-like tags match:
+        
+        generators.append(regexToken(.attribute, "(?m)\(quoteLookahead)<(?:.*?)\\b[^>]*\\/?>"))
         
         // Strings
         
@@ -61,6 +66,8 @@ class BoopLexer: RegexLexer {
         
         // - Match JSON labels and generic parameters
         generators.append(regexToken(.extra, "(?m)\(quoteLookahead)(?=(?:[ {\\[]*))([^\\r\\n:\\s\\w]+?|\(quotes))\\s*(?=\\:(?!\\:))"))
+        
+        
         
         // Comments
         

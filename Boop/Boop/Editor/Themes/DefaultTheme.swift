@@ -51,13 +51,13 @@ class DefaultTheme: SyntaxColorTheme {
         case .string:
             return [.foregroundColor: Colors.redey]
         case .attribute:
-            return [.foregroundColor: Colors.greenish]
+            return [.foregroundColor: Colors.cyanish]
         case .number:
             return [.foregroundColor: Colors.orangeish]
         case .extra:
             return [.foregroundColor: Colors.bluish]
         case .keyword:
-            return [.foregroundColor: Colors.cyanish]
+            return [.foregroundColor: Colors.greenish]
         }
     }
     

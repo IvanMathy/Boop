@@ -34,6 +34,9 @@ SELECT "Hello" FROM table LIMIT 2
 */
     
 if(true) return;
+    
+
+"This is quote-unquote \\"escaped\\" if you will."
 `
 	
 }
