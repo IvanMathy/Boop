@@ -22,6 +22,7 @@
 		2C3B003E22E3775300BBD4D0 /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; };
 		2C3B004022E3776D00BBD4D0 /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C53B6E0226D404E00DC6861 /* ScriptExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */; };
+		2C5ED41E2357F67200322893 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5ED41D2357F67200322893 /* Preferences.storyboard */; };
 		2C9118B623406B530018916F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9118B523406B530018916F /* Colors.swift */; };
 		2C9761D52214E11600AFF8CD /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
 		2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
@@ -32,6 +33,7 @@
 		2CA245D922480F9500586DFD /* String+Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D622480F9500586DFD /* String+Fuse.swift */; };
 		2CA245DA22480F9500586DFD /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D722480F9500586DFD /* Fuse.swift */; };
 		2CA245DC224822EA00586DFD /* ScriptTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245DB224822EA00586DFD /* ScriptTableView.swift */; };
+		2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,6 +77,7 @@
 		2C2066A521FE53870082570E /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
 		2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = ../../../Carthage/Build/Mac/SavannaKit.framework; sourceTree = "<group>"; };
 		2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptExecution.swift; sourceTree = "<group>"; };
+		2C5ED41D2357F67200322893 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		2C9118B523406B530018916F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2C9761D42214E11600AFF8CD /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsTableViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		2CA245D622480F9500586DFD /* String+Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Fuse.swift"; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/String+Fuse.swift"; sourceTree = "<group>"; };
 		2CA245D722480F9500586DFD /* Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fuse.swift; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/Fuse.swift"; sourceTree = "<group>"; };
 		2CA245DB224822EA00586DFD /* ScriptTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTableView.swift; sourceTree = "<group>"; };
+		2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 		2C20666921FD628E0082570E = {
 			isa = PBXGroup;
 			children = (
+				2C5ED41C2357F65400322893 /* UI */,
 				2CA245D322480F2200586DFD /* Dependencies */,
 				2C20667421FD628E0082570E /* Boop */,
 				2C20667321FD628E0082570E /* Products */,
@@ -127,7 +132,6 @@
 				2C20668321FD62D00082570E /* Frameworks */,
 				2C20667521FD628E0082570E /* AppDelegate.swift */,
 				2C20667721FD62910082570E /* Assets.xcassets */,
-				2C20667921FD62910082570E /* MainMenu.xib */,
 				2C20667C21FD62910082570E /* Info.plist */,
 				2C20667D21FD62910082570E /* Boop.entitlements */,
 			);
@@ -145,6 +149,7 @@
 		2C20668821FD63AB0082570E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2CC211C1236E3125007CECEE /* Preferences */,
 				2C20668921FD63C90082570E /* MainViewController.swift */,
 				2C2066A121FE47090082570E /* PopoverViewController.swift */,
 				2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */,
@@ -184,6 +189,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2C5ED41C2357F65400322893 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2C20667921FD62910082570E /* MainMenu.xib */,
+				2C5ED41D2357F67200322893 /* Preferences.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		2C9761DA2214E44300AFF8CD /* System */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +232,14 @@
 				2CA245D622480F9500586DFD /* String+Fuse.swift */,
 			);
 			path = Fuse;
+			sourceTree = "<group>";
+		};
+		2CC211C1236E3125007CECEE /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +305,7 @@
 				2C9761D52214E11600AFF8CD /* scripts in Resources */,
 				2C20667821FD62910082570E /* Assets.xcassets in Resources */,
 				2C20667B21FD62910082570E /* MainMenu.xib in Resources */,
+				2C5ED41E2357F67200322893 /* Preferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +335,7 @@
 				2C2066A421FE47CE0082570E /* PopoverView.swift in Sources */,
 				2C20668B21FD63C90082570E /* MainViewController.swift in Sources */,
 				2C20669A21FD76900082570E /* StatusView.swift in Sources */,
+				2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */,
 				2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,6 +27,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
-
+    @IBAction func showPreferencesWindow(_ sender: NSMenuItem) {
+        let controller = NSStoryboard.init(name: "Preferences", bundle: nil).instantiateInitialController() as? NSWindowController
+        
+        controller?.showWindow(sender)
+        
+    }
+    
 }
 
