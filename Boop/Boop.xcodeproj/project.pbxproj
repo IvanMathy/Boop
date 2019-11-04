@@ -34,6 +34,7 @@
 		2CA245DA22480F9500586DFD /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D722480F9500586DFD /* Fuse.swift */; };
 		2CA245DC224822EA00586DFD /* ScriptTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245DB224822EA00586DFD /* ScriptTableView.swift */; };
 		2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */; };
+		2CC211C5236FB5C1007CECEE /* ScriptsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +90,7 @@
 		2CA245D722480F9500586DFD /* Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fuse.swift; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/Fuse.swift"; sourceTree = "<group>"; };
 		2CA245DB224822EA00586DFD /* ScriptTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTableView.swift; sourceTree = "<group>"; };
 		2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTabViewController.swift; sourceTree = "<group>"; };
+		2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */,
+				2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC211C5236FB5C1007CECEE /* ScriptsSettingsViewController.swift in Sources */,
 				2C53B6E0226D404E00DC6861 /* ScriptExecution.swift in Sources */,
 				2C9118B623406B530018916F /* Colors.swift in Sources */,
 				2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */,
