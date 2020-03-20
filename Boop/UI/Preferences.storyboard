@@ -72,18 +72,18 @@
         <scene sceneID="sxi-Ml-FBf">
             <objects>
                 <viewController title="Scripts" id="oGW-Ve-Lv5" customClass="ScriptsSettingsViewController" customModule="Boop" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="F0t-rM-ABM">
-                        <rect key="frame" x="0.0" y="0.0" width="814" height="178"/>
+                    <view key="view" misplaced="YES" id="F0t-rM-ABM">
+                        <rect key="frame" x="0.0" y="0.0" width="814" height="148"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dko-Nm-ITU">
-                                <rect key="frame" x="30" y="20" width="754" height="138"/>
+                                <rect key="frame" x="30" y="20" width="754" height="108"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-qb-Mm6">
-                                        <rect key="frame" x="0.0" y="62" width="754" height="76"/>
+                                        <rect key="frame" x="0.0" y="62" width="754" height="46"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fGR-br-BfU">
-                                                <rect key="frame" x="-2" y="60" width="186" height="16"/>
+                                                <rect key="frame" x="-2" y="30" width="186" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Custom scripts folder location" id="DTS-D0-TzT">
                                                     <font key="font" usesAppearanceFont="YES"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -91,7 +91,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sFL-0f-jnz">
-                                                <rect key="frame" x="0.0" y="30" width="754" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="754" height="22"/>
                                                 <subviews>
                                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Juk-al-Xug">
                                                         <rect key="frame" x="0.0" y="0.0" width="666" height="22"/>
@@ -130,8 +130,8 @@
                                                     <real value="3.4028234663852886e+38"/>
                                                 </customSpacing>
                                             </stackView>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="kGl-H2-Urf">
-                                                <rect key="frame" x="0.0" y="0.0" width="754" height="22"/>
+                                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGl-H2-Urf">
+                                                <rect key="frame" x="0.0" y="24" width="754" height="22"/>
                                                 <subviews>
                                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ba3-V2-KJM">
                                                         <rect key="frame" x="302" y="0.0" width="151" height="22"/>

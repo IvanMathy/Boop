@@ -32,6 +32,7 @@ class ScriptsSettingsViewController: NSViewController {
         
     }
     
+    // Currently disabled since this is not Sandbox friendly...
     @IBAction func didClickDefaultLocation(_ sender: Any) {
         let alert = NSAlert()
         alert.messageText = "The default Boop folder does not exist. Would you like to create it?"

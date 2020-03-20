@@ -3,7 +3,7 @@
 
 ## Setup
 
-To use custom scripts, you need to tell Boop where to find them. Open the preferences Menu ( `Boop > Preferences...` or `⌘,` ) and go to the Scripts tab. You'll be able to set a custom path for Boop to look in, or create the default script location (`~/Documents/Boop`).
+To use custom scripts, you need to tell Boop where to find them. Open the preferences Menu ( `Boop > Preferences...` or `⌘,` ) and go to the Scripts tab. You'll be able to set a custom path for Boop to look in.
 
 
 ## Writing Custom Scripts
@@ -16,14 +16,14 @@ Each script starts with a declarative JSON document, describing the contents of 
 
 ```javascript
 /**
-	{
-		"api":1,
-		"name":"Add Slashes",
-		"description":"Escapes your text",
-		"author":"Ivan",
-		"icon":"quote",
-		"tags":"add,slashes,escape"
-	}
+  {
+    "api":1,
+    "name":"Add Slashes",
+    "description":"Escapes your text",
+    "author":"Ivan",
+    "icon":"quote",
+    "tags":"add,slashes,escape"
+  }
 **/
 ```
 
@@ -47,6 +47,11 @@ The script execution object is a representation of the current state of the edit
 Make sure you *do not store* the execution object. If you do so, the native ARC system will not release it, leading to memory leaks and a potential crash after 10-15 years of continuous use. All joking aside, this is not a good thing and if we can avoid we'll all be better off.
 
 Script executions are not exactly full Javascript objects, instead they're a proxy to the native `ScriptExecution` Swift class that communicates with the editor. Properties are actually dynamic getters and setters rather than stored values, that way if the `fullText` is huge and you don't actually need it, we're not passing it around needlessly. Therefore, try to only use the values you need and store them in variables to avoid calling native code too often.
+
+### Messaging
+
+Script execution objects have additional functions to communicate with the user, called `postInfo()` and `postError()`. These functions take in a single string argument, that will be presented in the Boop toolbar.
+
 
 ## Limitations
 
