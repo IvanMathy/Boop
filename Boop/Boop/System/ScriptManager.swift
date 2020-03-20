@@ -11,6 +11,9 @@ import SavannaKit
 
 class ScriptManager: NSObject {
     
+    static let userPreferencesPathKey = "scriptsFolderPath"
+    static let userPreferencesDataKey = "scriptsFolderData"
+    
     // This probably does not belong here.
     @IBOutlet weak var statusView: StatusView!
     
@@ -23,18 +26,64 @@ class ScriptManager: NSObject {
         super.init()
         
         loadDefaultScripts()
-        
+        loadUserScripts()
     }
     
+    /// Load built in scripts
     func loadDefaultScripts(){
         let files = Bundle.main.paths(forResourcesOfType: "js", inDirectory: "scripts")
         
-        files.forEach { (script:String) in
+        files.forEach { script in
             loadScript(path: script)
         }
     }
     
-    func loadScript(path:String){
+    
+    /// Load built in scripts
+    func loadUserScripts(){
+        guard let data = UserDefaults.standard.data(forKey: ScriptManager.userPreferencesDataKey) else {
+            // No user path specified, abbandon ship!
+            return
+        }
+        
+        do {
+            
+            var isBookmarkStale = false
+            
+            let url = try URL.init(resolvingBookmarkData: data, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isBookmarkStale)
+            
+            if(isBookmarkStale) {
+                fatalError("Stale!")
+            }
+            
+            guard url.startAccessingSecurityScopedResource() else {
+                return
+            }
+            
+            let urls = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+            
+            urls.forEach { url in
+                guard url.path.hasSuffix(".js") else {
+                    return
+                }
+                loadScript(path: url.path)
+            }
+           
+        }
+        catch let error {
+            print(error)
+            return
+        }
+        
+        
+        
+        
+        
+        
+    }
+    
+    /// Parses a script file
+    private func loadScript(path:String){
         do{
             let script = try String(contentsOfFile: path)
             
@@ -101,7 +150,7 @@ class ScriptManager: NSObject {
         }
         
         replaceText(ranges: ranges, values: values, editor: editor)
-
+        
         
     }
     
@@ -128,7 +177,7 @@ class ScriptManager: NSObject {
                 
                 offset += value.count - length
                 return (newRange, value)
-            }
+        }
         
         
         guard textView.shouldChangeText(inRanges: ranges as [NSValue], replacementStrings: values) else {
@@ -155,7 +204,7 @@ class ScriptManager: NSObject {
         
         return scriptExecution.text ?? ""
     }
-
+    
 }
 
 extension ScriptManager: ScriptDelegate {

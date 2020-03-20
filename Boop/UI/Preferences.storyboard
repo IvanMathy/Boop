@@ -34,7 +34,6 @@
                     <tabViewItems>
                         <tabViewItem label="General" identifier="" image="NSPreferencesGeneral" id="e4T-Zs-Uwe"/>
                         <tabViewItem label="Scripts" identifier="" image="NSNetwork" id="drV-oE-7k3"/>
-                        <tabViewItem label="Editor" image="NSFontPanel" id="h82-Bd-5Ub"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="nRh-fE-4La">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -48,7 +47,6 @@
                         <outlet property="tabView" destination="nRh-fE-4La" id="Lf1-uB-6kn"/>
                         <segue destination="dVd-GH-dN9" kind="relationship" relationship="tabItems" id="Yv9-KJ-Ugb"/>
                         <segue destination="oGW-Ve-Lv5" kind="relationship" relationship="tabItems" id="EhK-SX-Eff"/>
-                        <segue destination="IHQ-4i-6gQ" kind="relationship" relationship="tabItems" id="OEO-3C-XeY"/>
                     </connections>
                 </tabViewController>
                 <customObject id="cp6-kM-xr4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -72,7 +70,7 @@
         <scene sceneID="sxi-Ml-FBf">
             <objects>
                 <viewController title="Scripts" id="oGW-Ve-Lv5" customClass="ScriptsSettingsViewController" customModule="Boop" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="F0t-rM-ABM">
+                    <view key="view" id="F0t-rM-ABM">
                         <rect key="frame" x="0.0" y="0.0" width="814" height="148"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -101,7 +99,11 @@
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
-                                                            <binding destination="l2g-ul-G9x" name="value" keyPath="values.scriptsFolderPath" id="KWq-0x-GBV"/>
+                                                            <binding destination="l2g-ul-G9x" name="value" keyPath="values.scriptsFolderPath" id="If4-rh-hNi">
+                                                                <dictionary key="options">
+                                                                    <string key="NSNullPlaceholder">Nothing selected :(</string>
+                                                                </dictionary>
+                                                            </binding>
                                                         </connections>
                                                     </textField>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tPh-7S-HTs">
@@ -239,7 +241,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NSFontPanel" width="32" height="32"/>
         <image name="NSNetwork" width="32" height="32"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
     </resources>

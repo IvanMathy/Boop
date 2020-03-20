@@ -11,24 +11,38 @@ import Foundation
 
 class ScriptsSettingsViewController: NSViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
     @IBAction func didClickBrowseButton(_ sender: Any) {
         let panel = NSOpenPanel()
-        
-        // panel.directoryURL
         
         panel.canChooseFiles = false
         panel.canChooseDirectories = true
         panel.allowsMultipleSelection = false
         
-        guard panel.runModal() == .OK, let url = panel.directoryURL else {
-            return
-        }
+//        guard panel.runModal() == .OK, let url = panel.directoryURL else {
+//            return
+//        }
         
-        UserDefaults.standard.set(url, forKey: "scriptsFolderPath")
+        
+        panel.begin
+           {
+            result in
+            if result.rawValue == NSFileHandlingPanelOKButton {
+                do {
+                    guard let url = panel.url else {
+                            return
+                    }
+                    
+                    let data = try url.bookmarkData(options: NSURL.BookmarkCreationOptions.withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
+                    
+                    UserDefaults.standard.set(url, forKey: ScriptManager.userPreferencesPathKey)
+                    UserDefaults.standard.set(data, forKey: ScriptManager.userPreferencesDataKey)
+                    
+                    
+                } catch let error {
+                    print(error)
+                }
+               }
+           }
         
     }
     
