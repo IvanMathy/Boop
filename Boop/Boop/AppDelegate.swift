@@ -17,6 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Disable light mode because why in heck would you want that???
         NSApp.appearance = NSAppearance(named: .darkAqua)
+        
+        NSWindow.allowsAutomaticWindowTabbing = false
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
