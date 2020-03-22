@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C17C66A24271DDA005C911C /* BoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C66924271DDA005C911C /* BoopTests.swift */; };
+		2C17C67224271EBD005C911C /* ScriptManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C67124271EBD005C911C /* ScriptManagerTests.swift */; };
+		2C17C67324271EE8005C911C /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DB2214E45300AFF8CD /* ScriptManager.swift */; };
+		2C17C67524271F2F005C911C /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; };
+		2C17C6762427214B005C911C /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DE2214E46800AFF8CD /* Script.swift */; };
+		2C17C6772427214D005C911C /* ScriptExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */; };
+		2C17C67A24272156005C911C /* String+Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D622480F9500586DFD /* String+Fuse.swift */; };
+		2C17C67B2427218B005C911C /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669921FD76900082570E /* StatusView.swift */; };
+		2C17C67C242721C5005C911C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9118B523406B530018916F /* Colors.swift */; };
+		2C17C67E24272203005C911C /* FuseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C67D24272203005C911C /* FuseUtilities.swift */; };
+		2C17C67F24272203005C911C /* FuseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C67D24272203005C911C /* FuseUtilities.swift */; };
+		2C17C68124272343005C911C /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C68024272343005C911C /* Fuse.swift */; };
+		2C17C682242723CF005C911C /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C68024272343005C911C /* Fuse.swift */; };
 		2C20667621FD628E0082570E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20667521FD628E0082570E /* AppDelegate.swift */; };
 		2C20667821FD62910082570E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667721FD62910082570E /* Assets.xcassets */; };
 		2C20667B21FD62910082570E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667921FD62910082570E /* MainMenu.xib */; };
@@ -29,13 +42,21 @@
 		2C9761DC2214E45300AFF8CD /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DB2214E45300AFF8CD /* ScriptManager.swift */; };
 		2C9761DF2214E46800AFF8CD /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DE2214E46800AFF8CD /* Script.swift */; };
 		2C9761E12214E68D00AFF8CD /* ScriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */; };
-		2CA245D822480F9500586DFD /* FuseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D522480F9500586DFD /* FuseUtilities.swift */; };
 		2CA245D922480F9500586DFD /* String+Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D622480F9500586DFD /* String+Fuse.swift */; };
-		2CA245DA22480F9500586DFD /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D722480F9500586DFD /* Fuse.swift */; };
 		2CA245DC224822EA00586DFD /* ScriptTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245DB224822EA00586DFD /* ScriptTableView.swift */; };
 		2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */; };
 		2CC211C5236FB5C1007CECEE /* ScriptsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C17C66C24271DDA005C911C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C20666A21FD628E0082570E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C20667121FD628E0082570E;
+			remoteInfo = Boop;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		2C3B003C22E3758100BBD4D0 /* Embed Frameworks */ = {
@@ -61,6 +82,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2C17C66724271DDA005C911C /* BoopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C17C66924271DDA005C911C /* BoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoopTests.swift; sourceTree = "<group>"; };
+		2C17C66B24271DDA005C911C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C17C67124271EBD005C911C /* ScriptManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptManagerTests.swift; sourceTree = "<group>"; };
+		2C17C67D24272203005C911C /* FuseUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuseUtilities.swift; sourceTree = "<group>"; };
+		2C17C68024272343005C911C /* Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fuse.swift; sourceTree = "<group>"; };
 		2C20667221FD628E0082570E /* Boop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C20667521FD628E0082570E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C20667721FD62910082570E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,15 +112,21 @@
 		2C9761DB2214E45300AFF8CD /* ScriptManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptManager.swift; sourceTree = "<group>"; };
 		2C9761DE2214E46800AFF8CD /* Script.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
 		2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTableViewCell.swift; sourceTree = "<group>"; };
-		2CA245D522480F9500586DFD /* FuseUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FuseUtilities.swift; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/FuseUtilities.swift"; sourceTree = "<group>"; };
 		2CA245D622480F9500586DFD /* String+Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Fuse.swift"; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/String+Fuse.swift"; sourceTree = "<group>"; };
-		2CA245D722480F9500586DFD /* Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fuse.swift; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/Fuse.swift"; sourceTree = "<group>"; };
 		2CA245DB224822EA00586DFD /* ScriptTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTableView.swift; sourceTree = "<group>"; };
 		2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTabViewController.swift; sourceTree = "<group>"; };
 		2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2C17C66424271DDA005C911C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C17C67524271F2F005C911C /* SavannaKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C20666F21FD628E0082570E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,13 +138,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C17C66824271DDA005C911C /* BoopTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C17C66924271DDA005C911C /* BoopTests.swift */,
+				2C17C66B24271DDA005C911C /* Info.plist */,
+				2C17C67124271EBD005C911C /* ScriptManagerTests.swift */,
+			);
+			path = BoopTests;
+			sourceTree = "<group>";
+		};
+		2C17C67424271F2F005C911C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2C20666921FD628E0082570E = {
 			isa = PBXGroup;
 			children = (
 				2C5ED41C2357F65400322893 /* UI */,
 				2CA245D322480F2200586DFD /* Dependencies */,
 				2C20667421FD628E0082570E /* Boop */,
+				2C17C66824271DDA005C911C /* BoopTests */,
 				2C20667321FD628E0082570E /* Products */,
+				2C17C67424271F2F005C911C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				2C20667221FD628E0082570E /* Boop.app */,
+				2C17C66724271DDA005C911C /* BoopTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +196,8 @@
 		2C20668321FD62D00082570E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C17C68024272343005C911C /* Fuse.swift */,
+				2C17C67D24272203005C911C /* FuseUtilities.swift */,
 				2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */,
 			);
 			path = Frameworks;
@@ -229,8 +284,6 @@
 		2CA245D422480F8C00586DFD /* Fuse */ = {
 			isa = PBXGroup;
 			children = (
-				2CA245D722480F9500586DFD /* Fuse.swift */,
-				2CA245D522480F9500586DFD /* FuseUtilities.swift */,
 				2CA245D622480F9500586DFD /* String+Fuse.swift */,
 			);
 			path = Fuse;
@@ -248,6 +301,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2C17C66624271DDA005C911C /* BoopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C17C67024271DDA005C911C /* Build configuration list for PBXNativeTarget "BoopTests" */;
+			buildPhases = (
+				2C17C66324271DDA005C911C /* Sources */,
+				2C17C66424271DDA005C911C /* Frameworks */,
+				2C17C66524271DDA005C911C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C17C66D24271DDA005C911C /* PBXTargetDependency */,
+			);
+			name = BoopTests;
+			productName = BoopTests;
+			productReference = 2C17C66724271DDA005C911C /* BoopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2C20667121FD628E0082570E /* Boop */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C20668021FD62910082570E /* Build configuration list for PBXNativeTarget "Boop" */;
@@ -273,10 +344,14 @@
 		2C20666A21FD628E0082570E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = OKatBest;
 				TargetAttributes = {
+					2C17C66624271DDA005C911C = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 2C20667121FD628E0082570E;
+					};
 					2C20667121FD628E0082570E = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -296,11 +371,19 @@
 			projectRoot = "";
 			targets = (
 				2C20667121FD628E0082570E /* Boop */,
+				2C17C66624271DDA005C911C /* BoopTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2C17C66524271DDA005C911C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C20667021FD628E0082570E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,23 +398,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2C17C66324271DDA005C911C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C17C67224271EBD005C911C /* ScriptManagerTests.swift in Sources */,
+				2C17C67E24272203005C911C /* FuseUtilities.swift in Sources */,
+				2C17C67B2427218B005C911C /* StatusView.swift in Sources */,
+				2C17C67A24272156005C911C /* String+Fuse.swift in Sources */,
+				2C17C6762427214B005C911C /* Script.swift in Sources */,
+				2C17C682242723CF005C911C /* Fuse.swift in Sources */,
+				2C17C67C242721C5005C911C /* Colors.swift in Sources */,
+				2C17C6772427214D005C911C /* ScriptExecution.swift in Sources */,
+				2C17C66A24271DDA005C911C /* BoopTests.swift in Sources */,
+				2C17C67324271EE8005C911C /* ScriptManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C20666E21FD628E0082570E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2CC211C5236FB5C1007CECEE /* ScriptsSettingsViewController.swift in Sources */,
+				2C17C68124272343005C911C /* Fuse.swift in Sources */,
 				2C53B6E0226D404E00DC6861 /* ScriptExecution.swift in Sources */,
 				2C9118B623406B530018916F /* Colors.swift in Sources */,
 				2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */,
 				2CA245D922480F9500586DFD /* String+Fuse.swift in Sources */,
 				2C9761DF2214E46800AFF8CD /* Script.swift in Sources */,
 				2C20669121FD64A20082570E /* DefaultTheme.swift in Sources */,
-				2CA245DA22480F9500586DFD /* Fuse.swift in Sources */,
 				2C9761DC2214E45300AFF8CD /* ScriptManager.swift in Sources */,
 				2C20667621FD628E0082570E /* AppDelegate.swift in Sources */,
 				2C20669E21FE445E0082570E /* OverlayView.swift in Sources */,
 				2C9761E12214E68D00AFF8CD /* ScriptTableViewCell.swift in Sources */,
-				2CA245D822480F9500586DFD /* FuseUtilities.swift in Sources */,
 				2CA245DC224822EA00586DFD /* ScriptTableView.swift in Sources */,
 				2C20669521FD6F400082570E /* BoopLexer.swift in Sources */,
 				2C20669C21FE3E060082570E /* BoopToken.swift in Sources */,
@@ -341,10 +440,19 @@
 				2C20669A21FD76900082570E /* StatusView.swift in Sources */,
 				2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */,
 				2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */,
+				2C17C67F24272203005C911C /* FuseUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C17C66D24271DDA005C911C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C20667121FD628E0082570E /* Boop */;
+			targetProxy = 2C17C66C24271DDA005C911C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2C20667921FD62910082570E /* MainMenu.xib */ = {
@@ -358,6 +466,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2C17C66E24271DDA005C911C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RLZ8XBTX7G;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/Mac/**";
+				INFOPLIST_FILE = BoopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.BoopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boop.app/Contents/MacOS/Boop";
+			};
+			name = Debug;
+		};
+		2C17C66F24271DDA005C911C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RLZ8XBTX7G;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/Mac/**";
+				INFOPLIST_FILE = BoopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.BoopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boop.app/Contents/MacOS/Boop";
+			};
+			name = Release;
+		};
 		2C20667E21FD62910082570E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -494,6 +644,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -522,6 +673,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -532,6 +684,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2C17C67024271DDA005C911C /* Build configuration list for PBXNativeTarget "BoopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C17C66E24271DDA005C911C /* Debug */,
+				2C17C66F24271DDA005C911C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2C20666D21FD628E0082570E /* Build configuration list for PBXProject "Boop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

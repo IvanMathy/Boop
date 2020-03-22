@@ -9,6 +9,7 @@
 import Cocoa
 import SavannaKit
 
+
 class ScriptManager: NSObject {
     
     static let userPreferencesPathKey = "scriptsFolderPath"
