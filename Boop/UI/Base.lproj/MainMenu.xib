@@ -424,11 +424,13 @@ Gw
                                     <action selector="closePickerMenu:" target="Voe-Tx-rLC" id="b8d-Jr-eLb"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="qeG-jv-U7I"/>
                             <menuItem title="Re-execute Last Script" keyEquivalent="B" id="5MU-C4-39m">
                                 <connections>
                                     <action selector="executeLastScript:" target="Voe-Tx-rLC" id="b6h-FJ-qEs"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="Zfh-13-od8"/>
                             <menuItem title="Reload Scripts" keyEquivalent="R" id="AVC-ge-jRm">
                                 <connections>
                                     <action selector="reloadScripts:" target="Voe-Tx-rLC" id="Rmu-D9-Xm5"/>

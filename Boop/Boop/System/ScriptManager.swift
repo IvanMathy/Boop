@@ -76,12 +76,6 @@ class ScriptManager: NSObject {
             print(error)
             return
         }
-        
-        
-        
-        
-        
-        
     }
     
     /// Parses a script file
@@ -127,6 +121,8 @@ class ScriptManager: NSObject {
     func runScript(_ script: Script, into editor: SyntaxTextView) {
         
         let fullText = editor.text
+        
+        lastScript = script
         
         guard let ranges = editor.contentTextView.selectedRanges as? [NSRange], ranges.reduce(0, { $0 + $1.length }) > 0 else {
             

@@ -39,19 +39,6 @@ class PopoverViewController: NSViewController {
             (_ theEvent: NSEvent) -> NSEvent in
             
             var didSomething = false
-            
-            guard self.enabled else {
-                if theEvent.modifierFlags.contains(NSEvent.ModifierFlags.command)
-                    && theEvent.keyCode == 11 { // cmd + B
-                    
-                    // Open the popover
-                    self.show()
-                    
-                    return NSEvent()
-                }
-                
-                return theEvent
-            }
                 
             // Key codes:
             // 125 is down arrow
