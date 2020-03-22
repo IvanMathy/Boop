@@ -16,10 +16,10 @@
 		2C17C67A24272156005C911C /* String+Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245D622480F9500586DFD /* String+Fuse.swift */; };
 		2C17C67B2427218B005C911C /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669921FD76900082570E /* StatusView.swift */; };
 		2C17C67C242721C5005C911C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9118B523406B530018916F /* Colors.swift */; };
-		2C17C67E24272203005C911C /* FuseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C67D24272203005C911C /* FuseUtilities.swift */; };
-		2C17C67F24272203005C911C /* FuseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C67D24272203005C911C /* FuseUtilities.swift */; };
-		2C17C68124272343005C911C /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C68024272343005C911C /* Fuse.swift */; };
-		2C17C682242723CF005C911C /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C68024272343005C911C /* Fuse.swift */; };
+		2C17C685242728F2005C911C /* FuseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C683242728F2005C911C /* FuseUtilities.swift */; };
+		2C17C686242728F2005C911C /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C684242728F2005C911C /* Fuse.swift */; };
+		2C17C68724272901005C911C /* Fuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C684242728F2005C911C /* Fuse.swift */; };
+		2C17C68824272903005C911C /* FuseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C683242728F2005C911C /* FuseUtilities.swift */; };
 		2C20667621FD628E0082570E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20667521FD628E0082570E /* AppDelegate.swift */; };
 		2C20667821FD62910082570E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667721FD62910082570E /* Assets.xcassets */; };
 		2C20667B21FD62910082570E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667921FD62910082570E /* MainMenu.xib */; };
@@ -86,8 +86,8 @@
 		2C17C66924271DDA005C911C /* BoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoopTests.swift; sourceTree = "<group>"; };
 		2C17C66B24271DDA005C911C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C17C67124271EBD005C911C /* ScriptManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptManagerTests.swift; sourceTree = "<group>"; };
-		2C17C67D24272203005C911C /* FuseUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuseUtilities.swift; sourceTree = "<group>"; };
-		2C17C68024272343005C911C /* Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fuse.swift; sourceTree = "<group>"; };
+		2C17C683242728F2005C911C /* FuseUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FuseUtilities.swift; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/FuseUtilities.swift"; sourceTree = "<group>"; };
+		2C17C684242728F2005C911C /* Fuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fuse.swift; path = "../../../Carthage/Checkouts/fuse-swift/Fuse/Classes/Fuse.swift"; sourceTree = "<group>"; };
 		2C20667221FD628E0082570E /* Boop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C20667521FD628E0082570E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C20667721FD62910082570E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -196,8 +196,6 @@
 		2C20668321FD62D00082570E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2C17C68024272343005C911C /* Fuse.swift */,
-				2C17C67D24272203005C911C /* FuseUtilities.swift */,
 				2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */,
 			);
 			path = Frameworks;
@@ -284,6 +282,8 @@
 		2CA245D422480F8C00586DFD /* Fuse */ = {
 			isa = PBXGroup;
 			children = (
+				2C17C684242728F2005C911C /* Fuse.swift */,
+				2C17C683242728F2005C911C /* FuseUtilities.swift */,
 				2CA245D622480F9500586DFD /* String+Fuse.swift */,
 			);
 			path = Fuse;
@@ -403,11 +403,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C17C67224271EBD005C911C /* ScriptManagerTests.swift in Sources */,
-				2C17C67E24272203005C911C /* FuseUtilities.swift in Sources */,
 				2C17C67B2427218B005C911C /* StatusView.swift in Sources */,
 				2C17C67A24272156005C911C /* String+Fuse.swift in Sources */,
+				2C17C68724272901005C911C /* Fuse.swift in Sources */,
+				2C17C68824272903005C911C /* FuseUtilities.swift in Sources */,
 				2C17C6762427214B005C911C /* Script.swift in Sources */,
-				2C17C682242723CF005C911C /* Fuse.swift in Sources */,
 				2C17C67C242721C5005C911C /* Colors.swift in Sources */,
 				2C17C6772427214D005C911C /* ScriptExecution.swift in Sources */,
 				2C17C66A24271DDA005C911C /* BoopTests.swift in Sources */,
@@ -419,8 +419,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C17C686242728F2005C911C /* Fuse.swift in Sources */,
 				2CC211C5236FB5C1007CECEE /* ScriptsSettingsViewController.swift in Sources */,
-				2C17C68124272343005C911C /* Fuse.swift in Sources */,
 				2C53B6E0226D404E00DC6861 /* ScriptExecution.swift in Sources */,
 				2C9118B623406B530018916F /* Colors.swift in Sources */,
 				2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */,
@@ -440,7 +440,7 @@
 				2C20669A21FD76900082570E /* StatusView.swift in Sources */,
 				2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */,
 				2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */,
-				2C17C67F24272203005C911C /* FuseUtilities.swift in Sources */,
+				2C17C685242728F2005C911C /* FuseUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
