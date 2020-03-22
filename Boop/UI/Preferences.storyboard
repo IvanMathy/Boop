@@ -10,7 +10,7 @@
         <scene sceneID="nfO-EN-Svw">
             <objects>
                 <windowController id="gXf-A7-SMz" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="0OU-e2-WQo">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="0OU-e2-WQo">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="249" width="480" height="270"/>
@@ -32,8 +32,7 @@
             <objects>
                 <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="YGr-Uf-ZBE" customClass="PreferencesTabViewController" customModule="Boop" customModuleProvider="target" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem label="General" identifier="" image="NSPreferencesGeneral" id="e4T-Zs-Uwe"/>
-                        <tabViewItem label="Scripts" identifier="" image="NSNetwork" id="drV-oE-7k3"/>
+                        <tabViewItem label="Scripts" identifier="" image="NSAdvanced" id="drV-oE-7k3"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="nRh-fE-4La">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -45,7 +44,6 @@
                     </tabView>
                     <connections>
                         <outlet property="tabView" destination="nRh-fE-4La" id="Lf1-uB-6kn"/>
-                        <segue destination="dVd-GH-dN9" kind="relationship" relationship="tabItems" id="Yv9-KJ-Ugb"/>
                         <segue destination="oGW-Ve-Lv5" kind="relationship" relationship="tabItems" id="EhK-SX-Eff"/>
                     </connections>
                 </tabViewController>
@@ -66,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="698" y="75.5"/>
         </scene>
-        <!--Scripts-->
+        <!--General-->
         <scene sceneID="sxi-Ml-FBf">
             <objects>
-                <viewController title="Scripts" id="oGW-Ve-Lv5" customClass="ScriptsSettingsViewController" customModule="Boop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="General" id="oGW-Ve-Lv5" customClass="ScriptsSettingsViewController" customModule="Boop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="F0t-rM-ABM">
                         <rect key="frame" x="0.0" y="0.0" width="814" height="148"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -241,7 +239,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NSNetwork" width="32" height="32"/>
-        <image name="NSPreferencesGeneral" width="32" height="32"/>
+        <image name="NSAdvanced" width="32" height="32"/>
     </resources>
 </document>

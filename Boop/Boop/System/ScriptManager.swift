@@ -22,6 +22,8 @@ class ScriptManager: NSObject {
     
     let currentAPIVersion = 1.0
     
+    var lastScript: Script?
+    
     override init() {
         super.init()
         
@@ -203,6 +205,15 @@ class ScriptManager: NSObject {
         script.run(with: scriptExecution)
         
         return scriptExecution.text ?? ""
+    }
+    
+    func runScriptAgain(editor: SyntaxTextView) {
+        guard let script = lastScript else {
+            NSSound.beep()
+            return
+        }
+        
+        runScript(script, into: editor)
     }
     
 }

@@ -12,7 +12,10 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-
+    @IBOutlet weak var popoverViewController: PopoverViewController!
+    @IBOutlet weak var openPickerMenuItem: NSMenuItem!
+    @IBOutlet weak var closePickerMenuItem: NSMenuItem!
+    
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Disable light mode because why in heck would you want that???
@@ -36,5 +39,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
     
+    // Menu Stuff
+    
+    @IBAction func openPickerMenu(_ sender: NSMenuItem) {
+        popoverViewController.show()
+    }
+    
+    @IBAction func closePickerMenu(_ sender: Any) {
+        popoverViewController.hide()
+    }
+    
+    @IBAction func executeLastScript(_ sender: Any) {
+        popoverViewController.runScriptAgain()
+    }
+    
+    @IBAction func reloadScripts(_ sender: Any) {
+    }
+    
+    func setPopover(isOpen: Bool) {
+        closePickerMenuItem.isHidden = !isOpen
+        openPickerMenuItem.isHidden = isOpen
+    }
 }
 
