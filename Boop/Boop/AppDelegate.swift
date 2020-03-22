@@ -12,10 +12,11 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-    @IBOutlet weak var popoverViewController: PopoverViewController!
     @IBOutlet weak var openPickerMenuItem: NSMenuItem!
     @IBOutlet weak var closePickerMenuItem: NSMenuItem!
     
+    @IBOutlet weak var popoverViewController: PopoverViewController!
+    @IBOutlet weak var scriptManager: ScriptManager!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Disable light mode because why in heck would you want that???
@@ -54,6 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func reloadScripts(_ sender: Any) {
+        scriptManager.reloadScripts()
     }
     
     func setPopover(isOpen: Bool) {

@@ -212,6 +212,15 @@ class ScriptManager: NSObject {
         runScript(script, into: editor)
     }
     
+    func reloadScripts() {
+        lastScript = nil
+        scripts.removeAll()
+        loadDefaultScripts()
+        loadUserScripts()
+        
+        statusView.setStatus(.success("Reloaded Scripts"))
+    }
+    
 }
 
 extension ScriptManager: ScriptDelegate {
