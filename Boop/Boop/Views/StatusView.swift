@@ -13,6 +13,7 @@ enum Status {
     case help(String)
     case info(String)
     case error(String)
+    case success(String)
 }
 
 @IBDesignable
@@ -90,6 +91,8 @@ class StatusView: NSView {
             text = value
         case .error(let value):
             text = value
+        case .success(let value):
+            text = value
         case .normal:
             text = "Press ⌘+B to get started"
         }
@@ -113,6 +116,8 @@ class StatusView: NSView {
         switch newStatus {
         case .normal, .help(_):
             break
+        case .success(_):
+            color = Colors.greenButDarker
         case .info(_):
             color = Colors.blueButDarker
         case .error(_):

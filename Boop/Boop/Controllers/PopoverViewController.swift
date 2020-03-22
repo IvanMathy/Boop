@@ -22,6 +22,7 @@ class PopoverViewController: NSViewController {
     @IBOutlet weak var tableView: ScriptTableView!
     @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableViewController: ScriptsTableViewController!
+    @IBOutlet weak var appDelegate: AppDelegate!
     
     var enabled = false // Closed by default
 
@@ -38,19 +39,6 @@ class PopoverViewController: NSViewController {
             (_ theEvent: NSEvent) -> NSEvent in
             
             var didSomething = false
-            
-            guard self.enabled else {
-                if theEvent.modifierFlags.contains(NSEvent.ModifierFlags.command)
-                    && theEvent.keyCode == 11 { // cmd + B
-                    
-                    // Open the popover
-                    self.show()
-                    
-                    return NSEvent()
-                }
-                
-                return theEvent
-            }
                 
             // Key codes:
             // 125 is down arrow
@@ -132,6 +120,8 @@ class PopoverViewController: NSViewController {
         self.view.window?.makeFirstResponder(self.searchField)
         self.enabled = true
         
+        appDelegate.setPopover(isOpen: true)
+        
     }
     
     func hide() {
@@ -143,6 +133,12 @@ class PopoverViewController: NSViewController {
         self.view.window?.makeFirstResponder(self.editorView.contentTextView)
         self.enabled = false
         self.tableHeightConstraint.animator().constant = 0
+        
+        appDelegate.setPopover(isOpen: false)
+    }
+    
+    func runScriptAgain() {
+        self.scriptManager.runScriptAgain(editor: self.editorView)
     }
     
 }

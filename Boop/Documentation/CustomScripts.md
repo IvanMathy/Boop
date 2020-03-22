@@ -1,4 +1,12 @@
-## Custom Scripts
+# Custom Scripts
+
+
+## Setup
+
+To use custom scripts, you need to tell Boop where to find them. Open the preferences Menu ( `Boop > Preferences...` or `⌘,` ) and go to the Scripts tab. You'll be able to set a custom path for Boop to look in.
+
+
+## Writing Custom Scripts
 
 You can easily extend Boop with custom scripts to add your own functionality. Each script is a self-contained Javascript file that is loaded at app launch. If you make something cool or useful, feel free to submit a PR and share it with everyone else!
 
@@ -8,14 +16,14 @@ Each script starts with a declarative JSON document, describing the contents of 
 
 ```javascript
 /**
-	{
-		"api":1,
-		"name":"Add Slashes",
-		"description":"Escapes your text",
-		"author":"Ivan",
-		"icon":"quote",
-		"tags":"add,slashes,escape"
-	}
+  {
+    "api":1,
+    "name":"Add Slashes",
+    "description":"Escapes your text",
+    "author":"Ivan",
+    "icon":"quote",
+    "tags":"add,slashes,escape"
+  }
 **/
 ```
 
@@ -40,7 +48,12 @@ Make sure you *do not store* the execution object. If you do so, the native ARC 
 
 Script executions are not exactly full Javascript objects, instead they're a proxy to the native `ScriptExecution` Swift class that communicates with the editor. Properties are actually dynamic getters and setters rather than stored values, that way if the `fullText` is huge and you don't actually need it, we're not passing it around needlessly. Therefore, try to only use the values you need and store them in variables to avoid calling native code too often.
 
-### Limitations
+### Messaging
+
+Script execution objects have additional functions to communicate with the user, called `postInfo()` and `postError()`. These functions take in a single string argument, that will be presented in the Boop toolbar.
+
+
+## Limitations
 
 ### Performance
 

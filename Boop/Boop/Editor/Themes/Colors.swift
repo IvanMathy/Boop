@@ -18,6 +18,7 @@ struct Colors {
     static let commentGrey: NSColor = #colorLiteral(red: 0.7008966023, green: 0.7301803691, blue: 0.8538076556, alpha: 1) // #9BCCE3
     static let redButDarker: NSColor = #colorLiteral(red: 0.7254901961, green: 0.09411764706, blue: 0.262745098, alpha: 1) // #B91843
     static let blueButDarker: NSColor = #colorLiteral(red: 0, green: 0.4156862745, blue: 0.7176470588, alpha: 1) // #006AB7
+    static let greenButDarker: NSColor = #colorLiteral(red: 0, green: 0.6980392157, blue: 0, alpha: 1) // #00B200
 }
 
 
