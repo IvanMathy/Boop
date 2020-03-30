@@ -46,7 +46,7 @@ class PopoverViewController: NSViewController {
             // 53 is escape
             // 36 is enter
        
-            if theEvent.keyCode == 53 { // ESCAPE
+            if theEvent.keyCode == 53 && self.enabled { // ESCAPE
                 
                 // Let's dismiss the popover
                 self.hide()
@@ -54,7 +54,7 @@ class PopoverViewController: NSViewController {
                 didSomething = true
             }
             
-            if theEvent.keyCode == 36 { // ENTER
+            if theEvent.keyCode == 36 && self.enabled { // ENTER
                 
                 guard let script = self.tableViewController.selectedScript else {
                     return theEvent // Return event to beep

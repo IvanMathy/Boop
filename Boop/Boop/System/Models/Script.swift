@@ -8,6 +8,7 @@
 
 import Foundation
 import JavaScriptCore
+import Fuse
 
 class Script: NSObject {
     
@@ -20,10 +21,10 @@ class Script: NSObject {
     
     var info:[String: Any]
     
-    @objc dynamic var name: String?
-    @objc dynamic var tags: String?
-    @objc dynamic var desc: String?
-    @objc dynamic var icon: String?
+    var name: String?
+    var tags: String?
+    var desc: String?
+    var icon: String?
     
     weak var delegate: ScriptDelegate?
     
@@ -77,9 +78,9 @@ extension Script: Fuseable {
     
     var properties: [FuseProperty] {
         return [
-            FuseProperty(name: "name", weight: 0.9),
-            FuseProperty(name: "tags", weight: 0.6),
-            FuseProperty(name: "desc", weight: 0.2)
+            FuseProperty(value: name, weight: 0.9),
+            FuseProperty(value: tags, weight: 0.6),
+            FuseProperty(value: desc, weight: 0.2)
         ]
     }
 }

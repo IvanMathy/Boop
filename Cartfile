@@ -1,2 +1,2 @@
-github "crtgregoric/fuse-swift" "improvements/swift5"
+github "IvanMathy/fuse-swift" >= 2.0.0
 github "IvanMathy/savannakit"
