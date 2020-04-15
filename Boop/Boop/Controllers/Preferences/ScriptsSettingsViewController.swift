@@ -10,6 +10,13 @@ import Cocoa
 import Foundation
 
 class ScriptsSettingsViewController: NSViewController {
+    
+    static func setBookmarkData(url: URL) throws {
+        
+        let data = try url.bookmarkData(options: NSURL.BookmarkCreationOptions.withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
+        
+        UserDefaults.standard.set(data, forKey: ScriptManager.userPreferencesDataKey)
+    }
 
     @IBAction func didClickBrowseButton(_ sender: Any) {
         let panel = NSOpenPanel()
@@ -32,10 +39,9 @@ class ScriptsSettingsViewController: NSViewController {
                             return
                     }
                     
-                    let data = try url.bookmarkData(options: NSURL.BookmarkCreationOptions.withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
-                    
                     UserDefaults.standard.set(url, forKey: ScriptManager.userPreferencesPathKey)
-                    UserDefaults.standard.set(data, forKey: ScriptManager.userPreferencesDataKey)
+                    
+                    try ScriptsSettingsViewController.setBookmarkData(url: url)
                     
                     
                 } catch let error {

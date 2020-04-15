@@ -57,7 +57,11 @@ class ScriptManager: NSObject {
             let url = try URL.init(resolvingBookmarkData: data, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isBookmarkStale)
             
             if(isBookmarkStale) {
-                fatalError("Stale!")
+                do {
+                    try ScriptsSettingsViewController.setBookmarkData(url: url)
+                } catch let error {
+                    print(error)
+                }
             }
             
             guard url.startAccessingSecurityScopedResource() else {
