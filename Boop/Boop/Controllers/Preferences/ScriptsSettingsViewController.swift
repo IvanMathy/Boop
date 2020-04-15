@@ -10,13 +10,6 @@ import Cocoa
 import Foundation
 
 class ScriptsSettingsViewController: NSViewController {
-    
-    static func setBookmarkData(url: URL) throws {
-        
-        let data = try url.bookmarkData(options: NSURL.BookmarkCreationOptions.withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
-        
-        UserDefaults.standard.set(data, forKey: ScriptManager.userPreferencesDataKey)
-    }
 
     @IBAction func didClickBrowseButton(_ sender: Any) {
         let panel = NSOpenPanel()
@@ -25,30 +18,22 @@ class ScriptsSettingsViewController: NSViewController {
         panel.canChooseDirectories = true
         panel.allowsMultipleSelection = false
         
-//        guard panel.runModal() == .OK, let url = panel.directoryURL else {
-//            return
-//        }
-        
-        
-        panel.begin
-           {
-            result in
-            if result.rawValue == NSFileHandlingPanelOKButton {
-                do {
-                    guard let url = panel.url else {
-                            return
-                    }
-                    
-                    UserDefaults.standard.set(url, forKey: ScriptManager.userPreferencesPathKey)
-                    
-                    try ScriptsSettingsViewController.setBookmarkData(url: url)
-                    
-                    
-                } catch let error {
-                    print(error)
+        panel.begin { result in
+            do {
+                
+                guard let url = panel.url, result == NSApplication.ModalResponse.OK else {
+                        return
                 }
-               }
-           }
+                
+                UserDefaults.standard.set(url, forKey: ScriptManager.userPreferencesPathKey)
+                
+                try ScriptManager.setBookmarkData(url: url)
+                
+            } catch let error {
+                print(error)
+            }
+            
+        }
         
     }
     
