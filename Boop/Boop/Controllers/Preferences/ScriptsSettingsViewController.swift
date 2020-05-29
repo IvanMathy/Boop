@@ -18,31 +18,22 @@ class ScriptsSettingsViewController: NSViewController {
         panel.canChooseDirectories = true
         panel.allowsMultipleSelection = false
         
-//        guard panel.runModal() == .OK, let url = panel.directoryURL else {
-//            return
-//        }
-        
-        
-        panel.begin
-           {
-            result in
-            if result.rawValue == NSFileHandlingPanelOKButton {
-                do {
-                    guard let url = panel.url else {
-                            return
-                    }
-                    
-                    let data = try url.bookmarkData(options: NSURL.BookmarkCreationOptions.withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
-                    
-                    UserDefaults.standard.set(url, forKey: ScriptManager.userPreferencesPathKey)
-                    UserDefaults.standard.set(data, forKey: ScriptManager.userPreferencesDataKey)
-                    
-                    
-                } catch let error {
-                    print(error)
+        panel.begin { result in
+            do {
+                
+                guard let url = panel.url, result == NSApplication.ModalResponse.OK else {
+                        return
                 }
-               }
-           }
+                
+                UserDefaults.standard.set(url, forKey: ScriptManager.userPreferencesPathKey)
+                
+                try ScriptManager.setBookmarkData(url: url)
+                
+            } catch let error {
+                print(error)
+            }
+            
+        }
         
     }
     

@@ -13,6 +13,8 @@ import Fuse
 
 class ScriptManager: NSObject {
     
+    
+    
     static let userPreferencesPathKey = "scriptsFolderPath"
     static let userPreferencesDataKey = "scriptsFolderData"
     
@@ -31,6 +33,14 @@ class ScriptManager: NSObject {
         
         loadDefaultScripts()
         loadUserScripts()
+    }
+    
+
+    static func setBookmarkData(url: URL) throws {
+        
+        let data = try url.bookmarkData(options: NSURL.BookmarkCreationOptions.withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
+        
+        UserDefaults.standard.set(data, forKey: ScriptManager.userPreferencesDataKey)
     }
     
     /// Load built in scripts
@@ -57,7 +67,11 @@ class ScriptManager: NSObject {
             let url = try URL.init(resolvingBookmarkData: data, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isBookmarkStale)
             
             if(isBookmarkStale) {
-                fatalError("Stale!")
+                do {
+                    try ScriptManager.setBookmarkData(url: url)
+                } catch let error {
+                    print(error)
+                }
             }
             
             guard url.startAccessingSecurityScopedResource() else {
