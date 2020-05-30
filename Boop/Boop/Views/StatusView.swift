@@ -10,6 +10,7 @@ import Cocoa
 
 enum Status {
     case normal
+    case updateAvailable(String)
     case help(String)
     case info(String)
     case error(String)
@@ -41,7 +42,7 @@ class StatusView: NSView {
     func setStatus(_ newStatus: Status) {
         
         switch newStatus {
-        case .normal, .help(_):
+        case .normal, .help(_), .updateAvailable:
             // Skip the queue for those statuses
             running = false
             queue.removeAll()
@@ -84,6 +85,8 @@ class StatusView: NSView {
         
         var text = ""
         
+        var extra: NSAttributedString?
+        
         switch newStatus {
         case .help(let value):
             text = value
@@ -95,9 +98,19 @@ class StatusView: NSView {
             text = value
         case .normal:
             text = "Press ⌘+B to get started"
+        case .updateAvailable(let link):
+            text = "New version available! "
+            
+            extra = NSAttributedString(string: "Learn more", attributes: [.link : link, .cursor: NSCursor.closedHand])
         }
         
-        self.textLabel.stringValue = text
+        let attributed = NSMutableAttributedString(string: text)
+        
+        if let extra = extra {
+            attributed.append(extra)
+        }
+        
+        self.textLabel.attributedStringValue = attributed
     }
     
     fileprivate func fadeText(to alphaValue: CGFloat, completionHandler: (() -> Void)? = nil) {
@@ -122,6 +135,8 @@ class StatusView: NSView {
             color = Colors.blueButDarker
         case .error(_):
             color = Colors.redButDarker
+        case .updateAvailable:
+            color = Colors.purpleButDarker
         }
         
         NSAnimationContext.runAnimationGroup({ (context) in
