@@ -1,7 +1,7 @@
 /**
 	{
 		"api":1,
-		"name":"Encode to Base 64",
+		"name":"Bas64 Encode",
 		"description":"Encodes your text to Base 64",
 		"author":"See Source",
 		"icon":"metamorphose",

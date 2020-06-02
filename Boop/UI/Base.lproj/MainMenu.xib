@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,6 +13,11 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="twH-mb-iPe" customClass="UpdateBuddy" customModule="Boop" customModuleProvider="target">
+            <connections>
+                <outlet property="statusView" destination="zMi-QK-dkF" id="Y8d-3H-cA5"/>
+            </connections>
+        </customObject>
         <customObject id="jdF-I6-2al" customClass="ScriptManager" customModule="Boop" customModuleProvider="target">
             <connections>
                 <outlet property="statusView" destination="zMi-QK-dkF" id="6ja-w9-iQf"/>
@@ -68,6 +73,10 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                            <menuItem title="Check For Updates" id="mdD-pu-Aba">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="UhC-wH-H1d"/>
                             <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                 <connections>
                                     <action selector="showPreferencesWindow:" target="Voe-Tx-rLC" id="39H-Se-7g1"/>
@@ -521,14 +530,13 @@ Gw
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="43" rowSizeStyle="automatic" viewBased="YES" id="hJ8-Qr-O0F" customClass="ScriptTableView" customModule="Boop" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="440" height="140"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn width="437" minWidth="40" maxWidth="1000" id="oAy-Ya-q4E">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -645,25 +653,53 @@ Gw
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ri3-8q-QoT"/>
                     <toolbarItem implicitItemIdentifier="C5459F48-A2E4-4A46-BA5F-7368C65F8AC9" label="Custom View" paletteLabel="Custom View" tag="-1" sizingBehavior="auto" id="mG6-GU-aNe">
                         <nil key="toolTip"/>
-                        <customView key="view" id="zMi-QK-dkF" customClass="StatusView" customModule="Boop" customModuleProvider="target">
+                        <customView key="view" misplaced="YES" id="zMi-QK-dkF" customClass="StatusView" customModule="Boop" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="14" width="200" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
-                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aib-Zm-MbW">
-                                    <rect key="frame" x="28" y="3" width="144" height="15"/>
-                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Press ⌘+B to get started" drawsBackground="YES" id="Sc8-Qd-kcQ">
-                                        <font key="font" metaFont="systemLight" size="12"/>
-                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </textFieldCell>
-                                </textField>
+                                <stackView distribution="equalCentering" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nlt-yx-S75">
+                                    <rect key="frame" x="4" y="0.0" width="200" height="20"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aib-Zm-MbW">
+                                            <rect key="frame" x="26" y="3" width="148" height="15"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Press ⌘+B to get started" drawsBackground="YES" id="Sc8-Qd-kcQ">
+                                                <font key="font" metaFont="systemLight" size="12"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="PpN-Z0-jAa" customClass="UpdateTextField" customModule="Boop" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="6" width="69" height="14"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Learn More" drawsBackground="YES" id="o6X-4x-gie">
+                                                <font key="font" metaFont="systemMedium" size="11"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="Dev-i3-vUc"/>
+                                        <constraint firstAttribute="height" constant="20" id="UsD-XM-AIh"/>
+                                    </constraints>
+                                    <visibilityPriorities>
+                                        <integer value="1000"/>
+                                        <integer value="1000"/>
+                                    </visibilityPriorities>
+                                    <customSpacing>
+                                        <real value="3.4028234663852886e+38"/>
+                                        <real value="3.4028234663852886e+38"/>
+                                    </customSpacing>
+                                </stackView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="aib-Zm-MbW" firstAttribute="centerY" secondItem="zMi-QK-dkF" secondAttribute="centerY" id="OLZ-CX-wuG"/>
-                                <constraint firstItem="aib-Zm-MbW" firstAttribute="centerX" secondItem="zMi-QK-dkF" secondAttribute="centerX" id="xy7-o4-c4a"/>
+                                <constraint firstAttribute="trailing" secondItem="Nlt-yx-S75" secondAttribute="trailing" constant="4" id="1AS-iZ-Raj"/>
+                                <constraint firstItem="Nlt-yx-S75" firstAttribute="leading" secondItem="zMi-QK-dkF" secondAttribute="leading" constant="4" id="C54-Ji-PJq"/>
+                                <constraint firstAttribute="bottom" secondItem="Nlt-yx-S75" secondAttribute="bottom" id="mOX-WA-ibz"/>
+                                <constraint firstItem="Nlt-yx-S75" firstAttribute="top" secondItem="zMi-QK-dkF" secondAttribute="top" id="wDK-gM-b7p"/>
                             </constraints>
                             <connections>
                                 <outlet property="textLabel" destination="aib-Zm-MbW" id="fh0-MQ-n06"/>
+                                <outlet property="updateLabel" destination="PpN-Z0-jAa" id="0F4-Dh-c5b"/>
                             </connections>
                         </customView>
                     </toolbarItem>
