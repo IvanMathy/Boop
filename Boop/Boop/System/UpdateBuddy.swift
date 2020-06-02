@@ -23,8 +23,14 @@ class UpdateBuddy: NSObject {
             print("Cannot create update checker URL...")
             return
         }
+        
+        let config = URLSessionConfiguration.default
+        config.requestCachePolicy = .reloadIgnoringLocalCacheData
+        config.urlCache = nil
 
-        URLSession.shared.dataTask(with: URLRequest(url: url), completionHandler: { data, response, error -> Void in
+        let session = URLSession.init(configuration: config)
+
+        session.dataTask(with: URLRequest(url: url), completionHandler: { data, response, error -> Void in
             guard let data = data else {
                 return
             }

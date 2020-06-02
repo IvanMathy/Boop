@@ -24,6 +24,7 @@ class StatusView: NSView {
     let messageLength = 5.0
     
     @IBOutlet weak var textLabel: NSTextField!
+    @IBOutlet weak var updateLabel: UpdateTextField!
     
     var queue = [Status]()
     var running = false
@@ -85,7 +86,7 @@ class StatusView: NSView {
         
         var text = ""
         
-        var extra: NSAttributedString?
+        self.updateLabel.isHidden = true
         
         switch newStatus {
         case .help(let value):
@@ -100,17 +101,13 @@ class StatusView: NSView {
             text = "Press ⌘+B to get started"
         case .updateAvailable(let link):
             text = "New version available! "
+        
+            self.updateLabel.isHidden = false
+            self.updateLabel.link = link
             
-            extra = NSAttributedString(string: "Learn more", attributes: [.link : link, .cursor: NSCursor.closedHand])
         }
         
-        let attributed = NSMutableAttributedString(string: text)
-        
-        if let extra = extra {
-            attributed.append(extra)
-        }
-        
-        self.textLabel.attributedStringValue = attributed
+        self.textLabel.stringValue = text
     }
     
     fileprivate func fadeText(to alphaValue: CGFloat, completionHandler: (() -> Void)? = nil) {
