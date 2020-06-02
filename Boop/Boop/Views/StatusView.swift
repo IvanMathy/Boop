@@ -10,6 +10,7 @@ import Cocoa
 
 enum Status {
     case normal
+    case updateAvailable(String)
     case help(String)
     case info(String)
     case error(String)
@@ -23,6 +24,7 @@ class StatusView: NSView {
     let messageLength = 5.0
     
     @IBOutlet weak var textLabel: NSTextField!
+    @IBOutlet weak var updateLabel: UpdateTextField!
     
     var queue = [Status]()
     var running = false
@@ -41,7 +43,7 @@ class StatusView: NSView {
     func setStatus(_ newStatus: Status) {
         
         switch newStatus {
-        case .normal, .help(_):
+        case .normal, .help(_), .updateAvailable:
             // Skip the queue for those statuses
             running = false
             queue.removeAll()
@@ -84,6 +86,8 @@ class StatusView: NSView {
         
         var text = ""
         
+        self.updateLabel.isHidden = true
+        
         switch newStatus {
         case .help(let value):
             text = value
@@ -95,6 +99,12 @@ class StatusView: NSView {
             text = value
         case .normal:
             text = "Press ⌘+B to get started"
+        case .updateAvailable(let link):
+            text = "New version available! "
+        
+            self.updateLabel.isHidden = false
+            self.updateLabel.link = link
+            
         }
         
         self.textLabel.stringValue = text
@@ -122,6 +132,8 @@ class StatusView: NSView {
             color = Colors.blueButDarker
         case .error(_):
             color = Colors.redButDarker
+        case .updateAvailable:
+            color = Colors.purpleButDarker
         }
         
         NSAnimationContext.runAnimationGroup({ (context) in
