@@ -45,7 +45,16 @@ class UpdateBuddy: NSObject {
         
         let payload = try decoder.decode(VersionContainer.self, from: data)
         
+        #if APPSTORE
+        
+        let latest = payload.mas
+        
+        #else
+        
+        
         let latest = payload.standalone
+        
+        #endif
         
         guard let thisVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
             return

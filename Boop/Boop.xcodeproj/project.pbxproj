@@ -34,6 +34,36 @@
 		2C60A4A22482FE9E006496BA /* UpdateBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4A12482FE9E006496BA /* UpdateBuddy.swift */; };
 		2C60A4A4248300CE006496BA /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4A3248300CE006496BA /* AppVersion.swift */; };
 		2C60A4E624870678006496BA /* UpdateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4E524870678006496BA /* UpdateTextField.swift */; };
+		2C60A53B24871273006496BA /* ScriptsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */; };
+		2C60A53C24871273006496BA /* ScriptExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */; };
+		2C60A53D24871273006496BA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9118B523406B530018916F /* Colors.swift */; };
+		2C60A53E24871273006496BA /* UpdateBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4A12482FE9E006496BA /* UpdateBuddy.swift */; };
+		2C60A53F24871273006496BA /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A121FE47090082570E /* PopoverViewController.swift */; };
+		2C60A54024871273006496BA /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DE2214E46800AFF8CD /* Script.swift */; };
+		2C60A54124871273006496BA /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4A3248300CE006496BA /* AppVersion.swift */; };
+		2C60A54224871273006496BA /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20668F21FD64A20082570E /* DefaultTheme.swift */; };
+		2C60A54324871273006496BA /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DB2214E45300AFF8CD /* ScriptManager.swift */; };
+		2C60A54424871273006496BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20667521FD628E0082570E /* AppDelegate.swift */; };
+		2C60A54524871273006496BA /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669D21FE445E0082570E /* OverlayView.swift */; };
+		2C60A54624871273006496BA /* ScriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */; };
+		2C60A54724871273006496BA /* ScriptTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245DB224822EA00586DFD /* ScriptTableView.swift */; };
+		2C60A54824871273006496BA /* BoopLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669321FD6F400082570E /* BoopLexer.swift */; };
+		2C60A54924871273006496BA /* BoopToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669B21FE3E060082570E /* BoopToken.swift */; };
+		2C60A54A24871273006496BA /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A521FE53870082570E /* SearchField.swift */; };
+		2C60A54B24871273006496BA /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A321FE47CE0082570E /* PopoverView.swift */; };
+		2C60A54C24871273006496BA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20668921FD63C90082570E /* MainViewController.swift */; };
+		2C60A54D24871273006496BA /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669921FD76900082570E /* StatusView.swift */; };
+		2C60A54E24871273006496BA /* UpdateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4E524870678006496BA /* UpdateTextField.swift */; };
+		2C60A54F24871273006496BA /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */; };
+		2C60A55024871273006496BA /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
+		2C60A55224871273006496BA /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; };
+		2C60A55324871273006496BA /* Fuse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB9D7F024319BAC00135424 /* Fuse.framework */; };
+		2C60A55524871273006496BA /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
+		2C60A55624871273006496BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667721FD62910082570E /* Assets.xcassets */; };
+		2C60A55724871273006496BA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667921FD62910082570E /* MainMenu.xib */; };
+		2C60A55824871273006496BA /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5ED41D2357F67200322893 /* Preferences.storyboard */; };
+		2C60A55B24871273006496BA /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C60A55C24871273006496BA /* Fuse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CB9D7F024319BAC00135424 /* Fuse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C9118B623406B530018916F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9118B523406B530018916F /* Colors.swift */; };
 		2C9761D52214E11600AFF8CD /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
 		2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
@@ -79,6 +109,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C60A55924871273006496BA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C60A55A24871273006496BA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2C60A55B24871273006496BA /* SavannaKit.framework in CopyFiles */,
+				2C60A55C24871273006496BA /* Fuse.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -107,7 +158,7 @@
 		2C60A4A12482FE9E006496BA /* UpdateBuddy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBuddy.swift; sourceTree = "<group>"; };
 		2C60A4A3248300CE006496BA /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		2C60A4E524870678006496BA /* UpdateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTextField.swift; sourceTree = "<group>"; };
-		2C60A50F24871062006496BA /* Boop copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Boop copy-Info.plist"; path = "/Users/Ivan/Documents/GitHub/Boop/Boop/Boop copy-Info.plist"; sourceTree = "<absolute>"; };
+		2C60A56024871273006496BA /* Boop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9118B523406B530018916F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2C9761D42214E11600AFF8CD /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsTableViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +189,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C60A55124871273006496BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C60A55224871273006496BA /* SavannaKit.framework in Frameworks */,
+				2C60A55324871273006496BA /* Fuse.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -158,7 +218,6 @@
 				2C20667421FD628E0082570E /* Boop */,
 				2C17C66824271DDA005C911C /* BoopTests */,
 				2C20667321FD628E0082570E /* Products */,
-				2C60A50F24871062006496BA /* Boop copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +226,7 @@
 			children = (
 				2C20667221FD628E0082570E /* Boop.app */,
 				2C17C66724271DDA005C911C /* BoopTests.xctest */,
+				2C60A56024871273006496BA /* Boop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,6 +379,25 @@
 			productReference = 2C20667221FD628E0082570E /* Boop.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2C60A53924871273006496BA /* Boop (App Store) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C60A55D24871273006496BA /* Build configuration list for PBXNativeTarget "Boop (App Store)" */;
+			buildPhases = (
+				2C60A53A24871273006496BA /* Sources */,
+				2C60A55124871273006496BA /* Frameworks */,
+				2C60A55424871273006496BA /* Resources */,
+				2C60A55924871273006496BA /* Embed Frameworks */,
+				2C60A55A24871273006496BA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Boop (App Store)";
+			productName = Boop;
+			productReference = 2C60A56024871273006496BA /* Boop.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -353,6 +432,7 @@
 			targets = (
 				2C20667121FD628E0082570E /* Boop */,
 				2C17C66624271DDA005C911C /* BoopTests */,
+				2C60A53924871273006496BA /* Boop (App Store) */,
 			);
 		};
 /* End PBXProject section */
@@ -373,6 +453,17 @@
 				2C20667821FD62910082570E /* Assets.xcassets in Resources */,
 				2C20667B21FD62910082570E /* MainMenu.xib in Resources */,
 				2C5ED41E2357F67200322893 /* Preferences.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C60A55424871273006496BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C60A55524871273006496BA /* scripts in Resources */,
+				2C60A55624871273006496BA /* Assets.xcassets in Resources */,
+				2C60A55724871273006496BA /* MainMenu.xib in Resources */,
+				2C60A55824871273006496BA /* Preferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +510,35 @@
 				2C60A4E624870678006496BA /* UpdateTextField.swift in Sources */,
 				2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */,
 				2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C60A53A24871273006496BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C60A53B24871273006496BA /* ScriptsSettingsViewController.swift in Sources */,
+				2C60A53C24871273006496BA /* ScriptExecution.swift in Sources */,
+				2C60A53D24871273006496BA /* Colors.swift in Sources */,
+				2C60A53E24871273006496BA /* UpdateBuddy.swift in Sources */,
+				2C60A53F24871273006496BA /* PopoverViewController.swift in Sources */,
+				2C60A54024871273006496BA /* Script.swift in Sources */,
+				2C60A54124871273006496BA /* AppVersion.swift in Sources */,
+				2C60A54224871273006496BA /* DefaultTheme.swift in Sources */,
+				2C60A54324871273006496BA /* ScriptManager.swift in Sources */,
+				2C60A54424871273006496BA /* AppDelegate.swift in Sources */,
+				2C60A54524871273006496BA /* OverlayView.swift in Sources */,
+				2C60A54624871273006496BA /* ScriptTableViewCell.swift in Sources */,
+				2C60A54724871273006496BA /* ScriptTableView.swift in Sources */,
+				2C60A54824871273006496BA /* BoopLexer.swift in Sources */,
+				2C60A54924871273006496BA /* BoopToken.swift in Sources */,
+				2C60A54A24871273006496BA /* SearchField.swift in Sources */,
+				2C60A54B24871273006496BA /* PopoverView.swift in Sources */,
+				2C60A54C24871273006496BA /* MainViewController.swift in Sources */,
+				2C60A54D24871273006496BA /* StatusView.swift in Sources */,
+				2C60A54E24871273006496BA /* UpdateTextField.swift in Sources */,
+				2C60A54F24871273006496BA /* PreferencesTabViewController.swift in Sources */,
+				2C60A55024871273006496BA /* ScriptsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +785,68 @@
 			};
 			name = Release;
 		};
+		2C60A55E24871273006496BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Boop/Boop.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../Carthage/Build/Mac",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Boop/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Boop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0.0;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D APPSTORE";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
+				PRODUCT_NAME = Boop;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		2C60A55F24871273006496BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Boop/Boop.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../Carthage/Build/Mac",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Boop/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Boop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0.0;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D APPSTORE";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
+				PRODUCT_NAME = Boop;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -691,6 +873,15 @@
 			buildConfigurations = (
 				2C20668121FD62910082570E /* Debug */,
 				2C20668221FD62910082570E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C60A55D24871273006496BA /* Build configuration list for PBXNativeTarget "Boop (App Store)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C60A55E24871273006496BA /* Debug */,
+				2C60A55F24871273006496BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
