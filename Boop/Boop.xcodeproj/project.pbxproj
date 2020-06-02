@@ -64,6 +64,7 @@
 		2C60A55824871273006496BA /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5ED41D2357F67200322893 /* Preferences.storyboard */; };
 		2C60A55B24871273006496BA /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C60A55C24871273006496BA /* Fuse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CB9D7F024319BAC00135424 /* Fuse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C60A56224871730006496BA /* UpdateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4E524870678006496BA /* UpdateTextField.swift */; };
 		2C9118B623406B530018916F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9118B523406B530018916F /* Colors.swift */; };
 		2C9761D52214E11600AFF8CD /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
 		2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
@@ -479,6 +480,7 @@
 				2C17C6762427214B005C911C /* Script.swift in Sources */,
 				2C17C67C242721C5005C911C /* Colors.swift in Sources */,
 				2C17C6772427214D005C911C /* ScriptExecution.swift in Sources */,
+				2C60A56224871730006496BA /* UpdateTextField.swift in Sources */,
 				2C17C66A24271DDA005C911C /* BoopTests.swift in Sources */,
 				2C17C67324271EE8005C911C /* ScriptManager.swift in Sources */,
 			);
