@@ -5,7 +5,7 @@
 		"description":"Cleans and format JSON documents.",
 		"author":"Ivan",
 		"icon":"broom",
-		"tags":"prettify,clean,indent"
+		"tags":"json,prettify,clean,indent"
 	}
 **/
 
