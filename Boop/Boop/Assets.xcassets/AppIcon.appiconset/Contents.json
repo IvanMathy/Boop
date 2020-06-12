@@ -1,1 +1,74 @@
-{"images":[{"size":"1024x1024","expected-size":"1024","filename":"1024.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"ios-marketing","scale":"1x"},{"size":"128x128","expected-size":"128","filename":"128.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"mac","scale":"1x"},{"size":"256x256","expected-size":"256","filename":"256.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"mac","scale":"1x"},{"size":"128x128","expected-size":"256","filename":"256.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"mac","scale":"2x"},{"size":"256x256","expected-size":"512","filename":"512.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"mac","scale":"2x"},{"size":"32x32","expected-size":"32","filename":"32.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"mac","scale":"1x"},{"size":"512x512","expected-size":"512","filename":"512.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"mac","scale":"1x"},{"size":"16x16","expected-size":"16","filename":"16.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"mac","scale":"1x"},{"size":"16x16","expected-size":"32","filename":"32.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"mac","scale":"2x"},{"size":"32x32","expected-size":"64","filename":"64.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"mac","scale":"2x"},{"size":"512x512","expected-size":"1024","filename":"1024.png","folder":"Assets.xcassets/AppIcon.appiconset/","idiom":"mac","scale":"2x"}]}
+{
+  "images" : [
+    {
+      "filename" : "icon_512x512@2x-1.png",
+      "idiom" : "ios-marketing",
+      "scale" : "1x",
+      "size" : "1024x1024"
+    },
+    {
+      "filename" : "16.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "16x16"
+    },
+    {
+      "filename" : "icon_16x16@2x.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "16x16"
+    },
+    {
+      "filename" : "icon_32x32.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "32x32"
+    },
+    {
+      "filename" : "icon_32x32@2x.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "32x32"
+    },
+    {
+      "filename" : "icon_128x128.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "128x128"
+    },
+    {
+      "filename" : "icon_128x128@2x.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "128x128"
+    },
+    {
+      "filename" : "icon_256x256.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "256x256"
+    },
+    {
+      "filename" : "icon_256x256@2x.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "256x256"
+    },
+    {
+      "filename" : "icon_512x512.png",
+      "idiom" : "mac",
+      "scale" : "1x",
+      "size" : "512x512"
+    },
+    {
+      "filename" : "icon_512x512@2x.png",
+      "idiom" : "mac",
+      "scale" : "2x",
+      "size" : "512x512"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
