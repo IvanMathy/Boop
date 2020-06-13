@@ -480,7 +480,7 @@ Gw
                         <items>
                             <menuItem title="Boop Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                 <connections>
-                                    <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
+                                    <action selector="openHelp:" target="unv-pE-gme" id="8ta-uT-eZh"/>
                                 </connections>
                             </menuItem>
                         </items>

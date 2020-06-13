@@ -14,9 +14,13 @@ You can download Boop from the Mac App Store, or from the [Releases page on Gith
 
 Boop is pretty easy to use: Open it, paste some text, run some scripts, optionally copy the text out.
 
-To run scripts, simply open the script picker by pressing `⌘+B` or in the top menu under `Scripts > Open Picker`. 
+To run scripts, simply open the script picker by pressing `⌘B` or in the top menu under `Scripts > Open Picker`. 
 
 From the script picker, start typing to search for a script. You can then press `Enter ⏎` to pick the first script, or use the arrow keys to select another one. 
+
+You can run the last script again by pressing `⇧⌘B` or from the option in the scripts menu.
+
+If you are developing scripts, you can reload all the script by pressing `⇧⌘R` or  from the script menu as well.
 
 ## Questions
 
