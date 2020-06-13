@@ -12,6 +12,7 @@ import SavannaKit
 class MainViewController: NSViewController {
 
     @IBOutlet weak var editorView: SyntaxTextView!
+    @IBOutlet weak var updateBuddy: UpdateBuddy!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +38,19 @@ class MainViewController: NSViewController {
         
         let range = NSRange(location: 0, length: textView.string.count)
         
-        
         guard textView.shouldChangeText(in: range, replacementString: "") else {
             return
         }
         
-
         textView.textStorage?.replaceCharacters(in: range, with: "")
         
         textView.textStorage?.endEditing()
         textView.didChangeText()
+    }
+    
+    
+    @IBAction func checkForUpdates(_ sender: Any) {
+        updateBuddy.check()
     }
 }
 
