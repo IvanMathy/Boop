@@ -20,6 +20,8 @@ From the script picker, start typing to search for a script. You can then press 
 
 You can run the last script again by pressing `⇧⌘B` or from the option in the scripts menu.
 
+To start over, you can clear the editor by pressing `⌘N`. 
+
 If you are developing scripts, you can reload all the script by pressing `⇧⌘R` or  from the script menu as well.
 
 ## Questions

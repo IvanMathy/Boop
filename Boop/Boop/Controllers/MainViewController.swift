@@ -31,6 +31,23 @@ class MainViewController: NSViewController {
         NSWorkspace.shared.open(url)
     }
     
+    @IBAction func clear(_ sender: Any) {
+        let textView = editorView.contentTextView
+        textView.textStorage?.beginEditing()
+        
+        let range = NSRange(location: 0, length: textView.string.count)
+        
+        
+        guard textView.shouldChangeText(in: range, replacementString: "") else {
+            return
+        }
+        
+
+        textView.textStorage?.replaceCharacters(in: range, with: "")
+        
+        textView.textStorage?.endEditing()
+        textView.didChangeText()
+    }
 }
 
 extension MainViewController: SyntaxTextViewDelegate {
