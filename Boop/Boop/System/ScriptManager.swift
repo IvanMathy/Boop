@@ -119,16 +119,26 @@ class ScriptManager: NSObject {
             
             
         } catch {
-            print("Unable to load ",path)
+            print("Unable to load ", path)
         }
     }
     
     func search(_ query: String) -> [Script] {
         
+        guard query != "*" else {
+            return scripts.sorted { left, right in
+                left.name ?? "" < right.name ?? ""
+            }
+        }
+        
         let results = fuse.search(query, in: scripts)
         
         return results.filter { result in
             result.score < 0.4 // Filter low quality results
+        }.sorted { left, right in
+            let leftScore = left.score - (scripts[left.index].bias ?? 0)
+            let rightScore = right.score - (scripts[right.index].bias ?? 0)
+            return leftScore < rightScore
         }.map { result in
             scripts[result.index]
         }

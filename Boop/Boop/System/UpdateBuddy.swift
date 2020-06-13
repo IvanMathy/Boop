@@ -12,6 +12,8 @@ class UpdateBuddy: NSObject {
     
     @IBOutlet weak var statusView: StatusView!
     
+    var firstCheck = true
+    
     override init() {
         super.init()
         self.check()
@@ -35,14 +37,15 @@ class UpdateBuddy: NSObject {
                 return
             }
             
-            try? self.handleResponse(data: data)
+            DispatchQueue.main.async {
+                try? self.handleResponse(data: data)
+            }
             
         }).resume()
     }
     
     private func handleResponse(data: Data) throws {
         let decoder = JSONDecoder()
-        
         let payload = try decoder.decode(VersionContainer.self, from: data)
         
         #if APPSTORE
@@ -50,7 +53,6 @@ class UpdateBuddy: NSObject {
         let latest = payload.mas
         
         #else
-        
         
         let latest = payload.standalone
         
@@ -61,9 +63,11 @@ class UpdateBuddy: NSObject {
         }
         
         if latest.version.compare(thisVersion, options: .numeric) == .orderedDescending {
-            DispatchQueue.main.async {
-                self.statusView.setStatus(.updateAvailable(latest.link))
-            }
+            self.statusView.setStatus(.updateAvailable(latest.link))
+        } else if !firstCheck {
+            self.statusView.setStatus(.success("Boop is up to date!"))
         }
+        
+        self.firstCheck = false
     }
 }

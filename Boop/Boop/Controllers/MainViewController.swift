@@ -12,6 +12,7 @@ import SavannaKit
 class MainViewController: NSViewController {
 
     @IBOutlet weak var editorView: SyntaxTextView!
+    @IBOutlet weak var updateBuddy: UpdateBuddy!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,34 @@ class MainViewController: NSViewController {
         editorView.contentTextView.selectedTextAttributes = [.backgroundColor:NSColor(red:0.19, green:0.44, blue:0.71, alpha:1.0), .foregroundColor: NSColor.white]
         
     }
+    @IBAction func openHelp(_ sender: Any) {
+        guard let url = URL(string: "https://github.com/IvanMathy/Boop/blob/master/Boop/Documentation/Readme.md") else {
+            assertionFailure("Could not generate help URL.")
+            return
+        }
+        NSWorkspace.shared.open(url)
+    }
     
+    @IBAction func clear(_ sender: Any) {
+        let textView = editorView.contentTextView
+        textView.textStorage?.beginEditing()
+        
+        let range = NSRange(location: 0, length: textView.string.count)
+        
+        guard textView.shouldChangeText(in: range, replacementString: "") else {
+            return
+        }
+        
+        textView.textStorage?.replaceCharacters(in: range, with: "")
+        
+        textView.textStorage?.endEditing()
+        textView.didChangeText()
+    }
+    
+    
+    @IBAction func checkForUpdates(_ sender: Any) {
+        updateBuddy.check()
+    }
 }
 
 extension MainViewController: SyntaxTextViewDelegate {
