@@ -5,7 +5,8 @@
 		"description":"Converts JSON to comma-separated tables.",
 		"author":"Ivan",
 		"icon":"table",
-		"tags":"table,convert"
+		"tags":"table,convert",
+        "bias": -0.2
 	}
 **/
 

@@ -32,6 +32,14 @@ Each script starts with a declarative JSON document, describing the contents of 
 * `icon` is a visual representation of your scripts' actions. You can see available icons in `Boop/Assets.xcassets/Icons/`. If you can't find what you like, feel free to create an issue and we'll make it work!
 * `tags` are used by the fuzzy-search algorythm to filter and sort results.
 
+An optional property, `bias`, can also be added to help Boop prioritize your scripts. A positive value will move your script higher in the results, a negative value will push it further down. The bias property is a number:
+
+```javascript
+      "bias": -0.1
+```
+
+
+
 ### The Main Function
 
 Your script must declare a top level `main()` function, that takes in a single argument of type `ScriptExecution`. This is where all of the magic happens.

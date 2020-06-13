@@ -25,6 +25,7 @@ class Script: NSObject {
     var tags: String?
     var desc: String?
     var icon: String?
+    var bias: Double?
     
     weak var delegate: ScriptDelegate?
     
@@ -38,6 +39,7 @@ class Script: NSObject {
         self.tags = parameters["tags"] as? String
         self.desc = parameters["description"] as? String
         self.icon = (parameters["icon"] as? String)?.lowercased()
+        self.bias = parameters["bias"] as? Double
         
         context = JSContext()
         

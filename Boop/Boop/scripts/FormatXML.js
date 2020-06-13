@@ -5,7 +5,8 @@
 		"description":"Cleans and format XML/HTML documents.",
 		"author":"Ivan",
 		"icon":"broom",
-		"tags":"html,prettify,clean,indent"
+		"tags":"html,prettify,clean,indent",
+        "bias": -0.1
 	}
 **/
 

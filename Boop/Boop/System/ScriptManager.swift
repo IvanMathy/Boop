@@ -129,6 +129,10 @@ class ScriptManager: NSObject {
         
         return results.filter { result in
             result.score < 0.4 // Filter low quality results
+        }.sorted { left, right in
+            let leftScore = left.score - (scripts[left.index].bias ?? 0)
+            let rightScore = right.score - (scripts[right.index].bias ?? 0)
+            return leftScore < rightScore
         }.map { result in
             scripts[result.index]
         }
