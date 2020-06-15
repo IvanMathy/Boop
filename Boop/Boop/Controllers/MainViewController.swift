@@ -13,9 +13,16 @@ class MainViewController: NSViewController {
 
     @IBOutlet weak var editorView: SyntaxTextView!
     @IBOutlet weak var updateBuddy: UpdateBuddy!
+    @IBOutlet weak var checkUpdateMenuItem: NSMenuItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        #if APPSTORE
+        
+        checkUpdateMenuItem.isHidden = true
+        
+        #endif
         
         
         editorView.delegate = self
