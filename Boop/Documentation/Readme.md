@@ -38,6 +38,10 @@ Yes! Simply follow the instruction in the [Custom Scripts page](CustomScripts.md
 
 The best way to do that is to [file an issue on Github](https://github.com/IvanMathy/Boop/issues/new). Otherwise, you can [talk to me on Twitter](https://twitter.com/OKatBest), as long as you're nice.
 
+### How is Boop built?
+
+Built is mostly built using a custom fork of [SavannaKit](https://github.com/IvanMathy/savannakit), originaly created by [Louis D'hauwe](http://twitter.com/LouisDhauwe). The search is powered by a custom fork of [Fuse-swift](https://github.com/IvanMathy/fuse-swift). The rest of Boop is simply built in Swift, besides scripts which are Javascript. Go ahead and open some of them to check their license!
+
 ### Do I have to say "Boop" out loud when I press ⌘+B?
 
 Yes.
