@@ -4,7 +4,7 @@
 		"name":"Sort Ascending",
 		"description":"Sorts the lines ascending.",
 		"author":"andipaetzold",
-		"icon":"unknown",
+		"icon":"metamorphose",
 		"tags":"sort,ascending,asc"
 	}
 **/
