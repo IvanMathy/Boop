@@ -24,12 +24,8 @@ class MainViewController: NSViewController {
         
         #endif
         
-        
         editorView.delegate = self
         editorView.theme = DefaultTheme()
-        
-        editorView.contentTextView.selectedTextAttributes = [.backgroundColor:NSColor(red:0.19, green:0.44, blue:0.71, alpha:1.0), .foregroundColor: NSColor.white]
-        
     }
     @IBAction func openHelp(_ sender: Any) {
         guard let url = URL(string: "https://github.com/IvanMathy/Boop/blob/master/Boop/Documentation/Readme.md") else {

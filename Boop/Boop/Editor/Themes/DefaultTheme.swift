@@ -14,19 +14,19 @@ class DefaultTheme: SyntaxColorTheme {
     var tabWidth: Int = 4
     
     let gutterStyle: GutterStyle = GutterStyle(
-        backgroundColor: Color(red: 22/255.0, green: 22/255, blue: 22/255, alpha: 1.0),
-        separatorColor: Color(red: 15/255.0, green: 15/255, blue: 15/255, alpha: 1.0),
+        backgroundColor: Color.textBackgroundColor,
+        separatorColor: Color.separatorColor,
         minimumWidth: 40)
-    
+
     var font: Font = NSFont(name: "SFMono-Regular", size: 15) ?? Font(name: "Menlo", size: 15)!
     
     let lineNumbersStyle: LineNumbersStyle?
     
-    var backgroundColor: Color = Color(red: 31/255.0, green: 31/255, blue: 31/255, alpha: 1.0)
-    
+    var backgroundColor: Color = Color.textBackgroundColor
+
     
     init() {
-        lineNumbersStyle = LineNumbersStyle(font: font, textColor: Color(red: 100/255, green: 100/255, blue: 100/255, alpha: 1.0))
+        lineNumbersStyle = LineNumbersStyle(font: font, textColor: Color.tertiaryLabelColor)
     }
     
     func globalAttributes() -> [NSAttributedString.Key: Any] {
@@ -34,7 +34,7 @@ class DefaultTheme: SyntaxColorTheme {
         var attributes = [NSAttributedString.Key: Any]()
         
         attributes[.font] = self.font
-        attributes[.foregroundColor] = NSColor.white
+        attributes[.foregroundColor] = NSColor.textColor
         
         return attributes
     }

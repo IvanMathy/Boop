@@ -34,10 +34,6 @@ class StatusView: NSView {
         super.awakeFromNib()
         
         self.wantsLayer = true
-        
-        self.layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
-        self.layer?.cornerRadius = 5
-        
     }
 
     func setStatus(_ newStatus: Status) {
@@ -121,7 +117,7 @@ class StatusView: NSView {
     
     fileprivate func updateColor(_ newStatus: Status) {
         
-        var color = NSColor.textBackgroundColor
+        var color = NSColor.textColor
         
         switch newStatus {
         case .normal, .help(_):
@@ -138,7 +134,8 @@ class StatusView: NSView {
         
         NSAnimationContext.runAnimationGroup({ (context) in
             context.duration = self.transitionLength
-            self.layer?.backgroundColor = color.cgColor
+            self.textLabel.textColor = color
         })
+
     }
 }

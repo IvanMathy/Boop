@@ -13,7 +13,7 @@ class OverlayView: NSView {
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
         self.wantsLayer = true
-        self.layer?.backgroundColor = NSColor(calibratedWhite: 0.05, alpha: 1).cgColor
+        
         self.animator().isHidden = true
         self.alphaValue = 0;
     }

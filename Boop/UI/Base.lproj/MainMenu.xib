@@ -498,7 +498,7 @@ Gw
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <value key="minSize" type="size" width="480" height="360"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
@@ -519,8 +519,8 @@ Gw
                                     <constraint firstAttribute="height" constant="30" id="4GE-bC-UdC"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Start typing..." id="cpq-qD-Ulg">
-                                    <font key="font" metaFont="systemLight" size="21"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="font" metaFont="system" size="21"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
@@ -613,7 +613,6 @@ Gw
                                             </connections>
                                         </tableView>
                                     </subviews>
-                                    <nil key="backgroundColor"/>
                                 </clipView>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="Nja-wF-cOR"/>
@@ -659,32 +658,32 @@ Gw
                     <toolbarItem implicitItemIdentifier="C5459F48-A2E4-4A46-BA5F-7368C65F8AC9" label="Custom View" paletteLabel="Custom View" tag="-1" sizingBehavior="auto" id="mG6-GU-aNe">
                         <nil key="toolTip"/>
                         <customView key="view" misplaced="YES" id="zMi-QK-dkF" customClass="StatusView" customModule="Boop" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="14" width="200" height="20"/>
+                            <rect key="frame" x="0.0" y="14" width="300" height="24"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
-                                <stackView distribution="equalCentering" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nlt-yx-S75">
-                                    <rect key="frame" x="4" y="0.0" width="200" height="20"/>
+                                <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nlt-yx-S75">
+                                    <rect key="frame" x="4" y="0.0" width="292" height="25"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aib-Zm-MbW">
-                                            <rect key="frame" x="26" y="3" width="148" height="15"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Press ⌘+B to get started" drawsBackground="YES" id="Sc8-Qd-kcQ">
+                                            <rect key="frame" x="0.0" y="2" width="292" height="22"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" alignment="center" title="Press ⌘+B to get started" bezelStyle="round" id="Sc8-Qd-kcQ">
                                                 <font key="font" metaFont="systemLight" size="12"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
                                         <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="PpN-Z0-jAa" customClass="UpdateTextField" customModule="Boop" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="6" width="69" height="14"/>
+                                            <rect key="frame" x="0.0" y="11" width="69" height="14"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Learn More" drawsBackground="YES" id="o6X-4x-gie">
                                                 <font key="font" metaFont="systemMedium" size="11"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             </textFieldCell>
                                         </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="200" id="Dev-i3-vUc"/>
-                                        <constraint firstAttribute="height" constant="20" id="UsD-XM-AIh"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Dev-i3-vUc"/>
+                                        <constraint firstAttribute="height" constant="25" id="UsD-XM-AIh"/>
                                     </constraints>
                                     <visibilityPriorities>
                                         <integer value="1000"/>
