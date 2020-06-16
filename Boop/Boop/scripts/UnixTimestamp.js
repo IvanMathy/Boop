@@ -10,11 +10,9 @@
 **/
 
 function main(input) {
-    
-    // replace space by T to allow dates in the form
-    // yyyy-MM-dd HH:mm:ss or yyyy-MM-ddTHH:mm:ss
-    let parsedDate = Date.parse(input.text.replace(" ","T"))
-    
+
+    let parsedDate = Date.parse(input.text)
+
     if (isNaN(parsedDate)) {
         input.postError("Invalid Date")
     } else {
