@@ -34,9 +34,17 @@ Because that's not the goal of Boop. It's not really an editor, more of a unstru
 
 Yes! Simply follow the instruction in the [Custom Scripts page](CustomScripts.md) to know how to get started.
 
+### Does Boop collect data on me?
+
+No. The only time Boop communicates outside of itself is to check whether a new version is available. This is done by fetching a static .json file, with no additional data passed along. If you downloaded Boop through the Mac App Store, it's possible that standard data and/or crash reports get sent back to Apple and shared with me if you enabled App Analytics sharing.
+
 ### How can I report a problem?
 
 The best way to do that is to [file an issue on Github](https://github.com/IvanMathy/Boop/issues/new). Otherwise, you can [talk to me on Twitter](https://twitter.com/OKatBest), as long as you're nice.
+
+### How is Boop built?
+
+Built is mostly built using a custom fork of [SavannaKit](https://github.com/IvanMathy/savannakit), originaly created by [Louis D'hauwe](http://twitter.com/LouisDhauwe). The search is powered by a custom fork of [Fuse-swift](https://github.com/IvanMathy/fuse-swift). The rest of Boop is simply built in Swift, besides scripts which are Javascript. Go ahead and open some of them to check their license!
 
 ### Do I have to say "Boop" out loud when I press ⌘+B?
 
