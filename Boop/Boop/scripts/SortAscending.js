@@ -11,6 +11,9 @@
 
 function main(input) {
 
-	input.text = input.text.split('\n').sort().join('\n')
+	input.text = input.text
+		.split('\n')
+		.sort((a, b) => a.localeCompare(b))
+		.join('\n')
 
 }
