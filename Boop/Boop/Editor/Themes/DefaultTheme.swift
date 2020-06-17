@@ -10,6 +10,8 @@ import Cocoa
 import SavannaKit
 
 class DefaultTheme: SyntaxColorTheme {
+
+    let appearance: NSAppearance
     
     var tabWidth: Int = 4
     
@@ -22,10 +24,13 @@ class DefaultTheme: SyntaxColorTheme {
     
     let lineNumbersStyle: LineNumbersStyle?
     
-    var backgroundColor: Color = Color(red: 31/255.0, green: 31/255, blue: 31/255, alpha: 1.0)
+    var backgroundColor: Color {
+        return ColorPair.background.value(for: appearance)
+    }
     
     
-    init() {
+    init(appearance: NSAppearance) {
+        self.appearance = appearance
         lineNumbersStyle = LineNumbersStyle(font: font, textColor: Color(red: 100/255, green: 100/255, blue: 100/255, alpha: 1.0))
     }
     
@@ -34,7 +39,7 @@ class DefaultTheme: SyntaxColorTheme {
         var attributes = [NSAttributedString.Key: Any]()
         
         attributes[.font] = self.font
-        attributes[.foregroundColor] = NSColor.white
+        attributes[.foregroundColor] = ColorPair.body.value(for: appearance)
         
         return attributes
     }
@@ -49,15 +54,15 @@ class DefaultTheme: SyntaxColorTheme {
         case .comment:
             return [.foregroundColor: Colors.commentGrey]
         case .string:
-            return [.foregroundColor: Colors.redey]
+            return [.foregroundColor: ColorPair.red.value(for: appearance)]
         case .attribute:
             return [.foregroundColor: Colors.cyanish]
         case .number:
             return [.foregroundColor: Colors.orangeish]
         case .extra:
-            return [.foregroundColor: Colors.bluish]
+            return [.foregroundColor: ColorPair.blue.value(for: appearance)]
         case .keyword:
-            return [.foregroundColor: Colors.greenish]
+            return [.foregroundColor: ColorPair.green.value(for: appearance)]
         }
     }
     

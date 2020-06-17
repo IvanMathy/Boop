@@ -38,8 +38,10 @@ struct ColorPair {
     static let green = ColorPair(light: Colors.greenButDarker, dark: Colors.greenish)
     static let purple = ColorPair(light: Colors.purpleButDarker, dark: Colors.purpleButDarker)
     
+    static let body = ColorPair(light: .black, dark: .white)
     static let normal = ColorPair(light: .white, dark: .init(white: 0.1, alpha: 1))
     static let popover = ColorPair(light: .white, dark: .init(white: 0.05, alpha: 1))
+    static let background = ColorPair(light: .init(white: 0.95, alpha: 1), dark: NSColor(red: 31/255.0, green: 31/255, blue: 31/255, alpha: 1.0))
     
     let light: NSColor
     let dark: NSColor
