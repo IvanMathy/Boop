@@ -8,7 +8,7 @@ Hey there! Thanks for trying out Boop. This documentation should hopefully help 
 
 ## Getting Boop
 
-You can download Boop from the Mac App Store, or from the [Releases page on Github](https://github.com/IvanMathy/Boop/releases). If you'd like to roll your own, you can clone the repository and follow the build instructions in the README.
+You can download Boop from the Mac App Store, or from the [Releases page on GitHub](https://github.com/IvanMathy/Boop/releases). If you'd like to roll your own, you can clone the repository and follow the build instructions in the README.
 
 ## Using Boop
 
@@ -40,7 +40,7 @@ No. The only time Boop communicates outside of itself is to check whether a new 
 
 ### How can I report a problem?
 
-The best way to do that is to [file an issue on Github](https://github.com/IvanMathy/Boop/issues/new). Otherwise, you can [talk to me on Twitter](https://twitter.com/OKatBest), as long as you're nice.
+The best way to do that is to [file an issue on GitHub](https://github.com/IvanMathy/Boop/issues/new). Otherwise, you can [talk to me on Twitter](https://twitter.com/OKatBest), as long as you're nice.
 
 ### How is Boop built?
 
