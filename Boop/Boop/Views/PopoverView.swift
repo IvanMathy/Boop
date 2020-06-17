@@ -17,7 +17,8 @@ class PopoverView: NSView {
         self.wantsLayer = true
         self.layer?.cornerRadius = 5.0
         self.layer?.masksToBounds = true
-        self.layer?.backgroundColor = NSColor(calibratedWhite: 0.05, alpha: 1).cgColor
+        
+        self.setBackground()
         
         let dropShadow = NSShadow()
         dropShadow.shadowColor = NSColor(calibratedWhite: 0, alpha: 1)
@@ -40,7 +41,14 @@ class PopoverView: NSView {
         self.animator().isHidden = true;
     }
     
+    func setBackground() {
+        
+        self.layer?.backgroundColor = ColorPair.popover.value(for: self.effectiveAppearance).cgColor
+        
+    }
     
-    
-    
+    override func viewDidChangeEffectiveAppearance() {
+        super.viewDidChangeEffectiveAppearance()
+        self.setBackground()
+    }
 }

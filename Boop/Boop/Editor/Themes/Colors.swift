@@ -39,6 +39,7 @@ struct ColorPair {
     static let purple = ColorPair(light: Colors.purpleButDarker, dark: Colors.purpleButDarker)
     
     static let normal = ColorPair(light: .white, dark: .init(white: 0.1, alpha: 1))
+    static let popover = ColorPair(light: .white, dark: .init(white: 0.05, alpha: 1))
     
     let light: NSColor
     let dark: NSColor
