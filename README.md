@@ -13,7 +13,7 @@
   <a href="https://sonarcloud.io/dashboard?id=IvanMathy_Boop"><img src="https://sonarcloud.io/api/project_badges/measure?project=IvanMathy_Boop&metric=alert_status"></a>
 </p>   
 <p align="center">
-  <a href="https://boop.okat.best/">Website</a>  •  <a href="https://github.com/IvanMathy/Boop/releases">Download from Github</a>  •  <a href="https://apps.apple.com/us/app/boop/id1518425043">Get on the Mac App Store</a>
+  <a href="https://boop.okat.best/">Website</a>  •  <a href="https://github.com/IvanMathy/Boop/releases">Download from GitHub</a>  •  <a href="https://apps.apple.com/us/app/boop/id1518425043">Get on the Mac App Store</a>
 </p>
 
 ### How to build
