@@ -62,6 +62,10 @@ class MainViewController: NSViewController {
 }
 
 extension MainViewController: SyntaxTextViewDelegate {
+    func theme(for appearance: NSAppearance) -> SyntaxColorTheme {
+        DefaultTheme()
+    }
+
     func didChangeText(_ syntaxTextView: SyntaxTextView) {
         
     }
