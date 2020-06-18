@@ -10,7 +10,7 @@
  **/
 
 function main(input) {
-    const script = input.text.replace(/\n\n---[\s\S]*$/, '');
+    const script = input.text.replace(/\n\n\/\/ Result:[\s\S]*$/, '');
 
     let output = '';
     try {
@@ -19,8 +19,8 @@ function main(input) {
             output = JSON.stringify(output, null, 2);
         }
     } catch (e) {
-        output = 'Error: ' + e;
+        input.postError(e.toString());
     }
 
-    input.text = script + "\n\n---\n\n" + output;
+    input.text = script + "\n\n// Result:\n\n" + output;
 }
