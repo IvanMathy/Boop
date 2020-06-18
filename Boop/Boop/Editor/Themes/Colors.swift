@@ -40,8 +40,11 @@ struct ColorPair {
     
     static let body = ColorPair(light: .black, dark: .white)
     static let normal = ColorPair(light: .white, dark: .init(white: 0.1, alpha: 1))
+    static let gutter = ColorPair(light: .init(white: 240/255, alpha: 1), dark: .init(white: 22/255, alpha: 1))
     static let popover = ColorPair(light: .white, dark: .init(white: 0.05, alpha: 1))
+    static let separator = ColorPair(light: .init(white: 220/255, alpha: 1), dark: .init(white: 15/255, alpha: 1))
     static let background = ColorPair(light: .init(white: 0.95, alpha: 1), dark: NSColor(red: 31/255.0, green: 31/255, blue: 31/255, alpha: 1.0))
+    
     
     let light: NSColor
     let dark: NSColor

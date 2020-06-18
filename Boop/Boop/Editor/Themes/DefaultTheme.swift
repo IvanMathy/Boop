@@ -15,10 +15,13 @@ class DefaultTheme: SyntaxColorTheme {
     
     var tabWidth: Int = 4
     
-    let gutterStyle: GutterStyle = GutterStyle(
-        backgroundColor: Color(red: 22/255.0, green: 22/255, blue: 22/255, alpha: 1.0),
-        separatorColor: Color(red: 15/255.0, green: 15/255, blue: 15/255, alpha: 1.0),
-        minimumWidth: 40)
+    var gutterStyle: GutterStyle {
+        GutterStyle(
+            backgroundColor: ColorPair.gutter.value(for: appearance),
+            separatorColor: ColorPair.separator.value(for: appearance),
+            minimumWidth: 40
+        )
+    }
     
     var font: Font = NSFont(name: "SFMono-Regular", size: 15) ?? Font(name: "Menlo", size: 15)!
     
