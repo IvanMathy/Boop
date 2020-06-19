@@ -21,13 +21,14 @@ enum Status {
 class StatusView: NSView {
     
     let transitionLength = 0.3
-    let messageLength = 5.0
+    let messageLength = 25.0
     
     @IBOutlet weak var textLabel: NSTextField!
     @IBOutlet weak var updateLabel: UpdateTextField!
     
     var queue = [Status]()
     var running = false
+    var current = Status.normal
     
     
     override func awakeFromNib() {
@@ -47,6 +48,7 @@ class StatusView: NSView {
             // Skip the queue for those statuses
             running = false
             queue.removeAll()
+            self.current = newStatus
             self.updateText(newStatus)
             self.updateColor(newStatus)
         default:
@@ -66,6 +68,7 @@ class StatusView: NSView {
             running = false
             self.updateText(.normal)
             self.updateColor(.normal)
+            self.current = .normal
             return
         }
         
@@ -75,6 +78,7 @@ class StatusView: NSView {
         
         self.updateText(next)
         self.updateColor(next)
+        self.current = next
         
         DispatchQueue.main.asyncAfter(deadline: .now() + messageLength, execute: {
             self.running = false
@@ -121,24 +125,25 @@ class StatusView: NSView {
     
     fileprivate func updateColor(_ newStatus: Status) {
         
-        var color = NSColor.textBackgroundColor
+        var color = ColorPair.normal
         
         switch newStatus {
         case .normal, .help(_):
             break
         case .success(_):
-            color = Colors.greenButDarker
+            color = ColorPair.green.swap
         case .info(_):
-            color = Colors.blueButDarker
+            color = ColorPair.blue.swap
         case .error(_):
-            color = Colors.redButDarker
+            color = ColorPair.red.swap
         case .updateAvailable:
-            color = Colors.purpleButDarker
+            color = ColorPair.purple
         }
         
-        NSAnimationContext.runAnimationGroup({ (context) in
-            context.duration = self.transitionLength
-            self.layer?.backgroundColor = color.cgColor
-        })
+        self.layer?.backgroundColor = color.value(for: self.effectiveAppearance).cgColor
+    }
+    
+    override func viewDidChangeEffectiveAppearance() {
+        self.updateColor(self.current)
     }
 }

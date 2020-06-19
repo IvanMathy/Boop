@@ -19,8 +19,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var scriptManager: ScriptManager!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Disable light mode because why in heck would you want that???
-        NSApp.appearance = NSAppearance(named: .darkAqua)
+
+        ThemeSettingsViewController.applyTheme()
         
         NSWindow.allowsAutomaticWindowTabbing = false
     }
