@@ -9,7 +9,8 @@
   }
 **/
 
-const re = /(?:(?:MULTI)?POINT|(?:MULTI)?LINESTRING|(?:MULTI)?POLYGON)\s*\([()0-9\s,.]+\)/g;
+const re = /(?:(?:MULTI)?POINT|(?:MULTI)?LINESTRING|(?:MULTI)?POLYGON)\s*\([()0-9\s,\.\s]+\)/g;
+
 function main(input) {
   try {
     input.text = input.text.replace(re, convert);
