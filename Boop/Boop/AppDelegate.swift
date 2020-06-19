@@ -20,6 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
+        ThemeSettingsViewController.applyTheme()
+        
         NSWindow.allowsAutomaticWindowTabbing = false
     }
 

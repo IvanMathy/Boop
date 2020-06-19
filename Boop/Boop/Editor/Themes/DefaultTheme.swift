@@ -55,13 +55,13 @@ class DefaultTheme: SyntaxColorTheme {
         
         switch token.type {
         case .comment:
-            return [.foregroundColor: Colors.commentGrey]
+            return [.foregroundColor: ColorPair.comments.value(for: appearance)]
         case .string:
             return [.foregroundColor: ColorPair.red.value(for: appearance)]
         case .attribute:
-            return [.foregroundColor: Colors.cyanish]
+            return [.foregroundColor: ColorPair.cyanish.value(for: appearance)]
         case .number:
-            return [.foregroundColor: Colors.orangeish]
+            return [.foregroundColor: ColorPair.orangish.value(for: appearance)]
         case .extra:
             return [.foregroundColor: ColorPair.blue.value(for: appearance)]
         case .keyword:

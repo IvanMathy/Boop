@@ -21,6 +21,10 @@ struct Colors {
     static let blueButDarker: NSColor = #colorLiteral(red: 0, green: 0.4156862745, blue: 0.7176470588, alpha: 1) // #006AB7
     static let greenButDarker: NSColor = #colorLiteral(red: 0, green: 0.6980392157, blue: 0, alpha: 1) // #00B200
     static let purpleButDarker: NSColor = #colorLiteral(red: 0.462745098, green: 0, blue: 0.462745098, alpha: 1) // #760076
+    static let orangeABitDarker: NSColor = #colorLiteral(red: 1, green: 0.3960784314, blue: 0.1764705882, alpha: 1) // #FF652D
+    static let cyanTinyBitDarker: NSColor = #colorLiteral(red: 0, green: 0.6941176471, blue: 0.7176470588, alpha: 1) // #00B1B7
+    static let commentGreyDarkest: NSColor = #colorLiteral(red: 0.5333333333, green: 0.5568627451, blue: 0.6509803922, alpha: 1) // #888EA6
+    static let purpleButItsLighter: NSColor = #colorLiteral(red: 0.9725490196, green: 0.6470588235, blue: 0.9725490196, alpha: 1) // #F8A5F8
     
     static func dynamicColor(light: NSColor, dark: NSColor, for appearance: NSAppearance) -> NSColor {
         if appearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua {
@@ -36,12 +40,15 @@ struct ColorPair {
     static let red = ColorPair(light: Colors.redButDarker, dark: Colors.redey)
     static let blue = ColorPair(light: Colors.blueButDarker, dark: Colors.bluish)
     static let green = ColorPair(light: Colors.greenButDarker, dark: Colors.greenish)
-    static let purple = ColorPair(light: Colors.purpleButDarker, dark: Colors.purpleButDarker)
+    static let purple = ColorPair(light: Colors.purpleButItsLighter, dark: Colors.purpleButDarker)
+    static let cyanish = ColorPair(light: Colors.cyanTinyBitDarker, dark: Colors.cyanish)
+    static let orangish = ColorPair(light: Colors.orangeABitDarker, dark: Colors.orangeish)
     
-    static let body = ColorPair(light: .black, dark: .white)
+    static let body = ColorPair(light: .init(white: 0.1, alpha: 1), dark: .white)
     static let normal = ColorPair(light: .white, dark: .init(white: 0.1, alpha: 1))
     static let gutter = ColorPair(light: .init(white: 240/255, alpha: 1), dark: .init(white: 22/255, alpha: 1))
     static let popover = ColorPair(light: .white, dark: .init(white: 0.05, alpha: 1))
+    static let comments = ColorPair(light: Colors.commentGreyDarkest, dark: Colors.commentGreyDarkest)
     static let separator = ColorPair(light: .init(white: 220/255, alpha: 1), dark: .init(white: 15/255, alpha: 1))
     static let background = ColorPair(light: .init(white: 0.95, alpha: 1), dark: NSColor(red: 31/255.0, green: 31/255, blue: 31/255, alpha: 1.0))
     
