@@ -39,7 +39,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Boop</string>
+				<string>Send to Boop</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>textServiceHandler</string>
