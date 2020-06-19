@@ -36,7 +36,7 @@ class PopoverViewController: NSViewController {
         
         var keyHandler: (_: NSEvent) -> NSEvent?
         keyHandler = {
-            (_ theEvent: NSEvent) -> NSEvent in
+            (_ theEvent: NSEvent) -> NSEvent? in
             
             var didSomething = false
                 
@@ -98,7 +98,7 @@ class PopoverViewController: NSViewController {
             }
             
             // Return an empty event to avoid the funk sound
-            return NSEvent()
+            return nil
         }
         
         // Creates an object we do not own, but must keep track
