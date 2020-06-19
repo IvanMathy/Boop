@@ -1,8 +1,8 @@
 /**
   {
     "api":1,
-    "name":"Decode JWT",
-    "description":"Decodes JWT (no validation!)",
+    "name":"JWT Decode",
+    "description":"Converts JWTs to JSON",
     "author":"Nils Sonemann",
     "icon":"metamorphose",
     "tags":"decode,jwt,token"
@@ -13,7 +13,7 @@ function main(input) {
     var t = input.text
     var jwtParts = t.split(".")
     if(jwtParts.length != 3) {
-        input.postError("JWT Token not valid/complete")
+        input.postError("Invalid Token")
         return
     }
 
