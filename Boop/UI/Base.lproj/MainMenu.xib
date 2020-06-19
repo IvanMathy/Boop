@@ -55,6 +55,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Boop" customModuleProvider="target">
             <connections>
                 <outlet property="closePickerMenuItem" destination="KYm-JI-9g0" id="aZo-Hy-RkG"/>
+                <outlet property="editor" destination="Ef0-Na-xwu" id="rks-Mp-ffh"/>
                 <outlet property="openPickerMenuItem" destination="8ka-cp-srR" id="qZt-zg-2wc"/>
                 <outlet property="popoverViewController" destination="ugb-uZ-HP1" id="gLb-EK-85g"/>
                 <outlet property="scriptManager" destination="jdF-I6-2al" id="o2F-Lj-Vou"/>
