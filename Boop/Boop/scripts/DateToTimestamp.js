@@ -1,7 +1,7 @@
 /**
     {
         "api":1,
-        "name":"Unix Timestamp",
+        "name":"Date to Timestamp",
         "description":"Converts dates to Unix timestamp",
         "author":"Noah Halford",
         "icon":"watch",
