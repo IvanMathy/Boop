@@ -103,7 +103,7 @@ class PopoverViewController: NSViewController {
         
         // Creates an object we do not own, but must keep track
         // of it so that it can be "removed" when we're done
-       // NSEvent.addLocalMonitorForEvents(matching: .keyDown, handler: keyHandler)
+        NSEvent.addLocalMonitorForEvents(matching: .keyDown, handler: keyHandler)
         
     }
     
