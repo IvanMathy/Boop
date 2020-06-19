@@ -101,7 +101,7 @@ function handlePolygon(rings, littleEndian) {
   let out = toByteOrder(littleEndian) + toUint32(3, littleEndian);
   out += toUint32(rings.length, littleEndian);
   for (let ring of rings) {
-    out += handleRing(ring, littleEndian, "POLYGON");
+    out += handleRing(ring, littleEndian);
   }
   return out;
 }
