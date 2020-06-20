@@ -4,7 +4,7 @@
         "name":"Collapse lines",
         "description":"Removes all linebreaks from your text",
         "author":"Dennis",
-        "icon":"table",
+        "icon":"collapse",
         "tags":"strip,remove,collapse,join"
     }
 **/
