@@ -2,7 +2,7 @@
 	{
 		"api":1,
 		"name":"Reverse Lines",
-		"description":"Flip upside down",
+		"description":"Flips every line of your text",
 		"author":"@Clarko",
 		"icon":"flip",
 		"tags":"reverse,order,invert,mirror,flip,upside,down"

@@ -2,7 +2,7 @@
     {
         "api":1,
         "name":"Remove Duplicate Lines",
-        "description":"Only keeps unique lines.",
+        "description":"Ensures each line of your text is unique",
         "author":"andipaetzold",
         "icon":"metamorphose",
         "tags":"unique,duplicate"
