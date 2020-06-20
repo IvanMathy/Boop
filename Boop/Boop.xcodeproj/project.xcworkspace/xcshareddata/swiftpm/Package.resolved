@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Fuse",
+        "repositoryURL": "https://github.com/IvanMathy/fuse-swift",
+        "state": {
+          "branch": null,
+          "revision": "acb9a2ec2789ce1dcca4d01872a20da801e7ac55",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "SavannaKit",
+        "repositoryURL": "https://github.com/IvanMathy/savannakit",
+        "state": {
+          "branch": null,
+          "revision": "bc1a201dbad80e2845a96063045b9764e9c44aaa",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

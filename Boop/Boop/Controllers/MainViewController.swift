@@ -63,7 +63,6 @@ extension MainViewController: SyntaxTextViewDelegate {
     func theme(for appearance: NSAppearance) -> SyntaxColorTheme {
         return DefaultTheme(appearance: appearance)
     }
-    
     func didChangeText(_ syntaxTextView: SyntaxTextView) {
         
     }
