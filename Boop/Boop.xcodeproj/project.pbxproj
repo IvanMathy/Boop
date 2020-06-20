@@ -897,7 +897,7 @@
 			repositoryURL = "https://github.com/IvanMathy/savannakit";
 			requirement = {
 				kind = revision;
-				revision = 78bed4ccdaf0801f141900944e6e6de661c1ae07;
+				revision = bc1a201dbad80e2845a96063045b9764e9c44aaa;
 			};
 		};
 		2C8BE186249EBB3D00099B73 /* XCRemoteSwiftPackageReference "fuse-swift" */ = {
