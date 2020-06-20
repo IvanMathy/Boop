@@ -4,7 +4,7 @@
     "name":"JWT Decode",
     "description":"Converts JWTs to JSON",
     "author":"Nils Sonemann",
-    "icon":"metamorphose",
+    "icon":"identification",
     "tags":"decode,jwt,token"
   }
 **/
