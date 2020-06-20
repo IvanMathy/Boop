@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SavannaKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -17,12 +18,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var popoverViewController: PopoverViewController!
     @IBOutlet weak var scriptManager: ScriptManager!
+    @IBOutlet weak var editor: SyntaxTextView!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Disable light mode because why in heck would you want that???
-        NSApp.appearance = NSAppearance(named: .darkAqua)
+
+        ThemeSettingsViewController.applyTheme()
         
         NSWindow.allowsAutomaticWindowTabbing = false
+        NSApp.servicesProvider = self
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -62,5 +65,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         closePickerMenuItem.isHidden = !isOpen
         openPickerMenuItem.isHidden = isOpen
     }
+
+    @objc func textServiceHandler(_ pboard: NSPasteboard, userData: String, error: NSErrorPointer) {
+        if let string = pboard.string(forType: NSPasteboard.PasteboardType.string) {
+            editor.contentTextView.string = string
+        }
+    }
+
 }
 

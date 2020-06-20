@@ -35,6 +35,10 @@ SELECT "Hello" FROM table LIMIT 2
     
 if(true) return;
     
+This line was added on Fri, 19 Jun 2020 01:01:30 GMT
+    
+<div class="hello">World</div>
+    
 
 "This is quote-unquote \\"escaped\\" if you will."
 `

@@ -43,10 +43,12 @@ class BoopLexer: RegexLexer {
         
         // Extras
         
+        let UTCDate = "(?:(Sun|Mon|Tue|Wed|Thu|Fri|Sat),\\s+)?(0[1-9]|[1-2]?[0-9]|3[01])\\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\s+(19[0-9]{2}|[2-9][0-9]{3})\\s+(2[0-3]|[0-1][0-9]):([0-5][0-9])(?::(60|[0-5][0-9]))?\\s+([-\\+][0-9]{2}[0-5][0-9]|(?:UT|GMT|(?:E|C|M|P)(?:ST|DT)|[A-IK-Z]))"
+        
+        generators.append(regexToken(.number, "\(standalonePrefix)(\(UTCDate))\(standaloneSuffix)"))
         
         // - Match MD5 strings
-        generators.append(regexToken(.keyword, "\(standalonePrefix)([a-f0-9]{32})\(standaloneSuffix)", options: .dotMatchesLineSeparators))
-        
+        generators.append(regexToken(.keyword, "\(standalonePrefix)([a-f0-9]{32})\(standaloneSuffix)"))
         
         // - Bootleg XML-like tags match:
         
