@@ -54,13 +54,17 @@
 		2C60A54E24871273006496BA /* UpdateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4E524870678006496BA /* UpdateTextField.swift */; };
 		2C60A54F24871273006496BA /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */; };
 		2C60A55024871273006496BA /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
-		2C60A55224871273006496BA /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; };
 		2C60A55524871273006496BA /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
 		2C60A55624871273006496BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667721FD62910082570E /* Assets.xcassets */; };
 		2C60A55724871273006496BA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667921FD62910082570E /* MainMenu.xib */; };
 		2C60A55824871273006496BA /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5ED41D2357F67200322893 /* Preferences.storyboard */; };
-		2C60A55B24871273006496BA /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C60A56224871730006496BA /* UpdateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4E524870678006496BA /* UpdateTextField.swift */; };
+		2C8BE181249EBADC00099B73 /* SavannaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE180249EBADC00099B73 /* SavannaKit */; };
+		2C8BE182249EBADC00099B73 /* SavannaKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE180249EBADC00099B73 /* SavannaKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2C8BE184249EBAEC00099B73 /* SavannaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE183249EBAEC00099B73 /* SavannaKit */; };
+		2C8BE185249EBAEC00099B73 /* SavannaKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE183249EBAEC00099B73 /* SavannaKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2C8BE188249EBB3D00099B73 /* Fuse in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE187249EBB3D00099B73 /* Fuse */; };
+		2C8BE18A249EBB4200099B73 /* Fuse in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE189249EBB4200099B73 /* Fuse */; };
 		2C9118B623406B530018916F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9118B523406B530018916F /* Colors.swift */; };
 		2C9761D52214E11600AFF8CD /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
 		2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
@@ -70,10 +74,6 @@
 		2CA245DC224822EA00586DFD /* ScriptTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245DB224822EA00586DFD /* ScriptTableView.swift */; };
 		2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */; };
 		2CC211C5236FB5C1007CECEE /* ScriptsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */; };
-		53D77B43249A4008002A2F02 /* Fuse in Frameworks */ = {isa = PBXBuildFile; productRef = 53D77B42249A4008002A2F02 /* Fuse */; };
-		53D77B46249A4019002A2F02 /* Fuse in Frameworks */ = {isa = PBXBuildFile; productRef = 53D77B45249A4019002A2F02 /* Fuse */; };
-		53D77B49249A4079002A2F02 /* SavannaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 53D77B48249A4079002A2F02 /* SavannaKit */; };
-		53D77B4A249A4079002A2F02 /* SavannaKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 53D77B48249A4079002A2F02 /* SavannaKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +93,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				53D77B4A249A4079002A2F02 /* SavannaKit in Embed Frameworks */,
+				2C8BE182249EBADC00099B73 /* SavannaKit in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,18 +104,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2C8BE185249EBAEC00099B73 /* SavannaKit in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C60A55A24871273006496BA /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2C60A55B24871273006496BA /* SavannaKit.framework in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -173,8 +164,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53D77B43249A4008002A2F02 /* Fuse in Frameworks */,
-				53D77B49249A4079002A2F02 /* SavannaKit in Frameworks */,
+				2C8BE181249EBADC00099B73 /* SavannaKit in Frameworks */,
+				2C8BE188249EBB3D00099B73 /* Fuse in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,8 +173,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C60A55224871273006496BA /* SavannaKit.framework in Frameworks */,
-				53D77B46249A4019002A2F02 /* Fuse in Frameworks */,
+				2C8BE184249EBAEC00099B73 /* SavannaKit in Frameworks */,
+				2C8BE18A249EBB4200099B73 /* Fuse in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,8 +364,8 @@
 			);
 			name = Boop;
 			packageProductDependencies = (
-				53D77B42249A4008002A2F02 /* Fuse */,
-				53D77B48249A4079002A2F02 /* SavannaKit */,
+				2C8BE180249EBADC00099B73 /* SavannaKit */,
+				2C8BE187249EBB3D00099B73 /* Fuse */,
 			);
 			productName = Boop;
 			productReference = 2C20667221FD628E0082570E /* Boop.app */;
@@ -388,7 +379,6 @@
 				2C60A55124871273006496BA /* Frameworks */,
 				2C60A55424871273006496BA /* Resources */,
 				2C60A55924871273006496BA /* Embed Frameworks */,
-				2C60A55A24871273006496BA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -396,7 +386,8 @@
 			);
 			name = "Boop (App Store)";
 			packageProductDependencies = (
-				53D77B45249A4019002A2F02 /* Fuse */,
+				2C8BE183249EBAEC00099B73 /* SavannaKit */,
+				2C8BE189249EBB4200099B73 /* Fuse */,
 			);
 			productName = Boop;
 			productReference = 2C60A56024871273006496BA /* Boop.app */;
@@ -431,8 +422,8 @@
 			);
 			mainGroup = 2C20666921FD628E0082570E;
 			packageReferences = (
-				53D77B41249A4008002A2F02 /* XCRemoteSwiftPackageReference "fuse-swift" */,
-				53D77B47249A4079002A2F02 /* XCRemoteSwiftPackageReference "savannakit" */,
+				2C8BE17F249EBADC00099B73 /* XCRemoteSwiftPackageReference "savannakit" */,
+				2C8BE186249EBB3D00099B73 /* XCRemoteSwiftPackageReference "fuse-swift" */,
 			);
 			productRefGroup = 2C20667321FD628E0082570E /* Products */;
 			projectDirPath = "";
@@ -901,39 +892,44 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		53D77B41249A4008002A2F02 /* XCRemoteSwiftPackageReference "fuse-swift" */ = {
+		2C8BE17F249EBADC00099B73 /* XCRemoteSwiftPackageReference "savannakit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:eimantas/fuse-swift";
+			repositoryURL = "https://github.com/IvanMathy/savannakit";
+			requirement = {
+				kind = revision;
+				revision = 78bed4ccdaf0801f141900944e6e6de661c1ae07;
+			};
+		};
+		2C8BE186249EBB3D00099B73 /* XCRemoteSwiftPackageReference "fuse-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IvanMathy/fuse-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
 			};
 		};
-		53D77B47249A4079002A2F02 /* XCRemoteSwiftPackageReference "savannakit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:eimantas/savannakit";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		53D77B42249A4008002A2F02 /* Fuse */ = {
+		2C8BE180249EBADC00099B73 /* SavannaKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 53D77B41249A4008002A2F02 /* XCRemoteSwiftPackageReference "fuse-swift" */;
-			productName = Fuse;
-		};
-		53D77B45249A4019002A2F02 /* Fuse */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 53D77B41249A4008002A2F02 /* XCRemoteSwiftPackageReference "fuse-swift" */;
-			productName = Fuse;
-		};
-		53D77B48249A4079002A2F02 /* SavannaKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 53D77B47249A4079002A2F02 /* XCRemoteSwiftPackageReference "savannakit" */;
+			package = 2C8BE17F249EBADC00099B73 /* XCRemoteSwiftPackageReference "savannakit" */;
 			productName = SavannaKit;
+		};
+		2C8BE183249EBAEC00099B73 /* SavannaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C8BE17F249EBADC00099B73 /* XCRemoteSwiftPackageReference "savannakit" */;
+			productName = SavannaKit;
+		};
+		2C8BE187249EBB3D00099B73 /* Fuse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C8BE186249EBB3D00099B73 /* XCRemoteSwiftPackageReference "fuse-swift" */;
+			productName = Fuse;
+		};
+		2C8BE189249EBB4200099B73 /* Fuse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C8BE186249EBB3D00099B73 /* XCRemoteSwiftPackageReference "fuse-swift" */;
+			productName = Fuse;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

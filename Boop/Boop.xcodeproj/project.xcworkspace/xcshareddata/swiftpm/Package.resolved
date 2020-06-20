@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "Fuse",
-        "repositoryURL": "git@github.com:eimantas/fuse-swift",
+        "repositoryURL": "https://github.com/IvanMathy/fuse-swift",
         "state": {
           "branch": null,
           "revision": "acb9a2ec2789ce1dcca4d01872a20da801e7ac55",
@@ -12,10 +12,10 @@
       },
       {
         "package": "SavannaKit",
-        "repositoryURL": "git@github.com:eimantas/savannakit",
+        "repositoryURL": "https://github.com/IvanMathy/savannakit",
         "state": {
-          "branch": "master",
-          "revision": "c5f2119c95a2be3dfcbdf7320a90ff7e3be7a7f0",
+          "branch": null,
+          "revision": "78bed4ccdaf0801f141900944e6e6de661c1ae07",
           "version": null
         }
       }
