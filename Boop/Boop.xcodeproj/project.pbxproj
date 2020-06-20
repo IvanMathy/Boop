@@ -10,7 +10,6 @@
 		2C17C66A24271DDA005C911C /* BoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C66924271DDA005C911C /* BoopTests.swift */; };
 		2C17C67224271EBD005C911C /* ScriptManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C67124271EBD005C911C /* ScriptManagerTests.swift */; };
 		2C17C67324271EE8005C911C /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DB2214E45300AFF8CD /* ScriptManager.swift */; };
-		2C17C67524271F2F005C911C /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; };
 		2C17C6762427214B005C911C /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DE2214E46800AFF8CD /* Script.swift */; };
 		2C17C6772427214D005C911C /* ScriptExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */; };
 		2C17C67B2427218B005C911C /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669921FD76900082570E /* StatusView.swift */; };
@@ -158,7 +157,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C17C67524271F2F005C911C /* SavannaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
