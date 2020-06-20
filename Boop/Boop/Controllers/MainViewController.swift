@@ -30,7 +30,17 @@ class MainViewController: NSViewController {
         
     }
     @IBAction func openHelp(_ sender: Any) {
-        guard let url = URL(string: "https://github.com/IvanMathy/Boop/blob/master/Boop/Documentation/Readme.md") else {
+        open(url: "https://github.com/IvanMathy/Boop/blob/master/Boop/Documentation/Readme.md")
+    }
+    
+    
+    @IBAction func openScripts(_ sender: Any) {
+        open(url: "https://github.com/IvanMathy/Boop/tree/main/Scripts")
+    }
+    
+    
+    func open(url: String) {
+        guard let url = URL(string: url) else {
             assertionFailure("Could not generate help URL.")
             return
         }
