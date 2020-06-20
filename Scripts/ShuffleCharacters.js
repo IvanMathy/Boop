@@ -4,7 +4,7 @@
   "name": "Shuffle characters",
   "description": "Shuffles characters randomly",
   "author": "Christian Petersen",
-  "icon": "unknown",
+  "icon": "dice",
   "tags": "shuffle,random,character,char"
 }
 **/
