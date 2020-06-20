@@ -36,7 +36,6 @@ function main(input)
         input.text = JSON.stringify(convertToJson(input.text));
     } catch (error) {
         input.postError("Unable to parse given string")
-        input.text = error.message
     }
 
 }

@@ -37,7 +37,6 @@ function main(input)
 		input.text = convertToQuery(JSON.parse(input.text));
     } catch (error) {
         input.postError("Unable to convert JSON to URL params")
-        input.text = error.message
     }
 
 }
