@@ -4,7 +4,7 @@
 		"name":"Shuffle Lines",
 		"description":"Randomize each line of your text",
 		"author":"@Clarko",
-		"icon":"unknown",
+		"icon":"dice",
 		"tags":"shuffle,random"
 	}
 **/

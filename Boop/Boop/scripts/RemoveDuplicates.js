@@ -4,14 +4,18 @@
         "name":"Remove Duplicate Lines",
         "description":"Ensures each line of your text is unique",
         "author":"andipaetzold",
-        "icon":"metamorphose",
+        "icon":"filtration",
         "tags":"unique,duplicate"
     }
 **/
 
 function main(input) {
+    let lines = input.text.split('\n')
+    let out =  unique(lines)
 
-    input.text = unique(input.text.split('\n')).join('\n')
+    input.text = out.join('\n')
+    
+    input.postInfo(`${lines.length - out.length} lines removed`)
 
 }
 

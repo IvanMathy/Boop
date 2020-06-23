@@ -452,6 +452,13 @@ Gw
                                     <action selector="reloadScripts:" target="Voe-Tx-rLC" id="Rmu-D9-Xm5"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="Tfr-N1-YjS"/>
+                            <menuItem title="Get more scripts…" id="oS5-Vj-4JY">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openScripts:" target="unv-pE-gme" id="zHQ-km-1Mi"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -499,7 +506,7 @@ Gw
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
             <value key="minSize" type="size" width="480" height="360"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
