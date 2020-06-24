@@ -70,6 +70,7 @@
 		2C9761DC2214E45300AFF8CD /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DB2214E45300AFF8CD /* ScriptManager.swift */; };
 		2C9761DF2214E46800AFF8CD /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DE2214E46800AFF8CD /* Script.swift */; };
 		2C9761E12214E68D00AFF8CD /* ScriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */; };
+		2C9D045C24A2DAC600D27D20 /* ThemeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC93F9249C2D600080B9B8 /* ThemeSettingsViewController.swift */; };
 		2CA245DC224822EA00586DFD /* ScriptTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245DB224822EA00586DFD /* ScriptTableView.swift */; };
 		2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */; };
 		2CC211C5236FB5C1007CECEE /* ScriptsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */; };
@@ -526,6 +527,7 @@
 				2C60A53F24871273006496BA /* PopoverViewController.swift in Sources */,
 				2C60A54024871273006496BA /* Script.swift in Sources */,
 				2C60A54124871273006496BA /* AppVersion.swift in Sources */,
+				2C9D045C24A2DAC600D27D20 /* ThemeSettingsViewController.swift in Sources */,
 				2C60A54224871273006496BA /* DefaultTheme.swift in Sources */,
 				2C60A54324871273006496BA /* ScriptManager.swift in Sources */,
 				2C60A54424871273006496BA /* AppDelegate.swift in Sources */,
