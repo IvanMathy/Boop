@@ -6,7 +6,7 @@
 		"author":"riesentoaster",
 		"icon":"table",
 		"tags":"join, space",
-        	"bias": -0.1
+		"bias": -0.1
 	}
 **/
 
