@@ -23,3 +23,9 @@
 - In terminal, `cd` into your copy and run `$ carthage bootstrap --cache-builds --platform macos`
 - Open `Boop/Boop.xcodeproj`
 - Press play
+
+
+### Documentation
+
+- [Documentation](Boop/Documentation/Readme.md)
+- [Custom scripts](Boop/Documentation/CustomScripts.md)
