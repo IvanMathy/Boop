@@ -33,3 +33,9 @@ If you're just trying to get Boop, building from source might not be your best b
 - Clone or download a copy of the repository
 - Open `Boop/Boop.xcodeproj`
 - Press play
+
+
+### Documentation
+
+- [Documentation](Boop/Documentation/Readme.md)
+- [Custom scripts](Boop/Documentation/CustomScripts.md)
