@@ -4,7 +4,7 @@
 		"name":"Query String to JSON",
 		"description":"Converts URL query string to JSON",
 		"author":"Ota Mares <ota@mares.one>",
-		"icon":"table",
+		"icon":"website",
 		"tags":"url,query,params,json,convert,decode"
 	}
 **/
@@ -36,7 +36,6 @@ function main(input)
         input.text = JSON.stringify(convertToJson(input.text));
     } catch (error) {
         input.postError("Unable to parse given string")
-        input.text = error.message
     }
 
 }

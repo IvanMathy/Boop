@@ -4,7 +4,7 @@
 		"name":"JSON to Query String",
 		"description":"Converts JSON to URL query string",
 		"author":"Ota Mares <ota@mares.one>",
-		"icon":"table",
+		"icon":"website",
 		"tags":"url,query,params,json,convert,encode"
 	}
 **/
@@ -37,7 +37,6 @@ function main(input)
 		input.text = convertToQuery(JSON.parse(input.text));
     } catch (error) {
         input.postError("Unable to convert JSON to URL params")
-        input.text = error.message
     }
 
 }

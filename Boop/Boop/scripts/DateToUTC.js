@@ -5,7 +5,7 @@
 		"description":"Converts dates and timestamps to UTC dates",
 		"author":"Ivan",
 		"icon":"watch",
-		"tags":"date,time,calendar"
+		"tags":"date,time,calendar,unix,timestamp"
 	}
 **/
 
@@ -23,7 +23,7 @@ function main(input) {
     
     let out = parsedDate.toUTCString()
     
-    if(out === "Invalid Date") {
+    if (out === "Invalid Date") {
         input.postError(out)
         return
     }

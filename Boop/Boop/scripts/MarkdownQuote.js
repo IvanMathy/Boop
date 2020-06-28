@@ -1,10 +1,10 @@
 /**
     {
         "api":1,
-        "name":"Quote (Markdown style)",
-        "description":"Prepends > characters for each line, to match the style of a Markdown quote",
+        "name":"Markdown Quote",
+        "description":"Adds > to the start of every line of your text",
         "author":"Dan2552",
-        "icon":"metamorphose",
+        "icon":"term",
         "tags":"quote,markdown"
     }
 **/

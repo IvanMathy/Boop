@@ -4,7 +4,7 @@
         "name":"Upcase",
         "description":"Converts to uppercase",
         "author":"Dan2552",
-        "icon":"metamorphose",
+        "icon":"type",
         "tags":"upcase,uppercase,capital,capitalize,capitalization"
     }
 **/

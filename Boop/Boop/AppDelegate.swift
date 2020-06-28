@@ -20,16 +20,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var scriptManager: ScriptManager!
     @IBOutlet weak var editor: SyntaxTextView!
 
+    // Frame auto save name for app window frame restoration.
+    private static let appWindowName = "boop.app.window"
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
         ThemeSettingsViewController.applyTheme()
         
         NSWindow.allowsAutomaticWindowTabbing = false
         NSApp.servicesProvider = self
+        
+        // Restore app window frame.
+        window.setFrameUsingName(AppDelegate.appWindowName)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        // Memorize app window frame for restoration.
+        window.saveFrame(usingName: AppDelegate.appWindowName)
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
