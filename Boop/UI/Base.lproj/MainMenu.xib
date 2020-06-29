@@ -55,6 +55,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Boop" customModuleProvider="target">
             <connections>
                 <outlet property="closePickerMenuItem" destination="KYm-JI-9g0" id="aZo-Hy-RkG"/>
+                <outlet property="editor" destination="Ef0-Na-xwu" id="rks-Mp-ffh"/>
                 <outlet property="openPickerMenuItem" destination="8ka-cp-srR" id="qZt-zg-2wc"/>
                 <outlet property="popoverViewController" destination="ugb-uZ-HP1" id="gLb-EK-85g"/>
                 <outlet property="scriptManager" destination="jdF-I6-2al" id="o2F-Lj-Vou"/>
@@ -147,7 +148,7 @@
                                 </menu>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
-                            <menuItem title="Close" hidden="YES" keyEquivalent="w" id="DVo-aG-piG">
+                            <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
                                 <connections>
                                     <action selector="performClose:" target="-1" id="HmO-Ls-i7Q"/>
                                 </connections>
@@ -451,6 +452,13 @@ Gw
                                     <action selector="reloadScripts:" target="Voe-Tx-rLC" id="Rmu-D9-Xm5"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="Tfr-N1-YjS"/>
+                            <menuItem title="Get more scripts…" id="oS5-Vj-4JY">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openScripts:" target="unv-pE-gme" id="zHQ-km-1Mi"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -520,7 +528,7 @@ Gw
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Start typing..." id="cpq-qD-Ulg">
                                     <font key="font" metaFont="systemLight" size="21"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
@@ -575,7 +583,7 @@ Gw
                                                                             <rect key="frame" x="-2" y="0.0" width="96" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="YJp-VQ-NF7">
                                                                                 <font key="font" metaFont="system"/>
-                                                                                <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>

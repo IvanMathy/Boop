@@ -24,15 +24,23 @@ class MainViewController: NSViewController {
         
         #endif
         
-        
         editorView.delegate = self
-        editorView.theme = DefaultTheme()
         
         editorView.contentTextView.selectedTextAttributes = [.backgroundColor:NSColor(red:0.19, green:0.44, blue:0.71, alpha:1.0), .foregroundColor: NSColor.white]
         
     }
     @IBAction func openHelp(_ sender: Any) {
-        guard let url = URL(string: "https://github.com/IvanMathy/Boop/blob/master/Boop/Documentation/Readme.md") else {
+        open(url: "https://github.com/IvanMathy/Boop/blob/master/Boop/Documentation/Readme.md")
+    }
+    
+    
+    @IBAction func openScripts(_ sender: Any) {
+        open(url: "https://github.com/IvanMathy/Boop/tree/main/Scripts")
+    }
+    
+    
+    func open(url: String) {
+        guard let url = URL(string: url) else {
             assertionFailure("Could not generate help URL.")
             return
         }
@@ -62,6 +70,9 @@ class MainViewController: NSViewController {
 }
 
 extension MainViewController: SyntaxTextViewDelegate {
+    func theme(for appearance: NSAppearance) -> SyntaxColorTheme {
+        return DefaultTheme(appearance: appearance)
+    }
     func didChangeText(_ syntaxTextView: SyntaxTextView) {
         
     }

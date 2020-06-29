@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2C17C66A24271DDA005C911C /* BoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C66924271DDA005C911C /* BoopTests.swift */; };
 		2C17C67224271EBD005C911C /* ScriptManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C67124271EBD005C911C /* ScriptManagerTests.swift */; };
 		2C17C67324271EE8005C911C /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DB2214E45300AFF8CD /* ScriptManager.swift */; };
-		2C17C67524271F2F005C911C /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; };
 		2C17C6762427214B005C911C /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DE2214E46800AFF8CD /* Script.swift */; };
 		2C17C6772427214D005C911C /* ScriptExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */; };
 		2C17C67B2427218B005C911C /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20669921FD76900082570E /* StatusView.swift */; };
@@ -27,8 +26,6 @@
 		2C2066A221FE47090082570E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A121FE47090082570E /* PopoverViewController.swift */; };
 		2C2066A421FE47CE0082570E /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A321FE47CE0082570E /* PopoverView.swift */; };
 		2C2066A621FE53870082570E /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2066A521FE53870082570E /* SearchField.swift */; };
-		2C3B003E22E3775300BBD4D0 /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; };
-		2C3B004022E3776D00BBD4D0 /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C53B6E0226D404E00DC6861 /* ScriptExecution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53B6DF226D404E00DC6861 /* ScriptExecution.swift */; };
 		2C5ED41E2357F67200322893 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5ED41D2357F67200322893 /* Preferences.storyboard */; };
 		2C60A4A22482FE9E006496BA /* UpdateBuddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4A12482FE9E006496BA /* UpdateBuddy.swift */; };
@@ -56,26 +53,28 @@
 		2C60A54E24871273006496BA /* UpdateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4E524870678006496BA /* UpdateTextField.swift */; };
 		2C60A54F24871273006496BA /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */; };
 		2C60A55024871273006496BA /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
-		2C60A55224871273006496BA /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; };
-		2C60A55324871273006496BA /* Fuse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB9D7F024319BAC00135424 /* Fuse.framework */; };
 		2C60A55524871273006496BA /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
 		2C60A55624871273006496BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667721FD62910082570E /* Assets.xcassets */; };
 		2C60A55724871273006496BA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667921FD62910082570E /* MainMenu.xib */; };
 		2C60A55824871273006496BA /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5ED41D2357F67200322893 /* Preferences.storyboard */; };
-		2C60A55B24871273006496BA /* SavannaKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2C60A55C24871273006496BA /* Fuse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CB9D7F024319BAC00135424 /* Fuse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C60A56224871730006496BA /* UpdateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4E524870678006496BA /* UpdateTextField.swift */; };
+		2C8BE181249EBADC00099B73 /* SavannaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE180249EBADC00099B73 /* SavannaKit */; };
+		2C8BE182249EBADC00099B73 /* SavannaKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE180249EBADC00099B73 /* SavannaKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2C8BE184249EBAEC00099B73 /* SavannaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE183249EBAEC00099B73 /* SavannaKit */; };
+		2C8BE185249EBAEC00099B73 /* SavannaKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE183249EBAEC00099B73 /* SavannaKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2C8BE188249EBB3D00099B73 /* Fuse in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE187249EBB3D00099B73 /* Fuse */; };
+		2C8BE18A249EBB4200099B73 /* Fuse in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE189249EBB4200099B73 /* Fuse */; };
 		2C9118B623406B530018916F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9118B523406B530018916F /* Colors.swift */; };
 		2C9761D52214E11600AFF8CD /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = 2C9761D42214E11600AFF8CD /* scripts */; };
 		2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */; };
 		2C9761DC2214E45300AFF8CD /* ScriptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DB2214E45300AFF8CD /* ScriptManager.swift */; };
 		2C9761DF2214E46800AFF8CD /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761DE2214E46800AFF8CD /* Script.swift */; };
 		2C9761E12214E68D00AFF8CD /* ScriptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */; };
+		2C9D045C24A2DAC600D27D20 /* ThemeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC93F9249C2D600080B9B8 /* ThemeSettingsViewController.swift */; };
 		2CA245DC224822EA00586DFD /* ScriptTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA245DB224822EA00586DFD /* ScriptTableView.swift */; };
-		2CB9D7F124319BAC00135424 /* Fuse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB9D7F024319BAC00135424 /* Fuse.framework */; };
-		2CB9D7F224319BB000135424 /* Fuse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2CB9D7F024319BAC00135424 /* Fuse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */; };
 		2CC211C5236FB5C1007CECEE /* ScriptsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */; };
+		2CEC93FA249C2D600080B9B8 /* ThemeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC93F9249C2D600080B9B8 /* ThemeSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,19 +94,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2C8BE182249EBADC00099B73 /* SavannaKit in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C3B003F22E3776800BBD4D0 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2C3B004022E3776D00BBD4D0 /* SavannaKit.framework in CopyFiles */,
-				2CB9D7F224319BB000135424 /* Fuse.framework in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2C60A55924871273006496BA /* Embed Frameworks */ = {
@@ -116,19 +105,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2C8BE185249EBAEC00099B73 /* SavannaKit in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2C60A55A24871273006496BA /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2C60A55B24871273006496BA /* SavannaKit.framework in CopyFiles */,
-				2C60A55C24871273006496BA /* Fuse.framework in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -171,6 +150,7 @@
 		2CB9D7F024319BAC00135424 /* Fuse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fuse.framework; path = ../../../Carthage/Build/Mac/Fuse.framework; sourceTree = "<group>"; };
 		2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTabViewController.swift; sourceTree = "<group>"; };
 		2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsSettingsViewController.swift; sourceTree = "<group>"; };
+		2CEC93F9249C2D600080B9B8 /* ThemeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +158,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C17C67524271F2F005C911C /* SavannaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,8 +165,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C3B003E22E3775300BBD4D0 /* SavannaKit.framework in Frameworks */,
-				2CB9D7F124319BAC00135424 /* Fuse.framework in Frameworks */,
+				2C8BE181249EBADC00099B73 /* SavannaKit in Frameworks */,
+				2C8BE188249EBB3D00099B73 /* Fuse in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +174,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C60A55224871273006496BA /* SavannaKit.framework in Frameworks */,
-				2C60A55324871273006496BA /* Fuse.framework in Frameworks */,
+				2C8BE184249EBAEC00099B73 /* SavannaKit in Frameworks */,
+				2C8BE18A249EBB4200099B73 /* Fuse in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +199,7 @@
 				2C20667421FD628E0082570E /* Boop */,
 				2C17C66824271DDA005C911C /* BoopTests */,
 				2C20667321FD628E0082570E /* Products */,
+				53D77B44249A4019002A2F02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -338,8 +318,16 @@
 			children = (
 				2CC211C2236E3141007CECEE /* PreferencesTabViewController.swift */,
 				2CC211C4236FB5C1007CECEE /* ScriptsSettingsViewController.swift */,
+				2CEC93F9249C2D600080B9B8 /* ThemeSettingsViewController.swift */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		53D77B44249A4019002A2F02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,13 +359,16 @@
 				2C20666F21FD628E0082570E /* Frameworks */,
 				2C20667021FD628E0082570E /* Resources */,
 				2C3B003C22E3758100BBD4D0 /* Embed Frameworks */,
-				2C3B003F22E3776800BBD4D0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Boop;
+			packageProductDependencies = (
+				2C8BE180249EBADC00099B73 /* SavannaKit */,
+				2C8BE187249EBB3D00099B73 /* Fuse */,
+			);
 			productName = Boop;
 			productReference = 2C20667221FD628E0082570E /* Boop.app */;
 			productType = "com.apple.product-type.application";
@@ -390,13 +381,16 @@
 				2C60A55124871273006496BA /* Frameworks */,
 				2C60A55424871273006496BA /* Resources */,
 				2C60A55924871273006496BA /* Embed Frameworks */,
-				2C60A55A24871273006496BA /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Boop (App Store)";
+			packageProductDependencies = (
+				2C8BE183249EBAEC00099B73 /* SavannaKit */,
+				2C8BE189249EBB4200099B73 /* Fuse */,
+			);
 			productName = Boop;
 			productReference = 2C60A56024871273006496BA /* Boop.app */;
 			productType = "com.apple.product-type.application";
@@ -429,6 +423,10 @@
 				Base,
 			);
 			mainGroup = 2C20666921FD628E0082570E;
+			packageReferences = (
+				2C8BE17F249EBADC00099B73 /* XCRemoteSwiftPackageReference "savannakit" */,
+				2C8BE186249EBB3D00099B73 /* XCRemoteSwiftPackageReference "fuse-swift" */,
+			);
 			productRefGroup = 2C20667321FD628E0082570E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -513,6 +511,7 @@
 				2C20669A21FD76900082570E /* StatusView.swift in Sources */,
 				2C60A4E624870678006496BA /* UpdateTextField.swift in Sources */,
 				2CC211C3236E3141007CECEE /* PreferencesTabViewController.swift in Sources */,
+				2CEC93FA249C2D600080B9B8 /* ThemeSettingsViewController.swift in Sources */,
 				2C9761D92214E3B500AFF8CD /* ScriptsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +527,7 @@
 				2C60A53F24871273006496BA /* PopoverViewController.swift in Sources */,
 				2C60A54024871273006496BA /* Script.swift in Sources */,
 				2C60A54124871273006496BA /* AppVersion.swift in Sources */,
+				2C9D045C24A2DAC600D27D20 /* ThemeSettingsViewController.swift in Sources */,
 				2C60A54224871273006496BA /* DefaultTheme.swift in Sources */,
 				2C60A54324871273006496BA /* ScriptManager.swift in Sources */,
 				2C60A54424871273006496BA /* AppDelegate.swift in Sources */,
@@ -737,6 +737,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = RLZ8XBTX7G;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../Carthage/Build/Mac",
@@ -750,7 +751,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -767,6 +768,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -781,7 +783,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okatbest.boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -798,7 +800,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../Carthage/Build/Mac",
@@ -812,7 +814,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D APPSTORE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
@@ -830,7 +832,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../Carthage/Build/Mac",
@@ -844,7 +846,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D APPSTORE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okatbest.boop;
@@ -894,6 +896,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C8BE17F249EBADC00099B73 /* XCRemoteSwiftPackageReference "savannakit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IvanMathy/savannakit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.2;
+			};
+		};
+		2C8BE186249EBB3D00099B73 /* XCRemoteSwiftPackageReference "fuse-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IvanMathy/fuse-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C8BE180249EBADC00099B73 /* SavannaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C8BE17F249EBADC00099B73 /* XCRemoteSwiftPackageReference "savannakit" */;
+			productName = SavannaKit;
+		};
+		2C8BE183249EBAEC00099B73 /* SavannaKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C8BE17F249EBADC00099B73 /* XCRemoteSwiftPackageReference "savannakit" */;
+			productName = SavannaKit;
+		};
+		2C8BE187249EBB3D00099B73 /* Fuse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C8BE186249EBB3D00099B73 /* XCRemoteSwiftPackageReference "fuse-swift" */;
+			productName = Fuse;
+		};
+		2C8BE189249EBB4200099B73 /* Fuse */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C8BE186249EBB3D00099B73 /* XCRemoteSwiftPackageReference "fuse-swift" */;
+			productName = Fuse;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2C20666A21FD628E0082570E /* Project object */;
 }

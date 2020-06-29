@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SavannaKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -17,16 +18,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var popoverViewController: PopoverViewController!
     @IBOutlet weak var scriptManager: ScriptManager!
+    @IBOutlet weak var editor: SyntaxTextView!
 
+    // Frame auto save name for app window frame restoration.
+    private static let appWindowName = "boop.app.window"
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Disable light mode because why in heck would you want that???
-        NSApp.appearance = NSAppearance(named: .darkAqua)
+
+        ThemeSettingsViewController.applyTheme()
         
         NSWindow.allowsAutomaticWindowTabbing = false
+        NSApp.servicesProvider = self
+        
+        // Restore app window frame.
+        window.setFrameUsingName(AppDelegate.appWindowName)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        // Memorize app window frame for restoration.
+        window.saveFrame(usingName: AppDelegate.appWindowName)
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -62,5 +72,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         closePickerMenuItem.isHidden = !isOpen
         openPickerMenuItem.isHidden = isOpen
     }
+
+    @objc func textServiceHandler(_ pboard: NSPasteboard, userData: String, error: NSErrorPointer) {
+        if let string = pboard.string(forType: NSPasteboard.PasteboardType.string) {
+            editor.contentTextView.string = string
+        }
+    }
+
 }
 

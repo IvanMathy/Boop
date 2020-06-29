@@ -4,7 +4,7 @@
         "name":"Downcase",
         "description":"Converts to lowercase",
         "author":"Dan2552",
-        "icon":"metamorphose",
+        "icon":"type",
         "tags":"downcase,lowercase"
     }
 **/
