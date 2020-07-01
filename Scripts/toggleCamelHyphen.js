@@ -4,7 +4,7 @@
   "name": "Toggle Camel and Hyphen",
   "description": "Turns camelCase to camel-case and vice versa",
   "author": "Christian Heilmann",
-  "icon": "camel",
+  "icon": "table",
   "tags": "camelcase,hyphencase,syntax,codestandards"
 }
 **/
