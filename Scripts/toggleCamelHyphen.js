@@ -10,14 +10,24 @@
 **/
 
 const toggleCamelHyphen = (str) => {
-  if (str.indexOf('-') !== -1) {
-    return str.replace(/\W+(.)/g, (x, chr) => {
-      return chr.toUpperCase();
-    });
-  } else {
-    return str.replace(/\W+/g, '-')
-    .replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase();
-  }
+  let chunks = str.split(/\n/);
+  chunks.forEach((c,k) => {
+    if (c.indexOf('-') !== -1) {
+      chunks[k] = c.replace(/\W+(.)/g, (x, chr) => {
+        return chr.toUpperCase();
+      });
+    } else {
+      chunks[k] = c
+      .replace(/[^a-zA-Z0-9]+/g, '-')
+      .replace(/([A-Z]+)([A-Z][a-z])/g, '$1-$2')
+      .replace(/([a-z])([A-Z])/g, '$1-$2')
+      .replace(/([0-9])([^0-9])/g, '$1-$2')
+      .replace(/([^0-9])([0-9])/g, '$1-$2')
+      .replace(/-+/g, '-')
+      .toLowerCase();
+    }
+  });
+  return chunks.join("\n");
 }
 
 function main(input) {
