@@ -51,7 +51,7 @@ class MainViewController: NSViewController {
         let textView = editorView.contentTextView
         textView.textStorage?.beginEditing()
         
-        let range = NSRange(location: 0, length: textView.string.count)
+        let range = NSRange(location: 0, length: textView.textStorage?.length ?? textView.string.count)
         
         guard textView.shouldChangeText(in: range, replacementString: "") else {
             return
