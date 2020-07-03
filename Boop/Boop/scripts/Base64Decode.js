@@ -9,6 +9,8 @@
 	}
 **/
 
+require('lib/base64')
+
 function main(input) {
 	
 	input.text = base64decode(input.text)

@@ -51,6 +51,7 @@ class Script: NSObject {
             self.onScriptError(message: message)
         }
 
+        self.setupRequire()
         
         context.setObject(ScriptExecution.self, forKeyedSubscript: "ScriptExecution" as NSString)
         
