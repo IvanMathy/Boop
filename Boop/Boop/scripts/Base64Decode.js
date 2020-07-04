@@ -9,10 +9,10 @@
 	}
 **/
 
-const test = require('lib/base64')
+const { base64decode } = require('lib/base64')
 
 function main(input) {
 	
-    input.text = test.base64decode(input.text)
+    input.text = base64decode(input.text)
 	
 }

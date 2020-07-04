@@ -102,7 +102,7 @@ function base64decode(str) {
     return out;
 }
 
-exports = {
+module.exports = {
     base64encode,
     base64decode
 }

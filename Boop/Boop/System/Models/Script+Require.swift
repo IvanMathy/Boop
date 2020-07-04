@@ -25,55 +25,32 @@ extension Script {
             
             var url = Bundle.main.url(forResource: "base64", withExtension: ".js", subdirectory: "scripts/lib")
             
-         
-            
-            let tempContext = self.context.jsGlobalContextRef
             
             let rawCode = try! String(contentsOfFile: url!.path)
             
-            
-            let code = JSStringCreateWithCFString(rawCode as CFString)
-            
-            
-            let exports = JSObjectMake(tempContext, nil, nil)
-            let exportsName = JSStringCreateWithCFString("exports" as CFString)
-            let globalObject = JSContextGetGlobalObject(tempContext)
-            
-            JSObjectSetProperty(tempContext, globalObject, exportsName, exports, JSPropertyAttributes(kJSPropertyAttributeNone), nil)
-            
-            JSStringRelease(exportsName)
-            
+          
 
-            var exception : JSValueRef? = nil
+            // This is not ideal, I tried using native JSC bindings
+            // but no luck getting it to play nice. TODO I guess?
             
-            /*
-                      
-                    func JSEvaluateScript(_ ctx: JSContextRef!,
-                      _ script: JSStringRef!,
-                      _ thisObject: JSObjectRef!,
-                      _ sourceURL: JSStringRef!,
-                      _ startingLineNumber: Int32,
-                      _ exception: UnsafeMutablePointer<JSValueRef?>!) -> JSValueRef!
+           let wrappedCode =
+"""
+            
+(function() {
+    var module = {
+        exports: {}
+    };
+            
+    const moduleWrapper = (function (exports, module) {
+        \(rawCode)
+    }).apply(module.exports, [module.exports, module]);
 
-                      
-                      */
+    return module.exports;
+})();
             
-            let value = JSEvaluateScript(tempContext, code, exports, nil, 0, &exception)
-                
-            JSStringRelease(code)
+"""
             
-            let json = JSValueCreateJSONString(tempContext, exports, 1, nil)
-            
-
-            let maxBufferSize = JSStringGetMaximumUTF8CStringSize(json)
-            let buffer = UnsafeMutablePointer<Int8>.allocate(capacity: maxBufferSize)
-            JSStringGetUTF8CString(json, buffer, maxBufferSize)
-            
-            let jsValue = self.context.objectForKeyedSubscript("exports")
-
-            self.context.setObject(savedExports, forKeyedSubscript: "exports" as NSString)
-            
-            return jsValue
+            return self.context.evaluateScript(wrappedCode, withSourceURL: url)
         }
         
         self.context.setObject(require, forKeyedSubscript: "require" as NSString)
