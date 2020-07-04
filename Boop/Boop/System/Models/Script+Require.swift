@@ -20,6 +20,56 @@ extension Script {
                 path += ".js"
             }
             
+            var url = Bundle.main.url(forResource: "base64", withExtension: ".js", subdirectory: "scripts/lib")
+            
+         
+            
+            let tempContext = JSGlobalContextCreate(nil)
+            
+            let rawCode = try! String(contentsOfFile: url!.path)
+            
+            
+            let code = JSStringCreateWithCFString(rawCode as CFString)
+            
+            
+            let exports = JSObjectMake(tempContext, nil, nil)
+            let exportsName = JSStringCreateWithCFString("exports" as CFString)
+            let globalObject = JSContextGetGlobalObject(tempContext)
+            
+            JSObjectSetProperty(tempContext, globalObject, exportsName, exports, JSPropertyAttributes(kJSPropertyAttributeNone), nil)
+            
+            JSStringRelease(exportsName)
+            
+
+            var exception : JSValueRef? = nil
+            
+            /*
+                      
+                    func JSEvaluateScript(_ ctx: JSContextRef!,
+                      _ script: JSStringRef!,
+                      _ thisObject: JSObjectRef!,
+                      _ sourceURL: JSStringRef!,
+                      _ startingLineNumber: Int32,
+                      _ exception: UnsafeMutablePointer<JSValueRef?>!) -> JSValueRef!
+
+                      
+                      */
+            
+            let value = JSEvaluateScript(tempContext, code, exports, nil, 0, &exception)
+                
+            JSStringRelease(code)
+            
+            let json = JSValueCreateJSONString(tempContext, exports, 1, nil)
+            
+
+            let maxBufferSize = JSStringGetMaximumUTF8CStringSize(json)
+            let buffer = UnsafeMutablePointer<Int8>.allocate(capacity: maxBufferSize)
+            JSStringGetUTF8CString(json, buffer, maxBufferSize)
+            
+            print(String(cString: buffer))
+            
+            JSGlobalContextRelease(tempContext)
+            
             return nil
         }
         

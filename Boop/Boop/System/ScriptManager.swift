@@ -53,7 +53,7 @@ class ScriptManager: NSObject {
     }
     
     
-    /// Load built in scripts
+    /// Load user scripts
     func loadUserScripts(){
         guard let data = UserDefaults.standard.data(forKey: ScriptManager.userPreferencesDataKey) else {
             // No user path specified, abbandon ship!
