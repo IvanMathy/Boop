@@ -9,7 +9,7 @@
 	}
 **/
 
-const { base64encode } = require('lib/base64')
+const { base64encode } = require('@boop/base64')
 
 function main(input) {
 	

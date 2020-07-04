@@ -10,6 +10,10 @@ import Foundation
 import JavaScriptCore
 
 extension Script {
+    
+    static private let boopPrefix = "@boop/"
+    static private let moduleExt = ".js"
+    
     func setupRequire() {
         let require: @convention(block) (String) -> (JSValue?) = {
             path in
@@ -19,17 +23,17 @@ extension Script {
             
             var path = path
             
-            if !path.hasSuffix(".js") {
-                path += ".js"
+            if !path.hasSuffix(Script.moduleExt) {
+                path += Script.moduleExt
             }
             
-            var url = Bundle.main.url(forResource: "base64", withExtension: ".js", subdirectory: "scripts/lib")
+            guard
+                let url = self.url(for: path),
+                let rawCode = try? String(contentsOf: url)
+            else {
+                return nil
+            }
             
-            
-            let rawCode = try! String(contentsOfFile: url!.path)
-            
-          
-
             // This is not ideal, I tried using native JSC bindings
             // but no luck getting it to play nice. TODO I guess?
             
@@ -55,5 +59,15 @@ extension Script {
         
         self.context.setObject(require, forKeyedSubscript: "require" as NSString)
 
+    }
+    
+    private func url(for path: String) -> URL? {
+        if path.starts(with: Script.boopPrefix) {
+            let fileName = String(path.dropFirst(Script.boopPrefix.count).dropLast(3))
+            return Bundle.main.url(forResource: fileName, withExtension: Script.moduleExt, subdirectory: "scripts/lib")
+        }
+        
+        return nil
+                   
     }
 }
