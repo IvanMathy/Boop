@@ -15,67 +15,98 @@ function main(input) {
 	
 }
 
-/* Copyright (C) 1999 Masanao Izumo <iz@onicos.co.jp>
- * Version: 1.0
- * LastModified: Dec 25 1999
- * This library is free.  You can redistribute it and/or modify it.
+/*
+ * A Unicode friendly base64 decoder
+ *
+ *  Original: base64.js
+ *    from dankogai/js-base64 (version: e2fdad7):
+ *    https://github.com/dankogai/js-base64
+ *
+ *  Licensed under the BSD 3-Clause License.
+ *    http://opensource.org/licenses/BSD-3-Clause
+ *
+ *  References:
+ *    http://en.wikipedia.org/wiki/Base64
+ * 
+ *  Modified: Jul 1 2020
+ *    by CDFMLR
+ *
  */
-var base64DecodeChars = new Array(
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63,
-    52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1,
-    -1,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14,
-    15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1,
-    -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
-    41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1);
 
-function base64decode(str) {
-    var c1, c2, c3, c4;
-    var i, len, out;
+// constants
+var b64chars
+    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+var b64tab = function(bin) {
+    var t = {};
+    for (var i = 0, l = bin.length; i < l; i++) t[bin.charAt(i)] = i;
+    return t;
+}(b64chars);
+var fromCharCode = String.fromCharCode;
 
-    len = str.length;
-    i = 0;
-    out = "";
-    while(i < len) {
-  /* c1 */
-  do {
-      c1 = base64DecodeChars[str.charCodeAt(i++) & 0xff];
-  } while(i < len && c1 == -1);
-  if(c1 == -1)
-      break;
-
-  /* c2 */
-  do {
-      c2 = base64DecodeChars[str.charCodeAt(i++) & 0xff];
-  } while(i < len && c2 == -1);
-  if(c2 == -1)
-      break;
-
-  out += String.fromCharCode((c1 << 2) | ((c2 & 0x30) >> 4));
-
-  /* c3 */
-  do {
-      c3 = str.charCodeAt(i++) & 0xff;
-      if(c3 == 61)
-    return out;
-      c3 = base64DecodeChars[c3];
-  } while(i < len && c3 == -1);
-  if(c3 == -1)
-      break;
-
-  out += String.fromCharCode(((c2 & 0XF) << 4) | ((c3 & 0x3C) >> 2));
-
-  /* c4 */
-  do {
-      c4 = str.charCodeAt(i++) & 0xff;
-      if(c4 == 61)
-    return out;
-      c4 = base64DecodeChars[c4];
-  } while(i < len && c4 == -1);
-  if(c4 == -1)
-      break;
-  out += String.fromCharCode(((c3 & 0x03) << 6) | c4);
+// decoder stuff
+var re_btou = /[\xC0-\xDF][\x80-\xBF]|[\xE0-\xEF][\x80-\xBF]{2}|[\xF0-\xF7][\x80-\xBF]{3}/g;
+var cb_btou = function(cccc) {
+    switch(cccc.length) {
+    case 4:
+        var cp = ((0x07 & cccc.charCodeAt(0)) << 18)
+            |    ((0x3f & cccc.charCodeAt(1)) << 12)
+            |    ((0x3f & cccc.charCodeAt(2)) <<  6)
+            |     (0x3f & cccc.charCodeAt(3)),
+        offset = cp - 0x10000;
+        return (fromCharCode((offset  >>> 10) + 0xD800)
+                + fromCharCode((offset & 0x3FF) + 0xDC00));
+    case 3:
+        return fromCharCode(
+            ((0x0f & cccc.charCodeAt(0)) << 12)
+                | ((0x3f & cccc.charCodeAt(1)) << 6)
+                |  (0x3f & cccc.charCodeAt(2))
+        );
+    default:
+        return  fromCharCode(
+            ((0x1f & cccc.charCodeAt(0)) << 6)
+                |  (0x3f & cccc.charCodeAt(1))
+        );
     }
-    return out;
+};
+var btou = function(b) {
+    return b.replace(re_btou, cb_btou);
+};
+var cb_decode = function(cccc) {
+    var len = cccc.length,
+    padlen = len % 4,
+    n = (len > 0 ? b64tab[cccc.charAt(0)] << 18 : 0)
+        | (len > 1 ? b64tab[cccc.charAt(1)] << 12 : 0)
+        | (len > 2 ? b64tab[cccc.charAt(2)] <<  6 : 0)
+        | (len > 3 ? b64tab[cccc.charAt(3)]       : 0),
+    chars = [
+        fromCharCode( n >>> 16),
+        fromCharCode((n >>>  8) & 0xff),
+        fromCharCode( n         & 0xff)
+    ];
+    chars.length -= [0, 0, 2, 1][padlen];
+    return chars.join('');
+};
+var _atob = function(a){
+    return a.replace(/\S{1,4}/g, cb_decode);
+};
+var atob = function(a) {
+    return _atob(String(a).replace(/[^A-Za-z0-9\+\/]/g, ''));
+};
+var _decode = function(a) { return btou(_atob(a)) };
+var decode = function(a){
+    return _decode(
+        String(a).replace(/[-_]/g, function(m0) {
+            return m0 == '-' ? '+' : '/'
+        }).replace(/[^A-Za-z0-9\+\/]/g, '')
+    );
+};
+var toUint8Array = function(a) {
+    return Uint8Array.from(atob(a), function(c) {
+        return c.charCodeAt(0);
+    });
+};
+
+// Default API
+function base64decode(str) {
+    return decode(str)
 }
