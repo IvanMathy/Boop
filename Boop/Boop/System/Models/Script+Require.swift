@@ -14,6 +14,9 @@ extension Script {
         let require: @convention(block) (String) -> (JSValue?) = {
             path in
             
+            let savedExports = self.context.objectForKeyedSubscript("exports")
+
+            
             var path = path
             
             if !path.hasSuffix(".js") {
@@ -24,7 +27,7 @@ extension Script {
             
          
             
-            let tempContext = JSGlobalContextCreate(nil)
+            let tempContext = self.context.jsGlobalContextRef
             
             let rawCode = try! String(contentsOfFile: url!.path)
             
@@ -66,11 +69,11 @@ extension Script {
             let buffer = UnsafeMutablePointer<Int8>.allocate(capacity: maxBufferSize)
             JSStringGetUTF8CString(json, buffer, maxBufferSize)
             
-            print(String(cString: buffer))
+            let jsValue = self.context.objectForKeyedSubscript("exports")
+
+            self.context.setObject(savedExports, forKeyedSubscript: "exports" as NSString)
             
-            JSGlobalContextRelease(tempContext)
-            
-            return nil
+            return jsValue
         }
         
         self.context.setObject(require, forKeyedSubscript: "require" as NSString)

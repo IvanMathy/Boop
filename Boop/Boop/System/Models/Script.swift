@@ -43,6 +43,8 @@ class Script: NSObject {
         
         context = JSContext()
         
+        context.name = self.name ?? "Unknown Script"
+        
         super.init();
         
         context.exceptionHandler = { context, exception in
