@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C08A74F24B2269C00E1BD83 /* Script+Require.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BC0DC24AAC518009B8631 /* Script+Require.swift */; };
 		2C0BC0DD24AAC518009B8631 /* Script+Require.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BC0DC24AAC518009B8631 /* Script+Require.swift */; };
 		2C0BC0DE24AAC64F009B8631 /* Script+Require.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0BC0DC24AAC518009B8631 /* Script+Require.swift */; };
 		2C17C66A24271DDA005C911C /* BoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C17C66924271DDA005C911C /* BoopTests.swift */; };
@@ -483,6 +484,7 @@
 				2C17C67B2427218B005C911C /* StatusView.swift in Sources */,
 				2C17C6762427214B005C911C /* Script.swift in Sources */,
 				2C17C67C242721C5005C911C /* Colors.swift in Sources */,
+				2C08A74F24B2269C00E1BD83 /* Script+Require.swift in Sources */,
 				2C17C6772427214D005C911C /* ScriptExecution.swift in Sources */,
 				2C60A56224871730006496BA /* UpdateTextField.swift in Sources */,
 				2C17C66A24271DDA005C911C /* BoopTests.swift in Sources */,
