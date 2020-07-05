@@ -84,7 +84,15 @@ extension Script {
             return Bundle.main.url(forResource: fileName, withExtension: Script.moduleExt, subdirectory: "scripts/lib")
         }
         
-        return nil
+        guard
+            !self.isBuiltInt,
+            let url = try? ScriptManager.getBookmarkURL()
+        else {
+            // For now, built in scripts can't import custom stuff.
+            return nil
+        }
+        
+        return url?.appendingPathComponent(path, isDirectory: false)
                    
     }
 }

@@ -12,6 +12,7 @@ import Fuse
 
 class Script: NSObject {
     
+    var isBuiltInt: Bool
     var url: URL
     var scriptCode: String
     
@@ -31,12 +32,13 @@ class Script: NSObject {
     
     weak var delegate: ScriptDelegate?
     
-    init(url: URL, script:String, parameters: [String: Any], delegate: ScriptDelegate? = nil) {
+    init(url: URL, script:String, parameters: [String: Any], builtIn: Bool, delegate: ScriptDelegate? = nil) {
         
         
-        scriptCode = script
-        info = parameters
+        self.scriptCode = script
+        self.info = parameters
         self.url = url
+        self.isBuiltInt = builtIn
         
         self.name = parameters["name"] as? String
         self.tags = parameters["tags"] as? String

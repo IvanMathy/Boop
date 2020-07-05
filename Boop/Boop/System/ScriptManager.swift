@@ -48,33 +48,17 @@ class ScriptManager: NSObject {
         let urls = Bundle.main.urls(forResourcesWithExtension: "js", subdirectory: "scripts")
         
         urls?.forEach { script in
-            loadScript(url: script)
+            loadScript(url: script, builtIn: true)
         }
     }
     
     
     /// Load user scripts
     func loadUserScripts(){
-        guard let data = UserDefaults.standard.data(forKey: ScriptManager.userPreferencesDataKey) else {
-            // No user path specified, abbandon ship!
-            return
-        }
         
         do {
             
-            var isBookmarkStale = false
-            
-            let url = try URL.init(resolvingBookmarkData: data, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isBookmarkStale)
-            
-            if(isBookmarkStale) {
-                do {
-                    try ScriptManager.setBookmarkData(url: url)
-                } catch let error {
-                    print(error)
-                }
-            }
-            
-            guard url.startAccessingSecurityScopedResource() else {
+            guard let url = try ScriptManager.getBookmarkURL() else {
                 return
             }
             
@@ -84,9 +68,9 @@ class ScriptManager: NSObject {
                 guard url.path.hasSuffix(".js") else {
                     return
                 }
-                loadScript(url: url)
+                loadScript(url: url, builtIn: false)
             }
-           
+            
         }
         catch let error {
             print(error)
@@ -95,7 +79,7 @@ class ScriptManager: NSObject {
     }
     
     /// Parses a script file
-    private func loadScript(url: URL){
+    private func loadScript(url: URL, builtIn: Bool){
         do{
             let script = try String(contentsOf: url)
             
@@ -113,7 +97,7 @@ class ScriptManager: NSObject {
             
             let json = try JSONSerialization.jsonObject(with: meta.data(using: .utf8)!, options: .allowFragments) as! [String: Any]
             
-            let scriptObject = Script.init(url: url, script: script, parameters: json, delegate: self)
+            let scriptObject = Script.init(url: url, script: script, parameters: json, builtIn: builtIn, delegate: self)
             
             scripts.append(scriptObject)
             
@@ -246,6 +230,28 @@ class ScriptManager: NSObject {
         loadUserScripts()
         
         statusView.setStatus(.success("Reloaded Scripts"))
+    }
+    
+    static func getBookmarkURL() throws -> URL? {
+        
+        guard let data = UserDefaults.standard.data(forKey: ScriptManager.userPreferencesDataKey) else {
+            // No user path specified, abbandon ship!
+            return nil
+        }
+        
+        var isBookmarkStale = false
+                  
+        let url = try URL.init(resolvingBookmarkData: data, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isBookmarkStale)
+
+        if(isBookmarkStale) {
+            try ScriptManager.setBookmarkData(url: url)
+        }
+
+        guard url.startAccessingSecurityScopedResource() else {
+            return nil
+        }
+        
+        return url
     }
     
 }
