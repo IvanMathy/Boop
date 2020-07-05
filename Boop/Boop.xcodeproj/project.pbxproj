@@ -764,7 +764,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -796,7 +796,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.okatbest.boop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -828,7 +828,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.OKatBest.Boop;
 				PRODUCT_NAME = Boop;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -860,7 +860,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.okatbest.boop;
 				PRODUCT_NAME = Boop;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

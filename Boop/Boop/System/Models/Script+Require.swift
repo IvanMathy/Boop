@@ -92,7 +92,7 @@ extension Script {
             return nil
         }
         
-        return url?.appendingPathComponent(path, isDirectory: false)
+        return url.appendingPathComponent(path, isDirectory: false)
                    
     }
 }
