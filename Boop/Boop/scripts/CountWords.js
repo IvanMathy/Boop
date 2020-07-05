@@ -9,5 +9,5 @@
   }
 **/
 function main(input) {
-    input.postInfo(`${input.text.trim().match(/\S+/g).length} words`)
+    input.postInfo(`${input.text.trim().match(/[A-z&0-9]\S*/g).length} words`)
 }
