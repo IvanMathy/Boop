@@ -92,7 +92,6 @@ Script execution objects have additional functions to communicate with the user,
 
 Starting with version 1.2.0, modules can be imported in Boop scripts. See the [Modules page](Modules.md) for details.
 
-
 ## Limitations
 
 ### Sandbox

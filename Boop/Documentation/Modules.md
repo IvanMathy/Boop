@@ -2,6 +2,8 @@
 
 Just to be very clear before we get started: **Boop does not support commonJS/node/ES6 modules**. It has a custom import system that may or may not be compatible with some existing modules.
 
+*Modules are available in Boop version 1.2.0 and above.*
+
 ## Importing modules
 
 To import a module, use the require function. It'll will return the contents of `module.exports`:
