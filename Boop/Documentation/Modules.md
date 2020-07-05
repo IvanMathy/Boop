@@ -43,6 +43,27 @@ The above example is essentially the same as:
 const greeting = "Hello World"
 ```
 
+Module imports can also be nested, though you should probably avoid that.
+
+```javascript
+// lib/deepModule.js
+
+module.exports = "Hello World"
+```
+
+```javascript
+// lib/shallowModule.js
+const greeting = require('lib/deepModule')
+
+module.exports = greeting
+```
+
+```javascript
+// script.js
+const greeting = require('lib/shallowModule')
+```
+
+When using nested requires, the module name is based on the path of your script, not of the current module.
 
 ## Built in modules
 
