@@ -9,5 +9,6 @@
   }
 **/
 function main(input) {
-    input.postInfo(`${input.text.trim().match(/[A-z&0-9]\S*/g).length} words`)
+    let words = input.text.trim().match(/\S+/g)
+    input.postInfo(`${words && words.length || 0} words`)
 }
