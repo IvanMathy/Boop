@@ -5,6 +5,7 @@ Hey there! Thanks for trying out Boop. This documentation should hopefully help 
 ## Child Pages
 
  - [Custom Scripts](CustomScripts.md)
+ - [Modules](Modules.md)
 
 ## Getting Boop
 
@@ -26,9 +27,17 @@ If you are developing scripts, you can reload all the script by pressing `⇧⌘
 
 ## Questions
 
+### Can I see a list of all scripts?
+
+Yes! Simply open the script picker and search for `*`.
+
 ### Why can't I open/Save a file?
 
 Because that's not the goal of Boop. It's not really an editor, more of a unstructured limbo for your plain text pasted content.
+
+### Where can I find more scripts?
+
+You can find more functions in the [Boop Script Repository](https://github.com/IvanMathy/Boop/tree/main/Scripts). It contains scripts suggested by the community that are not in the built-in script library. You can go there to find new functionality, or suggest your own! 
 
 ### Can I make my own scripts?
 
@@ -44,7 +53,7 @@ The best way to do that is to [file an issue on GitHub](https://github.com/IvanM
 
 ### How is Boop built?
 
-Built is mostly built using a custom fork of [SavannaKit](https://github.com/IvanMathy/savannakit), originaly created by [Louis D'hauwe](http://twitter.com/LouisDhauwe). The search is powered by a custom fork of [Fuse-swift](https://github.com/IvanMathy/fuse-swift). The rest of Boop is simply built in Swift, besides scripts which are Javascript. Go ahead and open some of them to check their license!
+Boop is mostly built using a custom fork of [SavannaKit](https://github.com/IvanMathy/savannakit), originaly created by [Louis D'hauwe](http://twitter.com/LouisDhauwe). The search is powered by a custom fork of [Fuse-swift](https://github.com/IvanMathy/fuse-swift). The rest of Boop is simply built in Swift, besides scripts which are Javascript. Go ahead and open some of them to check their license!
 
 ### Do I have to say "Boop" out loud when I press ⌘+B?
 

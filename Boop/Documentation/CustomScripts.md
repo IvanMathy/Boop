@@ -88,16 +88,20 @@ If the user selects more than one part of the text (by using `cmd` or `alt` whil
 
 Script execution objects have additional functions to communicate with the user, called `postInfo()` and `postError()`. These functions take in a single string argument, that will be presented in the Boop toolbar.
 
+#### Modules
+
+Starting with version 1.2.0, modules can be imported in Boop scripts. See the [Modules page](Modules.md) for details.
+
 
 ## Limitations
 
 ### Sandbox
 
-Boop scripts run in a sandboxed environment. This means the only way to get data in or out is through the script execution object. It is not currently possible to include/import other files, to present UIs, or to affect how Boop behaves.
+Boop scripts run in a sandboxed environment. This means the only way to get data in or out is through the script execution object. It is not currently possible to present UIs, or to affect how Boop behaves.
 
 ### JavascriptCore
 
-JavascriptCore is the environment scripts run in. It is only a subset of Javascript running in a headless context, therefore a lot of what you would expect in a browser or Node.js isn't available. Things like `console`, `window`, `process`, `Crypto`, etc. do not exist and will throw errors if used. 
+JavascriptCore is the environment scripts run in. It is only a subset of Javascript running in a headless context, therefore a lot of what you would expect in a browser or Node.js isn't available. Things like `window`, `process`, `Crypto`, etc. do not exist and will throw errors if used. 
 
 ### Performance
 

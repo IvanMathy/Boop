@@ -45,10 +45,10 @@ class ScriptManager: NSObject {
     
     /// Load built in scripts
     func loadDefaultScripts(){
-        let files = Bundle.main.paths(forResourcesOfType: "js", inDirectory: "scripts")
+        let urls = Bundle.main.urls(forResourcesWithExtension: "js", subdirectory: "scripts")
         
-        files.forEach { script in
-            loadScript(path: script)
+        urls?.forEach { script in
+            loadScript(url: script)
         }
     }
     
@@ -84,7 +84,7 @@ class ScriptManager: NSObject {
                 guard url.path.hasSuffix(".js") else {
                     return
                 }
-                loadScript(path: url.path)
+                loadScript(url: url)
             }
            
         }
@@ -95,9 +95,9 @@ class ScriptManager: NSObject {
     }
     
     /// Parses a script file
-    private func loadScript(path:String){
+    private func loadScript(url: URL){
         do{
-            let script = try String(contentsOfFile: path)
+            let script = try String(contentsOf: url)
             
             // This is inspired by the ISF file format by Vidvox
             // Thanks to them for the idea and their awesome work
@@ -113,13 +113,13 @@ class ScriptManager: NSObject {
             
             let json = try JSONSerialization.jsonObject(with: meta.data(using: .utf8)!, options: .allowFragments) as! [String: Any]
             
-            let scriptObject = Script.init(script: script, parameters: json, delegate: self)
+            let scriptObject = Script.init(url: url, script: script, parameters: json, delegate: self)
             
             scripts.append(scriptObject)
             
             
         } catch {
-            print("Unable to load ", path)
+            print("Unable to load ", url)
         }
     }
     

@@ -22,10 +22,29 @@ const { base64decode } = require('lib/base64')
 const { base64encode } = require('lib/base64')
 ```
 
-## Modules structure
+## Creating modules
+
+Modules are run in a pseudo-sandbox, in somewhat similar (but not equal) way to CommonJS. The sandbox contains a `module` object with an `exports` property. Whatever that property contains is what will be returned by the require function.
+
+```javascript
+// testModule.js
+
+module.exports = "Hello World"
+```
+```javascript
+// script.js
+const greeting = require('testModule.js')
+```
+
+The above example is essentially the same as:
+
+```javascript
+// script.js
+const greeting = "Hello World"
+```
 
 
-### Built in modules
+## Built in modules
 
 Boop ships with a couple of modules, with the prefix `@boop/`, which you can use in your own scripts.
 

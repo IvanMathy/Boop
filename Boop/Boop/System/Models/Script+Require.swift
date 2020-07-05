@@ -39,6 +39,9 @@ extension Script {
             
            let wrappedCode =
 """
+/***********************************
+*     Start of Boop's wrapper      *
+***********************************/
             
 (function() {
     var module = {
@@ -46,11 +49,25 @@ extension Script {
     };
             
     const moduleWrapper = (function (exports, module) {
-        \(rawCode)
+
+/***********************************
+ *      End of Boop's wrapper      *
+ ***********************************/
+
+\(rawCode)
+            
+/***********************************
+*     Start of Boop's wrapper      *
+***********************************/
+            
     }).apply(module.exports, [module.exports, module]);
 
     return module.exports;
 })();
+            
+/***********************************
+*      End of Boop's wrapper      *
+***********************************/
             
 """
             

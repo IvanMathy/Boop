@@ -12,10 +12,12 @@ import Fuse
 
 class Script: NSObject {
     
-    var scriptCode:String
+    var url: URL
+    var scriptCode: String
     
-    var context:JSContext
-    lazy var main:JSValue = {
+    var context: JSContext
+    
+    lazy var main: JSValue = {
         return context.objectForKeyedSubscript("main")
     }()
     
@@ -29,11 +31,12 @@ class Script: NSObject {
     
     weak var delegate: ScriptDelegate?
     
-    init(script:String, parameters: [String: Any], delegate: ScriptDelegate? = nil) {
+    init(url: URL, script:String, parameters: [String: Any], delegate: ScriptDelegate? = nil) {
         
         
         scriptCode = script
         info = parameters
+        self.url = url
         
         self.name = parameters["name"] as? String
         self.tags = parameters["tags"] as? String
@@ -42,7 +45,6 @@ class Script: NSObject {
         self.bias = parameters["bias"] as? Double
         
         context = JSContext()
-        
         context.name = self.name ?? "Unknown Script"
         
         super.init();
@@ -57,7 +59,7 @@ class Script: NSObject {
         
         context.setObject(ScriptExecution.self, forKeyedSubscript: "ScriptExecution" as NSString)
         
-        context.evaluateScript(script)
+        context.evaluateScript(script, withSourceURL: url)
         
         // We set the delegate after the initial eval to avoid
         // showing init errors from scripts at launch.
