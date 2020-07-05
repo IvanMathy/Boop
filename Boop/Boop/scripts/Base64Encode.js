@@ -9,10 +9,10 @@
 	}
 **/
 
-const { base64encode } = require('@boop/base64')
+const { encode } = require('@boop/base64')
 
 function main(input) {
 	
-	input.text = base64encode(input.text)
+	input.text = encode(input.text)
 	
 }

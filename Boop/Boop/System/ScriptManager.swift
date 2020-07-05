@@ -155,7 +155,8 @@ class ScriptManager: NSObject {
             let result = runScript(script, fullText: fullText)
             // No selection, run on full text
             
-            replaceText(ranges: [NSRange(location: 0, length: fullText.count)], values: [result], editor: editor)
+            let unicodeSafeFullTextLength = editor.contentTextView.textStorage?.length ?? fullText.count
+            replaceText(ranges: [NSRange(location: 0, length: unicodeSafeFullTextLength)], values: [result], editor: editor)
             
             return
         }
