@@ -182,7 +182,10 @@ var Encoder = {
 			s = this.NumericalToHTML(s);
 		}
 
-		return s;					
+		// keep linebreaks
+		s = s.replace(/&#10;/g,"\n");
+
+		return s;				
 	},
 
 	// Encodes the basic 4 characters used to malform HTML in XSS hacks
