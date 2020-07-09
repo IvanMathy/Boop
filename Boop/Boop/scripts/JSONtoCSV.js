@@ -23,6 +23,6 @@ function main(state) {
 		csv.unshift(header.join(delimiter))
 		state.text = csv.join('\r\n')
 	} catch (error) {
-		state.error("Invalid JSON.")
+		state.postError("Invalid JSON.")
 	}
 }
