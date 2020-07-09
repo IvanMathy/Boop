@@ -66,10 +66,11 @@ Script executions are not exactly full Javascript objects, instead they're a pro
 
 #### Properties
 
-The script execution object has three properties to deal with text: `text`, `fullText`, and `selection`.
+The script execution object has three properties and functions to deal with text: `text`, `fullText`, `selection`, and `insert()`.
 * `fullText` will contain or set the entire string from the Boop editor, regardless of whether a selection is made or not.
 * `selection` will contain or set the currently selected text, one at a time if more that one selection exists (see below).
 * `text`  will behave like `selection` if there is one or more selected piece of text, otherwise it will behave like `fullText`. 
+* `insert()` takes in a single string argument, and inserts it at the caret position. If there is a selected piece of text, it will be replaced.
 
 ```js
 

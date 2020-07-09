@@ -152,7 +152,8 @@ class ScriptManager: NSObject {
         
         guard let ranges = editor.contentTextView.selectedRanges as? [NSRange], ranges.reduce(0, { $0 + $1.length }) > 0 else {
             
-            let result = runScript(script, fullText: fullText)
+            let insertPosition = (editor.contentTextView.selectedRanges.first as! NSRange).location
+            let result = runScript(script, fullText: fullText, insertIndex: insertPosition)
             // No selection, run on full text
             
             let unicodeSafeFullTextLength = editor.contentTextView.textStorage?.length ?? fullText.count
@@ -222,8 +223,8 @@ class ScriptManager: NSObject {
         textView.didChangeText()
     }
     
-    func runScript(_ script: Script, selection: String? = nil, fullText: String) -> String {
-        let scriptExecution = ScriptExecution(selection: selection, fullText: fullText, script: script)
+    func runScript(_ script: Script, selection: String? = nil, fullText: String, insertIndex: Int? = nil) -> String {
+        let scriptExecution = ScriptExecution(selection: selection, fullText: fullText, script: script, insertIndex: insertIndex)
         
         script.run(with: scriptExecution)
         
