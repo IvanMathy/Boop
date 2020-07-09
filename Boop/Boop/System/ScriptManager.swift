@@ -152,7 +152,7 @@ class ScriptManager: NSObject {
         
         guard let ranges = editor.contentTextView.selectedRanges as? [NSRange], ranges.reduce(0, { $0 + $1.length }) > 0 else {
             
-            let insertPosition = (editor.contentTextView.selectedRanges.first as! NSRange).location
+            let insertPosition = (editor.contentTextView.selectedRanges.first as? NSRange)?.location
             let result = runScript(script, fullText: fullText, insertIndex: insertPosition)
             // No selection, run on full text
             

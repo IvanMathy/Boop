@@ -27,6 +27,8 @@ import JavaScriptCore
     var fullText: String?
     let insertIndex: Int?
     
+    var insertOffset: Int = 0
+    
     private weak var script: Script?
     
     init(selection: String?, fullText: String, script: Script, insertIndex: Int?) {
@@ -59,13 +61,24 @@ import JavaScriptCore
     }
     
     func insert(_ newValue: String) {
-        if isSelection {
+        guard !isSelection else {
             selection = newValue
-        } else {
-            if let insertIndex = self.insertIndex, fullText != nil {
-                let point = fullText!.index(fullText!.startIndex, offsetBy: insertIndex)
-                fullText!.insert(contentsOf: newValue, at: point )
-            }
+            return
         }
+        guard
+            let insertIndex = self.insertIndex, fullText != nil,
+            let fullText = fullText,
+            let range = Range(NSMakeRange(insertIndex, 0), in: fullText)
+         else {
+            self.fullText = newValue
+            return
+        }
+        
+        let point = fullText.index(range.lowerBound, offsetBy: self.insertOffset)
+
+        self.fullText?.insert(contentsOf: newValue, at: point)
+        
+        self.insertOffset += newValue.count
+        
     }
 }
