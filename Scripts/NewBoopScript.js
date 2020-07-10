@@ -15,7 +15,7 @@ function main(state) {
 	}
 	catch(error) {
 		state.postError("Something strange happened here...")
-	}s
+	}
 }
 
 var script = `
