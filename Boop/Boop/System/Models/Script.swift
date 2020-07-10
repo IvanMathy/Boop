@@ -16,7 +16,24 @@ class Script: NSObject {
     var url: URL
     var scriptCode: String
     
-    var context: JSContext
+    lazy var context: JSContext = { [unowned self] in
+        let context: JSContext = JSContext()
+        context.name = self.name ?? "Unknown Script"
+        
+        context.exceptionHandler = { [unowned self] context, exception in
+            let message = "[\(self.name ?? "Unknown Script")] Error: \(exception?.toString() ?? "Unknown Error") "
+            print(message)
+            self.onScriptError(message: message)
+        }
+
+        self.setupRequire(context: context)
+        
+        context.setObject(ScriptExecution.self, forKeyedSubscript: "ScriptExecution" as NSString)
+        
+        context.evaluateScript(self.scriptCode, withSourceURL: url)
+        
+        return context
+    }()
     
     lazy var main: JSValue = {
         return context.objectForKeyedSubscript("main")
@@ -46,22 +63,7 @@ class Script: NSObject {
         self.icon = (parameters["icon"] as? String)?.lowercased()
         self.bias = parameters["bias"] as? Double
         
-        context = JSContext()
-        context.name = self.name ?? "Unknown Script"
         
-        super.init();
-        
-        context.exceptionHandler = { context, exception in
-            let message = "[\(self.name ?? "Unknown Script")] Error: \(exception?.toString() ?? "Unknown Error") "
-            print(message)
-            self.onScriptError(message: message)
-        }
-
-        self.setupRequire()
-        
-        context.setObject(ScriptExecution.self, forKeyedSubscript: "ScriptExecution" as NSString)
-        
-        context.evaluateScript(script, withSourceURL: url)
         
         // We set the delegate after the initial eval to avoid
         // showing init errors from scripts at launch.

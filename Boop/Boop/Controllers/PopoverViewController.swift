@@ -90,7 +90,7 @@ class PopoverViewController: NSViewController {
                 
                 window?.makeFirstResponder(self.searchField)
                 // This doesn't work for some reason.
-                self.searchField.moveToEndOfLine(nil)
+                //self.searchField.moveToEndOfLine(nil)
             }
             
             guard didSomething else {
@@ -133,6 +133,8 @@ class PopoverViewController: NSViewController {
         self.view.window?.makeFirstResponder(self.editorView.contentTextView)
         self.enabled = false
         self.tableHeightConstraint.animator().constant = 0
+        
+        tableViewController.results = []
         
         appDelegate.setPopover(isOpen: false)
     }

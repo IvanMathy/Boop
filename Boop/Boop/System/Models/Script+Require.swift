@@ -14,9 +14,9 @@ extension Script {
     static private let boopPrefix = "@boop/"
     static private let moduleExt = ".js"
     
-    func setupRequire() {
+    func setupRequire(context: JSContext) {
         let require: @convention(block) (String) -> (JSValue?) = {
-            path in
+             [unowned self] path in
             
             var path = path
             
@@ -68,10 +68,10 @@ extension Script {
             
 """
             
-            return self.context.evaluateScript(wrappedCode, withSourceURL: url)
+            return JSContext.current().evaluateScript(wrappedCode, withSourceURL: url)
         }
         
-        self.context.setObject(require, forKeyedSubscript: "require" as NSString)
+        context.setObject(require, forKeyedSubscript: "require" as NSString)
 
     }
     
