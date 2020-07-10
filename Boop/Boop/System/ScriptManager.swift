@@ -97,7 +97,7 @@ class ScriptManager: NSObject {
             
             let json = try JSONSerialization.jsonObject(with: meta.data(using: .utf8)!, options: .allowFragments) as! [String: Any]
             
-            let scriptObject = Script.init(url: url, script: script, parameters: json, builtIn: builtIn, delegate: self)
+            let scriptObject = Script(url: url, script: script, parameters: json, builtIn: builtIn, delegate: self)
             
             scripts.append(scriptObject)
             

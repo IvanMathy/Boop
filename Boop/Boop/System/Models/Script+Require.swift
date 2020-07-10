@@ -18,9 +18,6 @@ extension Script {
         let require: @convention(block) (String) -> (JSValue?) = {
             path in
             
-            let savedExports = self.context.objectForKeyedSubscript("exports")
-
-            
             var path = path
             
             if !path.hasSuffix(Script.moduleExt) {

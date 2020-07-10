@@ -290,19 +290,6 @@
             </objects>
             <point key="canvasLocation" x="386" y="722"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="TVB-in-Pdn">
-            <objects>
-                <viewController id="IHQ-4i-6gQ" sceneMemberID="viewController">
-                    <view key="view" id="MrJ-FT-7dr">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="ALB-1N-M3I" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="28" y="-62"/>
-        </scene>
     </scenes>
     <resources>
         <image name="NSAdvanced" width="32" height="32"/>

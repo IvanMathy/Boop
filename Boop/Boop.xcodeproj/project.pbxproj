@@ -584,7 +584,7 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/Mac/**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = BoopTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -607,7 +607,7 @@
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/Mac/**";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = BoopTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -748,7 +748,6 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = RLZ8XBTX7G;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../Carthage/Build/Mac",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Boop/Frameworks",
 					"$(PROJECT_DIR)",
@@ -780,7 +779,6 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../Carthage/Build/Mac",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Boop/Frameworks",
 					"$(PROJECT_DIR)",
@@ -811,7 +809,6 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../Carthage/Build/Mac",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Boop/Frameworks",
 					"$(PROJECT_DIR)",
@@ -843,7 +840,6 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../Carthage/Build/Mac",
 					"$(inherited)",
 					"$(PROJECT_DIR)/Boop/Frameworks",
 					"$(PROJECT_DIR)",
