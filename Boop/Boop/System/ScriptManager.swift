@@ -45,36 +45,20 @@ class ScriptManager: NSObject {
     
     /// Load built in scripts
     func loadDefaultScripts(){
-        let files = Bundle.main.paths(forResourcesOfType: "js", inDirectory: "scripts")
+        let urls = Bundle.main.urls(forResourcesWithExtension: "js", subdirectory: "scripts")
         
-        files.forEach { script in
-            loadScript(path: script)
+        urls?.forEach { script in
+            loadScript(url: script, builtIn: true)
         }
     }
     
     
-    /// Load built in scripts
+    /// Load user scripts
     func loadUserScripts(){
-        guard let data = UserDefaults.standard.data(forKey: ScriptManager.userPreferencesDataKey) else {
-            // No user path specified, abbandon ship!
-            return
-        }
         
         do {
             
-            var isBookmarkStale = false
-            
-            let url = try URL.init(resolvingBookmarkData: data, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isBookmarkStale)
-            
-            if(isBookmarkStale) {
-                do {
-                    try ScriptManager.setBookmarkData(url: url)
-                } catch let error {
-                    print(error)
-                }
-            }
-            
-            guard url.startAccessingSecurityScopedResource() else {
+            guard let url = try ScriptManager.getBookmarkURL() else {
                 return
             }
             
@@ -84,9 +68,9 @@ class ScriptManager: NSObject {
                 guard url.path.hasSuffix(".js") else {
                     return
                 }
-                loadScript(path: url.path)
+                loadScript(url: url, builtIn: false)
             }
-           
+            
         }
         catch let error {
             print(error)
@@ -95,9 +79,9 @@ class ScriptManager: NSObject {
     }
     
     /// Parses a script file
-    private func loadScript(path:String){
+    private func loadScript(url: URL, builtIn: Bool){
         do{
-            let script = try String(contentsOfFile: path)
+            let script = try String(contentsOf: url)
             
             // This is inspired by the ISF file format by Vidvox
             // Thanks to them for the idea and their awesome work
@@ -113,19 +97,30 @@ class ScriptManager: NSObject {
             
             let json = try JSONSerialization.jsonObject(with: meta.data(using: .utf8)!, options: .allowFragments) as! [String: Any]
             
-            let scriptObject = Script.init(script: script, parameters: json, delegate: self)
+            let scriptObject = Script.init(url: url, script: script, parameters: json, builtIn: builtIn, delegate: self)
             
             scripts.append(scriptObject)
             
             
         } catch {
-            print("Unable to load ", path)
+            print("Unable to load ", url)
         }
     }
     
     func search(_ query: String) -> [Script] {
         
+        
+        guard query.count < 20 else {
+            // If the query is too long let's just ignore it.
+            // It's probably the user pasting the wrong thing
+            // in the search box by accident which overwhelms
+            // fuse and crashes the app. Whoops!
+            
+            return []
+        }
+        
         guard query != "*" else {
+            
             return scripts.sorted { left, right in
                 left.name ?? "" < right.name ?? ""
             }
@@ -247,6 +242,28 @@ class ScriptManager: NSObject {
         loadUserScripts()
         
         statusView.setStatus(.success("Reloaded Scripts"))
+    }
+    
+    static func getBookmarkURL() throws -> URL? {
+        
+        guard let data = UserDefaults.standard.data(forKey: ScriptManager.userPreferencesDataKey) else {
+            // No user path specified, abbandon ship!
+            return nil
+        }
+        
+        var isBookmarkStale = false
+                  
+        let url = try URL.init(resolvingBookmarkData: data, options: .withSecurityScope, relativeTo: nil, bookmarkDataIsStale: &isBookmarkStale)
+
+        if(isBookmarkStale) {
+            try ScriptManager.setBookmarkData(url: url)
+        }
+
+        guard url.startAccessingSecurityScopedResource() else {
+            return nil
+        }
+        
+        return url
     }
     
 }

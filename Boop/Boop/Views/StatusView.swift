@@ -21,7 +21,7 @@ enum Status {
 class StatusView: NSView {
     
     let transitionLength = 0.3
-    let messageLength = 25.0
+    let messageLength = 10.0
     
     @IBOutlet weak var textLabel: NSTextField!
     @IBOutlet weak var updateLabel: UpdateTextField!

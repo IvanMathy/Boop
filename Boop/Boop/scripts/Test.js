@@ -20,9 +20,11 @@ var test: String? = "Toast"
 {
     "name": "Boop",
     "type": "software",
-    "info": { "tags": ["software", "editor"] },
+    "info": {
+        "tags": ["software", "editor"]
+    },
     "useful": false,
-    "version": 1.2345e-10 // Precision is key
+    "version": 1.2345e-10
 }
 
 The MD5 of \`truth\` is 68934a3e9455fa72420237eb05902327
@@ -33,7 +35,7 @@ SELECT "Hello" FROM table LIMIT 2
  haha you can't see me 👻
 */
     
-if(true) return;
+if(false) return;  // this doesn't work
     
 This line was added on Fri, 19 Jun 2020 01:01:30 GMT
     
