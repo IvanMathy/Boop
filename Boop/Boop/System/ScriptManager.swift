@@ -109,7 +109,18 @@ class ScriptManager: NSObject {
     
     func search(_ query: String) -> [Script] {
         
+        
+        guard query.count < 20 else {
+            // If the query is too long let's just ignore it.
+            // It's probably the user pasting the wrong thing
+            // in the search box by accident which overwhelms
+            // fuse and crashes the app. Whoops!
+            
+            return []
+        }
+        
         guard query != "*" else {
+            
             return scripts.sorted { left, right in
                 left.name ?? "" < right.name ?? ""
             }
