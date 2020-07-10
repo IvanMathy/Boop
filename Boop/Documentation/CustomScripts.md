@@ -66,7 +66,8 @@ Script executions are not exactly full Javascript objects, instead they're a pro
 
 #### Properties
 
-The script execution object has three properties to deal with text: `text`, `fullText`, and `selection`.
+Script execution objects have three properties to deal with text: `text`, `fullText`, `selection`.
+
 * `fullText` will contain or set the entire string from the Boop editor, regardless of whether a selection is made or not.
 * `selection` will contain or set the currently selected text, one at a time if more that one selection exists (see below).
 * `text`  will behave like `selection` if there is one or more selected piece of text, otherwise it will behave like `fullText`. 
@@ -80,17 +81,54 @@ state.text = "this could be a selection or a whole "
 
 ```
 
+#### Functions
+
+Script executions objects have a few functions that can be used to interact with the editor text, and present feedback to the user.
+
+##### Editing
+
+In version 1.2.O an above, the `insert()` function takes in a single string argument, and inserts it at the caret position. If there is a selected piece of text, it will be replaced with the provided string.
+
+```js
+
+state.insert("Hello, World!")
+
+```
+
+Multiple inserts are possible in a single script, they will be inserted sequentially in the order they were added.
+
+```js
+
+state.insert("1")
+state.insert("2")
+state.insert("3")
+
+// => "123"
+
+```
+
+
+##### Messaging
+
+Script execution objects have additional functions to communicate with the user, called `postInfo()` and `postError()`. These functions take in a single string argument, that will be presented in the Boop toolbar.
+
+```js
+
+state.postInfo(`${ lines.length } lines removed`)
+state.postError("Invalid XML")
+
+```
+
+
 #### Multiselect
 
 If the user selects more than one part of the text (by using `cmd` or `alt` while selecting), the script will be called multiple times as it uses either `selection` or `text`. If `fullText` is read or written to, the loop stops even if there is more unevaluated selections.
 
-#### Messaging
-
-Script execution objects have additional functions to communicate with the user, called `postInfo()` and `postError()`. These functions take in a single string argument, that will be presented in the Boop toolbar.
 
 #### Modules
 
 Starting with version 1.2.0, modules can be imported in Boop scripts. See the [Modules page](Modules.md) for details.
+
 
 ## Limitations
 

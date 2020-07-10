@@ -16,6 +16,7 @@ import JavaScriptCore
     var isSelection: Bool { get }
     func postError(_ error: String)
     func postInfo(_ info: String)
+    func insert(_ newValue: String)
 }
 
 
@@ -24,14 +25,18 @@ import JavaScriptCore
     var isSelection: Bool
     var selection: String?
     var fullText: String?
+    let insertIndex: Int?
+    
+    var insertOffset: Int = 0
     
     private weak var script: Script?
     
-    init(selection: String?, fullText: String, script: Script) {
+    init(selection: String?, fullText: String, script: Script, insertIndex: Int?) {
         self.isSelection = (selection != nil)
         self.selection = selection
         self.fullText = fullText
         self.script = script
+        self.insertIndex = insertIndex
     }
     
     var text: String? {
@@ -55,4 +60,25 @@ import JavaScriptCore
         self.script?.onScriptInfo(message: info)
     }
     
+    func insert(_ newValue: String) {
+        guard !isSelection else {
+            selection = newValue
+            return
+        }
+        guard
+            let insertIndex = self.insertIndex, fullText != nil,
+            let fullText = fullText,
+            let range = Range(NSMakeRange(insertIndex, 0), in: fullText)
+         else {
+            self.fullText = newValue
+            return
+        }
+        
+        let point = fullText.index(range.lowerBound, offsetBy: self.insertOffset)
+
+        self.fullText?.insert(contentsOf: newValue, at: point)
+        
+        self.insertOffset += newValue.count
+        
+    }
 }
