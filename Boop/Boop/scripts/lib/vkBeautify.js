@@ -10,12 +10,15 @@
 *
 *  Adapted for Boop from https://github.com/kayhadrin/vkBeautify/ and the source repo
 *   - Removed JSON functions
+*   - Fixed missing variables
+*   - 
 *
 */
 
 (function() {
 
-    const standardShift = createShiftArr('    ')
+    const standardStep = '    '
+    const standardShift = createShiftArr(standardStep)
 
     function createShiftArr(step) {
     
@@ -225,13 +228,11 @@
             len = ar_by_quote.length,
             ar = [],
             deep = 0,
-            tab = this.step,//+this.step,
-            // inComment = true,
-            // inQuote = false,
+            tab = standardStep,
             parenthesisLevel = 0,
             str = '',
             ix,
-            shift = step ? createShiftArr(step) : this.shift;
+            shift = standardShift;
         for(ix=0;ix<len;ix++) {
                 if(ix%2) {
                     ar = ar.concat(ar_by_quote[ix]);
