@@ -1,7 +1,7 @@
 /**
 	{
 		"api":1,
-		"name":"Ivan's Super Cool Script",
+		"name":"Test Script",
 		"description":"Testing script",
 		"author":"Ivan",
 		"icon":"quote",
@@ -10,13 +10,6 @@
 **/
 
 function main(input) {
-
-
-	console.log("Hello from console.log!")
-	console.warn("Hello from console.warn!")
-	console.error("Hello from console.error!")
-	console.info("Info - here's a console.trace:")
-	console.trace()
 	
 	input.postInfo("Hello this is a test!")
 	
