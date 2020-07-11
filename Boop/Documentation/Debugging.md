@@ -9,9 +9,9 @@ ___
 
 To use debugging tools, you need a dev build of Boop. This is a restriction of JavascriptCore (the thing that runs scripts) that I have not yet found a way to avoid.
 
-Since dev builds cannot be signed, they cannot be distributed and you need to make your own. For this, you'll need Xcode (free on the Mac App Store or the (Apple Developer Website)[https://developer.apple.com]. Once you have it, follow these steps:
+Since dev builds cannot be signed, they cannot be distributed and you need to make your own. For this, you'll need Xcode (free on the Mac App Store or the [Apple Developer Website](https://developer.apple.com). Once you have it, follow these steps:
 
-- Download the Boop source code from Github or clone it locally using git. You can find a compressed version of the source code on the (releases page)[https://github.com/IvanMathy/Boop/releases/].
+- Download the Boop source code from Github or clone it locally using git. You can find a compressed version of the source code on the [releases page](https://github.com/IvanMathy/Boop/releases/).
 
 - In the source code, find and open `Boop.xcodeproj` with Xcode. (It's in the `Boop` folder, surprisingly)
 
