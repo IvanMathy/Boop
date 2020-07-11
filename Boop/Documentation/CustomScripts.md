@@ -125,9 +125,15 @@ state.postError("Invalid XML")
 If the user selects more than one part of the text (by using `cmd` or `alt` while selecting), the script will be called multiple times as it uses either `selection` or `text`. If `fullText` is read or written to, the loop stops even if there is more unevaluated selections.
 
 
+## Advanced features
+
 #### Modules
 
 Starting with version 1.2.0, modules can be imported in Boop scripts. See the [Modules page](Modules.md) for details.
+
+#### Debugging
+
+Starting with version 1.2.0, scripts can inspected and attached to by javascript console/debugger. See the [Debugging Scripts page](Debugging.md) for details.
 
 
 ## Limitations
