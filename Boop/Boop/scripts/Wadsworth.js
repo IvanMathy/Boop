@@ -4,7 +4,7 @@
 		"name":"Wadsworth Constant",
 		"description":"first 30% of your text.",
 		"author":"Ivan",
-		"icon":"broom",
+		"icon":"scissors",
 		"tags":"snap"
 	}
 **/
