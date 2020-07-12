@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "icons8-merge_horizontal.pdf",
+      "filename" : "icons8-snake.pdf",
       "idiom" : "universal"
     }
   ],
@@ -10,6 +10,7 @@
     "version" : 1
   },
   "properties" : {
+    "preserves-vector-representation" : true,
     "template-rendering-intent" : "template"
   }
 }

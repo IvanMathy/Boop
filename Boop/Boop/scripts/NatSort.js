@@ -4,7 +4,7 @@
          "name":"Natural Sort Lines",
          "description":"Sort lines with smart handling of numbers.",
          "author":"Sebastiaan Besselsen",
-         "icon":"table",
+         "icon":"sort-numbers",
          "tags":"sort,natural,natsort"
      }
  **/

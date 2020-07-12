@@ -2,9 +2,9 @@
 	{
 		"api":1,
 		"name":"Snake Case",
-		"description":"converts_your_text_to_snake_case",
+		"description":"converts_your_text_to_snake_case.",
 		"author":"Ivan",
-		"icon":"metamorphose",
+		"icon":"snake",
 		"tags":"snake,case,function,lodash"
 	}
 **/

@@ -2,9 +2,9 @@
 	{
 		"api":1,
 		"name":"Trim End",
-		"description":"Trims trailing whitespace",
+		"description":"Trims trailing whitespace.",
 		"author":"Joshua Nozzi",
-		"icon":"trimend",
+		"icon":"scissors",
 		"tags":"trim,end,right,trailing,whitespace,empty,space",
 	}
 **/

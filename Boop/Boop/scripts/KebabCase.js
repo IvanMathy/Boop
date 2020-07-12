@@ -2,7 +2,7 @@
 	{
 		"api":1,
 		"name":"Kebab Case",
-		"description":"converts-your-text-to-kebab-case",
+		"description":"converts-your-text-to-kebab-case.",
 		"author":"Ivan",
 		"icon":"metamorphose",
 		"tags":"kebab,case,function,lodash"
