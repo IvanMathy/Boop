@@ -2,7 +2,7 @@
     {
         "api":1,
         "name":"SHA512 Hash",
-        "description":"Computes the SHA512 hash of your text",
+        "description":"Computes the SHA512 hash of your text (Hex encoded)",
         "icon":"fingerprint",
         "tags":"strip,slashes,remove"
     }
