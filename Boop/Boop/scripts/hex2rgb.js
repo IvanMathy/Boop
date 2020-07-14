@@ -1,11 +1,11 @@
 /**
      {
          "api":1,
-         "name":"HEX2RGB",
+         "name":"Hex to RGB",
          "description":"Convert color in hexadecimal to RGB.",
          "author":"Venkat",
-         "icon":"table",
-         "tags":"flip"
+         "icon":"color-wheel",
+         "tags":"hex,color,rgb,convert"
      }
  **/
 
