@@ -2,9 +2,9 @@
 	{
 		"api":1,
 		"name":"Join Lines With Comma",
-		"description":"Joins All Lines With a Comma",
+		"description":"Joins all lines with a comma.",
 		"author":"riesentoaster",
-		"icon":"table",
+		"icon":"collapse",
 		"tags":"join, comma",
 		"bias": -0.1
 	}

@@ -2,9 +2,9 @@
 	{
 		"api":1,
 		"name":"Join Lines With Space",
-		"description":"Joins All Lines With a Space",
+		"description":"Joins all lines with a space",
 		"author":"riesentoaster",
-		"icon":"table",
+		"icon":"collapse",
 		"tags":"join, space",
 		"bias": -0.1
 	}

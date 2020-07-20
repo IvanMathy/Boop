@@ -2,7 +2,7 @@
 	{
 		"api":1,
 		"name":"Remove Slashes",
-		"description":"Unescapes your text",
+		"description":"Unescapes your text.",
 		"author":"Ivan",
 		"icon":"quote",
 		"tags":"strip,slashes,remove,unescape"

@@ -2,7 +2,7 @@
 	{
 		"api":1,
 		"name":"URL Decode",
-		"description":"Decodes URL entities",
+		"description":"Decodes URL entities in your text.",
 		"author":"Ivan",
 		"icon":"link",
 		"tags":"url,decode,convert"

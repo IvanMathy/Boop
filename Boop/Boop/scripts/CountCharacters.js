@@ -2,7 +2,7 @@
 	{
 		"api":1,
 		"name":"Count Characters",
-		"description":"Get the length of your text.",
+		"description":"Get the length of your text",
 		"author":"Ivan",
 		"icon":"counter",
 		"tags":"count,length,size,character"

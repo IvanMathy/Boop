@@ -4,7 +4,7 @@
     "name":"Well-Known Text to Binary",
     "description":"Converts your WKT to little endian WKB (hex encoded), wkt2wkb",
     "author":"Mikael Brassman (Twitter: @spoike)",
-    "icon":"metamorphose",
+    "icon":"globe",
     "tags":"wkb,convert,wkt,binary,little endian,hex,wkt2wkb"
   }
 **/
