@@ -31,6 +31,11 @@ class PopoverViewController: NSViewController {
 
         // Double-click script selection
         tableView.doubleAction = #selector(runSelectedScript)
+
+        // Dismiss popover on background view click
+        overlayView.onMouseDown = { [weak self] in
+            self?.hide()
+        }
         
         setupKeyHandlers()
     }
