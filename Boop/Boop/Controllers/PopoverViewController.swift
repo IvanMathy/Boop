@@ -68,7 +68,7 @@ class PopoverViewController: NSViewController {
                     return theEvent
                 }
 
-                self.runScriptAgain()
+                self.runSelectedScript()
                 
                 didSomething = true
             }
