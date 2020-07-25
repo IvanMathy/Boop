@@ -4,7 +4,7 @@
 		"name":"Test Script",
 		"description":"Testing script",
 		"author":"Ivan",
-		"icon":"quote",
+		"icon":"flask",
 		"tags":"test,test,one,two"
 	}
 **/

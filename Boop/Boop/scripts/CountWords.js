@@ -2,7 +2,7 @@
   {
     "api":1,
     "name":"Count Words",
-    "description":"Get the word count of your text.",
+    "description":"Get the word count of your text",
     "author":"Daniel Stone",
     "icon":"counter",
     "tags":"count,length,size,words"

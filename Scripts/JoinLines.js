@@ -2,9 +2,9 @@
 	{
 		"api":1,
 		"name":"Join Lines",
-		"description":"Joins All Lines Without any Delimiter",
+		"description":"Joins all lines without any delimiter.",
 		"author":"riesentoaster",
-		"icon":"table",
+		"icon":"collapse",
 		"tags":"join"
 	}
 **/

@@ -28,6 +28,14 @@ class PopoverViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Double-click script selection
+        tableView.doubleAction = #selector(runSelectedScript)
+
+        // Dismiss popover on background view click
+        overlayView.onMouseDown = { [weak self] in
+            self?.hide()
+        }
         
         setupKeyHandlers()
     }
@@ -55,18 +63,12 @@ class PopoverViewController: NSViewController {
             }
             
             if theEvent.keyCode == 36 && self.enabled { // ENTER
-                
-                guard let script = self.tableViewController.selectedScript else {
-                    return theEvent // Return event to beep
+
+                guard self.tableViewController.selectedScript != nil else {
+                    return theEvent
                 }
-                
-                
-                // Let's dismiss the popover
-                self.hide()
-                
-                // Run the script afterwards in case we need to show a status
-                self.scriptManager.runScript(script, into: self.editorView)
-                
+
+                self.runSelectedScript()
                 
                 didSomething = true
             }
@@ -141,6 +143,18 @@ class PopoverViewController: NSViewController {
     
     func runScriptAgain() {
         self.scriptManager.runScriptAgain(editor: self.editorView)
+    }
+
+    @objc private func runSelectedScript() {
+        guard let script = tableViewController.selectedScript else {
+            return
+        }
+
+        // Let's dismiss the popover
+        hide()
+
+        // Run the script afterwards in case we need to show a status
+        scriptManager.runScript(script, into: editorView)
     }
     
 }

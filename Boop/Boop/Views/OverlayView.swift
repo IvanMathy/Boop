@@ -10,6 +10,8 @@ import Cocoa
 
 class OverlayView: NSView {
 
+    var onMouseDown: (() -> Void)?
+
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
         self.wantsLayer = true
@@ -32,7 +34,7 @@ class OverlayView: NSView {
     }
     
     override func mouseDown(with event: NSEvent) {
-        return
+        onMouseDown?()
     }
     
 }

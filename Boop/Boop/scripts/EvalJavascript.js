@@ -1,10 +1,10 @@
 /**
      {
          "api":1,
-         "name":"Eval",
-         "description":"Evaluate Javascript.",
+         "name":"Eval Javascript",
+         "description":"Runs your text as Javascript Code.",
          "author":"Sebastiaan Besselsen",
-         "icon":"unknown",
+         "icon":"command",
          "tags":"js,script,run"
      }
  **/

@@ -2,7 +2,7 @@
 	{
 		"api":1,
 		"name":"Shuffle Lines",
-		"description":"Randomize each line of your text",
+		"description":"Randomize each line of your text.",
 		"author":"@Clarko",
 		"icon":"dice",
 		"tags":"shuffle,random"

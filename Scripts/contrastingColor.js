@@ -4,7 +4,7 @@
     "name": "Contrasting Color",
     "description": "Determine whether black or white contrasts better with the given color(s) (one per line).",
     "author": "Sunny Walker",
-    "icon": "table",
+    "icon": "color-wheel",
     "tags": "contrast,color,wcag"
 }
 **/
