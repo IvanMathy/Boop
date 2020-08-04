@@ -534,7 +534,9 @@
           bkey = binl(bkey, key.length * 8);
         }
 
-        ipad = Array(16), opad = Array(16);
+        ipad = Array(16);
+        opad = Array(16);
+
         for (i = 0; i < 16; i += 1) {
           ipad[i] = bkey[i] ^ 0x36363636;
           opad[i] = bkey[i] ^ 0x5C5C5C5C;
@@ -1604,7 +1606,7 @@
        * Calculate the rmd160 of a raw string
        */
 
-      function rstr(s) {
+      function rstr(s, utf8) {
         s = (utf8) ? utf8Encode(s) : s;
         return binl2rstr(binl(rstr2binl(s), s.length * 8));
       }
@@ -1734,7 +1736,7 @@
   };
 
   // exposes Hashes
-  (function(window, undefined) {
+  (function(window) {
     var freeExports = false;
     if (typeof exports === 'object') {
       freeExports = exports;
