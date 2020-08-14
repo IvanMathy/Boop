@@ -119,7 +119,7 @@ class ScriptManager: NSObject {
             return []
         }
         
-        guard query != "*" else {
+        guard !query.isEmpty else {
             
             return scripts.sorted { left, right in
                 left.name ?? "" < right.name ?? ""
