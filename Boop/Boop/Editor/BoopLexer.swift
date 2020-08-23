@@ -69,7 +69,7 @@ class BoopLexer: RegexLexer {
         
         generators.append(regexToken(.comment, #"(?=(\/\*[\s\S]*?(?:\*\/|$)))"#, options: [.dotMatchesLineSeparators], greedy: true))
         
-        //generators.append(regexToken(.comment, "\(quoteLookahead)<\\!--[\\s\\S]*?(?:-\\->|$)", options: [.dotMatchesLineSeparators, .caseInsensitive]))
+        generators.append(regexToken(.comment, #"<!--[\s\S]*?-->"#, options: [.dotMatchesLineSeparators, .caseInsensitive], greedy: true))
         
       
         
