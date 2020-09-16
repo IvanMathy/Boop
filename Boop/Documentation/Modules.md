@@ -77,10 +77,14 @@ Boop ships with a couple of modules, with the prefix `@boop/`, which you can use
 
 | Module name        | Description   |
 | ------------------ | ------------- |
-| `@boop/base64`     | Base 64 encoding and decoding  |
-| `@boop/lodash.boop`| Subset of lodash string functions (see below)|
+| `@boop/base64`     | Base 64 encoding and decoding |
+| `@boop/lodash.boop`| Subset of lodash string functions (see below) |
 | `@boop/he`         | HTML entities encoder/decoder |
 | `@boop/vkBeautify` | XML, CSS, and SQL formatter and minifier |
+| `@boop/js-yaml`    | Parses and Stringifies YAML objects |
+| `@boop/hashes`     | Common crypto hashes |
+
+If you need a new module that you think could be used by more scripts, feel free to open a PR adding more functionality.
 
 #### Lodash
 
