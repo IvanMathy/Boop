@@ -95,8 +95,8 @@ extension Script: Fuseable {
         return [
             FuseProperty(value: name, weight: 0.9),
             FuseProperty(value: desc, weight: 0.2)
-        ] + tags.map({(tag: String) -> FuseProperty in
-            FuseProperty(value: tag, weight: 0.6)})
+        ] + tags.map { tag in
+            FuseProperty(value: tag, weight: 0.4) }
     }
 }
 
