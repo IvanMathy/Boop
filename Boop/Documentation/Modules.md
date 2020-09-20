@@ -87,7 +87,7 @@ Boop ships with a couple of modules, with the prefix `@boop/`, which you can use
 The built in lodash module was created with the following command and only includes a few functions and their direct dependencies:
 
 ```bash
-$ lodash include=camelCase,deburr,escapeRegExp,kebabCase,snakeCase,startCase
+$ lodash include=camelCase,deburr,escapeRegExp,kebabCase,snakeCase,startCase,size
 ```
 
 If you'd like to add more functions, feel free to rebuild with additional parameters and submit a PR.

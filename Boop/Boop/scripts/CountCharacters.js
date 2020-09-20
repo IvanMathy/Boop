@@ -9,8 +9,12 @@
 	}
 **/
 
+
+const { size } = require('@boop/lodash.boop')
+
 function main(input) {
 	
-	input.postInfo(`${input.text.length} characters`)
+	input.postInfo(`${size(input.text)} characters`)
 	
 }
+
