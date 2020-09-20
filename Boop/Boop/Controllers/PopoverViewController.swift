@@ -49,7 +49,7 @@ class PopoverViewController: NSViewController {
             var didSomething = false
                 
             // Key codes:
-            let kVK_Tab = 0x30
+            let kVKTab = 0x30
             // 125 is down arrow
             // 126 is up
             // 53 is escape
@@ -76,7 +76,7 @@ class PopoverViewController: NSViewController {
 
             let window = self.view.window
             
-            if theEvent.keyCode == kVK_Tab && self.enabled {
+            if theEvent.keyCode == kVKTab && self.enabled {
                 if window?.firstResponder is NSTextView &&
                     (window?.firstResponder as! NSTextView).delegate is SearchField {
                     let offset = theEvent.modifierFlags.contains(.shift) ? -1 : 1
