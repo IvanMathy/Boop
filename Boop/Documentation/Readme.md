@@ -7,6 +7,7 @@ Hey there! Thanks for trying out Boop. This documentation should hopefully help 
  - [Custom Scripts](CustomScripts.md)
  - [Modules](Modules.md)
  - [Debugging Scripts](Debugging.md)
+ - [Converting Node Modules](ConvertingNodeModules.md)
 
 ## Getting Boop
 
