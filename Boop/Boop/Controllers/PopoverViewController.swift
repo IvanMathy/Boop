@@ -49,6 +49,7 @@ class PopoverViewController: NSViewController {
             var didSomething = false
                 
             // Key codes:
+            let kVKTab = 0x30
             // 125 is down arrow
             // 126 is up
             // 53 is escape
@@ -72,9 +73,20 @@ class PopoverViewController: NSViewController {
                 
                 didSomething = true
             }
-            
+
             let window = self.view.window
             
+            if theEvent.keyCode == kVKTab && self.enabled {
+                if window?.firstResponder is NSTextView &&
+                    (window?.firstResponder as! NSTextView).delegate is SearchField {
+                    let offset = theEvent.modifierFlags.contains(.shift) ? -1 : 1
+                    let newSel = IndexSet([self.tableView.selectedRow + offset])
+                    self.tableView.selectRowIndexes(newSel, byExtendingSelection: false)
+                    self.tableView.scrollRowToVisible(self.tableView.selectedRow)
+                }
+                didSomething = true // prevent tabbing back into text document
+            }
+
             if window?.firstResponder is NSTextView &&
                 (window?.firstResponder as! NSTextView).delegate is SearchField &&
                 theEvent.keyCode == 125 { // DOWN
