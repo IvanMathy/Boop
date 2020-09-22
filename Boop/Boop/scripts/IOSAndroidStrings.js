@@ -4,8 +4,8 @@
     "name":"iOS Localizables to Android Strings",
     "description":"Converts iOS Localizables to Android Strings",
     "author":"Manuel Kunz (https://github.com/KunzManuel)",
-    "icon":"quote",
-    "tags":"string, android, ios"
+    "icon":"translation",
+    "tags":"string,android,ios"
   }
 **/
 
