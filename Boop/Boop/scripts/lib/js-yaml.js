@@ -488,7 +488,7 @@ function writeScalar(state, string, level, iskey) {
         return '>' + blockHeader(string, state.indent)
           + dropEndingNewline(indentString(foldString(string, lineWidth), indent));
       case STYLE_DOUBLE:
-        return '"' + escapeString(string, lineWidth) + '"';
+        return '"' + escapeString(string) + '"';
       default:
         throw new YAMLException('impossible error: invalid scalar style');
     }
@@ -1185,7 +1185,7 @@ var directiveHandlers = {
 
   YAML: function handleYamlDirective(state, name, args) {
 
-    var match, major, minor;
+    var major, minor;
 
     if (state.version !== null) {
       throwError(state, 'duplication of %YAML directive');
@@ -1195,14 +1195,15 @@ var directiveHandlers = {
       throwError(state, 'YAML directive accepts exactly one argument');
     }
 
-    match = /^([0-9]+)\.([0-9]+)$/.exec(args[0]);
+    var match = /^([0-9]+)\.([0-9]+)$/.exec(args[0]);
 
     if (match === null) {
       throwError(state, 'ill-formed argument of the YAML directive');
+    } else {
+        major = parseInt(match[1], 10);
+        minor = parseInt(match[2], 10);
     }
 
-    major = parseInt(match[1], 10);
-    minor = parseInt(match[2], 10);
 
     if (major !== 1) {
       throwError(state, 'unacceptable YAML version of the document');
