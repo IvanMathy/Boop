@@ -2,10 +2,10 @@
   {
     "api":1,
     "name":"Android Strings to iOS Localizables",
-    "description":"Connverts Android Strings to iOS localizables",
+    "description":"Converts Android Strings to iOS localizables",
     "author":"Manuel Kunz (https://github.com/KunzManuel)",
-    "icon":"quote",
-    "tags":"string, android, ios"
+    "icon":"translation",
+    "tags":"string,android,ios"
   }
 **/
 
