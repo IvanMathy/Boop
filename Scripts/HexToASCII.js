@@ -10,8 +10,19 @@
 **/
 
 function main(state) {
+	input = state.fullText.toUpperCase();
 	buf = "";
-	for(i = 0; i < state.fullText.length; i += 2)
-		buf += String.fromCharCode(parseInt(state.fullText.substring(i, i+2), 16));
+	hexBuf = "";
+	for(i = 0; i < input.length; i ++) {
+		c = input.charAt(i);
+		if("0123456789ABCDEF".includes(c)) {
+ 			hexBuf += c;
+ 			if(hexBuf.length >= 2) {
+				buf += String.fromCharCode(parseInt(hexBuf, 16));
+				hexBuf = "";
+ 			}
+		} else if(c != ' ' && c != '\t' && c != '\n' && c != '\r') 
+			throw "Not hex";
+	}
 	state.fullText = buf;
 }
