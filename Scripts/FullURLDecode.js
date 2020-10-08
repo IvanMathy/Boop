@@ -18,6 +18,7 @@ function fullUrlDecode(str) {
 		decoded += String.fromCharCode(parseInt(c, 16));
 	}
 
+	return decoded;
 }
 
 function main(state) {
