@@ -4,7 +4,7 @@
         "name":"JS Object to JSON",
         "description":"Converts a javascript object to JSON format",
         "author":"luisfontes19",
-        "icon":"code",
+        "icon":"HTML",
         "tags":"json,js,object,convert",
         "bias": -0.1
     }
