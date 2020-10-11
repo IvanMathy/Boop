@@ -35,7 +35,7 @@ Yes! Simply open the script picker and search for `*`.
 
 ### Why can't I open/Save a file?
 
-Because that's not the goal of Boop. It's not really an editor, more of a unstructured limbo for your plain text pasted content.
+Because that's not the goal of Boop. It's not really an editor, more of an unstructured limbo for your plain text pasted content.
 
 ### Where can I find more scripts?
 
@@ -55,7 +55,7 @@ The best way to do that is to [file an issue on GitHub](https://github.com/IvanM
 
 ### How is Boop built?
 
-Boop is mostly built using a custom fork of [SavannaKit](https://github.com/IvanMathy/savannakit), originaly created by [Louis D'hauwe](http://twitter.com/LouisDhauwe). The search is powered by a custom fork of [Fuse-swift](https://github.com/IvanMathy/fuse-swift). The rest of Boop is simply built in Swift, besides scripts which are Javascript. Go ahead and open some of them to check their license!
+Boop is mostly built using a custom fork of [SavannaKit](https://github.com/IvanMathy/savannakit), originally created by [Louis D'hauwe](http://twitter.com/LouisDhauwe). The search is powered by a custom fork of [Fuse-swift](https://github.com/IvanMathy/fuse-swift). The rest of Boop is simply built in Swift, besides scripts which are Javascript. Go ahead and open some of them to check their license!
 
 ### Do I have to say "Boop" out loud when I press ⌘+B?
 
