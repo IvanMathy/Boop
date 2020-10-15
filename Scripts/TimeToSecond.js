@@ -4,7 +4,7 @@
     "name":"Time to seconds",
     "description":"Convert hh:mm:ss to seconds",
     "author":"PeteChu",
-    "icon":"flask",
+    "icon":"watch",
     "tags":"transform,convert"
   }
 **/
@@ -15,5 +15,5 @@ function timeToSeconds(durationText) {
 }
 
 function main(input) {
-  input.text = timeToSeconds(input.text)
+  input.insert('\n\n' + timeToSeconds(input.text));
 }
