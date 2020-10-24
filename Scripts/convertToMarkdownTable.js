@@ -1,12 +1,12 @@
 /**
-	{
-		"api":1,
-		"name":"Convert to pretty markdown table",
-		"description":"Converts csv, tsv or markdown table into pretty markdown table format.",
-		"author":"xshoji",
-		"icon":"term",
-		"tags":"csv,tsv,md,markdown"
-	}
+{
+  "api":1,
+  "name":"Convert to pretty markdown table",
+  "description":"Converts csv, tsv or markdown table into pretty markdown table format.",
+  "author":"xshoji",
+  "icon":"term",
+  "tags":"csv,tsv,md,markdown"
+}
 **/
 function main(input) {
   input.text = convertToPrettyMarkdownTableFormat(input.text);
@@ -31,10 +31,10 @@ function convertToPrettyMarkdownTableFormat(input) {
   const columnMaxLengthList = tableElements[0].map((v, i) => i).reduce((map, columnIndex) => {
     let maxLength = 0;
     tableElements.forEach(record => maxLength < calcBytes(record[columnIndex]) ? maxLength = calcBytes(record[columnIndex]) : null);
-		if (maxLength === 1) {
-			// Avoids markdown header line becomes only ":" ( ":-" is correct. ).
-			maxLength = 2;
-		}
+    if (maxLength === 1) {
+      // Avoids markdown header line becomes only ":" ( ":-" is correct. ).
+      maxLength = 2;
+    }
     map[columnIndex] = maxLength;
     return map;
   }, {})
