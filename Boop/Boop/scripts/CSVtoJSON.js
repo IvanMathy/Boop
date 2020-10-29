@@ -11,8 +11,8 @@
 **/
 function main(state) {
 	try {
-    		const { data } = Papa.parse(state.text);
-    		state.text = JSON.stringify(data);
+    		const { data } = Papa.parse(state.text, {header:true});
+    		state.text = JSON.stringify(data, null, 2);
   	}
   	catch(error) {
 		state.postError("Invalid CSV")
