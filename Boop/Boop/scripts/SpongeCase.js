@@ -1,11 +1,11 @@
 /**
 {
   "api": 1,
-  "name": "Sponge Text",
-  "description": "Randomly capitalizes letters to make it sarcastic",
+  "name": "Sponge Case",
+  "description": "CoNvERtS yoUR Text To A HIghER fOrM Of CoMMUnICAtIOn",
   "author": "Paul Seelman",
-  "icon": "dice",
-  "tags": "sponge,spongetext,spongebob,spongebob text,sarcasm,sarcastic,random,caps,capitalized"
+  "icon": "pineapple",
+  "tags": "bob,sarcasm,no,this,is,patrick"
 }
 **/
 function spongeText(string) {

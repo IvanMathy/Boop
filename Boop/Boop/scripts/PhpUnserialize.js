@@ -4,7 +4,7 @@
     "name":"PHP Unserialize",
     "description":"Convert PHP serialized data to JSON",
     "author":"Rob Bogie",
-    "icon":"HTML",
+    "icon":"elephant",
     "tags":"php,serialize,unserialize,json"
   }
 **/
