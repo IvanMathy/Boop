@@ -11,9 +11,6 @@
 
 function main(state) {
   try {
-    if (!state.text.match(/(\{|\[).*(\}|\])(;)?/s)) {
-      throw new Error('Could not parse as JS Array or Object.');
-    }
     const result = new Function(`return ${state.text}`)();
     state.text = convert(result) + ';';
   } catch (error) {
