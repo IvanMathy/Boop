@@ -30,8 +30,6 @@ const toPHP = function (value, indentation) {
       value = value.replace(/"/g, '\\"');
       value = `"${value}"`;
       break;
-    default:
-      value = value;
   }
 
   return value;
