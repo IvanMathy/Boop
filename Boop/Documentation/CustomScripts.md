@@ -50,7 +50,7 @@ Your script will be kept alive in its own virtual machine, retaining context and
 
 ```js
 
-function main(input) {
+function main(state) {
     // Do something useful here (or not)
 }
 
