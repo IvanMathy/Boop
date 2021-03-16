@@ -28,7 +28,20 @@ function main(state) {
 
 function sort(obj) {
   if (obj instanceof Array) {
-    return obj.map(item => sort(item));
+    let out = obj.map(item => sort(item));
+    out.sort((a, b) => {
+        let fa = JSON.stringify(a),
+            fb = JSON.stringify(b);
+
+        if (fa < fb) {
+            return -1;
+        }
+        if (fa > fb) {
+            return 1;
+        }
+        return 0;
+    });
+    return out;
   }
 
   if (!isPlainObject(obj)) {
