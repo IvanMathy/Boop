@@ -21,8 +21,10 @@ function main(state) {
 				buf += String.fromCharCode(parseInt(hexBuf, 16));
 				hexBuf = "";
  			}
-		} else if(c != ' ' && c != '\t' && c != '\n' && c != '\r') 
-			throw "Not hex";
+        } else if(c != ' ' && c != '\t' && c != '\n' && c != '\r') {
+            state.postError("Text is not hex")
+            throw "Not hex";
+        }
 	}
 	state.fullText = buf;
 }
