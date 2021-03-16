@@ -22,7 +22,6 @@ function main(state) {
   value = sort(value);
 
   state.text = JSON.stringify(value, null, 2);
-  state.postInfo(`Sorted`);
 }
 
 
