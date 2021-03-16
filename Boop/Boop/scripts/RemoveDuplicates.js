@@ -11,7 +11,7 @@
 
 function main(input) {
     let lines = input.text.split('\n')
-    let out =  unique(lines)
+    let out = unique(lines)
 
     input.text = out.join('\n')
     
