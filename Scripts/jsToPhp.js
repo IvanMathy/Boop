@@ -21,7 +21,9 @@ function main(state) {
 const toPHP = function (value, indentation) {
   switch (typeof value) {
     case 'object':
-      value = convert(value, indentation + 1);
+      if(value !== null) {
+        value = convert(value, indentation + 1);
+      }
       break;
     case 'string':
       value = value.replace(/"/g, '\\"');
