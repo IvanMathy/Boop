@@ -13,9 +13,37 @@
 function main(state) {
   var rows = parseInput(state.text);
   var separator = getSeparator(rows);
-  var colLengths = [];
-  var isNumberCol = [];
 
+  var colLengths = getColumnLengths(rows, separator);
+
+  var output = "\n";
+
+  for (var i = 0; i < rows.length; i++) {
+    if (i === 1) {
+      output += getSeparatorRow(colLengths);
+    }
+
+    var cols;
+    var data;
+
+    for (var j = 0; j <= colLengths.length; j++) {
+      cols = rows[i].split(separator);
+      data = cols[j] || "";
+      if (j < colLengths.length) {
+        data = pad(data, colLengths[j]);
+        output += "| " + data + " ";
+      } else {
+        output += "|\n";
+      }
+    }
+  }
+
+  state.text = output;
+}
+
+function getColumnLengths(rows, separator) {
+  var isNumberCol = [];
+  var colLengths = [];
   for (var i = 0; i < rows.length; i++) {
     rows[i] = rows[i].replace(/(    )/g, separator);
     var cols = rows[i].split(separator);
@@ -33,27 +61,7 @@ function main(state) {
       }
     }
   }
-
-  var output = "\n";
-
-  for (i = 0; i < rows.length; i++) {
-    if (i === 1) {
-      output += getSeparatorRow(colLengths);
-    }
-
-    for (j = 0; j <= colLengths.length; j++) {
-      cols = rows[i].split(separator);
-      data = cols[j] || "";
-      if (j < colLengths.length) {
-        data = pad(data, colLengths[j]);
-        output += "| " + data + " ";
-      } else {
-        output += "|\n";
-      }
-    }
-  }
-
-  state.text = output;
+  return colLengths;
 }
 
 function parseInput(txt) {
@@ -67,7 +75,7 @@ function parseInput(txt) {
         input += convertToPlainText(row) + "\n";
       }
     } else {
-      input = state.text.replace(/  /g, "\t");
+      input = txt.replace(/  /g, "\t");
       break;
     }
   }
