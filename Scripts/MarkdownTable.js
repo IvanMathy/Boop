@@ -11,41 +11,11 @@
 **/
 
 function main(state) {
-  var txt = state.text;
-  var rows = txt.split(/[\r\n]+/);
-  var input = "";
-  for (var y = 0; y < rows.length; y++) {
-    if (rows[y].length === 0) {
-      continue;
-    } else if (rows[y].substr(0, 1) === "|") {
-      if (rows[y].substr(1, 1) !== "-") {
-        input += convertToPlainText(rows[y]) + "\n";
-      }
-    } else {
-      input = state.text.replace(/  /g, "\t");
-      break;
-    }
-  }
-
-  while (input.includes("\t\t")) {
-    input = input.replace("\t\t", "\t");
-  }
-
-  rows = input.split(/[\r\n]+/);
-  while (rows[rows.length - 1] === "") {
-    rows.pop();
-  }
-
+  var rows = parseInput(state.text);
+  var separator = getSeparator(rows);
   var colLengths = [];
   var isNumberCol = [];
-  var possibleSeparators = ["\t", ",", " "];
-  var separator = "\t";
-  for (var x = 0; x < possibleSeparators.length; x++) {
-    if (rows[0].split(possibleSeparators[x]).length > 2) {
-      separator = possibleSeparators[x];
-      break;
-    }
-  }
+
   for (var i = 0; i < rows.length; i++) {
     rows[i] = rows[i].replace(/(    )/g, separator);
     var cols = rows[i].split(separator);
@@ -71,7 +41,7 @@ function main(state) {
       output += getSeparatorRow(colLengths);
     }
 
-    for (var j = 0; j <= colLengths.length; j++) {
+    for (j = 0; j <= colLengths.length; j++) {
       cols = rows[i].split(separator);
       data = cols[j] || "";
       if (j < colLengths.length) {
@@ -84,6 +54,44 @@ function main(state) {
   }
 
   state.text = output;
+}
+
+function parseInput(txt) {
+  var rows = txt.split(/[\r\n]+/);
+  var input = "";
+  for (const row of rows) {
+    if (row.length === 0) {
+      continue;
+    } else if (row.substr(0, 1) === "|") {
+      if (row.substr(1, 1) !== "-") {
+        input += convertToPlainText(row) + "\n";
+      }
+    } else {
+      input = state.text.replace(/  /g, "\t");
+      break;
+    }
+  }
+
+  while (input.includes("\t\t")) {
+    input = input.replace("\t\t", "\t");
+  }
+
+  rows = input.split(/[\r\n]+/);
+  while (rows[rows.length - 1] === "") {
+    rows.pop();
+  }
+  return rows;
+}
+
+function getSeparator(rows) {
+  var separator = "\t";
+  var possibleSeparators = ["\t", ",", " "];
+  for (const possibleSeparator of possibleSeparators) {
+    if (rows[0].split(possibleSeparator).length > 2) {
+      return possibleSeparator;
+    }
+  }
+  return separator;
 }
 
 function getSeparatorRow(lengths) {
@@ -102,8 +110,7 @@ function getSeparatorRow(lengths) {
 
 function pad(text, length) {
   var additionalChars = length - text.length;
-  var result = text + repeat(" ", additionalChars);
-  return result;
+  return text + repeat(" ", additionalChars);
 }
 
 function repeat(str, num) {
