@@ -93,7 +93,7 @@ function parseInput(txt) {
 
 function getSeparator(rows) {
   var separator = "\t";
-  var possibleSeparators = ["\t", ",", " "];
+  var possibleSeparators = ["\t", "|", ",", " "];
   for (const possibleSeparator of possibleSeparators) {
     if (rows[0].split(possibleSeparator).length > 2) {
       return possibleSeparator;
@@ -105,9 +105,7 @@ function getSeparator(rows) {
 function getSeparatorRow(lengths) {
   var rowOutput = "";
   for (var j = 0; j <= lengths.length; j++) {
-    if (j === 0) {
-      rowOutput += "|" + repeat("-", lengths[j] + 2);
-    } else if (j < lengths.length) {
+    if (j < lengths.length) {
       rowOutput += "|" + repeat("-", lengths[j] + 2);
     } else {
       rowOutput += "|\n";
