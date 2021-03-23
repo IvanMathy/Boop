@@ -95,7 +95,7 @@ function getSeparator(rows) {
   var separator = "\t";
   var possibleSeparators = ["\t", "|", ",", " "];
   for (const possibleSeparator of possibleSeparators) {
-    if (rows[0].split(possibleSeparator).length > 2) {
+    if (rows[0].split(possibleSeparator).length > 1) {
       return possibleSeparator;
     }
   }
