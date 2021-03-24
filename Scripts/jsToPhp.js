@@ -10,16 +10,22 @@
 **/
 
 function main(state) {
+  const js = state.text.replace(/\n\n\/\/ Result:[\s\S]*$/, '');
+  let output = '';
   try {
-    const result = new Function(`return ${state.text}`)();
-    state.text = convert(result) + ';';
+    const result = new Function(`return ${js}`)();
+    output = convert(result) + ';';
   } catch (error) {
     state.postError(error.message);
   }
+  state.text = js + "\n\n// Result:\n\n" + output;
 }
 
 const toPHP = function (value, indentation) {
   switch (typeof value) {
+    case 'undefined':
+      value = null;
+      break;
     case 'object':
       if(value !== null) {
         value = convert(value, indentation + 1);
