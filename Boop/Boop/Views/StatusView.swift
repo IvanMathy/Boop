@@ -40,7 +40,12 @@ class StatusView: NSView {
         self.layer?.cornerRadius = 5
         
     }
-
+    
+    var onMouseDown: (() -> Void)?
+    override func mouseDown(with event: NSEvent) {
+        onMouseDown?()
+    }
+    
     func setStatus(_ newStatus: Status) {
         
         switch newStatus {
