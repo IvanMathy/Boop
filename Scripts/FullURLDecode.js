@@ -15,7 +15,7 @@ function fullUrlDecode(str) {
 	var decoded = '';
 
 	for (var i = 0; i < codes.length; i++) {
-		decoded += String.fromCharCode(parseInt(c, 16));
+		decoded += String.fromCharCode(parseInt(codes[i], 16));
 	}
 
 	return decoded;
