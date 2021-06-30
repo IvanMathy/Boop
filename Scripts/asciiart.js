@@ -19,6 +19,4 @@ function main(state) {
     state.text = blockLetterGenerator(all, {lineBreak: '#'})
 }
 
-function r() {
-    return Math.random() >= poopFactor
 }
