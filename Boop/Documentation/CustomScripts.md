@@ -29,7 +29,7 @@ Each script starts with a declarative JSON document, describing the contents of 
 
 * `api` is not currently used, but is strongly recommended for potential backwards compatibility. You should set it to 1.
 * `name`, `description` and `author` are exactly what you think they are.
-* `icon` is a visual representation of your scripts' actions. You can see available icons in `Boop/Assets.xcassets/Icons/`. If you can't find what you like, feel free to create an issue and we'll make it work!
+* `icon` is a visual representation of your scripts' actions. You can see available icons in `Boop/Assets.xcassets/Icons/`. On macOS 11 and above you can also use [SF Symbols](https://developer.apple.com/sf-symbols/). If you can't find what you like, feel free to create an issue and we'll make it work!
 * `tags` are used by the fuzzy-search algorythm to filter and sort results.
 
 An optional property, `bias`, can also be added to help Boop prioritize your scripts. A positive value will move your script higher in the results, a negative value will push it further down. The bias property is a number:
