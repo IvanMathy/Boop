@@ -9,6 +9,36 @@
 import Cocoa
 import SavannaKit
 
+fileprivate let kVKTab = 0x30
+    // 125 is down arrow
+    // 126 is up
+    // 53 is escape
+    // 36 is enter
+
+fileprivate enum MoveCommand {
+    case up, down
+}
+
+fileprivate let moveDownControlKeys = ["j", "n"]
+fileprivate let moveUpControlKeys = ["k", "p"]
+
+fileprivate func extractMoveCommand(fromEvent event: NSEvent) -> MoveCommand? {
+    if event.keyCode == kVKTab {
+        return event.modifierFlags.contains(.shift) ? .up : .down
+    }
+    if event.modifierFlags.contains(.control),
+       let chars = event.charactersIgnoringModifiers {
+        if moveDownControlKeys.contains(chars) {
+            return .down
+        }
+        else if moveUpControlKeys.contains(chars) {
+            return .up
+        }
+    }
+    return nil
+}
+
+
 class PopoverViewController: NSViewController {
     
     @IBOutlet weak var overlayView: OverlayView!
@@ -48,13 +78,6 @@ class PopoverViewController: NSViewController {
             
             var didSomething = false
                 
-            // Key codes:
-            let kVKTab = 0x30
-            // 125 is down arrow
-            // 126 is up
-            // 53 is escape
-            // 36 is enter
-       
             if theEvent.keyCode == 53 && self.enabled { // ESCAPE
                 
                 // Let's dismiss the popover
@@ -76,10 +99,11 @@ class PopoverViewController: NSViewController {
 
             let window = self.view.window
             
-            if theEvent.keyCode == kVKTab && self.enabled {
+            if self.enabled,
+               let moveCommand = extractMoveCommand(fromEvent: theEvent) {
                 if window?.firstResponder is NSTextView &&
                     (window?.firstResponder as! NSTextView).delegate is SearchField {
-                    let offset = theEvent.modifierFlags.contains(.shift) ? -1 : 1
+                    let offset = moveCommand == .up ? -1 : 1
                     let newSel = IndexSet([self.tableView.selectedRow + offset])
                     self.tableView.selectRowIndexes(newSel, byExtendingSelection: false)
                     self.tableView.scrollRowToVisible(self.tableView.selectedRow)
