@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -502,7 +502,7 @@ Gw
             </items>
             <point key="canvasLocation" x="139" y="-200"/>
         </menu>
-        <window title="Boop" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" tabbingMode="disallowed" titleVisibility="hidden" id="QvC-M9-y7g">
+        <window title="Boop" separatorStyle="shadow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" tabbingMode="disallowed" titleVisibility="hidden" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
@@ -519,10 +519,10 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                     </customView>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ibo-QR-zuu" customClass="PopoverView" customModule="Boop" customModuleProvider="target">
-                        <rect key="frame" x="20" y="142" width="440" height="198"/>
+                        <rect key="frame" x="20" y="144" width="440" height="190"/>
                         <subviews>
                             <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8Zz-Qr-iVg" customClass="SearchField" customModule="Boop" customModuleProvider="target">
-                                <rect key="frame" x="14" y="152" width="412" height="30"/>
+                                <rect key="frame" x="10" y="148" width="420" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4GE-bC-UdC"/>
                                 </constraints>
@@ -537,18 +537,18 @@ Gw
                             </textField>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="45" horizontalPageScroll="10" verticalLineScroll="45" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kim-cP-qoy">
                                 <rect key="frame" x="0.0" y="0.0" width="440" height="140"/>
-                                <clipView key="contentView" drawsBackground="NO" id="k53-tn-QWl">
+                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="k53-tn-QWl">
                                     <rect key="frame" x="0.0" y="0.0" width="440" height="140"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="43" rowSizeStyle="automatic" viewBased="YES" id="hJ8-Qr-O0F" customClass="ScriptTableView" customModule="Boop" customModuleProvider="target">
+                                        <tableView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="43" rowSizeStyle="automatic" viewBased="YES" id="hJ8-Qr-O0F" customClass="ScriptTableView" customModule="Boop" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="440" height="140"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="437" minWidth="40" maxWidth="1000" id="oAy-Ya-q4E">
+                                                <tableColumn width="408" minWidth="40" maxWidth="1000" id="oAy-Ya-q4E">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -556,12 +556,12 @@ Gw
                                                     <customCell key="dataCell" alignment="left" id="hKX-Tq-apH"/>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="scriptCell" id="XkG-Fy-tdM" customClass="ScriptTableViewCell" customModule="Boop" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="437" height="43"/>
+                                                        <tableCellView identifier="scriptCell" misplaced="YES" id="XkG-Fy-tdM" customClass="ScriptTableViewCell" customModule="Boop" customModuleProvider="target">
+                                                            <rect key="frame" x="11" y="1" width="417" height="43"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ODE-N3-eZN">
-                                                                    <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                                                    <rect key="frame" x="8" y="9" width="30" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="30" id="3Lp-yt-Tn1"/>
                                                                         <constraint firstAttribute="height" constant="30" id="uEa-Wh-Tu7"/>
@@ -569,10 +569,10 @@ Gw
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="icons8-broom" id="wtt-XN-7xb"/>
                                                                 </imageView>
                                                                 <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSG-6c-xJD">
-                                                                    <rect key="frame" x="45" y="3" width="392" height="40"/>
+                                                                    <rect key="frame" x="45" y="3" width="372" height="41"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V6y-xm-z2x">
-                                                                            <rect key="frame" x="-2" y="16" width="151" height="24"/>
+                                                                            <rect key="frame" x="-2" y="16" width="152" height="25"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Remove Slashes" id="lg9-Vc-9ib">
                                                                                 <font key="font" metaFont="systemLight" size="21"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -640,11 +640,11 @@ Gw
                             <constraint firstItem="Kim-cP-qoy" firstAttribute="leading" secondItem="ibo-QR-zuu" secondAttribute="leading" id="5HO-xS-Qli"/>
                             <constraint firstAttribute="width" constant="440" id="6Jf-jX-8MB"/>
                             <constraint firstAttribute="trailing" secondItem="Kim-cP-qoy" secondAttribute="trailing" id="Cv9-s9-b8K"/>
-                            <constraint firstItem="8Zz-Qr-iVg" firstAttribute="leading" secondItem="ibo-QR-zuu" secondAttribute="leading" constant="16" id="KL3-cZ-eKw"/>
-                            <constraint firstItem="8Zz-Qr-iVg" firstAttribute="top" secondItem="ibo-QR-zuu" secondAttribute="top" constant="16" id="Nvg-rb-aWA"/>
+                            <constraint firstItem="8Zz-Qr-iVg" firstAttribute="leading" secondItem="ibo-QR-zuu" secondAttribute="leading" constant="12" id="KL3-cZ-eKw"/>
+                            <constraint firstItem="8Zz-Qr-iVg" firstAttribute="top" secondItem="ibo-QR-zuu" secondAttribute="top" constant="12" id="Nvg-rb-aWA"/>
                             <constraint firstAttribute="bottom" secondItem="Kim-cP-qoy" secondAttribute="bottom" id="Xrt-Jd-cue"/>
-                            <constraint firstAttribute="trailing" secondItem="8Zz-Qr-iVg" secondAttribute="trailing" constant="16" id="kkT-5c-Y12"/>
-                            <constraint firstItem="Kim-cP-qoy" firstAttribute="top" secondItem="8Zz-Qr-iVg" secondAttribute="bottom" constant="12" id="krU-HR-7Ns"/>
+                            <constraint firstAttribute="trailing" secondItem="8Zz-Qr-iVg" secondAttribute="trailing" constant="12" id="kkT-5c-Y12"/>
+                            <constraint firstItem="Kim-cP-qoy" firstAttribute="top" secondItem="8Zz-Qr-iVg" secondAttribute="bottom" constant="8" id="krU-HR-7Ns"/>
                         </constraints>
                     </customView>
                 </subviews>
@@ -655,7 +655,7 @@ Gw
                     <constraint firstItem="Cdf-EW-00p" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="NHA-kS-nTU"/>
                     <constraint firstAttribute="bottom" secondItem="Cdf-EW-00p" secondAttribute="bottom" id="T1c-lp-Aph"/>
                     <constraint firstAttribute="bottom" secondItem="Ef0-Na-xwu" secondAttribute="bottom" id="bZ8-tK-5Rp"/>
-                    <constraint firstItem="ibo-QR-zuu" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="dtX-cx-GKv"/>
+                    <constraint firstItem="ibo-QR-zuu" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="26" id="dtX-cx-GKv"/>
                     <constraint firstAttribute="trailing" secondItem="Cdf-EW-00p" secondAttribute="trailing" id="fSW-2c-sjF"/>
                     <constraint firstAttribute="trailing" secondItem="Ef0-Na-xwu" secondAttribute="trailing" id="mT1-Dv-hPz"/>
                     <constraint firstItem="ibo-QR-zuu" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="pzh-9k-RgK"/>
@@ -668,7 +668,7 @@ Gw
                         <nil key="toolTip"/>
                         <customView key="view" id="zMi-QK-dkF" customClass="StatusView" customModule="Boop" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="14" width="208" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <stackView distribution="equalCentering" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nlt-yx-S75">
                                     <rect key="frame" x="4" y="0.0" width="200" height="20"/>

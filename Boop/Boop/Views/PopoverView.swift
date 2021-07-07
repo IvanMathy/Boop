@@ -15,15 +15,17 @@ class PopoverView: NSView {
         
         // UI set up
         self.wantsLayer = true
-        self.layer?.cornerRadius = 5.0
+        self.layer?.cornerRadius = 12.0
         self.layer?.masksToBounds = true
+        
+        self.layer?.borderWidth = 1
         
         self.setBackground()
         
         let dropShadow = NSShadow()
-        dropShadow.shadowColor = NSColor(calibratedWhite: 0, alpha: 1)
-        dropShadow.shadowOffset = NSMakeSize(0, -10.0)
-        dropShadow.shadowBlurRadius = 10.0
+        dropShadow.shadowColor = NSColor(calibratedWhite: 0, alpha: 0.4)
+        dropShadow.shadowOffset = NSMakeSize(0, -20.0)
+        dropShadow.shadowBlurRadius = 15.0
         
         self.shadow = dropShadow
         
@@ -44,6 +46,7 @@ class PopoverView: NSView {
     func setBackground() {
         
         self.layer?.backgroundColor = ColorPair.popover.value(for: self.effectiveAppearance).cgColor
+        self.layer?.borderColor = ColorPair.popoverOutline.value(for: self.effectiveAppearance).cgColor
         
     }
     
