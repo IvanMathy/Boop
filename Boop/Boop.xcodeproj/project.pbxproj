@@ -61,6 +61,8 @@
 		2C60A55724871273006496BA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C20667921FD62910082570E /* MainMenu.xib */; };
 		2C60A55824871273006496BA /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5ED41D2357F67200322893 /* Preferences.storyboard */; };
 		2C60A56224871730006496BA /* UpdateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60A4E524870678006496BA /* UpdateTextField.swift */; };
+		2C873BE12697C2A800D9A3F0 /* PopoverContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C873BE02697C2A800D9A3F0 /* PopoverContainerView.swift */; };
+		2C873BE42697C34200D9A3F0 /* PopoverContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C873BE02697C2A800D9A3F0 /* PopoverContainerView.swift */; };
 		2C8BE181249EBADC00099B73 /* SavannaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE180249EBADC00099B73 /* SavannaKit */; };
 		2C8BE182249EBADC00099B73 /* SavannaKit in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE180249EBADC00099B73 /* SavannaKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2C8BE184249EBAEC00099B73 /* SavannaKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2C8BE183249EBAEC00099B73 /* SavannaKit */; };
@@ -144,6 +146,7 @@
 		2C60A4A3248300CE006496BA /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		2C60A4E524870678006496BA /* UpdateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTextField.swift; sourceTree = "<group>"; };
 		2C60A56024871273006496BA /* Boop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C873BE02697C2A800D9A3F0 /* PopoverContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverContainerView.swift; sourceTree = "<group>"; };
 		2C9118B523406B530018916F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		2C9761D42214E11600AFF8CD /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = scripts; sourceTree = "<group>"; };
 		2C9761D82214E3B500AFF8CD /* ScriptsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptsTableViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +287,7 @@
 				2C9761E02214E68D00AFF8CD /* ScriptTableViewCell.swift */,
 				2CA245DB224822EA00586DFD /* ScriptTableView.swift */,
 				2C60A4E524870678006496BA /* UpdateTextField.swift */,
+				2C873BE02697C2A800D9A3F0 /* PopoverContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -496,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C873BE12697C2A800D9A3F0 /* PopoverContainerView.swift in Sources */,
 				2CC211C5236FB5C1007CECEE /* ScriptsSettingsViewController.swift in Sources */,
 				2C53B6E0226D404E00DC6861 /* ScriptExecution.swift in Sources */,
 				2C0BC0DD24AAC518009B8631 /* Script+Require.swift in Sources */,
@@ -539,6 +544,7 @@
 				2C60A54224871273006496BA /* DefaultTheme.swift in Sources */,
 				2C60A54324871273006496BA /* ScriptManager.swift in Sources */,
 				2C60A54424871273006496BA /* AppDelegate.swift in Sources */,
+				2C873BE42697C34200D9A3F0 /* PopoverContainerView.swift in Sources */,
 				2C60A54524871273006496BA /* OverlayView.swift in Sources */,
 				2C60A54624871273006496BA /* ScriptTableViewCell.swift in Sources */,
 				2C60A54724871273006496BA /* ScriptTableView.swift in Sources */,

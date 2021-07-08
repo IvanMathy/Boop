@@ -21,32 +21,14 @@ class PopoverView: NSView {
         self.layer?.borderWidth = 1
         
         self.setBackground()
+
         
-        let dropShadow = NSShadow()
-        dropShadow.shadowColor = NSColor(calibratedWhite: 0, alpha: 0.4)
-        dropShadow.shadowOffset = NSMakeSize(0, -20.0)
-        dropShadow.shadowBlurRadius = 15.0
-        
-        self.shadow = dropShadow
-        
-        self.isHidden = true
-        
-    }
-    
-    func show() {
-        self.animator().alphaValue = 1
-        self.animator().isHidden = false
-    }
-    
-    func hide() {
-        self.animator().alphaValue = 0
-        self.animator().isHidden = true;
     }
     
     func setBackground() {
         
         self.layer?.backgroundColor = ColorPair.popover.value(for: self.effectiveAppearance).cgColor
-        self.layer?.borderColor = ColorPair.popoverOutline.value(for: self.effectiveAppearance).cgColor
+        self.layer?.borderColor = ColorPair.popoverBorder.value(for: self.effectiveAppearance).cgColor
         
     }
     
