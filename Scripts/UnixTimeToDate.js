@@ -3,9 +3,9 @@
 		"api":1,
 		"name":"Timestamp to Date(ISO)",
 		"description":"Converts a unix timestamp to a ISO Date string",
-		"author":"riesentoaster",
+		"author":"Kris Linquist",
 		"icon":"collapse",
-		"tags":"join, space",
+		"tags":"timestamp, date",
 		"bias": -0.1
 	}
 **/
