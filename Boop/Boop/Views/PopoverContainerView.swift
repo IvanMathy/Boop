@@ -29,14 +29,23 @@ class PopoverContainerView: NSView {
         
         
         self.layer?.borderWidth = 0.5
-        self.layer?.borderColor = NSColor.black.cgColor
         
         self.shadow = dropShadow
         
         self.isHidden = true
         
+        self.setOutline()
+        
+    }
+
+    func setOutline() {
+        self.layer?.borderColor = ColorPair.popoverOutline.value(for: self.effectiveAppearance).cgColor
     }
     
+    override func viewDidChangeEffectiveAppearance() {
+        super.viewDidChangeEffectiveAppearance()
+        self.setOutline()
+    }
     
     func show() {
         self.animator().alphaValue = 1
