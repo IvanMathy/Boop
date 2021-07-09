@@ -18,7 +18,7 @@ class PopoverView: NSView {
         self.layer?.cornerRadius = 12.0
         self.layer?.masksToBounds = true
         
-        self.layer?.borderWidth = 1
+        self.layer?.borderWidth = 1.5
         
         self.setBackground()
 

@@ -50,7 +50,7 @@ struct ColorPair {
     static let popover = ColorPair(light: .init(white: 0.95, alpha: 1), dark: .init(white: 0.12, alpha: 1))
     
     static let comments = ColorPair(light: Colors.commentGreyDarkest, dark: Colors.commentGreyDarkest)
-    static let separator = ColorPair(light: .init(white: 220/255, alpha: 1), dark: .init(white: 35/255, alpha: 1))
+    static let separator = ColorPair(light: .init(white: 220/255, alpha: 1), dark: .init(white: 45/255, alpha: 1))
     static let background = ColorPair(light: .init(white: 0.95, alpha: 1), dark: .init(white: 31/255, alpha: 1))
     static let overlayColor = ColorPair(light: NSColor(calibratedWhite: 0.85, alpha: 0.6), dark: NSColor(calibratedWhite: 0.08, alpha: 0.6))
     static let popoverBorder = ColorPair(light: .init(white: 170/255, alpha: 1), dark: .init(white: 100/255, alpha: 1))

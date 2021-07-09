@@ -27,6 +27,10 @@ class PopoverContainerView: NSView {
         dropShadow.shadowOffset = NSMakeSize(0, -20.0)
         dropShadow.shadowBlurRadius = 10.0
         
+        
+        self.layer?.borderWidth = 0.5
+        self.layer?.borderColor = NSColor.black.cgColor
+        
         self.shadow = dropShadow
         
         self.isHidden = true
