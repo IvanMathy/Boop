@@ -1,11 +1,12 @@
 /**
     {
         "api":1,
-        "name":"URL Encode (full)",
-        "description":"URL Encodes all characters",
+        "name":"URL Entity Encode",
+        "description":"URL Encodes all characters in your text.",
         "author":"luisfontes19",
-        "icon":"link",
+        "icon":"percentage",
         "tags":"url,encode,full",
+        "bias": -0.1
     }
 **/
 

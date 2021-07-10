@@ -1,11 +1,12 @@
 /**
 	{
 		"api":1,
-		"name":"URL Decode (full)",
-		"description":"URL Decodes all characters",
+		"name":"URL Entities Decode",
+		"description":"URL Decodes all characters in your text.",
 		"author":"luisfontes19",
-		"icon":"link",
+		"icon":"percentage",
 		"tags":"url,decode,full",
+        "bias": -0.1
 	}
 **/
 
@@ -15,7 +16,7 @@ function fullUrlDecode(str) {
 	var decoded = '';
 
 	for (var i = 0; i < codes.length; i++) {
-		decoded += String.fromCharCode(parseInt(c, 16));
+		decoded += String.fromCharCode(parseInt(codes[i], 16));
 	}
 
 	return decoded;
