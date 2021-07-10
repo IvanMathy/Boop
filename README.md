@@ -22,7 +22,7 @@
 There are four ways to get Boop. Your best bet is either to
 
  - <a href="https://github.com/IvanMathy/Boop/releases">Download from GitHub releases</a> or
- - <a href="https://apps.apple.com/us/app/boop/id1518425043">Download on the Mac App Store</a><br/>.
+ - <a href="https://apps.apple.com/us/app/boop/id1518425043">Download on the Mac App Store</a><br/>
 
  You can also build it from source, or <a href="https://formulae.brew.sh/cask/boop#default">get it from Homebrew</a>, although that is not officially supported.
 
