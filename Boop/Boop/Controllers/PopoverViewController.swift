@@ -12,7 +12,7 @@ import SavannaKit
 class PopoverViewController: NSViewController {
     
     @IBOutlet weak var overlayView: OverlayView!
-    @IBOutlet weak var popoverView: PopoverView!
+    @IBOutlet weak var popoverView: PopoverContainerView!
     @IBOutlet weak var searchField: SearchField!
     @IBOutlet weak var editorView: SyntaxTextView!
     @IBOutlet weak var statusView: StatusView!

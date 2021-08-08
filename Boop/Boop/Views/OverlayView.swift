@@ -15,15 +15,23 @@ class OverlayView: NSView {
     required init?(coder decoder: NSCoder) {
         super.init(coder: decoder)
         self.wantsLayer = true
-        self.layer?.backgroundColor = NSColor(calibratedWhite: 0.05, alpha: 1).cgColor
         self.animator().isHidden = true
         self.alphaValue = 0;
+        
+        setBackground()
+    }
+    
+    func setBackground() {
+        
+        self.layer?.backgroundColor = ColorPair.overlayColor.value(for: self.effectiveAppearance).cgColor
+        
+        
     }
     
     
     func show() {
         
-        self.animator().alphaValue = 0.6
+        self.animator().alphaValue = 1
         self.animator().isHidden = false
     }
     
@@ -35,6 +43,11 @@ class OverlayView: NSView {
     
     override func mouseDown(with event: NSEvent) {
         onMouseDown?()
+    }
+    
+    override func viewDidChangeEffectiveAppearance() {
+        super.viewDidChangeEffectiveAppearance()
+        self.setBackground()
     }
     
 }
