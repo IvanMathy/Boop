@@ -22,6 +22,20 @@ class ScriptsTableViewController: NSViewController, NSTableViewDelegate, NSTable
         return results.count
     }
     
+    private func scriptIcon(identifier: String?) -> NSImage? {
+        guard let identifier = identifier else {
+            return NSImage(named: "icons8-unknown")
+        }
+        if let namedImage = NSImage(named: "icons8-\(identifier)") {
+            return namedImage
+        }
+        if #available(macOS 11.0, *),
+           let systemImage = NSImage(systemSymbolName: identifier, accessibilityDescription: nil) {
+            return systemImage
+        }
+        return nil
+    }
+    
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {        
         
         let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "scriptCell"), owner: self) as! ScriptTableViewCell
@@ -33,7 +47,7 @@ class ScriptsTableViewController: NSViewController, NSTableViewDelegate, NSTable
         view.titleLabel.stringValue = script.name ?? "No Name 🤔"
         view.subtitleLabel.stringValue = script.desc ?? "No Description 😢"
         
-        view.imageView?.image = NSImage(named: "icons8-\(script.icon ?? "unknown")")
+        view.imageView?.image = self.scriptIcon(identifier: script.icon)
         
         return view
         
