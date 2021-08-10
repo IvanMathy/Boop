@@ -29,8 +29,8 @@ Each script starts with a declarative JSON document, describing the contents of 
 
 * `api` is not currently used, but is strongly recommended for potential backwards compatibility. You should set it to 1.
 * `name`, `description` and `author` are exactly what you think they are.
-* `icon` is a visual representation of your scripts' actions. You can see available icons in `Boop/Assets.xcassets/Icons/`. If you can't find what you like, feel free to create an issue and we'll make it work!
-* `tags` are used by the fuzzy-search algorythm to filter and sort results.
+* `icon` is a visual representation of your scripts' actions. You can see available icons in `Boop/Assets.xcassets/Icons/`. If you can't find what you like, feel free to create an issue and we'll make it work! You can [see all the icons here](Icons.md)
+* `tags` are used by the fuzzy-search algorithm to filter and sort results.
 
 An optional property, `bias`, can also be added to help Boop prioritize your scripts. A positive value will move your script higher in the results, a negative value will push it further down. The bias property is a number:
 
@@ -150,7 +150,7 @@ JavascriptCore is the environment scripts run in. It is only a subset of Javascr
 
 A few times in this document you may have seen tips about performance, memory leaks, etc. Truth is, this is not that big of a deal because we're running minimal snippets of code in headless sandboxed environment. That being said, even though we're not at webpage-in-a-native-container levels of performance concerns, keeping the interface snappy and memory footprint low should be a priority when developing scripts so that we don't get a whole bunch of angry tweets about how maybe native apps aren't that great after all. (for the record they are that great).
 
-Including all of jQuery to save a few lines of code may not be the greatest move here, so always prefer vanilla javascript functions as your whole script will be kept alive as long as the app is being used. If you'd like some helper functions, consider extracting only the part you need from the library (and clealy mention where it comes from alongside the license) rather than pasting the full source in your script. Includes/requires are not currently supported and not currently planned. Plus, if you use Vanilla you get to brag about how you can do it with nothing but your sharp brain and isn't that what being a developer is all about anyway?
+Including all of jQuery to save a few lines of code may not be the greatest move here, so always prefer vanilla javascript functions as your whole script will be kept alive as long as the app is being used. If you'd like some helper functions, consider extracting only the part you need from the library (and clearly mention where it comes from alongside the license) rather than pasting the full source in your script. Includes/requires are not currently supported and not currently planned. Plus, if you use Vanilla you get to brag about how you can do it with nothing but your sharp brain and isn't that what being a developer is all about anyway?
 
 ### Removing limitations
 
