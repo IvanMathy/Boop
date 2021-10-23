@@ -51,9 +51,9 @@ struct ColorPair {
     
     static let comments = ColorPair(light: Colors.commentGreyDarkest, dark: Colors.commentGreyDarkest)
     static let separator = ColorPair(light: .init(white: 220/255, alpha: 1), dark: .init(white: 45/255, alpha: 1))
-    static let background = ColorPair(light: .init(white: 0.95, alpha: 1), dark: .init(white: 31/255, alpha: 1))
-    static let overlayColor = ColorPair(light: NSColor(calibratedWhite: 0.85, alpha: 0.6), dark: NSColor(calibratedWhite: 0.08, alpha: 0.6))
-    static let popoverBorder = ColorPair(light: .init(white: 220/255, alpha: 1), dark: .init(white: 130/255, alpha: 1))
+    static let background = ColorPair(light: .init(white: 0.95, alpha: 1.0), dark: .init(white: 31/255, alpha: 1.0))
+    static let overlayColor = ColorPair(light: .init(white: 0.85, alpha: 0.6), dark: .init(white: 0.08, alpha: 0.6))
+    static let popoverBorder = ColorPair(light: .init(white: 220/255, alpha: 1), dark: .init(white: 75/255, alpha: 1))
     static let popoverOutline = ColorPair(light: .init(white: 150/255, alpha: 1), dark: .init(white: 20/255, alpha: 1))
     
     
