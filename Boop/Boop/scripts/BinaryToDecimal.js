@@ -1,8 +1,8 @@
 /**
  {
    "api": 1,
-   "name": "Dec to Bin",
-   "description": "Decimal to Binary (per line)",
+   "name": "Binary to Decimal",
+   "description": "Converts binary values to decimal.",
    "author": "Maurice",
    "icon": "metamorphose",
    "tags": "decimal,binary,dec,bin"
@@ -16,12 +16,12 @@ function main(state) {
 
   for (const index in lines) {
     var text = lines[index].trim();
-    var bin = parseInt(text).toString(2).toUpperCase();
+    var decimal = parseInt(text, 2);
 
-    if (isNaN(bin)) {
+    if (isNaN(decimal)) {
       result += text;
     } else {
-      result += bin;
+      result += decimal;
     }
 
     result += "\n";

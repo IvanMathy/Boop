@@ -2,7 +2,7 @@
 	{
 		"api":1,
 		"name":"Hex To ASCII",
-		"description":"Converts hex into ASCII characters",
+		"description":"Converts hexadecimal values into ASCII characters",
 		"author":"aWZHY0yQH81uOYvH",
 		"icon":"metamorphose",
 		"tags":"hex,ascii,convert"

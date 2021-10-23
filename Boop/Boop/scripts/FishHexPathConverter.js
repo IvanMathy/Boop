@@ -2,7 +2,7 @@
 {
   "api": 1,
   "name": "Fish PATH Hex Converter",
-  "description": "Takes a regular PATH and converts it to use hex ascii characters ex. -L/usr/local/opt/openssl@1.1/lib -> \x2dL/usr/local/opt/openssl\x401\x2e1/lib"",
+  "description": "Escapes terminal characters.",
   "author": "Paul Seelman",
   "icon": "broom",
   "tags": "fish_user_paths, fish, hex, ascii, path, var"

@@ -2,7 +2,7 @@
     {
         "api":1,
         "name":"Lorem Ipsum",
-        "description":"Generates Lorem Ipsum like text",
+        "description":"Generates Lorem Ipsum placeholder text.",
         "author":"luisfontes19",
         "icon":"type",
         "tags":"generate,lorem,ipsum,text",

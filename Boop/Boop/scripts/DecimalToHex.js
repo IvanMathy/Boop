@@ -1,8 +1,8 @@
 /**
  {
    "api": 1,
-   "name": "Hex to Dec",
-   "description": "Hexadecimal to Decimal (per line)",
+   "name": "Decimal to Hex",
+   "description": "Converts decimal values to hexadecimal.",
    "author": "Maurice",
    "icon": "metamorphose",
    "tags": "decimal,hexadecimal,dec,hex"
@@ -16,12 +16,11 @@ function main(state) {
 
   for (const index in lines) {
     var text = lines[index].trim();
-    var decimal = parseInt(text, 16);
 
-    if (isNaN(decimal)) {
+    if (isNaN(text)) {
       result += text;
     } else {
-      result += decimal;
+      result += parseInt(text).toString(16).toUpperCase();
     }
 
     result += "\n";

@@ -1,11 +1,11 @@
 /**
  {
    "api": 1,
-   "name": "Bin to Dec",
-   "description": "Binary to Decimal (per line)",
+   "name": "Hex to Dec",
+   "description": "Converts hexadecimal to decimal.",
    "author": "Maurice",
    "icon": "metamorphose",
-   "tags": "decimal,binary,dec,bin"
+   "tags": "decimal,hexadecimal,dec,hex"
  }
  **/
 
@@ -16,7 +16,7 @@ function main(state) {
 
   for (const index in lines) {
     var text = lines[index].trim();
-    var decimal = parseInt(text, 2);
+    var decimal = parseInt(text, 16);
 
     if (isNaN(decimal)) {
       result += text;

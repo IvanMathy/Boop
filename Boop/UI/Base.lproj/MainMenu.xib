@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17156" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -495,13 +495,17 @@ Gw
                                     <action selector="openHelp:" target="unv-pE-gme" id="8ta-uT-eZh"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="Fec-Ba-9Rm"/>
+                            <menuItem title="@OKatBest on Twitter" id="N9h-rg-i4V" userLabel="@OKatBest on Twitter">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
             </items>
             <point key="canvasLocation" x="139" y="-200"/>
         </menu>
-        <window title="Boop" separatorStyle="shadow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" tabbingMode="disallowed" titleVisibility="hidden" id="QvC-M9-y7g">
+        <window title="Boop" separatorStyle="shadow" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" tabbingMode="disallowed" toolbarStyle="compact" titleVisibility="hidden" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
@@ -518,13 +522,13 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                     </customView>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ibo-QR-zuu" customClass="PopoverContainerView" customModule="Boop" customModuleProvider="target">
-                        <rect key="frame" x="20" y="144" width="440" height="190"/>
+                        <rect key="frame" x="20" y="152" width="440" height="182"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="NDF-Rt-5B3" customClass="PopoverView" customModule="Boop" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="440" height="190"/>
+                                <rect key="frame" x="0.0" y="0.0" width="440" height="182"/>
                                 <subviews>
                                     <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EfF-8p-bmE" customClass="SearchField" customModule="Boop" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="148" width="420" height="30"/>
+                                        <rect key="frame" x="10" y="140" width="420" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="3ju-8B-ORH"/>
                                         </constraints>
@@ -563,7 +567,7 @@ Gw
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hXY-cu-8yv">
-                                                                            <rect key="frame" x="8" y="5" width="30" height="30"/>
+                                                                            <rect key="frame" x="0.0" y="5" width="30" height="30"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="30" id="5DT-iv-bTJ"/>
                                                                                 <constraint firstAttribute="height" constant="30" id="DLV-6S-4Af"/>
@@ -571,7 +575,7 @@ Gw
                                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="icons8-broom" id="0pf-Dg-gKF"/>
                                                                         </imageView>
                                                                         <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="-2" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahi-ZC-6NH">
-                                                                            <rect key="frame" x="45" y="3" width="372" height="37"/>
+                                                                            <rect key="frame" x="37" y="3" width="380" height="37"/>
                                                                             <subviews>
                                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="llX-0P-Bnw">
                                                                                     <rect key="frame" x="-2" y="13" width="146" height="24"/>
@@ -584,7 +588,7 @@ Gw
                                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLt-DR-5JZ">
                                                                                     <rect key="frame" x="-2" y="0.0" width="90" height="15"/>
                                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="fOL-j2-H9u">
-                                                                                        <font key="font" metaFont="system" size="12"/>
+                                                                                        <font key="font" metaFont="cellTitle"/>
                                                                                         <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                                     </textFieldCell>
@@ -601,12 +605,12 @@ Gw
                                                                         </stackView>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="ahi-ZC-6NH" firstAttribute="top" secondItem="1oI-88-xll" secondAttribute="top" id="LWs-D3-oJh"/>
-                                                                        <constraint firstItem="hXY-cu-8yv" firstAttribute="top" secondItem="1oI-88-xll" secondAttribute="top" constant="5" id="LlB-v6-CtV"/>
+                                                                        <constraint firstItem="ahi-ZC-6NH" firstAttribute="top" secondItem="1oI-88-xll" secondAttribute="top" constant="1" id="LWs-D3-oJh"/>
+                                                                        <constraint firstItem="hXY-cu-8yv" firstAttribute="top" secondItem="1oI-88-xll" secondAttribute="top" constant="6" id="LlB-v6-CtV"/>
                                                                         <constraint firstItem="ahi-ZC-6NH" firstAttribute="leading" secondItem="hXY-cu-8yv" secondAttribute="trailing" constant="7" id="Lrk-98-STE"/>
                                                                         <constraint firstAttribute="trailing" secondItem="ahi-ZC-6NH" secondAttribute="trailing" id="bM0-gY-1Wg"/>
                                                                         <constraint firstAttribute="bottom" secondItem="ahi-ZC-6NH" secondAttribute="bottom" constant="3" id="ifu-ja-93W"/>
-                                                                        <constraint firstItem="hXY-cu-8yv" firstAttribute="leading" secondItem="1oI-88-xll" secondAttribute="leading" constant="8" id="lOt-qT-7gH"/>
+                                                                        <constraint firstItem="hXY-cu-8yv" firstAttribute="leading" secondItem="1oI-88-xll" secondAttribute="leading" id="lOt-qT-7gH"/>
                                                                     </constraints>
                                                                     <connections>
                                                                         <outlet property="imageView" destination="hXY-cu-8yv" id="WEV-5g-bSe"/>
@@ -628,6 +632,7 @@ Gw
                                         <constraints>
                                             <constraint firstAttribute="height" constant="140" id="CGh-qY-CKR"/>
                                         </constraints>
+                                        <edgeInsets key="scrollerInsets" left="0.0" right="0.0" top="0.0" bottom="10"/>
                                         <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="uf1-vI-kh9">
                                             <rect key="frame" x="1" y="119" width="223" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -639,10 +644,11 @@ Gw
                                     </scrollView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="lpr-jW-wRt" firstAttribute="top" secondItem="EfF-8p-bmE" secondAttribute="bottom" constant="8" id="2ID-K8-nFS"/>
+                                    <constraint firstItem="lpr-jW-wRt" firstAttribute="top" secondItem="EfF-8p-bmE" secondAttribute="bottom" id="2ID-K8-nFS"/>
                                     <constraint firstItem="EfF-8p-bmE" firstAttribute="leading" secondItem="NDF-Rt-5B3" secondAttribute="leading" constant="12" id="2Qj-w2-tCw"/>
                                     <constraint firstItem="lpr-jW-wRt" firstAttribute="leading" secondItem="NDF-Rt-5B3" secondAttribute="leading" id="dOf-du-E6M"/>
                                     <constraint firstAttribute="trailing" secondItem="EfF-8p-bmE" secondAttribute="trailing" constant="12" id="eSY-Sy-G2J"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EfF-8p-bmE" secondAttribute="bottom" constant="8" id="hUt-ze-STS"/>
                                     <constraint firstItem="EfF-8p-bmE" firstAttribute="top" secondItem="NDF-Rt-5B3" secondAttribute="top" constant="12" id="hvZ-Ps-eCw"/>
                                     <constraint firstAttribute="bottom" secondItem="lpr-jW-wRt" secondAttribute="bottom" id="v0z-IJ-iPG"/>
                                     <constraint firstAttribute="trailing" secondItem="lpr-jW-wRt" secondAttribute="trailing" id="zwK-uj-6le"/>

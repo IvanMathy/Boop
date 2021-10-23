@@ -1,11 +1,11 @@
 /**
  {
    "api": 1,
-   "name": "Dec to Hex",
-   "description": "Decimal to Hexadecimal (per line)",
+   "name": "Decimal to Binary",
+   "description": "Converts decimal values to binary.",
    "author": "Maurice",
    "icon": "metamorphose",
-   "tags": "decimal,hexadecimal,dec,hex"
+   "tags": "decimal,binary,dec,bin"
  }
  **/
 
@@ -16,11 +16,12 @@ function main(state) {
 
   for (const index in lines) {
     var text = lines[index].trim();
+    var bin = parseInt(text).toString(2).toUpperCase();
 
-    if (isNaN(text)) {
+    if (isNaN(bin)) {
       result += text;
     } else {
-      result += parseInt(text).toString(16).toUpperCase();
+      result += bin;
     }
 
     result += "\n";
