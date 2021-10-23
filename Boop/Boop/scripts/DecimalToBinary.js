@@ -1,8 +1,8 @@
 /**
  {
    "api": 1,
-   "name": "Dec to Bin",
-   "description": "Decimal to Binary (per line)",
+   "name": "Decimal to Binary",
+   "description": "Converts decimal values to binary.",
    "author": "Maurice",
    "icon": "metamorphose",
    "tags": "decimal,binary,dec,bin"

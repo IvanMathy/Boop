@@ -2,7 +2,7 @@
  {
    "api": 1,
    "name": "Hex to Dec",
-   "description": "Hexadecimal to Decimal (per line)",
+   "description": "Converts hexadecimal to decimal.",
    "author": "Maurice",
    "icon": "metamorphose",
    "tags": "decimal,hexadecimal,dec,hex"

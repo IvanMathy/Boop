@@ -2,7 +2,7 @@
 	{
 		"api":1,
 		"name":"Sum All",
-		"description":"Sum a list of numbers (separated by either a new line, comma, or semicolon).",
+		"description":"Sums up a list of numbers.",
 		"author":"Annie Tran",
 		"icon":"abacus",
 		"tags":"sum,calculator,addition,add"

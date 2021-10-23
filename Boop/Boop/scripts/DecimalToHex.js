@@ -1,8 +1,8 @@
 /**
  {
    "api": 1,
-   "name": "Dec to Hex",
-   "description": "Decimal to Hexadecimal (per line)",
+   "name": "Decimal to Hex",
+   "description": "Converts decimal values to hexadecimal.",
    "author": "Maurice",
    "icon": "metamorphose",
    "tags": "decimal,hexadecimal,dec,hex"
