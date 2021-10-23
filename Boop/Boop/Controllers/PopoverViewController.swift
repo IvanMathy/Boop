@@ -180,6 +180,6 @@ extension PopoverViewController: NSTextFieldDelegate {
         let results = scriptManager.search(searchField.stringValue)
         tableViewController.results = results
         
-        self.tableHeightConstraint.constant = CGFloat(65 * min(5, results.count))
+        self.tableHeightConstraint.constant = CGFloat(45 * min(5, results.count) + ((results.count != 0) ? 20 : 0))
     }
 }
