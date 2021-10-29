@@ -10,5 +10,10 @@
 **/
 
 function main(state) {
-  state.text = state.text.match(/[ -~]/g).join("");
+  const matchedText = state.text.match(/[ -~]/g);
+  if (matchedText == null || matchedText.length == 0) {
+    state.text = "";
+  } else {
+    state.text = matchedText.join("");
+  }
 }
