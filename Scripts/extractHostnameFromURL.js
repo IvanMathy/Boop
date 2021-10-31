@@ -5,15 +5,21 @@
 		"description":"Extract Hostname from URL",
 		"author":"susil95",
 		"icon":"HTML",
-		"tags":"boop,url,hostname,extract"
+		"tags":"url,hostname,extract"
 	}
 **/
 
 function main(state) {
 	try {
-		var temp = state.text;
-		
-		state.text = inp.match("^(?:http[s]?:)?(?:\/\/)?(?:[^@\n]+@)?(?:w[eb|ww]\.)?([^:\/\n]+)");
+		const lines = state.text.split(/\n/);
+		let temp = "";
+		for (let i = 1; i < lines.length; i++) {
+			const line = lines[i];
+	
+			temp += line.match("^(?:http[s]?:)?(?:\/\/)?(?:[^@\n]+@)?(?:www\.)?(?:web\.)?([^:\/\n]+)")[1];
+			temp += "\n";
+		}
+		state.text = temp;
 	}
 	catch(error) {
 		state.postError(error.message);
