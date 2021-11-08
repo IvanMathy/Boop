@@ -4,7 +4,7 @@
     "name":"To NATO Alphabet",
     "description":"Outputs the provided string, substituting letters for the code words from the NATO phonetic alphabet",
     "author":"funkju",
-    "icon":"color-wheel",
+    "icon":"globe",
     "tags":"rgb,hex,convert,color"
   }
 **/
