@@ -3,7 +3,7 @@
     "api":1,
     "name":"To NATO Alphabet",
     "description":"Outputs the provided string, substituting letters for the code words from the NATO phonetic alphabet",
-    "author":"justin",
+    "author":"funkju",
     "icon":"color-wheel",
     "tags":"rgb,hex,convert,color"
   }
