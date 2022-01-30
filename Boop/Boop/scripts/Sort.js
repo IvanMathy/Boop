@@ -11,7 +11,11 @@
 
 function main(input) {
     let sorted = input.text.replace(/\n$/, '').split('\n')
-        .sort((a, b) => a.localeCompare(b))
+        .sort((a, b) => {
+            a = a.replace(/^\s+/, '');
+            b = b.replace(/^\s+/, '');
+            return a.localeCompare(b);
+        })
         .join('\n');
 
     if (sorted === input.text) {
