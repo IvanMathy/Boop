@@ -17,6 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var closePickerMenuItem: NSMenuItem!
     
     @IBOutlet weak var popoverViewController: PopoverViewController!
+    @IBOutlet weak var mainViewController: MainViewController!
     @IBOutlet weak var scriptManager: ScriptManager!
     @IBOutlet weak var editor: SyntaxTextView!
 
@@ -39,6 +40,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
+
+    func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+            
+        let text=try? String(contentsOf: URL(fileURLWithPath: filename))
+        mainViewController.setText(text ?? "Failed to load: " + filename)
         return true
     }
 

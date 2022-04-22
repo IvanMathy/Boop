@@ -48,25 +48,51 @@ class MainViewController: NSViewController {
     }
     
     @IBAction func clear(_ sender: Any) {
+        setText("")
+    }
+    
+    public func setText(_ text: String) {
         let textView = editorView.contentTextView
         textView.textStorage?.beginEditing()
         
         let range = NSRange(location: 0, length: textView.textStorage?.length ?? textView.string.count)
         
-        guard textView.shouldChangeText(in: range, replacementString: "") else {
+        guard textView.shouldChangeText(in: range, replacementString: text) else {
             return
         }
         
-        textView.textStorage?.replaceCharacters(in: range, with: "")
+        textView.textStorage?.replaceCharacters(in: range, with: text)
         
         textView.textStorage?.endEditing()
         textView.didChangeText()
     }
     
-    
+
     @IBAction func checkForUpdates(_ sender: Any) {
         updateBuddy.check()
     }
+
+    @IBAction func browseFile(sender: AnyObject) {
+        
+        let dialog = NSOpenPanel();
+        
+        dialog.title                   = "Choose a file";
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.canChooseDirectories    = false;
+        dialog.canCreateDirectories    = false;
+        dialog.allowsMultipleSelection = false;
+
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            if let result = dialog.url { // Pathname of the file
+                let path = result.path
+                let text=try? String(contentsOf: URL(fileURLWithPath: path))
+                setText(text ?? "Failed to load: " + path)
+            }
+        }
+        
+    }
+    
 }
 
 extension MainViewController: SyntaxTextViewDelegate {

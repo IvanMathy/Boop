@@ -55,6 +55,7 @@
             <connections>
                 <outlet property="closePickerMenuItem" destination="KYm-JI-9g0" id="aZo-Hy-RkG"/>
                 <outlet property="editor" destination="Ef0-Na-xwu" id="rks-Mp-ffh"/>
+                <outlet property="mainViewController" destination="unv-pE-gme" id="SJf-P6-FHE"/>
                 <outlet property="openPickerMenuItem" destination="8ka-cp-srR" id="qZt-zg-2wc"/>
                 <outlet property="popoverViewController" destination="ugb-uZ-HP1" id="gLb-EK-85g"/>
                 <outlet property="scriptManager" destination="jdF-I6-2al" id="o2F-Lj-Vou"/>
@@ -128,9 +129,9 @@
                                     <action selector="clear:" target="unv-pE-gme" id="Mj1-40-053"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Open…" hidden="YES" keyEquivalent="o" id="IAo-SY-fd9">
+                            <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
                                 <connections>
-                                    <action selector="openDocument:" target="-1" id="bVn-NM-KNZ"/>
+                                    <action selector="browseFileWithSender:" target="unv-pE-gme" id="KxG-Xy-LeB"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open Recent" hidden="YES" id="tXI-mr-wws">
