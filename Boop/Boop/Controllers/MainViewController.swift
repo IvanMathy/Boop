@@ -72,7 +72,7 @@ class MainViewController: NSViewController {
         updateBuddy.check()
     }
 
-    @IBAction func browseFile(sender: AnyObject) {
+    @IBAction func openFile(sender: AnyObject) {
         
         let dialog = NSOpenPanel();
         
@@ -84,10 +84,35 @@ class MainViewController: NSViewController {
         dialog.allowsMultipleSelection = false;
 
         if (dialog.runModal() == NSApplication.ModalResponse.OK) {
-            if let result = dialog.url { // Pathname of the file
-                let path = result.path
-                let text=try? String(contentsOf: URL(fileURLWithPath: path))
-                setText(text ?? "Failed to load: " + path)
+            if let pathUrl = dialog.url { // Pathname of the file
+                let text=try? String(contentsOf: pathUrl)
+                setText(text ?? "Failed to load file '\(pathUrl.path)'.")
+            }
+        }
+        
+    }
+    
+    @IBAction func saveFileAs(sender: AnyObject) {
+        
+        let dialog = NSSavePanel();
+        
+        dialog.title                   = "Save content as…";
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.showsTagField           = false;
+        dialog.canCreateDirectories    = true;
+        dialog.nameFieldStringValue    = "Untitled.txt"
+
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            if let pathUrl = dialog.url { // Pathname of the file
+                let textView = editorView.contentTextView
+                let textData=textView.textStorage?.string.data(using: .utf8)
+                do {
+                    try textData?.write(to: pathUrl)
+                } catch let error as NSError {
+                    setText("Failed to save content to file '\(pathUrl.path)'. (Reason: \(error.localizedFailureReason!))")
+                    // TODO: Show error in alert box
+                }
             }
         }
         
