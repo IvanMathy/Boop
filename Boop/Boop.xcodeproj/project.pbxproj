@@ -239,8 +239,6 @@
 		2C20668321FD62D00082570E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2CB9D7F024319BAC00135424 /* Fuse.framework */,
-				2C3B003D22E3775300BBD4D0 /* SavannaKit.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -753,11 +751,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = RLZ8XBTX7G;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Boop/Frameworks",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = Boop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -784,11 +777,6 @@
 				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Boop/Frameworks",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = Boop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -814,11 +802,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Boop/Frameworks",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = Boop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -846,11 +829,6 @@
 				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = RLZ8XBTX7G;
 				ENABLE_HARDENED_RUNTIME = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Boop/Frameworks",
-					"$(PROJECT_DIR)",
-				);
 				INFOPLIST_FILE = Boop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
