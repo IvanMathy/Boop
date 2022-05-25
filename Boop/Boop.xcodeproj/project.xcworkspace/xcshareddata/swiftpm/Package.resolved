@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Fuse",
-        "repositoryURL": "https://github.com/IvanMathy/fuse-swift",
-        "state": {
-          "branch": null,
-          "revision": "acb9a2ec2789ce1dcca4d01872a20da801e7ac55",
-          "version": "2.0.0"
-        }
-      },
-      {
-        "package": "SavannaKit",
-        "repositoryURL": "https://github.com/IvanMathy/savannakit",
-        "state": {
-          "branch": null,
-          "revision": "bb51ee074152a7361e7085d10723f699c79fe673",
-          "version": "0.15.1"
-        }
+  "pins" : [
+    {
+      "identity" : "fuse-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/IvanMathy/fuse-swift",
+      "state" : {
+        "revision" : "acb9a2ec2789ce1dcca4d01872a20da801e7ac55",
+        "version" : "2.0.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "savannakit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/IvanMathy/savannakit",
+      "state" : {
+        "revision" : "bb51ee074152a7361e7085d10723f699c79fe673",
+        "version" : "0.15.1"
+      }
+    }
+  ],
+  "version" : 2
 }
