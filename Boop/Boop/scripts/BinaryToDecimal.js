@@ -16,6 +16,7 @@ function main(state) {
 
   for (const index in lines) {
     var text = lines[index].trim();
+    if (text.startsWith("0b")) text = text.split("0b").pop();
     var decimal = parseInt(text, 2);
 
     if (isNaN(decimal)) {
