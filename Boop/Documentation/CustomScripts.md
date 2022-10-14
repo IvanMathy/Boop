@@ -154,4 +154,4 @@ Including all of jQuery to save a few lines of code may not be the greatest move
 
 ### Removing limitations
 
-If you find yourself hitting those limitations, feel free to file an issue your get in touch via Twitter. Boop and the scripting system can be extended to support more use cases, we just need to figure it out together!
+If you find yourself hitting those limitations, feel free to file an issue or get in touch via Twitter. Boop and the scripting system can be extended to support more use cases, we just need to figure it out together!
