@@ -38,6 +38,22 @@ class MainViewController: NSViewController {
         open(url: "https://boop.okat.best/scripts/")
     }
     
+    @IBAction func openScriptsFolder(_ sender: Any) {
+        do {
+            
+            guard let url = try ScriptManager.getBookmarkURL() else {
+//                TODO open preferences so user can pick folder
+                return
+            }
+            
+            NSWorkspace.shared.open(url)
+            
+        }
+        catch let error {
+            print(error)
+            return
+        }
+    }
     
     func open(url: String) {
         guard let url = URL(string: url) else {
