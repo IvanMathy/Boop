@@ -42,7 +42,8 @@ class MainViewController: NSViewController {
         do {
             
             guard let url = try ScriptManager.getBookmarkURL() else {
-//                TODO open preferences so user can pick folder
+                let controller = NSStoryboard.init(name: "Preferences", bundle: nil).instantiateInitialController() as? NSWindowController
+                controller?.showWindow(sender)
                 return
             }
             
