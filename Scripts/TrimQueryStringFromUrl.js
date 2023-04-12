@@ -15,4 +15,3 @@ function main(state){
 		state.text = url.slice(0, queryIndex);
 	}
 }
-1
