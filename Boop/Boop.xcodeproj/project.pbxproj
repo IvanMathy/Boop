@@ -912,8 +912,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/IvanMathy/savannakit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.14.2;
+				branch = main;
+				kind = branch;
 			};
 		};
 		2C8BE186249EBB3D00099B73 /* XCRemoteSwiftPackageReference "fuse-swift" */ = {
