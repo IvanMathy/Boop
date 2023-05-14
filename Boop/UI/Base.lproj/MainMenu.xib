@@ -451,6 +451,11 @@ Gw
                                     <action selector="reloadScripts:" target="Voe-Tx-rLC" id="Rmu-D9-Xm5"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Open Scripts Folder" keyEquivalent="F" id="DIC-Fd-4YF">
+                                <connections>
+                                    <action selector="openScriptsFolder:" target="unv-pE-gme" id="Uap-fp-E5o"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="Tfr-N1-YjS"/>
                             <menuItem title="Get more scripts…" id="oS5-Vj-4JY">
                                 <modifierMask key="keyEquivalentModifierMask"/>
