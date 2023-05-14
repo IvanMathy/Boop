@@ -55,6 +55,7 @@
             <connections>
                 <outlet property="closePickerMenuItem" destination="KYm-JI-9g0" id="aZo-Hy-RkG"/>
                 <outlet property="editor" destination="Ef0-Na-xwu" id="rks-Mp-ffh"/>
+                <outlet property="mainViewController" destination="unv-pE-gme" id="SJf-P6-FHE"/>
                 <outlet property="openPickerMenuItem" destination="8ka-cp-srR" id="qZt-zg-2wc"/>
                 <outlet property="popoverViewController" destination="ugb-uZ-HP1" id="gLb-EK-85g"/>
                 <outlet property="scriptManager" destination="jdF-I6-2al" id="o2F-Lj-Vou"/>
@@ -128,9 +129,9 @@
                                     <action selector="clear:" target="unv-pE-gme" id="Mj1-40-053"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Open…" hidden="YES" keyEquivalent="o" id="IAo-SY-fd9">
+                            <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
                                 <connections>
-                                    <action selector="openDocument:" target="-1" id="bVn-NM-KNZ"/>
+                                    <action selector="openFileWithSender:" target="unv-pE-gme" id="l3F-jU-eYg"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open Recent" hidden="YES" id="tXI-mr-wws">
@@ -147,19 +148,15 @@
                                 </menu>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
-                            <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
-                                <connections>
-                                    <action selector="performClose:" target="-1" id="HmO-Ls-i7Q"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Save…" hidden="YES" keyEquivalent="s" id="pxx-59-PXV">
+                            <menuItem title="Save…" hidden="YES" id="pxx-59-PXV">
+                                <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="saveDocument:" target="-1" id="teZ-XB-qJY"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Save As…" hidden="YES" keyEquivalent="S" id="Bw7-FT-i3A">
+                            <menuItem title="Save As…" keyEquivalent="s" id="Bw7-FT-i3A">
                                 <connections>
-                                    <action selector="saveDocumentAs:" target="-1" id="mDf-zr-I0C"/>
+                                    <action selector="saveFileAsSender:" target="unv-pE-gme" id="vLF-0s-Nt1"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Revert to Saved" hidden="YES" keyEquivalent="r" id="KaW-ft-85H">
@@ -177,6 +174,11 @@
                             <menuItem title="Print…" hidden="YES" keyEquivalent="p" id="aTl-1u-JFS">
                                 <connections>
                                     <action selector="print:" target="-1" id="qaZ-4w-aoO"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="HmO-Ls-i7Q"/>
                                 </connections>
                             </menuItem>
                         </items>
