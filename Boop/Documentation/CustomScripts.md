@@ -87,7 +87,7 @@ Script executions objects have a few functions that can be used to interact with
 
 ##### Editing
 
-In version 1.2.O an above, the `insert()` function takes in a single string argument, and inserts it at the caret position. If there is a selected piece of text, it will be replaced with the provided string.
+In version 1.2.0 and above, the `insert()` function takes in a single string argument, and inserts it at the caret position. If there is a selected piece of text, it will be replaced with the provided string.
 
 ```js
 
