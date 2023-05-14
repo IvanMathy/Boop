@@ -9,10 +9,8 @@
 	}
 **/
 
-const { startCase } = require('@boop/lodash.boop')
+const { startCase, lowerCase } = require("@boop/lodash.boop");
 
 function main(input) {
-	
-    input.text = startCase(input.text)
-	
+  input.text = startCase(lowerCase(input.text));
 }
