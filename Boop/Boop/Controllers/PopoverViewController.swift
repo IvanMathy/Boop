@@ -32,6 +32,11 @@ class PopoverViewController: NSViewController {
         // Double-click script selection
         tableView.doubleAction = #selector(runSelectedScript)
 
+        // Show popover on status view click
+        statusView.onMouseDown = { [weak self] in
+            self?.show()
+        }
+
         // Dismiss popover on background view click
         overlayView.onMouseDown = { [weak self] in
             self?.hide()
