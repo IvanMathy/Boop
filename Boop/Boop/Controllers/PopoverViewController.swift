@@ -129,7 +129,12 @@ class PopoverViewController: NSViewController {
         statusView.setStatus(.help("Select your action"))
         
         self.searchField.stringValue = ""
-        self.tableHeightConstraint.constant = 0
+        
+        let allScriptsList = scriptManager.scripts.sorted { left, right in
+            left.name ?? "" < right.name ?? ""
+        }
+        self.tableViewController.results = allScriptsList
+        self.tableHeightConstraint.constant = CGFloat(47 * min(5, allScriptsList.count))
         
         self.view.window?.makeFirstResponder(self.searchField)
         self.enabled = true
