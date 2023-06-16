@@ -8,6 +8,7 @@
 
 import Cocoa
 import SavannaKit
+import Carbon
 
 class PopoverViewController: NSViewController {
     
@@ -48,13 +49,6 @@ class PopoverViewController: NSViewController {
             
             var didSomething = false
                 
-            // Key codes:
-            let kVKTab = 0x30
-            // 125 is down arrow
-            // 126 is up
-            // 53 is escape
-            // 36 is enter
-       
             if theEvent.keyCode == 53 && self.enabled { // ESCAPE
                 
                 // Let's dismiss the popover
@@ -63,7 +57,7 @@ class PopoverViewController: NSViewController {
                 didSomething = true
             }
             
-            if theEvent.keyCode == 36 && self.enabled { // ENTER
+            if theEvent.keyCode == kVK_Return && self.enabled { // ENTER
 
                 guard self.tableViewController.selectedScript != nil else {
                     return theEvent
@@ -76,20 +70,34 @@ class PopoverViewController: NSViewController {
 
             let window = self.view.window
             
-            if theEvent.keyCode == kVKTab && self.enabled {
+            if self.enabled {
                 if window?.firstResponder is NSTextView &&
                     (window?.firstResponder as! NSTextView).delegate is SearchField {
-                    let offset = theEvent.modifierFlags.contains(.shift) ? -1 : 1
+                    let isControlPressed = theEvent.modifierFlags.intersection(.deviceIndependentFlagsMask) == .control
+                    let isControlN = isControlPressed && theEvent.keyCode == kVK_ANSI_N
+                    let isControlP = isControlPressed && theEvent.keyCode == kVK_ANSI_P
+
+                    let isShiftPressed = theEvent.modifierFlags.intersection(.deviceIndependentFlagsMask) == .shift
+                    let isTab = theEvent.keyCode == kVK_Tab
+                    let isOnlyTab = isTab && !isShiftPressed
+                    let isShiftTab = isShiftPressed && isTab
+
+                    let next = isControlN || isOnlyTab
+                    let pre = isControlP || isShiftTab
+                    let offset = next ? 1 : (pre ? -1 : 0)
                     let newSel = IndexSet([self.tableView.selectedRow + offset])
                     self.tableView.selectRowIndexes(newSel, byExtendingSelection: false)
                     self.tableView.scrollRowToVisible(self.tableView.selectedRow)
+                    
+                    if next || pre {
+                        didSomething = true
+                    }
                 }
-                didSomething = true // prevent tabbing back into text document
             }
 
             if window?.firstResponder is NSTextView &&
                 (window?.firstResponder as! NSTextView).delegate is SearchField &&
-                theEvent.keyCode == 125 { // DOWN
+                theEvent.keyCode == kVK_DownArrow { // DOWN
                 
                 // Why -1? I don't know, and I don't even care.
                 let indexSet = IndexSet(integer: -1)
@@ -100,7 +108,7 @@ class PopoverViewController: NSViewController {
             // Oh hey look now somehow it's 0.
             if window?.firstResponder is NSTableView &&
                 self.tableView.selectedRow == 0 &&
-                theEvent.keyCode == 126 { // UP
+                theEvent.keyCode == kVK_UpArrow { // UP
                 
                 window?.makeFirstResponder(self.searchField)
                 // This doesn't work for some reason.
