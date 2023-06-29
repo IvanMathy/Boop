@@ -3,7 +3,7 @@
   {
     "api":1,
     "name":"To Unicode Escaped String",
-    "description":"Converts a UTF8 string to unicode escape chars(js format)",
+    "description":"Converts a string to Unicode escape chars (JS format)",
     "author":"luisfontes19",
     "icon":"broom",
     "tags":"string,unicode,convert,escape"
@@ -16,9 +16,9 @@ function main(state) {
 
 function toUnicode(str) {
   return [...str].map(c => {
-    let hex = c.charCodeAt(0).toString(16);
+    let hex = c.codePointAt(0).toString(16);
     if (hex.length == 2) hex = "00" + hex;
-    return ("\\u" + hex).slice(-7);
+    return ("\\u{" + hex + "}");
   }).join("");
 }
 
