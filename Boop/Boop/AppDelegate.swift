@@ -17,8 +17,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var closePickerMenuItem: NSMenuItem!
     
     @IBOutlet weak var popoverViewController: PopoverViewController!
+    @IBOutlet weak var mainViewController: MainViewController!
     @IBOutlet weak var scriptManager: ScriptManager!
     @IBOutlet weak var editor: SyntaxTextView!
+    @IBOutlet weak var statusView: StatusView!
 
     // Frame auto save name for app window frame restoration.
     private static let appWindowName = "boop.app.window"
@@ -42,6 +44,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
+    func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+
+        let text=try? String(contentsOf: URL(fileURLWithPath: filename))
+        
+        if text == nil {
+            self.statusView.setStatus(.error("Failed to load file: '\(filename)'."))
+        } else  {
+            editor.text = text!
+        }
+        return true
+    }
+    
     @IBAction func showPreferencesWindow(_ sender: NSMenuItem) {
         let controller = NSStoryboard.init(name: "Preferences", bundle: nil).instantiateInitialController() as? NSWindowController
         

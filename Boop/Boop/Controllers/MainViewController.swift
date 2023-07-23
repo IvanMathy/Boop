@@ -10,7 +10,8 @@ import Cocoa
 import SavannaKit
 
 class MainViewController: NSViewController {
-
+    
+    @IBOutlet weak var statusView: StatusView!
     @IBOutlet weak var editorView: SyntaxTextView!
     @IBOutlet weak var updateBuddy: UpdateBuddy!
     @IBOutlet weak var checkUpdateMenuItem: NSMenuItem!
@@ -66,6 +67,54 @@ class MainViewController: NSViewController {
     
     @IBAction func checkForUpdates(_ sender: Any) {
         updateBuddy.check()
+    }
+    
+    @IBAction func openFile(sender: AnyObject) {
+
+        let dialog = NSOpenPanel();
+
+        dialog.title                   = "Choose a file";
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.canChooseDirectories    = false;
+        dialog.canCreateDirectories    = false;
+        dialog.allowsMultipleSelection = false;
+
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            if let pathUrl = dialog.url { // Pathname of the file
+                let text=try? String(contentsOf: pathUrl)
+                
+                if text == nil {
+                    self.statusView.setStatus(.error("Failed to load file: '\(pathUrl.path)'."))
+                } else  {
+                    editorView.text = text!
+                }
+            }
+        }
+    }
+    
+    @IBAction func saveFileAs(sender: AnyObject) {
+        
+        let dialog = NSSavePanel();
+        
+        dialog.title                   = "Save content as…";
+        dialog.showsResizeIndicator    = true;
+        dialog.showsHiddenFiles        = false;
+        dialog.showsTagField           = false;
+        dialog.canCreateDirectories    = true;
+        dialog.nameFieldStringValue    = "Untitled.txt"
+        
+        if (dialog.runModal() == NSApplication.ModalResponse.OK) {
+            if let pathUrl = dialog.url { // Pathname of the file
+                let textView = editorView.contentTextView
+                let textData=textView.textStorage?.string.data(using: .utf8)
+                do {
+                    try textData?.write(to: pathUrl)
+                } catch let error as NSError {
+                    self.statusView.setStatus(.error("Failed to save content to file '\(pathUrl.path)'. (Reason: \(error.localizedFailureReason!))"))
+                }
+            }
+        }
     }
 }
 
