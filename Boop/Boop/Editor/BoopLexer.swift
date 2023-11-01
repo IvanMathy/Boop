@@ -46,7 +46,7 @@ class BoopLexer: RegexLexer {
         
         // - Bootleg XML-like tags match:
         
-        generators.append(regexToken(.attribute, "<(?:.*?)\\b[^>]*\\/?>"))
+        generators.append(regexToken(.attribute, "<(?:.*?)\\b[^>\n]*\\/?>"))
         
         
         // - Match JSON labels and generic parameters
