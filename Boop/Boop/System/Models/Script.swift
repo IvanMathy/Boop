@@ -43,7 +43,7 @@ class Script: NSObject {
     var info:[String: Any]
     
     var name: String?
-    var tags: String?
+    var tags: [String]
     var desc: String?
     var icon: String?
     var bias: Double?
@@ -59,7 +59,7 @@ class Script: NSObject {
         self.isBuiltInt = builtIn
         
         self.name = parameters["name"] as? String
-        self.tags = parameters["tags"] as? String
+        self.tags = Script.parseTerms(terms: parameters["tags"] as? String)
         self.desc = parameters["description"] as? String
         self.icon = (parameters["icon"] as? String)?.lowercased()
         self.bias = parameters["bias"] as? Double
@@ -84,6 +84,10 @@ class Script: NSObject {
         main.call(withArguments: [execution])
     }
     
+    private static func parseTerms(terms: String?) -> [String] {
+        // reurn either an empty array or the terms split by comma space or semicolon
+        terms?.components(separatedBy: CharacterSet(charactersIn: ",; ")) ?? [String]()
+    }
 }
 
 extension Script: Fuseable {
@@ -91,9 +95,9 @@ extension Script: Fuseable {
     var properties: [FuseProperty] {
         return [
             FuseProperty(value: name, weight: 0.9),
-            FuseProperty(value: tags, weight: 0.6),
             FuseProperty(value: desc, weight: 0.2)
-        ]
+        ] + tags.map { tag in
+            FuseProperty(value: tag, weight: 0.4) }
     }
 }
 
