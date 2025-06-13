@@ -10,8 +10,8 @@
 **/
 
 function main(state) {
-    // Regex to extract email addresses
-    const emailRegex = /[a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+/g;
+    // Regex to extract email addresses while avoiding ReDoS vulnerabilities
+    const emailRegex = /\b[A-Za-z0-9](?:[A-Za-z0-9._+-]*[A-Za-z0-9])?@[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?\.[A-Za-z]{2,}\b/g;
     const text = state.text || "";
     const matches = text.match(emailRegex) || [];
 
