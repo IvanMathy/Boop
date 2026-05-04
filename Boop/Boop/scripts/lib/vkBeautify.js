@@ -121,7 +121,7 @@
                 }
             }
     
-        return  (str.charAt(0) === '\n') ? str.slice(1) : str;
+        return (str.charAt(0) === '\n') ? str.slice(1) : str;
     };
 
     vkbeautify.prototype.css = function(text, step) {
@@ -142,13 +142,13 @@
             
             for(ix=0;ix<len;ix++) {
     
-                if( /{/.exec(ar[ix]))  {
+                if( /{/.exec(ar[ix])) {
                     str += shift[deep++]+ar[ix];
                 } else 
-                if( /}/.exec(ar[ix]))  {
+                if( /}/.exec(ar[ix])) {
                     str += shift[--deep]+ar[ix];
                 } else
-                if( /\*\\/.exec(ar[ix]))  { 
+                if( /\*\\/.exec(ar[ix])) { 
                     str += shift[deep]+ar[ix];
                 }
                 else {
@@ -246,25 +246,25 @@
                 
                 parenthesisLevel = isSubquery(ar[ix], parenthesisLevel);
                 
-                if( /\s*\s*SELECT\s*/.exec(ar[ix]))  {
+                if( /\s*\s*SELECT\s*/.exec(ar[ix])) {
                     ar[ix] = ar[ix].replace(/,/g,",\n"+tab+tab+"");
                 } 
                 
-                if( /\s*\s*SET\s*/.exec(ar[ix]))  {
+                if( /\s*\s*SET\s*/.exec(ar[ix])) {
                     ar[ix] = ar[ix].replace(/,/g,",\n"+tab+tab+"");
                 } 
                 
-                if( /\s*\(\s*SELECT\s*/.exec(ar[ix]))  {
+                if( /\s*\(\s*SELECT\s*/.exec(ar[ix])) {
                     deep++;
                     str += shift[deep]+ar[ix];
                 } else 
-                if( /'/.exec(ar[ix]) )  {
+                if( /'/.exec(ar[ix]) ) {
                     if(parenthesisLevel<1 && deep) {
                         deep--;
                     }
                     str += ar[ix];
                 }
-                else  { 
+                else { 
                     str += shift[deep]+ar[ix];
                     if(parenthesisLevel<1 && deep) {
                         deep--;

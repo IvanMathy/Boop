@@ -221,6 +221,7 @@ class ScriptManager: NSObject {
     func runScript(_ script: Script, selection: String? = nil, fullText: String, insertIndex: Int? = nil) -> String {
         let scriptExecution = ScriptExecution(selection: selection, fullText: fullText, script: script, insertIndex: insertIndex)
         
+        self.statusView.setStatus(.normal)
         script.run(with: scriptExecution)
         
         return scriptExecution.text ?? ""

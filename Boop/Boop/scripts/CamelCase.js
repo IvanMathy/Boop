@@ -4,7 +4,7 @@
 		"name":"Camel Case",
 		"description":"convertsYourTextToCamelCase",
 		"author":"Ivan",
-		"icon":"metamorphose",
+		"icon":"camel",
 		"tags":"camel,case,function,lodash"
 	}
 **/

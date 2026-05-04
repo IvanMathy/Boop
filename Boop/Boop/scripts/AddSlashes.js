@@ -2,7 +2,7 @@
 	{
 		"api":1,
 		"name":"Add Slashes",
-		"description":"Escapes your text",
+		"description":"Escapes your text.",
 		"author":"Ivan",
 		"icon":"quote",
 		"tags":"add,slashes,escape"

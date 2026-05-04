@@ -2,9 +2,9 @@
 	{
 		"api":1,
 		"name":"Deburr",
-		"description":"Converts your text to basic latin characters",
+		"description":"Converts your text to basic latin characters.",
 		"author":"Ivan",
-		"icon":"metamorphose",
+		"icon":"colosseum",
 		"tags":"burr,special,characters,function,lodash"
 	}
 **/

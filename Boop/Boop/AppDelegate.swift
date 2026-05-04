@@ -23,8 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Frame auto save name for app window frame restoration.
     private static let appWindowName = "boop.app.window"
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-
+    func applicationWillFinishLaunching(_ notification: Notification) {
         ThemeSettingsViewController.applyTheme()
         
         NSWindow.allowsAutomaticWindowTabbing = false

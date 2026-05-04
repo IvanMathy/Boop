@@ -2,7 +2,7 @@
     {
         "api":1,
         "name":"Upcase",
-        "description":"Converts to uppercase",
+        "description":"Converts your text to uppercase.",
         "author":"Dan2552",
         "icon":"type",
         "tags":"upcase,uppercase,capital,capitalize,capitalization"

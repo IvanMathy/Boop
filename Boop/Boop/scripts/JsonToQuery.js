@@ -2,7 +2,7 @@
 	{
 		"api":1,
 		"name":"JSON to Query String",
-		"description":"Converts JSON to URL query string",
+		"description":"Converts JSON to URL query string.",
 		"author":"Ota Mares <ota@mares.one>",
 		"icon":"website",
 		"tags":"url,query,params,json,convert,encode"

@@ -9,9 +9,11 @@
 import Cocoa
 import SavannaKit
 
-class BoopToken: Token {
+class BoopToken: Token, CustomStringConvertible {
     
-    public enum TokenType {
+    
+    
+    public enum TokenType: String {
         case comment
         case string
         case attribute
@@ -26,15 +28,22 @@ class BoopToken: Token {
     // Plain tokens are not even parsed in the first place.
     var isPlain = false
     
-    var range: Range<String.Index>
+    var isActive = true
+    var isGreedy: Bool
+    
+    var range: NSRange
     var type: BoopToken.TokenType
     
-    init(type:TokenType, range: Range<String.Index>) {
+    init(type:TokenType, range: NSRange, greedy: Bool = false) {
         self.range = range
         self.type = type
+        self.isGreedy = greedy
     }
     
 
+    var description: String {
+        return type.rawValue
+    }
     
     
 }

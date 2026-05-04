@@ -16,6 +16,7 @@ class Script: NSObject {
     var url: URL
     var scriptCode: String
     
+    
     lazy var context: JSContext = { [unowned self] in
         let context: JSContext = JSContext()
         context.name = self.name ?? "Unknown Script"

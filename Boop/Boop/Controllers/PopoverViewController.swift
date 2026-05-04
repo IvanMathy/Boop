@@ -12,7 +12,7 @@ import SavannaKit
 class PopoverViewController: NSViewController {
     
     @IBOutlet weak var overlayView: OverlayView!
-    @IBOutlet weak var popoverView: PopoverView!
+    @IBOutlet weak var popoverView: PopoverContainerView!
     @IBOutlet weak var searchField: SearchField!
     @IBOutlet weak var editorView: SyntaxTextView!
     @IBOutlet weak var statusView: StatusView!
@@ -28,6 +28,14 @@ class PopoverViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Double-click script selection
+        tableView.doubleAction = #selector(runSelectedScript)
+
+        // Dismiss popover on background view click
+        overlayView.onMouseDown = { [weak self] in
+            self?.hide()
+        }
         
         setupKeyHandlers()
     }
@@ -41,6 +49,7 @@ class PopoverViewController: NSViewController {
             var didSomething = false
                 
             // Key codes:
+            let kVKTab = 0x30
             // 125 is down arrow
             // 126 is up
             // 53 is escape
@@ -55,24 +64,29 @@ class PopoverViewController: NSViewController {
             }
             
             if theEvent.keyCode == 36 && self.enabled { // ENTER
-                
-                guard let script = self.tableViewController.selectedScript else {
-                    return theEvent // Return event to beep
+
+                guard self.tableViewController.selectedScript != nil else {
+                    return theEvent
                 }
-                
-                
-                // Let's dismiss the popover
-                self.hide()
-                
-                // Run the script afterwards in case we need to show a status
-                self.scriptManager.runScript(script, into: self.editorView)
-                
+
+                self.runSelectedScript()
                 
                 didSomething = true
             }
-            
+
             let window = self.view.window
             
+            if theEvent.keyCode == kVKTab && self.enabled {
+                if window?.firstResponder is NSTextView &&
+                    (window?.firstResponder as! NSTextView).delegate is SearchField {
+                    let offset = theEvent.modifierFlags.contains(.shift) ? -1 : 1
+                    let newSel = IndexSet([self.tableView.selectedRow + offset])
+                    self.tableView.selectRowIndexes(newSel, byExtendingSelection: false)
+                    self.tableView.scrollRowToVisible(self.tableView.selectedRow)
+                }
+                didSomething = true // prevent tabbing back into text document
+            }
+
             if window?.firstResponder is NSTextView &&
                 (window?.firstResponder as! NSTextView).delegate is SearchField &&
                 theEvent.keyCode == 125 { // DOWN
@@ -142,6 +156,18 @@ class PopoverViewController: NSViewController {
     func runScriptAgain() {
         self.scriptManager.runScriptAgain(editor: self.editorView)
     }
+
+    @objc private func runSelectedScript() {
+        guard let script = tableViewController.selectedScript else {
+            return
+        }
+
+        // Let's dismiss the popover
+        hide()
+
+        // Run the script afterwards in case we need to show a status
+        scriptManager.runScript(script, into: editorView)
+    }
     
 }
 
@@ -154,6 +180,6 @@ extension PopoverViewController: NSTextFieldDelegate {
         let results = scriptManager.search(searchField.stringValue)
         tableViewController.results = results
         
-        self.tableHeightConstraint.constant = CGFloat(47 * min(5, results.count))
+        self.tableHeightConstraint.constant = CGFloat(45 * min(5, results.count) + ((results.count != 0) ? 20 : 0))
     }
 }

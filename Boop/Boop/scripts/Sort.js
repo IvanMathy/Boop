@@ -4,7 +4,7 @@
          "name":"Sort lines",
          "description":"Sort lines alphabetically.",
          "author":"Sebastiaan Besselsen",
-         "icon":"table",
+         "icon":"sort-characters",
          "tags":"sort,alphabet"
      }
  **/

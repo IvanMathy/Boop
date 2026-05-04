@@ -36,7 +36,7 @@ class StatusView: NSView {
         
         self.wantsLayer = true
         
-        self.layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
+        self.layer?.backgroundColor = ColorPair.normal.value(for: self.effectiveAppearance).cgColor
         self.layer?.cornerRadius = 5
         
     }

@@ -26,7 +26,7 @@ var script = `
 		"description":"What does your script do?",
 		"author":"Whooooooo are you?",
 		"icon":"broom",
-        "tags":"place,tags,here"
+        "tags":"place,tags,here",
         "bias":0.0
 	}
 **/

@@ -2,7 +2,7 @@
     {
         "api":1,
         "name":"Date to Timestamp",
-        "description":"Converts dates to Unix timestamp",
+        "description":"Converts dates to Unix timestamp.",
         "author":"Noah Halford",
         "icon":"watch",
         "tags":"date,time,calendar,unix,timestamp"

@@ -2,9 +2,9 @@
 	{
 		"api":1,
 		"name":"Start Case",
-		"description":"Converts Your Text To Start Case",
+		"description":"Converts Your Text To Start Case.",
 		"author":"Ivan",
-		"icon":"metamorphose",
+		"icon":"type",
 		"tags":"start,case,function,lodash"
 	}
 **/

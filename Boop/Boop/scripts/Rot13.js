@@ -2,9 +2,9 @@
   {
     "api":1,
     "name":"Rot13",
-    "description":"Applies the Rot13 cypher to your text",
+    "description":"Applies the Rot13 cypher to your text.",
     "author":"Paul Starr",
-    "icon":"flip",
+    "icon":"roman",
     "tags":"spoilers,encryption,plaintext"
   }
 **/
