@@ -11,5 +11,5 @@
 **/
 
 function main(input) {
-	input.text = input.text.replace(/\n/g, ' ');
+	input.text = input.text.replace(/\r\n|\r|\n/g, ' ');
 }
